@@ -1,0 +1,11 @@
+@tailwind base;
+/* @import "tailwind/base"; */
+
+@tailwind components;
+/* @import "tailwind/components"; */
+.bang{
+    @apply bg-red-50;
+}
+
+@tailwind utilities;
+/* @import "tailwind/utilities"; */
