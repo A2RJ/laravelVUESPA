@@ -1,4 +1,4 @@
-<!-- dibuat otomatis https://medium.com/teknomuslim/getting-started-tailwind-ui-with-laravel-482f65fd6ef0-->
+Dibuat otomatis https://medium.com/teknomuslim/getting-started-tailwind-ui-with-laravel-482f65fd6ef0
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
