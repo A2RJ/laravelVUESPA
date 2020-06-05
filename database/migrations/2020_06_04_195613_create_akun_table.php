@@ -21,6 +21,6 @@ class CreateAkunTable extends Migration {
 
 	public function down()
 	{
-		Schema::drop('akun');
+		Schema::dropIfExists('akun');
 	}
 }
