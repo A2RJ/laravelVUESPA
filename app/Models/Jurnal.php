@@ -3,12 +3,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 /**
-   @property date $tanggal tanggal
-@property varchar $aktivitas aktivitas
+   @property varchar $aktivitas aktivitas
 @property varchar $no_akun no akun
 @property text $keterangan keterangan
 @property varchar $jum_debet jum debet
 @property varchar $jum_kredit jum kredit
+@property timestamp $created_at created at
+@property timestamp $updated_at updated at
+@property timestamp $deleted_at deleted at
    
  */
 class Jurnal extends Model 
@@ -22,20 +24,16 @@ class Jurnal extends Model
     /**
     * Mass assignable columns
     */
-    protected $fillable=[
-        'jum_kredit',
-'tanggal',
-'aktivitas',
+    protected $fillable=['aktivitas',
 'no_akun',
 'keterangan',
 'jum_debet',
-'jum_kredit'
-];
+'jum_kredit'];
 
     /**
     * Date time columns.
     */
-    protected $dates=['tanggal'];
+    protected $dates=[];
 
 
 

@@ -2,12 +2,12 @@
     <div class="card-header">
         <div class="row">
             <div class="col-sm-9">
-                <a href="{{route('jurnal.show',$record->id)}}"> Detail</a>
+                <a href="{{route('jurnal.show',$record->id)}}"> {{$record->id}}</a>
             </div>
             <div class="col-sm-3 text-right">
                 <div class="btn-group">
                     <a class="btn btn-secondary" href="{{route('jurnal.edit',$record->id)}}">
-    <span class="fa fa-pencil">Ubah</span>
+    <span class="fa fa-pencil"></span>
 </a>
                     <form onsubmit="return confirm('Are you sure you want to delete?')"
       action="{{route('jurnal.destroy',$record->id)}}"
@@ -16,7 +16,7 @@
     {{csrf_field()}}
     {{method_field('DELETE')}}
     <button type="submit" class="btn btn-secondary cursor-pointer">
-        <i class="text-danger fa fa-remove"></i> Hapus
+        <i class="text-danger fa fa-remove"></i>
     </button>
 </form>
                 </div>
@@ -27,10 +27,6 @@
         <table class="table table-bordered table-striped">
             <tbody>
             		<tr>
-			<th>Tanggal</th>
-			<td>{{$record->tanggal}}</td>
-		</tr>
-		<tr>
 			<th>Aktivitas</th>
 			<td>{{$record->aktivitas}}</td>
 		</tr>
