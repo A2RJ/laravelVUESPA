@@ -13,6 +13,7 @@
         Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
       </p>
     </div>
+
     <div class="inline-block relative w-64">
         <label for="aktivitas">Aktivitas</label>
         <select id="selectAktivitas" name="aktivitas" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
@@ -24,11 +25,19 @@
         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
         </div>
-        </div>
-        <div class="form-group">
+        <div class="inline-block relative w-64">
             <label for="selectWaktu">Waktu</label>
-            <select class="form-control" id="selectWaktu" name="waktu">
-                <option value="">Pilih</option>
+            <select id="selectWaktu" name="waktu" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option value="">Pilih Waktu</option>
+            </select>
+        </div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+        <div class="inline-block relative w-64">
+            <label for="selectAkun">Akun</label>
+            <select id="selectAkun" name="akun" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option value="">Pilih Akun</option>
             </select>
         </div>
     </div>
