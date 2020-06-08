@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
+
+
+
+Route::group(['prefix'=>'jurnals'], function () {
+    
+    Route::get('akun/{id}', [
+            'as' => 'jurnals.getakun',
+            'uses' => 'JurnalController@getAkun'
+    ]);
+
+    Route::get('waktu/{id}', [
+            'as' => 'jurnals.getwaktu',
+            'uses' => 'JurnalController@getWaktu'
+    ]);
+
+});
+
+Route::resource('jurnals','JurnalController');
+
