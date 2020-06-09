@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\Aktivitas;
 use App\Models\Akun;
 use App\Models\JangkaWaktu;
@@ -28,7 +29,10 @@ class JurnalController extends Controller
     {
         $jurnal = new Jurnal;
         $jurnal->joinTable();
-        return view('index', ['records' => Jurnal::All(), 'aktivitas' => Aktivitas::All()]);
+        return view('index', [
+            'records' => Jurnal::All(),
+            'aktivitas' => Aktivitas::All()
+            ]);
     }    /**
      * Display the specified resource.
      *
@@ -63,12 +67,12 @@ class JurnalController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $model=new Jurnal;
         $model->fill($request->all());
 
         if ($model->save()) {
-            
-            return redirect('jurnals')->with('status', 'Jurnal saved successfully');
+                return redirect('jurnals')->with('status', 'Jurnal saved successfully');
             } else {
                 session()->flash('app_message', 'Something is wrong while saving Jurnal');
             }
