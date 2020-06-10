@@ -1,5 +1,6 @@
 import AllJurnals from './views/allJurnals.vue';
 import Coba from './views/coba.vue';
+import Input from './views/input.vue';
 
 export const routes = [
     {
@@ -12,9 +13,9 @@ export const routes = [
         path: '/add',
         component: Coba
     },
-    // {
-    //     name: 'edit',
-    //     path: '/edit/:id',
-    //     component: EditBook
-    // }
+    {
+        name: 'input',
+        path: '/input',
+        component: Input
+    }
 ];

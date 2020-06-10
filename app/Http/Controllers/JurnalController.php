@@ -67,11 +67,22 @@ class JurnalController extends Controller
         $model->fill($request->all());
 
         if ($model->save()) {
-                return redirect('jurnal')->with('status', 'Jurnal saved successfully');
-            } else {
-                session()->flash('app_message', 'Something is wrong while saving Jurnal');
-            }
-        return redirect()->back();
+            return response()->json([
+                'success' => true,
+                'message' => 'Post Berhasil Disimpan!',
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Post Gagal Disimpan!',
+            ], 400);
+        }
+        // if ($model->save()) {
+        //         return redirect('jurnal')->with('status', 'Jurnal saved successfully');
+        //     } else {
+        //         session()->flash('app_message', 'Something is wrong while saving Jurnal');
+        //     }
+        // return redirect()->back();
     } /**
      * Show the form for editing the specified resource.
      *
@@ -122,6 +133,28 @@ class JurnalController extends Controller
             }
 
         return redirect()->back();
+    }
+
+    public function getAktivitas()
+    {
+        // return response([
+        //     'success' => true,
+        //     'message' => 'List Aktivitas',
+        //     'data' => Aktivitas::all()
+        // ], 200);
+        if (Aktivitas::all()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'List data',
+                'data' => Aktivitas::all()
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Data tidak ditemukan',
+            ], 400);
+        }
+        // return response()->json(Aktivitas::all());
     }
 
     public function getAkun($id)
