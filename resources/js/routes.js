@@ -1,5 +1,5 @@
-import AllJurnals from './allJurnals.vue';
-import Coba from './coba.vue';
+import AllJurnals from './views/allJurnals.vue';
+import Coba from './views/coba.vue';
 
 export const routes = [
     {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\Aktivitas;
 use App\Models\Akun;
 use App\Models\JangkaWaktu;
@@ -26,11 +27,8 @@ class JurnalController extends Controller
      */
     public function index(Request $request)
     {
-        // $jurnal = new Jurnal;
-        // $jurnal->joinTable();
-        // return view('index', ['records' => Jurnal::All(), 'aktivitas' => Aktivitas::All()]);
-        $jurnals = Jurnal::all()->toArray();
-        return array_reverse($jurnals);
+        // return view('pages.jurnal.index', ['records' => Jurnal::paginate(10)]);
+        return response()->json(Jurnal::all(), 200);
     }    /**
      * Display the specified resource.
      *
@@ -69,8 +67,7 @@ class JurnalController extends Controller
         $model->fill($request->all());
 
         if ($model->save()) {
-            
-            return redirect('jurnals')->with('status', 'Jurnal saved successfully');
+                return redirect('jurnal')->with('status', 'Jurnal saved successfully');
             } else {
                 session()->flash('app_message', 'Something is wrong while saving Jurnal');
             }
@@ -129,11 +126,11 @@ class JurnalController extends Controller
 
     public function getAkun($id)
     {
-        return response()->json(Akun::where('id_akun', $id)->get());
+        return response()->json(Akun::where('id_akun', $id)->get(), 200);
     }
 
     public function getWaktu($id)
     {
-        return response()->json(JangkaWaktu::where('id_jangka_waktu', $id)->get());
+        return response()->json(JangkaWaktu::where('id_jangka_waktu', $id)->get(), 200);
     }
 }
