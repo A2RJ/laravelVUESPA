@@ -26,9 +26,11 @@ class JurnalController extends Controller
      */
     public function index(Request $request)
     {
-        $jurnal = new Jurnal;
-        $jurnal->joinTable();
-        return view('index', ['records' => Jurnal::All(), 'aktivitas' => Aktivitas::All()]);
+        // $jurnal = new Jurnal;
+        // $jurnal->joinTable();
+        // return view('index', ['records' => Jurnal::All(), 'aktivitas' => Aktivitas::All()]);
+        $jurnals = Jurnal::all()->toArray();
+        return array_reverse($jurnals);
     }    /**
      * Display the specified resource.
      *

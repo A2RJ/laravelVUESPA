@@ -17,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix'=>'jurnals'], function () {
+    
+    Route::get('akun/{id}', [
+            'as' => 'jurnals.getakun',
+            'uses' => 'JurnalController@getAkun'
+    ]);
+
+    Route::get('waktu/{id}', [
+            'as' => 'jurnals.getwaktu',
+            'uses' => 'JurnalController@getWaktu'
+    ]);
+
+});
+
+Route::resource('jurnals','JurnalController');
