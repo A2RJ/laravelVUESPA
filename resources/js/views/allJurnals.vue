@@ -2,6 +2,7 @@
     <div>
         <h3 class="text-center">All Books</h3><br/>
         <p>ini adalah halaman Alljurnals</p>
+        <Input />
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -21,18 +22,23 @@
 </template>
 
 <script>
+    import Input from './input.vue';
     export default {
+        components: {
+            Input,
+        },
         data() {
             return {
-                books: []
+                jurnals: []
             }
         },
         created() {
             this.axios
                 .get('http://127.0.0.1:8000/api/jurnals')
                 .then(response => {
-                    this.books = response.data;
-                });
+                    this.jurnals = response.data;
+                }
+            );
         }
     }
 </script>

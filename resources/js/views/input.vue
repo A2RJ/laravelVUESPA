@@ -72,30 +72,30 @@
                 this.selection = this.selection;
             },
             addData(){
-            axios.post('http://127.0.0.1:8000/api/jurnals', this.form).then(res => {
-                
-                aktivitas: this.form.aktivitas;
-                jangka_waktu: this.form.jangka_waktu;
-                no_akun: this.form.no_akun;
-                keterangan: this.form.keterangan;
-                jum_debet: this.form.jum_debet;
-                jum_debet: this.form.jum_kredit;
-                
-                this.form.aktivitas = '',
-                this.form.jangka_waktu = '',
-                this.form.no_akun = '',
-                this.form.keterangan = '',
-                this.form.jum_debet = '',
-                this.form.jum_kredit = ''
-            })
-            .then(response => {
-            // push router ke read data
-                this.$router.push("/");
-            })
-            .catch ((err) => {
-                console.log(err);
-            });
-        },
+                axios.post('http://127.0.0.1:8000/api/jurnals', this.form).then(res => {
+                    
+                    aktivitas: this.form.aktivitas;
+                    jangka_waktu: this.form.jangka_waktu;
+                    no_akun: this.form.no_akun;
+                    keterangan: this.form.keterangan;
+                    jum_debet: this.form.jum_debet;
+                    jum_debet: this.form.jum_kredit;
+                    
+                    this.form.aktivitas = '',
+                    this.form.jangka_waktu = '',
+                    this.form.no_akun = '',
+                    this.form.keterangan = '',
+                    this.form.jum_debet = '',
+                    this.form.jum_kredit = ''
+                })
+                .then(response => {
+                // push router ke read data
+                    this.$router.push("/");
+                })
+                .catch ((err) => {
+                    console.log(err);
+                });
+            },
         }
     }
 </script>

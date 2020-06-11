@@ -1945,6 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _input_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./input.vue */ "./resources/js/views/input.vue");
 //
 //
 //
@@ -1967,17 +1968,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Input: _input_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
-      books: []
+      jurnals: []
     };
   },
   created: function created() {
     var _this = this;
 
     this.axios.get('http://127.0.0.1:8000/api/jurnals').then(function (response) {
-      _this.books = response.data;
+      _this.jurnals = response.data;
     });
   }
 });
@@ -37792,38 +37798,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _c("h3", { staticClass: "text-center" }, [_vm._v("All Books")]),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", [_vm._v("ini adalah halaman Alljurnals")]),
+      _vm._v(" "),
+      _c("Input"),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h3", { staticClass: "text-center" }, [_vm._v("All Books")]),
-      _c("br"),
+    return _c("table", { staticClass: "table table-bordered" }, [
+      _c("thead", [
+        _c("tr", [
+          _c("th", [_vm._v("ID")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Name")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Author")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Created At")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Updated At")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Actions")])
+        ])
+      ]),
       _vm._v(" "),
-      _c("p", [_vm._v("ini adalah halaman Alljurnals")]),
-      _vm._v(" "),
-      _c("table", { staticClass: "table table-bordered" }, [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("ID")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Name")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Author")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Created At")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Updated At")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Actions")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tbody")
-      ])
+      _c("tbody")
     ])
   }
 ]
