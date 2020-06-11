@@ -10,7 +10,6 @@
                     {{ akt.aktivitas }}
                 </option>
             </select>
-            <!-- <span>Selected: {{ aktivitas }}</span> -->
         </div>
         <div class="form-group">
             <label for="selectWaktu">Waktu</label>
@@ -41,6 +40,7 @@
 </template>
 
 <script>
+import { validationMixin, required } from 'vuelidate';
     export default {
         data() {
             return {
@@ -54,6 +54,12 @@
                     jum_debet: '',
                     jum_kredit: ''
                 }
+            }
+        },
+        mixins: [validationMixin],
+        validations: {
+            aktivitas: {
+                required,
             }
         },
         created() {
