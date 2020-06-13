@@ -17,7 +17,7 @@ use App\Models\Jurnal;
  * @author Tuhin Bepari <digitaldreams40@gmail.com>
  */
 
-class JurnalController extends Controller
+class AController extends Controller
 {
        /**
      * Display a listing of the resource.

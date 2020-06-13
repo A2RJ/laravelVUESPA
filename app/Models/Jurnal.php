@@ -26,6 +26,7 @@ class Jurnal extends Model
     /**
     * Mass assignable columns
     */
+    protected $guarded = [];
     protected $fillable=[
         'aktivitas',
         'jangka_waktu',

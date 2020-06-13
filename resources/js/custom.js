@@ -5,7 +5,7 @@ $("#selectAktivitas").click(function(){
     $.get( "/api/jurnals/akun/"+aktivitas, function( data ) {
         var i;
         for (i = 0; i < data.length; i++) {
-            $('#selectAkun').append($("<option value="+ data[i]['id_akun'] +"></option>").text(data[i]['no_akun'] + " " + data[i]['akun']));
+            $('#selectAkun').append($("<option value="+ data[i]['id'] +"></option>").text(data[i]['no_akun'] + " " + data[i]['akun']));
         }
     });
 });

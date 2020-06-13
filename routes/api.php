@@ -19,22 +19,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix'=>'jurnals'], function () {
-    
-    Route::get('aktivitas', [
-            'as' => 'jurnals.getAktivitas',
-            'uses' => 'JurnalController@getAktivitas'
-    ]);
-    
-    Route::get('akun/{id}', [
-            'as' => 'jurnals.getakun',
-            'uses' => 'JurnalController@getAkun'
-    ]);
+        
+        Route::get('aktivitas', [
+                'as' => 'jurnals.getAktivitas',
+                'uses' => 'JurnalController@getAktivitas'
+        ]);
 
-    Route::get('waktu/{id}', [
-            'as' => 'jurnals.getwaktu',
-            'uses' => 'JurnalController@getWaktu'
-    ]);
+        Route::get('akun/{id}', [
+                'as' => 'jurnals.getakun',
+                'uses' => 'JurnalController@getAkun'
+        ]);
 
+        Route::get('waktu/{id}', [
+        'as' => 'jurnals.getwaktu',
+        'uses' => 'JurnalController@getWaktu'
+        ]);
+        
 });
 
 Route::resource('jurnals','JurnalController');

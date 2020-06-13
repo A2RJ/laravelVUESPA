@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 @property timestamp $updated_at updated at
    
  */
-class Jurnal extends Model 
+class A extends Model 
 {
     
     /**
