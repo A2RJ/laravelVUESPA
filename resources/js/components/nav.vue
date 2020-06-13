@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <router-link to="/" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
+                    <router-link to="/" class="nav-link" v-on:click="show = !show">Home <span class="sr-only">(current)</span></router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/Jurnal" class="nav-item nav-link">Jurnal</router-link>
@@ -31,10 +31,17 @@
 
 <script>
 export default {
-
+    data: {
+        show: true
+    }
 }
 </script>
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 <style>
 
 </style>

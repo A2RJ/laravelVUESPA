@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-8 offset-2">
-                <form @submit.prevent="addData()">
+                <transition name="fade">
+                <form @submit.prevent="addData()" v-if="show">
                     <div class="form-group">
                         <label for="selectAktivitas">Aktivitas</label>
                         <select class="form-control" id="selectAktivitas" name="aktivitas" v-model="form.aktivitas" v-on:change="change()">
@@ -38,6 +39,7 @@
                     </div>
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>
+                </transition>
             </div>
         </div>
     </div>
@@ -55,7 +57,8 @@
                     keterangan: '',
                     jum_debet: '',
                     jum_kredit: ''
-                }
+                },
+                show: true
             }
         },
         created() {
@@ -91,7 +94,7 @@
                     this.form.jum_debet = '',
                     this.form.jum_kredit = ''
 
-                    this.$router.push("/");                    
+                    this.$router.push("/jurnal");                    
                 })
                 .catch ((err) => {
                     console.log(

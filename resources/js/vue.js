@@ -1,15 +1,17 @@
 window.Vue = require('vue');
 
+import Vue from 'vue';
 import App from './layouts/App.vue';
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { Plugin } from 'vue-fragment';
-import Vue from 'vue';
+import Vue2Filters from 'vue2-filters'
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Plugin)
+Vue.use(Vue2Filters)
 
 import AllJurnals from './views/AllJurnals.vue';
 import Input from './views/Input.vue';
