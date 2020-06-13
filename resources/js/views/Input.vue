@@ -6,28 +6,34 @@
                 <form @submit.prevent="addData()" v-if="show">
                     <div class="form-group">
                         <label for="selectAktivitas">Aktivitas</label>
-                        <select class="form-control" id="selectAktivitas" name="aktivitas" v-model="form.aktivitas" v-on:change="change()">
+                        <select class="form-control" id="selectAktivitas" name="aktivitas" v-model="form.id_aktivitas" v-on:change="change()">
                             <option value="">Pilih</option>
-                            <option v-for="akt in listAktivitas" :key="akt.id_aktivitas" :value="akt.id_aktivitas">
-                                {{ akt.aktivitas }}
+                            <option v-for="aktivitas in listAktivitas" :key="aktivitas.id" :value="aktivitas.id_aktivitas">
+                                {{ aktivitas.aktivitas }}
                             </option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="selectWaktu">Waktu</label>
                         <select class="form-control" id="selectWaktu" name="jangka_waktu" v-model="form.jangka_waktu">
-                            <option value="">Pilih</option>
+                            <option value="">Pilih Waktu</option>
+                            <option v-for="waktu in listWaktu" :key="waktu.id" :value="waktu.jangka_waktu">
+                                {{ waktu.jangka_waktu }}
+                            </option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="selectAkun">Akun</label>
                         <select class="form-control" id="selectAkun" name="no_akun" v-model="form.no_akun">
-                            <option value="">Pilih</option>
+                            <option value="">Pilih Akun</option>
+                            <option v-for="akun in listAkun" :key="akun.id" :value="akun.id">
+                                {{ akun.no_akun }} {{ akun.akun }}
+                            </option>
                         </select>
                     </div>
                       <div class="form-group">
                         <label for="keterangan">Keterangan</label>
-                        <textarea class="form-control" name="keterangan" v-model="form.keterangan" placeholder="keterangan" aria-label="keterangan"  id="keterangan" rows="3"></textarea>
+                        <textarea class="form-control" name="keterangan" v-model="form.keterangan" placeholder="keterangan" aria-label="keterangan"  id="keterangan" rows="6"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="jum_debet">Debet</label>
@@ -47,11 +53,13 @@
 
 <script>
     export default {
-        data() {
+        data: function(){
             return {
                 listAktivitas: [],
+                listWaktu: [],
+                listAkun: [],
                 form:{
-                    aktivitas: '',
+                    id_aktivitas: '',
                     jangka_waktu: '',
                     no_akun: '',
                     keterangan: '',
@@ -74,20 +82,22 @@
          
         methods: {
             change: function () {
-                this.selection = this.selection;
+                this.axios.get('/api/jurnals/waktu/' + this.form.id_aktivitas).then(response => {
+                    this.listWaktu = response.data;
+                }).catch ((err) => {
+                    console.log(err);
+                })
+
+                this.axios.get('/api/jurnals/akun/' + this.form.id_aktivitas).then(response => {
+                    this.listAkun = response.data;
+                }).catch ((err) => {
+                    console.log(err);
+                })
             },
-            addData(){
+            addData() {
                 this.axios
                 .post('/api/jurnals/', this.form).then(res => {
-                    
-                    // aktivitas: this.form.aktivitas;
-                    // jangka_waktu: this.form.jangka_waktu;
-                    // no_akun: this.form.no_akun;
-                    // keterangan: this.form.keterangan;
-                    // jum_debet: this.form.jum_debet;
-                    // jum_debet: this.form.jum_kredit;
-                    
-                    this.form.aktivitas = '',
+                    this.form.id_aktivitas = '',
                     this.form.jangka_waktu = '',
                     this.form.no_akun = '',
                     this.form.keterangan = '',
@@ -97,17 +107,9 @@
                     this.$router.push("/jurnal");                    
                 })
                 .catch ((err) => {
-                    console.log(
-                        this.form.aktivitas,
-                        this.form.jangka_waktu,
-                        this.form.no_akun,
-                        this.form.keterangan,
-                        this.form.jum_debet,
-                        this.form.jum_kredit
-                    );
                     console.log(err.response, 'gagal');
                 });
-            },
+            }
         }
     }
 </script>

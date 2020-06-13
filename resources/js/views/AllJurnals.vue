@@ -19,6 +19,7 @@
                             <th scope="col" class="tgl">Tgl</th>
                             <th scope="col">Aktivitas</th>
                             <th scope="col">No. Akun</th>
+                            <th scope="col">Akun</th>
                             <th scope="col">Keterangan</th>
                             <th scope="col">Debet</th>
                             <th scope="col">Kredit</th>
@@ -26,11 +27,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="jurnal in jurnals" :key="jurnal.id">
-                            <td>{{ jurnal.id }}</td>
+                        <tr v-for="(jurnal, index) in jurnals" :key="jurnal.created_at">
+                            <td>{{ index+1 }}</td>
                             <td>{{ jurnal.created_at }}</td>
                             <td>{{ jurnal.aktivitas }}</td>
                             <td>{{ jurnal.no_akun }}</td>
+                            <td>{{ jurnal.akun }}</td>
                             <td>{{ jurnal.keterangan }}</td>
                             <td>{{ jurnal.jum_debet }}</td>
                             <td>{{ jurnal.jum_kredit }}</td>
@@ -45,10 +47,7 @@
 
 <script>
     export default {
-        components: {
-            
-        },
-        data() {
+        data: function() {
             return {
                 jurnals: []
             }
@@ -60,6 +59,9 @@
                     this.jurnals = response.data;
                 }
             );
+        },
+        methods: {
+            
         }
     }
 </script>

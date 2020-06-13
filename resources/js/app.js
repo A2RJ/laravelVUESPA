@@ -1,3 +1,3 @@
 require('./bootstrap');
-require('./vue')
-require('./custom')
+require('./vue');
+// require('./custom')

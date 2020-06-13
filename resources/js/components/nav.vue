@@ -31,8 +31,10 @@
 
 <script>
 export default {
-    data: {
-        show: true
+    data: function() {
+        return {
+            show: true
+        }
     }
 }
 </script>

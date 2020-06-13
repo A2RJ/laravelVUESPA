@@ -28,7 +28,7 @@ class Jurnal extends Model
     */
     protected $guarded = [];
     protected $fillable=[
-        'aktivitas',
+        'id_aktivitas',
         'jangka_waktu',
         'no_akun',
         'keterangan',
@@ -43,10 +43,11 @@ class Jurnal extends Model
 
     public function joinTable()
     {
-        return DB::table('aktivitas')
-            ->join('akun', 'aktivitas.id_aktivitas', '=', 'akun.id_akun')
-            ->select('aktivitas.*', 'akun.*')
-            ->get();
+        return DB::table('jurnal')
+        ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
+        ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
+        ->select('jurnal.*', 'aktivitas.*', 'akun.*')
+        ->get();
     }
 
 

@@ -27,15 +27,8 @@ class JurnalController extends Controller
      */
     public function index(Request $request)
     {
-        // return view('pages.jurnal.index', ['records' => Jurnal::paginate(10)]);
-        // return response()->json(Jurnal::all(), 200);
-        return response()->json(
-            DB::table('jurnal')
-            ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
-            // ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('jurnal.*', 'aktivitas.*')
-            ->get()
-        );
+        $model = new Jurnal;
+        return response()->json($model->joinTable());
     }    /**
      * Display the specified resource.
      *

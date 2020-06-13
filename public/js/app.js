@@ -1940,8 +1940,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: {
-    show: true
+  data: function data() {
+    return {
+      show: true
+    };
   }
 });
 
@@ -2031,8 +2033,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {},
   data: function data() {
     return {
       jurnals: []
@@ -2044,7 +2047,8 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.get('/api/jurnals').then(function (response) {
       _this.jurnals = response.data;
     });
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -2105,12 +2109,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       listAktivitas: [],
+      listWaktu: [],
+      listAkun: [],
       form: {
-        aktivitas: '',
+        id_aktivitas: '',
         jangka_waktu: '',
         no_akun: '',
         keterangan: '',
@@ -2131,23 +2143,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     change: function change() {
-      this.selection = this.selection;
-    },
-    addData: function addData() {
       var _this2 = this;
 
-      this.axios.post('/api/jurnals/', this.form).then(function (res) {
-        // aktivitas: this.form.aktivitas;
-        // jangka_waktu: this.form.jangka_waktu;
-        // no_akun: this.form.no_akun;
-        // keterangan: this.form.keterangan;
-        // jum_debet: this.form.jum_debet;
-        // jum_debet: this.form.jum_kredit;
-        _this2.form.aktivitas = '', _this2.form.jangka_waktu = '', _this2.form.no_akun = '', _this2.form.keterangan = '', _this2.form.jum_debet = '', _this2.form.jum_kredit = '';
-
-        _this2.$router.push("/jurnal");
+      this.axios.get('/api/jurnals/waktu/' + this.form.id_aktivitas).then(function (response) {
+        _this2.listWaktu = response.data;
       })["catch"](function (err) {
-        console.log(_this2.form.aktivitas, _this2.form.jangka_waktu, _this2.form.no_akun, _this2.form.keterangan, _this2.form.jum_debet, _this2.form.jum_kredit);
+        console.log(err);
+      });
+      this.axios.get('/api/jurnals/akun/' + this.form.id_aktivitas).then(function (response) {
+        _this2.listAkun = response.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    addData: function addData() {
+      var _this3 = this;
+
+      this.axios.post('/api/jurnals/', this.form).then(function (res) {
+        _this3.form.id_aktivitas = '', _this3.form.jangka_waktu = '', _this3.form.no_akun = '', _this3.form.keterangan = '', _this3.form.jum_debet = '', _this3.form.jum_kredit = '';
+
+        _this3.$router.push("/jurnal");
+      })["catch"](function (err) {
         console.log(err.response, 'gagal');
       });
     }
@@ -37910,15 +37926,17 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
-            _vm._l(_vm.jurnals, function(jurnal) {
-              return _c("tr", { key: jurnal.id }, [
-                _c("td", [_vm._v(_vm._s(jurnal.id))]),
+            _vm._l(_vm.jurnals, function(jurnal, index) {
+              return _c("tr", { key: jurnal.created_at }, [
+                _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(jurnal.aktivitas))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(jurnal.no_akun))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(jurnal.akun))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(jurnal.keterangan))]),
                 _vm._v(" "),
@@ -37960,6 +37978,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("No. Akun")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Akun")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Keterangan")]),
         _vm._v(" "),
@@ -38024,8 +38044,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.aktivitas,
-                              expression: "form.aktivitas"
+                              value: _vm.form.id_aktivitas,
+                              expression: "form.id_aktivitas"
                             }
                           ],
                           staticClass: "form-control",
@@ -38043,7 +38063,7 @@ var render = function() {
                                   })
                                 _vm.$set(
                                   _vm.form,
-                                  "aktivitas",
+                                  "id_aktivitas",
                                   $event.target.multiple
                                     ? $$selectedVal
                                     : $$selectedVal[0]
@@ -38060,17 +38080,17 @@ var render = function() {
                             _vm._v("Pilih")
                           ]),
                           _vm._v(" "),
-                          _vm._l(_vm.listAktivitas, function(akt) {
+                          _vm._l(_vm.listAktivitas, function(aktivitas) {
                             return _c(
                               "option",
                               {
-                                key: akt.id_aktivitas,
-                                domProps: { value: akt.id_aktivitas }
+                                key: aktivitas.id,
+                                domProps: { value: aktivitas.id_aktivitas }
                               },
                               [
                                 _vm._v(
                                   "\n                            " +
-                                    _vm._s(akt.aktivitas) +
+                                    _vm._s(aktivitas.aktivitas) +
                                     "\n                        "
                                 )
                               ]
@@ -38121,9 +38141,27 @@ var render = function() {
                         },
                         [
                           _c("option", { attrs: { value: "" } }, [
-                            _vm._v("Pilih")
-                          ])
-                        ]
+                            _vm._v("Pilih Waktu")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.listWaktu, function(waktu) {
+                            return _c(
+                              "option",
+                              {
+                                key: waktu.id,
+                                domProps: { value: waktu.jangka_waktu }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(waktu.jangka_waktu) +
+                                    "\n                        "
+                                )
+                              ]
+                            )
+                          })
+                        ],
+                        2
                       )
                     ]),
                     _vm._v(" "),
@@ -38167,9 +38205,26 @@ var render = function() {
                         },
                         [
                           _c("option", { attrs: { value: "" } }, [
-                            _vm._v("Pilih")
-                          ])
-                        ]
+                            _vm._v("Pilih Akun")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.listAkun, function(akun) {
+                            return _c(
+                              "option",
+                              { key: akun.id, domProps: { value: akun.id } },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(akun.no_akun) +
+                                    " " +
+                                    _vm._s(akun.akun) +
+                                    "\n                        "
+                                )
+                              ]
+                            )
+                          })
+                        ],
+                        2
                       )
                     ]),
                     _vm._v(" "),
@@ -38193,7 +38248,7 @@ var render = function() {
                           placeholder: "keterangan",
                           "aria-label": "keterangan",
                           id: "keterangan",
-                          rows: "3"
+                          rows: "6"
                         },
                         domProps: { value: _vm.form.keterangan },
                         on: {
@@ -54347,9 +54402,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./vue */ "./resources/js/vue.js");
-
-__webpack_require__(/*! ./custom */ "./resources/js/custom.js");
+__webpack_require__(/*! ./vue */ "./resources/js/vue.js"); // require('./custom')
 
 /***/ }),
 
@@ -54464,40 +54517,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nav_vue_vue_type_template_id_199c5fa8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/custom.js":
-/*!********************************!*\
-  !*** ./resources/js/custom.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$("#selectAktivitas").click(function () {
-  var aktivitas = $("#selectAktivitas").val();
-  $("#selectAkun").empty();
-  $("#selectAkun").append('<option value="">Pilih Akun</option>');
-  $.get("/api/jurnals/akun/" + aktivitas, function (data) {
-    var i;
-
-    for (i = 0; i < data.length; i++) {
-      $('#selectAkun').append($("<option value=" + data[i]['id'] + "></option>").text(data[i]['no_akun'] + " " + data[i]['akun']));
-    }
-  });
-});
-$("#selectAktivitas").click(function () {
-  var aktivitas = $("#selectAktivitas").val();
-  $("#selectWaktu").empty();
-  $("#selectWaktu").append('<option value="">Pilih Waktu</option>');
-  $.get("/api/jurnals/waktu/" + aktivitas, function (data) {
-    var i;
-
-    for (i = 0; i < data.length; i++) {
-      $('#selectWaktu').append($("<option value=" + data[i]['id'] + "></option>").text(data[i]['jangka_waktu']));
-    }
-  });
-});
 
 /***/ }),
 
@@ -54866,8 +54885,7 @@ var routes = [{
   name: 'Arus Kas',
   path: '/arusKas',
   component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
-}]; // const router = new VueRouter({ routes });
-
+}];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   mode: 'history',
   routes: routes
