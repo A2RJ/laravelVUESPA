@@ -50,6 +50,29 @@ class JurnalController extends Controller
      */
     public function create(Request $request)
     {
+        // $keterangan = Akun::select('keterangan')->where('id_akun', $request->input('id_aktivias'))->where('no_akun', $request->input('no_akun'))->get();
+        
+        // if ($keterangan['keterangan'] == 'kas') {
+        //     // create beban penyusutan perlatan dan bangunan
+        //     DB::table('jurnal')->insert([
+        //         [
+        //             'id_aktivitas' => $request->input('id_aktivitas'),
+        //             'jangka_waktu' => $request->input('jangka_waktu'),
+        //             'no_akun' => $request->input('no_akun'),
+        //             'keterangan' => $request->input('keterangan'),
+        //             'jum_debet' => $request->input('jum_debet'),
+        //             'jum_kredit' => $request->input('jum_kredit')
+        //         ],
+        //         [
+        //             'id_aktivitas' => $request->input('id_aktivitas'),
+        //             'jangka_waktu' => $request->input('jangka_waktu'),
+        //             'no_akun' => $request->input('no_akun'),
+        //             'keterangan' => $request->input('keterangan'),
+        //             'jum_debet' => $request->input('jum_debet'),
+        //             'jum_kredit' => $request->input('jum_kredit')
+        //         ]
+        //     ]);
+        // }
 
         return view('pages.jurnal.create', [
             'model' => new Jurnal,
@@ -67,16 +90,36 @@ class JurnalController extends Controller
         $model->fill($request->all());
 
         if ($model->save()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Post Berhasil Disimpan!',
-            ], 200);
+            $keterangan = Akun::select('keterangan')->where('id_akun', $request->input("id_aktivitas"))->where('id', $request->input("no_akun"))->get();
+            
+            if ($keterangan[0]['keterangan'] == '?') {
+                // create beban penyusutan perlatan dan bangunan
+                DB::table('jurnal')->insert([
+                    [
+                        'id_aktivitas' => $request->input('id_aktivitas'),
+                        'jangka_waktu' => $request->input('jangka_waktu'),
+                        'no_akun' => $request->input('no_akun'),
+                        'keterangan' => $request->input('keterangan'),
+                        'jum_debet' => $request->input('jum_debet'),
+                        'jum_kredit' => $request->input('jum_kredit')
+                    ],
+                    [
+                        'id_aktivitas' => $request->input('id_aktivitas'),
+                        'jangka_waktu' => $request->input('jangka_waktu'),
+                        'no_akun' => $request->input('no_akun'),
+                        'keterangan' => $request->input('keterangan'),
+                        'jum_debet' => $request->input('jum_debet'),
+                        'jum_kredit' => $request->input('jum_kredit')
+                    ]
+                ]);
+            }
+            return response()->json(['success' => true], 200);
         } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Post Gagal Disimpan!',
-            ], 400);
+            return response()->json(['success' => false], 400);
         }
+
+
+        
         // if ($model->save()) {
         //         return redirect('jurnal')->with('status', 'Jurnal saved successfully');
         //     } else {

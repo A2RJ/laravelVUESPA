@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row my-5">
             <div class="col-sm-12 col-lg-8 offset-2">
-                <div class="" v-show="message">
-                    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-                        Dismissible Alert!
+                <div class="" v-if="message">
+                    <b-alert variant="danger" dismissible>
+                        {{ message }}
                     </b-alert>
                 </div>
                 <form @submit.prevent="addData()">
@@ -108,11 +108,10 @@
                     this.form.jum_kredit = ''
 
                     this.message = true;
-
                     // this.$router.push("/jurnal");                    
                 })
                 .catch ((err) => {
-                    console.log(err.response, 'gagal');
+                    this.message = true;
                 });
             }
         }

@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
-        <div class="col-sm-12 kecil">
-            <div class="d-flex justify-content-center mb-4">
+  <div class="row container d-flex justify-content-center ">
+        <div class="col-sm-12">
+            <div class="mb-4 mt-5">
                 <table class="table table-bordered">
                     <thead>
                         <tr>

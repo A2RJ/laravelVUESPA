@@ -1,7 +1,7 @@
 <template>
-    <div class="row">
-        <div class="col-sm-12 ">
-            <div class="d-flex justify-content-center mb-5 kecil">
+    <div class="row container d-flex justify-content-center">
+        <div class="col-sm-12">
+            <div class="mb-5 mt-5">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -24,7 +24,7 @@
                         <tr>
                             <td></td>
                             <td colspan="2" class="bold">Jumlah</td>
-                            <td class="bold"></td>
+                            <td class="bold">{{ pendapatan }}</td>
 						</tr> 
 						<tr>
 							<td colspan="5" class="font-weight-bold">Beban</td>
@@ -95,18 +95,18 @@
                         <tr class="bold">
                             <td></td>
                             <td colspan="2">Jumlah Beban</td>
-                            <td> </td>
+                            <td>RP. {{ beban }}</td>
                         </tr>
                         <tr class="bold">
                             <td>3.1</td>
                             <td colspan="2">Aktiva bersih tidak terikat</td>
-                            <td> </td>
+                            <td>RP. {{ abtt }}</td>
                         </tr>
                         <tr class="bold">
                             <td></td>
                             <td colspan="2">Kenaikan/penurunan Aset Neto Tidak Terikat</td>
                             <td></td>
-                            <td> </td>
+                            <td>RP. {{ abtt }}</td>
                         </tr>
                         <!-- aktiva -->
                         <tr>
@@ -127,12 +127,12 @@
                         <tr class="bold">
                             <td>3.2</td>
                             <td colspan="2">Aktiva Bersih Temporer</td>
-                            <td> </td>
+                            <td>RP. {{ abt }}</td>
                         </tr>
                         <tr class="bold">
                             <td></td>
                             <td colspan="3">Kenaikan/penurunan Aset Neto Temporer</td>
-                            <td> </td>
+                            <td>RP. {{ abt }}</td>
                         </tr>
                         <tr>
                             <td colspan="5"></td>
@@ -147,12 +147,12 @@
                         <tr class="bold">
                             <td>3.3</td>
                             <td colspan="2">Aktiva Bersih Permanen</td>
-                            <td> </td>
+                            <td>RP. {{ abp }}</td>
                         </tr>
                         <tr class="bold">
                             <td></td>
                             <td colspan="3">Kenaikan/penurunan Aset Neto Permanen</td>
-                            <td> </td>
+                            <td>RP. {{ abp }}</td>
                         </tr>
                         <tr>
                             <td colspan="5"></td>
@@ -183,7 +183,7 @@
                         <tr class="bold">
                             <td></td>
                             <td colspan="3">Aktiva Bersih Akhir Tahun</td>
-                            <td> </td>
+                            <td>{{ abat }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -197,7 +197,32 @@
         data: function(){
             return {
                 Aktivitas: [],
-                sumbangan: ''
+                sumbangan: '',
+                pendBungaBank: '',
+                pendapatan: '',
+
+                bebanGaji: '',
+                bebanListrik: '',
+                bebanAir: '',
+                bebanInternet: '',
+                bebanPemeliharaan: '',
+                bebanAdministrasiUmum: '',
+                bebanPajak: '',
+                bebanPHBI: '',
+                bebanTranportasi: '',
+                bebanAdministrasiBank: '',
+                beban: '',
+
+                abtt: '',
+
+                hibahPeralatan: '',
+                hibahGedung: '',
+                abt: '',
+
+                hibahTanah: '',
+                abp: '',
+
+                abat: '',
             }
         },
         mounted(){
@@ -212,6 +237,8 @@
 
                     this.sumbangan = this.Aktivitas.sumbangan.original;
                     this.pendBungaBank = this.Aktivitas.pendBungaBank.original;
+                    this.pendapatan = this.sumbangan + this.pendBungaBank;
+
                     this.bebanGaji = this.Aktivitas.bebanGaji.original;
                     this.bebanListrik = this.Aktivitas.bebanListrik.original;
                     this.bebanAir = this.Aktivitas.bebanAir.original;
@@ -222,9 +249,18 @@
                     this.bebanPHBI = this.Aktivitas.bebanPHBI.original;
                     this.bebanTranportasi = this.Aktivitas.bebanTranportasi.original;
                     this.bebanAdministrasiBank = this.Aktivitas.bebanAdministrasiBank.original;
+                    this.beban = this.bebanGaji + this.bebanListrik + this.bebanAir + this.bebanInternet + this.bebanPemeliharaan + this.bebanAdministrasiUmum + this.bebanPajak + this.bebanPHBI + this.bebanTranportasi + this.bebanAdministrasiBank + this.beban;
+
+                    this.abtt = this.pendapatan - this.beban;
+
                     this.hibahPeralatan = this.Aktivitas.hibahPeralatan.original;
                     this.hibahGedung = this.Aktivitas.hibahGedung.original;
+                    this.abt = this.hibahPeralatan + this.hibahGedung;
+
                     this.hibahTanah = this.Aktivitas.hibahTanah.original;
+                    this.abp = this.hibahTanah;
+
+                    this.abat = this.abtt + this.abt + this.abp;
                 })
                 .catch ((err) => {
                 console.log(err);
