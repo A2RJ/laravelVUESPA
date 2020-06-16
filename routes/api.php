@@ -38,3 +38,8 @@ Route::group(['prefix'=>'jurnals'], function () {
 });
 
 Route::resource('jurnals','JurnalController');
+
+Route::get('laporan/{id}', [
+        'as' => 'laporan.index',
+        'uses' => 'LaporanController@index'
+]);

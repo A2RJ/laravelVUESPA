@@ -13,7 +13,7 @@ class CreateAkunTable extends Migration {
 			$table->foreign('id_akun')->references('id_aktivitas')->on('aktivitas');
 			$table->string('no_akun', 5);
 			$table->string('akun', 40);
-			$table->string('kas', 50);
+			$table->string('debet', 50);
 			$table->string('kredit', 50);
 			$table->string('keterangan', 6);
 		});

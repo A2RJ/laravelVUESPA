@@ -10,7 +10,7 @@ class CreateJurnalTable extends Migration {
 		Schema::create('jurnal', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('id_aktivitas', 50);
-			$table->string('jangka_waktu', 20);
+			$table->string('jangka_waktu', 20)->nullable();
 			$table->string('no_akun', 5);
 			$table->text('keterangan');
 			$table->string('jum_debet', 32);

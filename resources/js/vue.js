@@ -6,7 +6,14 @@ import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { Plugin } from 'vue-fragment';
-import Vue2Filters from 'vue2-filters'
+import Vue2Filters from 'vue2-filters';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+// Install BootstrapVue
+Vue.use(BootstrapVue);
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin);
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);

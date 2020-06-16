@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row"> 
             <div class="col-12">
-                <table class="table">
+                <table class="table table-responsive">
                     <thead>
                         <!-- <div class="col-8 offset-2">
                             <h6 class="text-danger text-center">Maaf data jurnal tahun  tidak ditemukan, <a href="<?= base_url('Sikangmas'); ?>">Batal</a></h6>
@@ -19,7 +19,6 @@
                             <th scope="col" class="tgl">Tgl</th>
                             <th scope="col">Aktivitas</th>
                             <th scope="col">No. Akun</th>
-                            <th scope="col">Akun</th>
                             <th scope="col">Keterangan</th>
                             <th scope="col">Debet</th>
                             <th scope="col">Kredit</th>
@@ -27,16 +26,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(jurnal, index) in jurnals" :key="jurnal.created_at">
+                        <tr v-for="(jurnal, index) in jurnals" :key="index">
                             <td>{{ index+1 }}</td>
                             <td>{{ jurnal.created_at }}</td>
                             <td>{{ jurnal.aktivitas }}</td>
                             <td>{{ jurnal.no_akun }}</td>
-                            <td>{{ jurnal.akun }}</td>
                             <td>{{ jurnal.keterangan }}</td>
-                            <td>{{ jurnal.jum_debet }}</td>
-                            <td>{{ jurnal.jum_kredit }}</td>
-                            <td>Opsi</td>
+                            <td>{{ jurnal.debet }}: {{ jurnal.jum_debet }}</td>
+                            <td>{{ jurnal.kredit }}: {{ jurnal.jum_kredit }}</td>
+                            <td>
+                                <button @click="edit(user)">Edit</button> ||  <button @click="del(user)">Delete</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -61,7 +61,13 @@
             );
         },
         methods: {
-            
+            del(user){
+                axios.delete('http://localhost:3000/users/' + user.id).then(res =>{
+                    this.load()
+                    let index = this.users.indexOf(form.name)
+                    this.users.splice(index,1)
+                })
+            }
         }
     }
 </script>

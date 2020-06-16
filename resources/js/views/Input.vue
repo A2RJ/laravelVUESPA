@@ -2,12 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-8 offset-2">
-                <transition name="fade">
-                <form @submit.prevent="addData()" v-if="show">
+                <div class="" v-show="message">
+                    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+                        Dismissible Alert!
+                    </b-alert>
+                </div>
+                <form @submit.prevent="addData()">
                     <div class="form-group">
                         <label for="selectAktivitas">Aktivitas</label>
                         <select class="form-control" id="selectAktivitas" name="aktivitas" v-model="form.id_aktivitas" v-on:change="change()">
-                            <option value="">Pilih</option>
+                            <option value="0">Pilih</option>
                             <option v-for="aktivitas in listAktivitas" :key="aktivitas.id" :value="aktivitas.id_aktivitas">
                                 {{ aktivitas.aktivitas }}
                             </option>
@@ -16,7 +20,7 @@
                     <div class="form-group">
                         <label for="selectWaktu">Waktu</label>
                         <select class="form-control" id="selectWaktu" name="jangka_waktu" v-model="form.jangka_waktu">
-                            <option value="">Pilih Waktu</option>
+                            <option value="0">Pilih Waktu</option>
                             <option v-for="waktu in listWaktu" :key="waktu.id" :value="waktu.jangka_waktu">
                                 {{ waktu.jangka_waktu }}
                             </option>
@@ -25,7 +29,7 @@
                     <div class="form-group">
                         <label for="selectAkun">Akun</label>
                         <select class="form-control" id="selectAkun" name="no_akun" v-model="form.no_akun">
-                            <option value="">Pilih Akun</option>
+                            <option value="0">Pilih Akun</option>
                             <option v-for="akun in listAkun" :key="akun.id" :value="akun.id">
                                 {{ akun.no_akun }} {{ akun.akun }}
                             </option>
@@ -45,7 +49,6 @@
                     </div>
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>
-                </transition>
             </div>
         </div>
     </div>
@@ -66,7 +69,7 @@
                     jum_debet: '',
                     jum_kredit: ''
                 },
-                show: true
+                message: false
             }
         },
         created() {
@@ -104,7 +107,9 @@
                     this.form.jum_debet = '',
                     this.form.jum_kredit = ''
 
-                    this.$router.push("/jurnal");                    
+                    this.message = true;
+
+                    // this.$router.push("/jurnal");                    
                 })
                 .catch ((err) => {
                     console.log(err.response, 'gagal');

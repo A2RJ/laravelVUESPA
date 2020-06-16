@@ -149,10 +149,7 @@ class JurnalController extends Controller
                 'data' => Aktivitas::all()
             ], 200);
         } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Data tidak ditemukan',
-            ], 400);
+            // return response::make::('Not Found', 400);
         }
         // return response()->json(Aktivitas::all());
     }

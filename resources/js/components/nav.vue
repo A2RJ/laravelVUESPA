@@ -1,49 +1,29 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <b-navbar toggleable="lg" type="dark" variant="info">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <b-navbar-brand href="#">NavBar</b-navbar-brand>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <router-link to="/" class="nav-link" v-on:click="show = !show">Home <span class="sr-only">(current)</span></router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/Jurnal" class="nav-item nav-link">Jurnal</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/LPK" class="nav-link">LPK</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/Aktivitas" class="nav-link">Aktivitas</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/ArusKas" class="nav-link">Arus Kas</router-link>
-                </li>
-            </ul>
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+            <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav class="ml-auto">
+                <b-nav-item><router-link to="/" class="nav-item nav-link">Home</router-link></b-nav-item>
+                <b-nav-item><router-link to="/Jurnal" class="nav-item nav-link">Jurnal</router-link></b-nav-item>
+                <b-nav-item><router-link to="/Aktivitas" class="nav-link">Aktivitas</router-link></b-nav-item>
+                <b-nav-item><router-link to="/ArusKas" class="nav-link">Arus Kas</router-link></b-nav-item>
+                <b-nav-item><router-link to="/LPK" class="nav-link">LPK</router-link></b-nav-item>
+            </b-navbar-nav>
+            </b-collapse>
         </div>
-    </div>
-</nav> 
+    </b-navbar>
 </template>
 
 <script>
 export default {
-    data: function() {
-        return {
-            show: true
-        }
-    }
+    
 }
 </script>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+
 <style>
 
 </style>
