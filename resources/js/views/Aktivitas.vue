@@ -165,17 +165,17 @@
                         <tr>
                             <td></td>
                             <td colspan="2">Aktiva Bersih Tidak Terikat</td>
-                            <td> </td>
+                            <td>RP. {{ aktivaabtt }}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td colspan="2">Aktiva Bersih Temporer</td>
-                            <td> </td>
+                            <td>RP. {{ aktivaabt }}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td colspan="2">Aktiva Bersih Permanen</td>
-                            <td> </td>
+                            <td>RP. {{ aktivaabp }}</td>
                         </tr>
                         <tr>
                             <td colspan="5"></td>
@@ -183,7 +183,7 @@
                         <tr class="bold">
                             <td></td>
                             <td colspan="3">Aktiva Bersih Akhir Tahun</td>
-                            <td>{{ abat }}</td>
+                            <td>{{ apa }} </td>
                         </tr>
                     </tbody>
                 </table>
@@ -223,6 +223,11 @@
                 abp: '',
 
                 abat: '',
+
+                // aktiva
+                aktivaabtt: '',
+                aktivaabt: '',
+                aktivaabp: ''
             }
         },
         mounted(){
@@ -260,12 +265,22 @@
                     this.hibahTanah = this.Aktivitas.hibahTanah.original;
                     this.abp = this.hibahTanah;
 
-                    this.abat = this.abtt + this.abt + this.abp;
+                    // this.abat = this.abtt + this.abt + this.abp;
+
+                    this.aktivaabtt = this.Aktivitas.aktiva[0].abtt;
+                    // this.aktivaabtt = this.aktivaabtt + this.abtt;
+                    this.aktivaabt = this.Aktivitas.aktiva[0].abt + this.abt;
+                    this.aktivaabp = this.Aktivitas.aktiva[0].abp + this.abp;
                 })
                 .catch ((err) => {
                 console.log(err);
-            })
-        }
+                })
+            }
+        },
+        computed: {
+            apa: function() {
+                return parseFloat(this.aktivaabtt) + parseFloat(this.abtt);
+            }
         }
         
     }

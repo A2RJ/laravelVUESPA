@@ -50,12 +50,18 @@
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>
             </div>
+            <M />
         </div>
     </div>
 </template>
 
-<script>
+<script>  
+// gunakan if else untuk menampilkan pesan error ataupu toggle
+import M from '../components/message';
     export default {
+        components: {
+            M
+        },
         data: function(){
             return {
                 listAktivitas: [],
@@ -69,7 +75,7 @@
                     jum_debet: '',
                     jum_kredit: ''
                 },
-                message: false
+                message: false,
             }
         },
         created() {
@@ -111,7 +117,7 @@
                     // this.$router.push("/jurnal");                    
                 })
                 .catch ((err) => {
-                    this.message = true;
+                   
                 });
             }
         }

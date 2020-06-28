@@ -27,6 +27,7 @@
         "vue": "^2.6.11",
         "vue-axios": "^2.1.5",
         "vue-fragment": "^1.5.1",
+        "vue-m-message": "^3.0.0",
         "vue-router": "^3.3.2",
         "vue-toast-notification": "^0.4.0",
         "vue2-filters": "^0.11.0",

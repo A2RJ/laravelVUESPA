@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\Jurnal;
+use App\Models\Aktiva;
 
 class LaporanController extends Controller
 {
@@ -33,7 +34,8 @@ class LaporanController extends Controller
                 'bebanAdministrasiBank' => $this->bebanAdministrasiBank(),
                 'hibahPeralatan' => $this->hibahPeralatan(),
                 'hibahGedung' => $this->hibahGedung(),
-                'hibahTanah' => $this->hibahTanah()                
+                'hibahTanah' => $this->hibahTanah(),
+                'aktiva' => $this->aktiva()
         ], Response::HTTP_OK);
     }
 
@@ -126,6 +128,10 @@ class LaporanController extends Controller
         return $this->getByNoAkun('31', 'debet');
     }
 
+    public function aktiva()
+    {
+        return Aktiva::All();
+    }
     /** 
         @Untuk Halaman Arus Kas
     **/

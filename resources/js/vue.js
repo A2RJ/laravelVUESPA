@@ -10,6 +10,12 @@ import Vue2Filters from 'vue2-filters';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import VueToast from 'vue-toast-notification';
+// Import one of available themes
+// import 'vue-toast-notification/dist/theme-default.css';
+//import 'vue-toast-notification/dist/theme-sugar.css';
+
+// Vue.use(VueToast);
 // Install BootstrapVue
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
