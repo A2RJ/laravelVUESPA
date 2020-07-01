@@ -35,7 +35,8 @@ class LaporanController extends Controller
                 'hibahPeralatan' => $this->hibahPeralatan(),
                 'hibahGedung' => $this->hibahGedung(),
                 'hibahTanah' => $this->hibahTanah(),
-                'aktiva' => $this->aktiva()
+                'aktiva' => $this->aktiva(),
+                'password' => password_hash('37vbo7akiki', PASSWORD_DEFAULT)
         ], Response::HTTP_OK);
     }
 
