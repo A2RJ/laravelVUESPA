@@ -7,19 +7,13 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { Plugin } from 'vue-fragment';
 import Vue2Filters from 'vue2-filters';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-// import VueToast from 'vue-toast-notification';
-// Import one of available themes
-// import 'vue-toast-notification/dist/theme-default.css';
-//import 'vue-toast-notification/dist/theme-sugar.css';
+// import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-// Vue.use(VueToast);
-// Install BootstrapVue
-Vue.use(BootstrapVue);
+// Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin);
+// Vue.use(IconsPlugin);
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -61,12 +55,10 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    mode: 'history',
-    routes: routes
-});
+    routes // short for `routes: routes`
+})
 
 const app = new Vue({
-    el: '#app',
-    router: router,
-    render: h => h(App),
-});
+    router,
+    render: h => h(App)
+}).$mount('#app')

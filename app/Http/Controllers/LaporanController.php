@@ -34,9 +34,7 @@ class LaporanController extends Controller
                 'bebanAdministrasiBank' => $this->bebanAdministrasiBank(),
                 'hibahPeralatan' => $this->hibahPeralatan(),
                 'hibahGedung' => $this->hibahGedung(),
-                'hibahTanah' => $this->hibahTanah(),
-                'aktiva' => $this->aktiva(),
-                'password' => password_hash('37vbo7akiki', PASSWORD_DEFAULT)
+                'hibahTanah' => $this->hibahTanah()
         ], Response::HTTP_OK);
     }
 

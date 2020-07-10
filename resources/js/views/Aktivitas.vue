@@ -271,6 +271,7 @@
                     // this.aktivaabtt = this.aktivaabtt + this.abtt;
                     this.aktivaabt = this.Aktivitas.aktiva[0].abt + this.abt;
                     this.aktivaabp = this.Aktivitas.aktiva[0].abp + this.abp;
+                    console.log(this.aktivitas);
                 })
                 .catch ((err) => {
                 console.log(err);

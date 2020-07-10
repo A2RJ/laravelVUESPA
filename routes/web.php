@@ -20,20 +20,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('{any}', function () {
     return view('App');
 })->where('any', '.*');
-
-// Route::group(['prefix'=>'jurnals'], function () {
-    
-//     Route::get('akun/{id}', [
-//             'as' => 'jurnals.getakun',
-//             'uses' => 'JurnalController@getAkun'
-//     ]);
-
-//     Route::get('waktu/{id}', [
-//             'as' => 'jurnals.getwaktu',
-//             'uses' => 'JurnalController@getWaktu'
-//     ]);
-
-// });
-
-// Route::resource('jurnals','JurnalController');
-
