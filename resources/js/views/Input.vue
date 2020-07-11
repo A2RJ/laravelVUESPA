@@ -10,7 +10,7 @@
                 <form @submit.prevent="addData()">
                     <div class="form-group">
                         <label for="selectAktivitas">Aktivitas</label>
-                        <select class="form-control" id="selectAktivitas" name="aktivitas" v-model="form.id_aktivitas" v-on:change="change()">
+                        <select class="custom-select" id="selectAktivitas" name="aktivitas" v-model="form.id_aktivitas" v-on:change="change()">
                             <option value="0">Pilih</option>
                             <option v-for="aktivitas in listAktivitas" :key="aktivitas.id" :value="aktivitas.id_aktivitas">
                                 {{ aktivitas.aktivitas }}
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="selectWaktu">Waktu</label>
-                        <select class="form-control" id="selectWaktu" name="jangka_waktu" v-model="form.jangka_waktu">
+                        <select class="custom-select" id="selectWaktu" name="jangka_waktu" v-model="form.jangka_waktu">
                             <option value="0">Pilih Waktu</option>
                             <option v-for="waktu in listWaktu" :key="waktu.id" :value="waktu.jangka_waktu">
                                 {{ waktu.jangka_waktu }}
@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                         <label for="selectAkun">Akun</label>
-                        <select class="form-control" id="selectAkun" name="no_akun" v-model="form.no_akun">
+                        <select class="custom-select" id="selectAkun" name="no_akun" v-model="form.no_akun">
                             <option value="0">Pilih Akun</option>
                             <option v-for="akun in listAkun" :key="akun.id" :value="akun.id">
                                 {{ akun.no_akun }} {{ akun.akun }}
@@ -47,7 +47,7 @@
                         <label for="jum_kredit">Kredit</label>
                         <input type="number" class="form-control" name="jum_kredit" v-model="form.jum_kredit" id="jum_kredit" placeholder="RP. . .">
                     </div>
-                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-md btn-outline-primary btn-rounded float-right">Submit</button>
                 </form>
             </div>
             <M />
@@ -56,11 +56,9 @@
 </template>
 
 <script>  
-// gunakan if else untuk menampilkan pesan error ataupu toggle
-import M from '../components/message';
+// gunakan if else untuk menampilkan pesan err
     export default {
         components: {
-            M
         },
         data: function(){
             return {

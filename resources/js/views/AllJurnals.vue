@@ -35,7 +35,7 @@
                             <td>{{ jurnal.debet }}: {{ jurnal.jum_debet }}</td>
                             <td>{{ jurnal.kredit }}: {{ jurnal.jum_kredit }}</td>
                             <td>
-                                <button @click="edit(user)">Edit</button> ||  <button @click="del(user)">Delete</button>
+                                <button @click="edit(user)" class="btn btn-sm btn-outline-warning btn-rounded">Edit</button> ||  <button @click="del(user)" class="mt-1 btn btn-outline-danger btn-sm btn-rounded">Delete</button>
                             </td>
                         </tr>
                     </tbody>
