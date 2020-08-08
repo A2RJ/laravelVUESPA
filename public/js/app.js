@@ -2242,6 +2242,62 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
@@ -3003,6 +3059,442 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanDana.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/PerubahanDana.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39453,7 +39945,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("li", { staticClass: "nav-small-cap" }, [
                       _c("span", { staticClass: "hide-menu" }, [
-                        _vm._v("Applications")
+                        _vm._v("Jurnal")
                       ])
                     ]),
                     _vm._v(" "),
@@ -39481,82 +39973,291 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _c(
-                      "li",
-                      { staticClass: "sidebar-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "sidebar-link sidebar-link",
-                            attrs: {
-                              to: "/Aktivitas",
-                              "aria-expanded": "false"
-                            }
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "feather-icon",
-                              attrs: { "data-feather": "message-square" }
-                            }),
-                            _c("span", { staticClass: "hide-menu" }, [
-                              _vm._v("Aktivitas")
-                            ])
-                          ]
-                        )
-                      ],
-                      1
-                    ),
+                    _c("li", { staticClass: "nav-small-cap" }, [
+                      _c("span", { staticClass: "hide-menu" }, [
+                        _vm._v("Pelaporan")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "li",
-                      { staticClass: "sidebar-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "sidebar-link sidebar-link",
-                            attrs: { to: "/ArusKas", "aria-expanded": "false" }
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "feather-icon",
-                              attrs: { "data-feather": "calendar" }
-                            }),
-                            _c("span", { staticClass: "hide-menu" }, [
-                              _vm._v("Arus Kas")
-                            ])
-                          ]
-                        )
-                      ],
-                      1
-                    ),
+                    _c("li", { staticClass: "sidebar-item" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "sidebar-link has-arrow",
+                          attrs: {
+                            href: "javascript:void(0)",
+                            "aria-expanded": "false"
+                          }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "feather-icon",
+                            attrs: { "data-feather": "grid" }
+                          }),
+                          _c("span", { staticClass: "hide-menu" }, [
+                            _vm._v("Laporan\n                            ")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        {
+                          staticClass: "collapse  first-level base-level-line",
+                          attrs: { "aria-expanded": "false" }
+                        },
+                        [
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/LPK",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Neraca")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/LPDana",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Perubahan Dana")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/PAK",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Perubahan Aset Kelolaan")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/ArusKas",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Arus Kas")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "li",
-                      { staticClass: "sidebar-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "sidebar-link sidebar-link",
-                            attrs: { to: "/LPK", "aria-expanded": "false" }
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "feather-icon",
-                              attrs: { "data-feather": "calendar" }
-                            }),
-                            _c("span", { staticClass: "hide-menu" }, [
-                              _vm._v("LPK")
-                            ])
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "list-divider" })
+                    _c("li", { staticClass: "sidebar-item" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "sidebar-link has-arrow",
+                          attrs: {
+                            href: "javascript:void(0)",
+                            "aria-expanded": "false"
+                          }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "feather-icon",
+                            attrs: { "data-feather": "grid" }
+                          }),
+                          _c("span", { staticClass: "hide-menu" }, [
+                            _vm._v(
+                              "Cetak Laporan\n                            "
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        {
+                          staticClass: "collapse  first-level base-level-line",
+                          attrs: { "aria-expanded": "false" }
+                        },
+                        [
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/LPK",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Neraca")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/LPDana",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Perubahan Dana")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/PAK",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Perubahan Aset Kelolaan")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "sidebar-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "sidebar-link sidebar-link",
+                                  attrs: {
+                                    to: "/ArusKas",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather-icon",
+                                    attrs: { "data-feather": "calendar" }
+                                  }),
+                                  _c("span", { staticClass: "hide-menu" }, [
+                                    _vm._v("Arus Kas")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ])
                   ])
                 ])
               ]
@@ -41174,13 +41875,13 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [_vm._v("Aktiva")]),
+                  _c("th", [_vm._v("Keterangan")]),
                   _vm._v(" "),
                   _c("th", [_vm._v("Jumlah")]),
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [_vm._v("PASIVA")]),
+                  _c("th", [_vm._v("Keterangan")]),
                   _vm._v(" "),
                   _c("th", [_vm._v("Jumlah")])
                 ]),
@@ -41188,13 +41889,13 @@ var staticRenderFns = [
                 _c("tr", { staticClass: "bold" }, [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aktiva Lancar")]),
+                  _c("td", [_vm._v("Aset")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Utang")]),
+                  _c("td", [_vm._v("Kewajiban")]),
                   _vm._v(" "),
                   _c("td")
                 ])
@@ -41202,35 +41903,51 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("tbody", [
                 _c("tr", [
-                  _c("td", [_vm._v("1.1")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Kas")]),
+                  _c("td", { staticClass: "bold" }, [_vm._v("Aset lancar")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("2.1")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Utang jangka pendek")]),
+                  _c("td", { staticClass: "bold" }, [
+                    _vm._v("Kewajiban jangka pendek")
+                  ]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.2")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Bank")]),
+                  _c("td", [_vm._v("Kas dan setara kas")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("2.2")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Utang Jangka Panjang")]),
+                  _c("td", [_vm._v("Biaya yang masih harus dibayar")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.3")]),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Instrumen keuangan")]),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
                   _vm._v(" "),
                   _c("td", [_vm._v("Piutang")]),
                   _vm._v(" "),
@@ -41244,93 +41961,202 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.4")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Perlengkapan")]),
-                  _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", { staticClass: "bold" }, [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Jumlah")]),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Jumlah")]),
-                  _vm._v(" "),
-                  _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", { staticClass: "bold" }, [
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Aktiva Tetap")]),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Aktiva Bersih")]),
+                  _c("td", [_vm._v("Kewajiban jangka panjang")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.5")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Tanah")]),
+                  _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("3.1")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aktiva Bersih Tidak Terikat")]),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Imbalan kerja jangka panjang")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.6")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Gedung & Bangunan")]),
+                  _c("td", [_vm._v("Aset tidak lancar")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("3.2")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aktiva Bersih Temporer")]),
+                  _c("td", { staticClass: "bold" }, [
+                    _vm._v("Jumlah kewajiban")
+                  ]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.7")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Akm. Penystn. Gedung & Bangunan")]),
+                  _c("td", [_vm._v("Aset tetap")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("3.3")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aktiva Bersih Permanen")]),
+                  _c("td", { staticClass: "bold" }, [_vm._v("Saldo dana")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.8")]),
+                  _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v(" Peralatan")]),
+                  _c("td", [_vm._v("Akumulasi penyusutan")]),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Dana sakat")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Dana infak/sedekah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Dana amil")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Dana non halal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "bold" }, [_vm._v("Jumlah dana")]),
+                  _vm._v(" "),
+                  _c("td")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=template&id=26564762&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=template&id=26564762& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row container d-flex justify-content-center " },
+      [
+        _c("div", { staticClass: "col-sm-12" }, [
+          _c("div", { staticClass: "my-5 mb-5" }, [
+            _c("table", { staticClass: "table table-bordered" }, [
+              _c("thead", [
+                _c("tr", [
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Saldo awal")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Penambahan")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Penggunaan")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Penyisihan")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Akumulasi Penyusutan")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Saldo akhir")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", [
+                    _vm._v("Dana infak/sedekah - aset kelolaan lancar")
+                  ]),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -41342,9 +42168,13 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("tr", [
-                  _c("td", [_vm._v("1.9")]),
+                  _c("td", [
+                    _vm._v("Dana infak/sedekah - aset kelolaan tidak lancar")
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Akm. Penystn. Peralatan")]),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -41353,30 +42183,617 @@ var staticRenderFns = [
                   _c("td"),
                   _vm._v(" "),
                   _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", { staticClass: "bold" }, [
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanDana.vue?vue&type=template&id=4b1b0c7f&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/PerubahanDana.vue?vue&type=template&id=4b1b0c7f& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row container d-flex justify-content-center " },
+      [
+        _c("div", { staticClass: "col-sm-12" }, [
+          _c("div", { staticClass: "my-5 mb-5" }, [
+            _c("table", { staticClass: "table table-bordered" }, [
+              _c("thead", [
+                _c("tr", [
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Keterangan")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Jumlah")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tbody", [
+                _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Jumlah")]),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Jumlah")]),
+                  _c("td", { staticClass: "bold" }, [_vm._v("Dana sakat")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
                 _vm._v(" "),
-                _c("tr", { staticClass: "bold" }, [
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan dari musakki")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("musakki entitas")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Musakki individual")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Hasil penempatan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penerimaan dana sakat")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Bagian amil atas penerimaan dana sakat")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("jumlah penerimaan dana sakat setelah bagian amil")
+                  ]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Total Utang dan Aktiva Bersih")]),
+                  _c("td", [_vm._v("Penyaluran")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Fakir-Miskin")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Riqab")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Gharim")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Mualaf")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Sabilillah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Ibnu sabil")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penyaluran dana sakat")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Surplus")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo awal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo akhir")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("DANA INFAK/SEDEKAH")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Muqayyadah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Mutlaqah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("Bagian amil atas penerimaan dana infak/sedekah")
+                  ]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Hasil pengelolaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penerimaan dana infak/sedekah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penyaluran")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Muqayyadah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Mutlaqah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Beban penyusutan dan penyisihan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penyaluran dana infak/sedekah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Surplus (Defisit)")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo awal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo akhir")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("DANA AMIL")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Bagian amil dari dana sakat")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Bagian amil dari dana infak/sedekah")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan lainnya")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penerimaan dana amil")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penggunaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Beban pegawai")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Beban penyusutan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Beban umum dan administrasi")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penggunaan dana amil")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Surplus (Defisit)")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo awal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo akhir")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("DANA NONHALAL")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Bunga bank")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jaga giro")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penerimaan nonhalal lainnya")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penerimaan dana nonhalal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Penggunaan")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah penggunaan dana nonhalal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Surplus (Defisit)")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo awal")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Saldo akhir")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "Jumlah saldo dana sakat, dana infak/sedekah, dana amil dan dana nonhalal."
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("td")
                 ])
@@ -57911,6 +59328,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/PerubahanAsetKelolaan.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/views/PerubahanAsetKelolaan.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PerubahanAsetKelolaan_vue_vue_type_template_id_26564762___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerubahanAsetKelolaan.vue?vue&type=template&id=26564762& */ "./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=template&id=26564762&");
+/* harmony import */ var _PerubahanAsetKelolaan_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PerubahanAsetKelolaan.vue?vue&type=script&lang=js& */ "./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PerubahanAsetKelolaan_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PerubahanAsetKelolaan_vue_vue_type_template_id_26564762___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PerubahanAsetKelolaan_vue_vue_type_template_id_26564762___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/PerubahanAsetKelolaan.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanAsetKelolaan_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PerubahanAsetKelolaan.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanAsetKelolaan_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=template&id=26564762&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=template&id=26564762& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanAsetKelolaan_vue_vue_type_template_id_26564762___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PerubahanAsetKelolaan.vue?vue&type=template&id=26564762& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanAsetKelolaan.vue?vue&type=template&id=26564762&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanAsetKelolaan_vue_vue_type_template_id_26564762___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanAsetKelolaan_vue_vue_type_template_id_26564762___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/PerubahanDana.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/views/PerubahanDana.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PerubahanDana_vue_vue_type_template_id_4b1b0c7f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerubahanDana.vue?vue&type=template&id=4b1b0c7f& */ "./resources/js/views/PerubahanDana.vue?vue&type=template&id=4b1b0c7f&");
+/* harmony import */ var _PerubahanDana_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PerubahanDana.vue?vue&type=script&lang=js& */ "./resources/js/views/PerubahanDana.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PerubahanDana_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PerubahanDana_vue_vue_type_template_id_4b1b0c7f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PerubahanDana_vue_vue_type_template_id_4b1b0c7f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/PerubahanDana.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/PerubahanDana.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/views/PerubahanDana.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanDana_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PerubahanDana.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanDana.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanDana_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/PerubahanDana.vue?vue&type=template&id=4b1b0c7f&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/views/PerubahanDana.vue?vue&type=template&id=4b1b0c7f& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanDana_vue_vue_type_template_id_4b1b0c7f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PerubahanDana.vue?vue&type=template&id=4b1b0c7f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PerubahanDana.vue?vue&type=template&id=4b1b0c7f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanDana_vue_vue_type_template_id_4b1b0c7f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerubahanDana_vue_vue_type_template_id_4b1b0c7f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/vue.js":
 /*!*****************************!*\
   !*** ./resources/js/vue.js ***!
@@ -57936,6 +59491,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
 /* harmony import */ var _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/Aktivitas.vue */ "./resources/js/views/Aktivitas.vue");
 /* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
+/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
+/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
@@ -57954,6 +59511,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_3___default.a, axios__WEBPACK_IMPORTED_MODULE_4___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Plugin"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_6___default.a);
+
+
 
 
 
@@ -57979,6 +59538,14 @@ var routes = [{
   name: 'Arus Kas',
   path: '/arusKas',
   component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
+}, {
+  name: 'LPD',
+  path: '/LPDana',
+  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
+}, {
+  name: 'PAK',
+  path: '/PAK',
+  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: routes // short for `routes: routes`

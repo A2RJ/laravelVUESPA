@@ -25,6 +25,8 @@ import Input from './views/Input.vue';
 import LPK from './views/LPK.vue';
 import Aktivitas from './views/Aktivitas.vue';
 import ArusKas from './views/ArusKas.vue';
+import LPDana from './views/PerubahanDana.vue';
+import PAK from './views/PerubahanAsetKelolaan.vue';
 
 const routes = [
     {
@@ -51,6 +53,16 @@ const routes = [
         name: 'Arus Kas',
         path: '/arusKas',
         component: ArusKas
+    },
+    {
+        name: 'LPD',
+        path: '/LPDana',
+        component: LPDana
+    },
+    {
+        name: 'PAK',
+        path: '/PAK',
+        component: PAK
     }
 ];
 

@@ -209,23 +209,79 @@
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Dashboard</span></router-link></li>
                         <li class="list-divider"></li>
-                        <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Jurnal</span></li>
 
                         <li class="sidebar-item"> <router-link class="sidebar-link" to="/Jurnal"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Jurnal
                                 </span></router-link>
                         </li>
-                        <li class="sidebar-item"> <router-link class="sidebar-link sidebar-link" to="/Aktivitas"
-                                aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
-                                    class="hide-menu">Aktivitas</span></router-link></li>
-                        <li class="sidebar-item"> <router-link class="sidebar-link sidebar-link" to="/ArusKas"
-                                aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
-                                    class="hide-menu">Arus Kas</span></router-link></li>
-                        <li class="sidebar-item"> <router-link class="sidebar-link sidebar-link" to="/LPK"
-                                aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
-                                    class="hide-menu">LPK</span></router-link></li>
-                        <li class="list-divider"></li></ul>
+                        
+                        <li class="nav-small-cap"><span class="hide-menu">Pelaporan</span></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    class="hide-menu">Laporan
+                                </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <router-link class="sidebar-link sidebar-link" to="/LPK"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Neraca</span>
+                                    </router-link>
+                                </li>
+                                <li class="sidebar-item">
+                                    <router-link class="sidebar-link sidebar-link" to="/LPDana"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Perubahan Dana</span>
+                                    </router-link>
+                                </li>
+                                <li class="sidebar-item">
+                                    <router-link class="sidebar-link sidebar-link" to="/PAK"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Perubahan Aset Kelolaan</span>
+                                    </router-link>
+                                </li>
+                                <li class="sidebar-item"> 
+                                    <router-link class="sidebar-link sidebar-link" to="/ArusKas"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Arus Kas</span>
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    class="hide-menu">Cetak Laporan
+                                </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <router-link class="sidebar-link sidebar-link" to="/LPK"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Neraca</span>
+                                    </router-link>
+                                </li>
+                                <li class="sidebar-item">
+                                    <router-link class="sidebar-link sidebar-link" to="/LPDana"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Perubahan Dana</span>
+                                    </router-link>
+                                </li>
+                                <li class="sidebar-item">
+                                    <router-link class="sidebar-link sidebar-link" to="/PAK"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Perubahan Aset Kelolaan</span>
+                                    </router-link>
+                                </li>
+                                <li class="sidebar-item"> 
+                                    <router-link class="sidebar-link sidebar-link" to="/ArusKas"
+                                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                            class="hide-menu">Arus Kas</span>
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         </aside>
