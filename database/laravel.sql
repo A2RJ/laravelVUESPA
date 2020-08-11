@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 16 Jun 2020 pada 06.30
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.5
+-- Host: localhost:3306
+-- Waktu pembuatan: 11 Agu 2020 pada 18.53
+-- Versi server: 8.0.20
+-- Versi PHP: 7.3.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,12 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `aktiva`
+--
+
+CREATE TABLE `aktiva` (
+  `id` bigint UNSIGNED NOT NULL,
+  `abtt` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abt` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abp` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `aktivitas`
 --
 
 CREATE TABLE `aktivitas` (
-  `id_aktivitas` int(11) NOT NULL,
-  `aktivitas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id_aktivitas` int NOT NULL,
+  `aktivitas` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -58,13 +72,13 @@ INSERT INTO `aktivitas` (`id_aktivitas`, `aktivitas`) VALUES
 --
 
 CREATE TABLE `akun` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `id_akun` int(11) NOT NULL,
-  `no_akun` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `akun` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `debet` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kredit` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `keterangan` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int UNSIGNED NOT NULL,
+  `id_akun` int NOT NULL,
+  `no_akun` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `akun` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `debet` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kredit` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keterangan` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -119,9 +133,9 @@ INSERT INTO `akun` (`id`, `id_akun`, `no_akun`, `akun`, `debet`, `kredit`, `kete
 --
 
 CREATE TABLE `jangka_waktu` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `id_jangka_waktu` int(11) NOT NULL,
-  `jangka_waktu` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` bigint UNSIGNED NOT NULL,
+  `id_jangka_waktu` int NOT NULL,
+  `jangka_waktu` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -141,13 +155,13 @@ INSERT INTO `jangka_waktu` (`id`, `id_jangka_waktu`, `jangka_waktu`) VALUES
 --
 
 CREATE TABLE `jurnal` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `id_aktivitas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jangka_waktu` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_akun` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `keterangan` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jum_debet` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jum_kredit` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `id_aktivitas` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jangka_waktu` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_akun` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jum_debet` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jum_kredit` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -158,11 +172,8 @@ CREATE TABLE `jurnal` (
 --
 
 INSERT INTO `jurnal` (`id`, `id_aktivitas`, `jangka_waktu`, `no_akun`, `keterangan`, `jum_debet`, `jum_kredit`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '1', NULL, '1', 'sdsdsdsds', '1000', '1000', '2020-06-15 00:00:48', '2020-06-15 00:00:48', NULL),
-(2, '1', NULL, '1', 'kedua', '20000', '2000', '2020-06-15 00:33:07', '2020-06-15 00:33:07', NULL),
-(3, '1', '0', '1', 'apa apa aja mo', '20000', '20000', '2020-06-16 08:11:07', '2020-06-16 08:11:07', NULL),
-(4, '6', '0', '14', 'apa aja mp', '1000', '1000', '2020-06-16 08:11:45', '2020-06-16 08:11:45', NULL),
-(5, '2', NULL, '5', 'sadasds', '1000', '1000', '2020-06-16 08:28:05', '2020-06-16 08:28:05', NULL);
+(6, '4', 'jangka pendek', '32', 'asasas', '1000', '1000', '2020-07-02 20:20:57', '2020-07-02 20:20:57', NULL),
+(9, '13', NULL, '29', 'sss', '1000', '1000', '2020-07-02 22:05:29', '2020-07-02 22:05:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -171,9 +182,9 @@ INSERT INTO `jurnal` (`id`, `id_aktivitas`, `jangka_waktu`, `no_akun`, `keterang
 --
 
 CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -184,11 +195,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (37, '2020_06_04_195613_create_aktivitas_table', 1),
 (38, '2020_06_04_195613_create_akun_table', 1),
 (40, '2020_06_05_023259_create_jangka_waktu_table', 1),
-(45, '2020_06_04_195613_create_jurnal_table', 2);
+(45, '2020_06_04_195613_create_jurnal_table', 2),
+(46, '2020_06_16_175750_aktiva', 3);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `aktiva`
+--
+ALTER TABLE `aktiva`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `aktivitas`
@@ -227,34 +245,40 @@ ALTER TABLE `migrations`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `aktiva`
+--
+ALTER TABLE `aktiva`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `aktivitas`
 --
 ALTER TABLE `aktivitas`
-  MODIFY `id_aktivitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_aktivitas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT untuk tabel `jangka_waktu`
 --
 ALTER TABLE `jangka_waktu`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
