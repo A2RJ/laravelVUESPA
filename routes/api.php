@@ -38,7 +38,8 @@ Route::group(['prefix'=>'jurnals'], function () {
 });
 
 Route::resource('jurnals','JurnalController');
-
+// route berguna agar semua routes sangat fleksibel
+// hanya dengan 1 pemanggilan dapat kesemua functions
 Route::get('laporan/{id}', [
         'as' => 'laporan.index',
         'uses' => 'LaporanController@index'
