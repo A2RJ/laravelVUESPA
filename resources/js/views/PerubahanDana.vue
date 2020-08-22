@@ -13,7 +13,7 @@
                 <tbody>
                     <tr>
                         <td></td>
-                        <td class="bold">Dana sakat</td>
+                        <td class="bold">Dana zakat</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -23,37 +23,37 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Penerimaan dari musakki</td>
+                        <td>Penerimaan dari muzakki</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>musakki entitas</td>
-                        <td></td>
+                        <td>muzakki entitas</td>
+                        <td>{{ data.entitas }}</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Musakki individual</td>
-                        <td></td>
+                        <td>Muzakki individual</td>
+                        <td>{{ data.individual }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Hasil penempatan</td>
+                        <td>{{ data.penempatan }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Jumlah penerimaan dana zakat</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Jumlah penerimaan dana sakat</td>
-                        <td></td>
+                        <td>Bagian amil atas penerimaan dana zakat</td>
+                        <td>{{ data.bagianAmilzakat }}</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Bagian amil atas penerimaan dana sakat</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>jumlah penerimaan dana sakat setelah bagian amil</td>
+                        <td>jumlah penerimaan dana zakat setelah bagian amil</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -69,37 +69,37 @@
                     <tr>
                         <td></td>
                         <td>Fakir-Miskin</td>
-                        <td></td>
+                        <td>{{ data.fakir }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Riqab</td>
-                        <td></td>
+                        <td>{{ data.riqab }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Gharim</td>
-                        <td></td>
+                        <td>{{ data.gharim }}</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Mualaf</td>
-                        <td></td>
+                        <td>Muallaf</td>
+                        <td>{{ data.muallaf }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Sabilillah</td>
-                        <td></td>
+                        <td>{{ data.sabilillah }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Ibnu sabil</td>
-                        <td></td>
+                        <td>{{ data.ibnusabil }}</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Jumlah penyaluran dana sakat</td>
-                        <td>    </td>
+                        <td>Jumlah penyaluran dana zakat</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -134,22 +134,22 @@
                     <tr>
                         <td></td>
                         <td>Muqayyadah</td>
-                        <td></td>
+                        <td>{{ data.muqayyadahKas }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Mutlaqah</td>
-                        <td></td>
+                        <td>{{ data.mutlaqahKas }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Bagian amil atas penerimaan dana infak/sedekah</td>
-                        <td></td>
+                        <td>{{ data.bagianAmilInfak }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Hasil pengelolaan</td>
-                        <td></td>
+                        <td>{{ data.pengelolaan }}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -169,17 +169,17 @@
                     <tr>
                         <td></td>
                         <td>Muqayyadah</td>
-                        <td></td>
+                        <td>{{ data.muqayyadahKredit }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Mutlaqah</td>
-                        <td></td>
+                        <td>{{ data.mutlaqahKredit }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Beban penyusutan dan penyisihan</td>
-                        <td></td>
+                        <td>{{ data.alokasi }}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -213,18 +213,18 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Bagian amil dari dana sakat</td>
-                        <td></td>
+                        <td>Bagian amil dari dana zakat</td>
+                        <td>{{ data.amilzakat }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Bagian amil dari dana infak/sedekah</td>
-                        <td></td>
+                        <td>{{ data.amilinfak }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Penerimaan lainnya</td>
-                        <td></td>
+                        <td>{{ data.penerimaan }}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -244,17 +244,17 @@
                     <tr>
                         <td></td>
                         <td>Beban pegawai</td>
-                        <td></td>
+                        <td>{{ data.bebanPegawai }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Beban penyusutan</td>
-                        <td></td>
+                        <td>{{ data.bebanPenyusutan }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Beban umum dan administrasi</td>
-                        <td></td>
+                        <td>{{ data.bebanUmum }}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -294,17 +294,17 @@
                     <tr>
                         <td></td>
                         <td>Bunga bank</td>
-                        <td></td>
+                        <td>{{ data.bungaBank }}</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Jaga giro</td>
-                        <td></td>
+                        <td>Jasa giro</td>
+                        <td>{{ data.giro }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Penerimaan nonhalal lainnya</td>
-                        <td></td>
+                        <td>{{ data.nonalalLainnya }}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -324,7 +324,7 @@
                     <tr>
                         <td></td>
                         <td>Jumlah penggunaan dana nonhalal</td>
-                        <td></td>
+                        <td>{{ data.penggunaanNonhalal }}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -353,7 +353,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Jumlah saldo dana sakat, dana infak/sedekah, dana amil dan dana nonhalal.</td>
+                        <td>Jumlah saldo dana zakat, dana infak/sedekah, dana amil dan dana nonhalal.</td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -365,7 +365,17 @@
 
 <script>
 export default {
-
+   data () {
+    return {
+      data: []
+    }
+  },
+  mounted () {
+    axios
+      .get('api/laporan/lpd')
+      .then(response => (this.data = response.data))
+      .catch(error => console.log(error))   
+  }
 }
 </script>
 

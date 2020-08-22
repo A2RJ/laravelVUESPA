@@ -6,7 +6,9 @@ import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { Plugin } from 'vue-fragment';
+import { Fragment } from "vue-fragment";
 import Vue2Filters from 'vue2-filters';
+import VueLoadImage from 'vue-load-image'
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap-vue/dist/bootstrap-vue.css';
