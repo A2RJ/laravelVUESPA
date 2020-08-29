@@ -19,18 +19,7 @@ class LaporanController extends Controller
     {
         return $this->$any();
     }
-
-    // Dapat digunakan untuk mengambil 1 nilai langsung dari vue js
-    public function getByNoAkun($id, $jenis)
-    {
-        $return = Jurnal::where('no_akun', $id)->sum('jum_' . $jenis);
-        if ($return) {
-            return response()->json($return, Response::HTTP_OK);
-        }else{
-            return response()->json($return, Response::HTTP_NOT_FOUND);
-        }
-    }
-    
+ 
     /** 
         @Untuk Halaman Aktivitas 
     **/
@@ -44,11 +33,22 @@ class LaporanController extends Controller
     /** 
         @Untuk Halaman Arus Kas
     **/
-
+    public function arusKas()
+    {
+        return response()->json([
+            'success'=> "success",
+        ]);
+    }
     /** 
         @Untuk Halaman Laporan Posisi Keuangan
     **/
-
+    public function LPK()
+    {
+        return response()->json([
+            'zakat'=> $this->total('zakat') + $this->total('zakatkredit'),
+            'infak'=> $this->total('zakat') + $this->total('zakatkredit'),
+        ]);
+    }
     /** 
         @Untuk Halaman Laporan Perubahan Dana
     **/
@@ -85,4 +85,24 @@ class LaporanController extends Controller
         ], Response::HTTP_OK);
     }
 
+    /** 
+     * @Funsi untuk mengambil data sesuai aktifitas
+     * **/
+    /* Dapat digunakan untuk mengambil 1 nilai langsung */
+    public function getByNoAkun($id, $jenis)
+    {
+        return Jurnal::where('no_akun', $id)->sum('jum_' . $jenis);
+    }
+    
+    /* Get nilai total */
+    public function total($id)
+    {
+        if($id == 'zakat'){
+            return $data = 10;
+        }elseif ($id == 'infak') {
+            return $data = $this->getByNoAkun(1, 'debet') + $this->getByNoAkun(2, 'debet') + $this->getByNoAkun(1, 'debet') + $this->getByNoAkun(2, 'debet');
+        }elseif ($id == 'zakatkredit') {
+            return $data = 12;
+        }
+    }
 }
