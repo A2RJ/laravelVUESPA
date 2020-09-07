@@ -12,14 +12,90 @@ use App\Models\Aktiva;
 class LaporanController extends Controller
 {
     /**  
-        @dari routes masuk ditangkap oleh functions index 
-        dan diteruskan ke function sesuai params
+        @dari routes masuk ditangkap oleh functions index dan diteruskan ke function sesuai params
     **/
     public function index($any)
     {
         return $this->$any();
     }
- 
+
+    /* Dapat digunakan untuk mengambil 1 nilai langsung */
+    public function get($id, $jenis)
+    {
+        return Jurnal::where('no_akun', $id)->sum('jum_' . $jenis);
+    }
+    
+    /* Get nilai total */
+    public function total($id)
+    {
+        if($id == 'zakat'){
+            $a = $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet');
+            $b = $this->get(2, 'debet') +
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet');
+            return $a - $b;
+        }elseif ($id == 'infak') {
+            $a = $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet');
+            $b = $this->get(2, 'debet') +
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet');
+            return $a - $b;
+        }elseif ($id == 'amil') {
+            $a = $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet');
+            $b = $this->get(2, 'debet') +
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet');
+            return $a - $b;
+        }elseif ($id == 'nonhalal') {
+            $a = $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') +
+            $this->get(1, 'debet');
+            $b = $this->get(2, 'debet') +
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet') + 
+            $this->get(1, 'debet') + 
+            $this->get(2, 'debet');
+            return $a - $b;
+        }
+    }
+
+    /** 
+        @Untuk Halaman Laporan Posisi Keuangan
+    **/
+    public function LPK()
+    {
+        return response()->json([
+            'zakat'=> $this->total('zakat'),
+            'infak'=> $this->total('infak'),
+            'amil'=> $this->total('amil'),
+            'nonhalal'=> $this->total('nonhalal')
+        ]);
+    }
+
     /** 
         @Untuk Halaman Aktivitas 
     **/
@@ -40,69 +116,40 @@ class LaporanController extends Controller
         ]);
     }
     /** 
-        @Untuk Halaman Laporan Posisi Keuangan
-    **/
-    public function LPK()
-    {
-        return response()->json([
-            'zakat'=> $this->total('zakat') + $this->total('zakatkredit'),
-            'infak'=> $this->total('zakat') + $this->total('zakatkredit'),
-        ]);
-    }
-    /** 
         @Untuk Halaman Laporan Perubahan Dana
     **/
     public function LPD()
     {
         return response()->json([
-            'entitas' => Jurnal::where('no_akun', 40)->sum('jum_debet'),
-            'individual' => Jurnal::where('no_akun', 41)->sum('jum_debet'),
-            'penempatan' => Jurnal::where('no_akun', 42)->sum('jum_debet'),
-            'bagianAmilzakat' => Jurnal::where('no_akun', 43)->sum('jum_debet'),
-            'fakir' => Jurnal::where('no_akun', 44)->sum('jum_debet'),
-            'riqab' => Jurnal::where('no_akun', 45)->sum('jum_debet'),
-            'gharim' => Jurnal::where('no_akun', 46)->sum('jum_debet'),
-            'muallaf' => Jurnal::where('no_akun', 47)->sum('jum_debet'),
-            'sabilillah' => Jurnal::where('no_akun', 48)->sum('jum_debet'),
-            'ibnuSabil' => Jurnal::where('no_akun', 49)->sum('jum_debet'),
-            'muqayyadahKas' => Jurnal::where('no_akun', 50)->sum('jum_debet'),
-            'mutlaqahKas' => Jurnal::where('no_akun', 51)->sum('jum_debet'),
-            'bagianAmilInfak' => Jurnal::where('no_akun', 52)->sum('jum_debet'),
-            'pengelolaan' => Jurnal::where('no_akun', 53)->sum('jum_debet'),
-            'muqayyadahKredit' => Jurnal::where('no_akun', 54)->sum('jum_debet'),
-            'mutlaqahKredit' => Jurnal::where('no_akun', 55)->sum('jum_debet'),
-            'alokasi' => Jurnal::where('no_akun', 56)->sum('jum_debet'),
-            'amilzakat' => Jurnal::where('no_akun', 57)->sum('jum_debet'),
-            'amilinfak' => Jurnal::where('no_akun', 58)->sum('jum_debet'),
-            'penerimaan' => Jurnal::where('no_akun', 59)->sum('jum_debet'),
-            'bebanPegawai' => Jurnal::where('no_akun', 60)->sum('jum_debet'),
-            'bebanPenyusutan' => Jurnal::where('no_akun', 61)->sum('jum_debet'),
-            'bebanUmum' => Jurnal::where('no_akun', 61)->sum('jum_debet'),
-            'bungaBank' => Jurnal::where('no_akun', 62)->sum('jum_debet'),
-            'giro' => Jurnal::where('no_akun', 63)->sum('jum_debet'),
-            'nonalalLainnya' => Jurnal::where('no_akun', 64)->sum('jum_debet'),
-            'penggunaanNonhalal' => Jurnal::where('no_akun', 65)->sum('jum_debet')
+            'entitas' => $this->get(40, 'debet'),
+            'individual' => $this->get(41, 'debet'),
+            'penempatan' => $this->get(42, 'debet'),
+            'bagianAmilzakat' => $this->get(43, 'debet'),
+            'fakir' => $this->get(44, 'debet'),
+            'riqab' => $this->get(45, 'debet'),
+            'gharim' => $this->get(46, 'debet'),
+            'muallaf' => $this->get(47, 'debet'),
+            'sabilillah' => $this->get(48, 'debet'),
+            'ibnuSabil' => $this->get(49, 'debet'),
+            'muqayyadahKas' => $this->get(50, 'debet'),
+            'mutlaqahKas' => $this->get(51, 'debet'),
+            'bagianAmilInfak' => $this->get(52, 'debet'),
+            'pengelolaan' => $this->get(53, 'debet'),
+            'muqayyadahKredit' => $this->get(54, 'debet'),
+            'mutlaqahKredit' => $this->get(55, 'debet'),
+            'alokasi' => $this->get(56, 'debet'),
+            'amilzakat' => $this->get(57, 'debet'),
+            'amilinfak' => $this->get(58, 'debet'),
+            'penerimaan' => $this->get(59, 'debet'),
+            'bebanPegawai' => $this->get(60, 'debet'),
+            'bebanPenyusutan' => $this->get(61, 'debet'),
+            'bebanUmum' => $this->get(61, 'debet'),
+            'bungaBank' => $this->get(62, 'debet'),
+            'giro' => $this->get(63, 'debet'),
+            'nonalalLainnya' => $this->get(64, 'debet'),
+            'penggunaanNonhalal' => $this->get(65,'debet')
         ], Response::HTTP_OK);
     }
 
-    /** 
-     * @Funsi untuk mengambil data sesuai aktifitas
-     * **/
-    /* Dapat digunakan untuk mengambil 1 nilai langsung */
-    public function getByNoAkun($id, $jenis)
-    {
-        return Jurnal::where('no_akun', $id)->sum('jum_' . $jenis);
-    }
-    
-    /* Get nilai total */
-    public function total($id)
-    {
-        if($id == 'zakat'){
-            return $data = 10;
-        }elseif ($id == 'infak') {
-            return $data = $this->getByNoAkun(1, 'debet') + $this->getByNoAkun(2, 'debet') + $this->getByNoAkun(1, 'debet') + $this->getByNoAkun(2, 'debet');
-        }elseif ($id == 'zakatkredit') {
-            return $data = 12;
-        }
-    }
+
 }
