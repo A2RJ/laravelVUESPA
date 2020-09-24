@@ -19,7 +19,10 @@ class LaporanController extends Controller
         return $this->$any();
     }
 
-    /* Dapat digunakan untuk mengambil 1 nilai langsung */
+    /**
+     * FUNGSI UNTUK KELOLA JURNAL
+     * 
+     * Dapat digunakan untuk mengambil 1 nilai langsung **/
     public function get($id, $jenis)
     {
         return Jurnal::where('no_akun', $id)->sum('jum_' . $jenis);
@@ -29,61 +32,68 @@ class LaporanController extends Controller
     public function total($id)
     {
         if($id == 'zakat'){
+
             $a = $this->get(1, 'debet') + 
             $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet');
-            $b = $this->get(2, 'debet') +
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet');
-            return $a - $b;
+            $this->get(3, 'debet');
+            $b = $this->get(4, 'debet') +
+            $this->get(5, 'debet') + 
+            $this->get(6, 'debet') + 
+            $this->get(7, 'debet') + 
+            $this->get(8, 'debet') + 
+            $this->get(9, 'debet');
+
+            return response()->json([
+                'total' => $a - $b,
+                'kas' => $a,
+                'kredit' => $b
+            ]);
         }elseif ($id == 'infak') {
-            $a = $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet');
-            $b = $this->get(2, 'debet') +
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet');
-            return $a - $b;
+
+            $a = $this->get(10, 'debet') + 
+            $this->get(11, 'debet') + 
+            $this->get(12, 'debet');
+            $b = $this->get(13, 'debet') +
+            $this->get(14, 'debet') + 
+            $this->get('penyisihan', 'debet');
+
+            return response()->json([
+                'total' => $a - $b,
+                'kas' => $a,
+                'kredit' => $b
+            ]);
         }elseif ($id == 'amil') {
-            $a = $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet');
-            $b = $this->get(2, 'debet') +
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet');
-            return $a - $b;
+
+            $a = $this->get(16, 'debet') + 
+            $this->get(17, 'debet') + 
+            $this->get(18, 'debet');
+            $b = $this->get(19, 'debet') +
+            $this->get('penyusutan', 'debet');
+            $this->get('20', 'debet');
+
+            return response()->json([
+                'total' => $a - $b,
+                'kas' => $a,
+                'kredit' => $b
+            ]);
         }elseif ($id == 'nonhalal') {
-            $a = $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') +
-            $this->get(1, 'debet');
-            $b = $this->get(2, 'debet') +
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(1, 'debet') + 
-            $this->get(2, 'debet');
-            return $a - $b;
+
+            $a = $this->get(21, 'debet') + 
+            $this->get(22, 'debet') + 
+            $this->get(23, 'debet');
+            $b = $this->get(24, 'debet');
+
+            return response()->json([
+                'total' => $a - $b,
+                'kas' => $a,
+                'kredit' => $b
+            ]);
         }
     }
 
     /** 
+     * FUNGSI UNTUK LAPORAN
+     * 
         @Untuk Halaman Laporan Posisi Keuangan
     **/
     public function LPK()
@@ -93,7 +103,7 @@ class LaporanController extends Controller
             'infak'=> $this->total('infak'),
             'amil'=> $this->total('amil'),
             'nonhalal'=> $this->total('nonhalal')
-        ]);
+        ], Response::HTTP_OK);
     }
 
     /** 
@@ -124,28 +134,27 @@ class LaporanController extends Controller
             'entitas' => $this->get(1, 'debet'),
             'individual' => $this->get(2, 'debet'),
             'penempatan' => $this->get(3, 'debet'),
-            'fakir' => $this->get(44, 'debet'),
-            'riqab' => $this->get(45, 'debet'),
-            'gharim' => $this->get(46, 'debet'),
-            'muallaf' => $this->get(47, 'debet'),
-            'sabilillah' => $this->get(48, 'debet'),
-            'ibnuSabil' => $this->get(49, 'debet'),
-            'muqayyadahKas' => $this->get(50, 'debet'),
-            'mutlaqahKas' => $this->get(51, 'debet'),
-            'pengelolaan' => $this->get(53, 'debet'),
-            'muqayyadahKredit' => $this->get(54, 'debet'),
-            'mutlaqahKredit' => $this->get(55, 'debet'),
-            'alokasi' => $this->get(56, 'debet'),
-            'amilzakat' => $this->get(57, 'debet'),
-            'amilinfak' => $this->get(58, 'debet'),
-            'penerimaan' => $this->get(59, 'debet'),
-            'bebanPegawai' => $this->get(60, 'debet'),
-            'bebanPenyusutan' => $this->get(61, 'debet'),
-            'bebanUmum' => $this->get(61, 'debet'),
-            'bungaBank' => $this->get(62, 'debet'),
-            'giro' => $this->get(63, 'debet'),
-            'nonalalLainnya' => $this->get(64, 'debet'),
-            'penggunaanNonhalal' => $this->get(65,'debet')
+            'fakir' => $this->get(4, 'debet'),
+            'riqab' => $this->get(5, 'debet'),
+            'gharim' => $this->get(6, 'debet'),
+            'muallaf' => $this->get(7, 'debet'),
+            'sabilillah' => $this->get(8, 'debet'),
+            'ibnuSabil' => $this->get(9, 'debet'),
+            'muqayyadahKas' => $this->get(10, 'debet'),
+            'mutlaqahKas' => $this->get(11, 'debet'),
+            'pengelolaan' => $this->get(12, 'debet'),
+            'muqayyadahKredit' => $this->get(13, 'debet'),
+            'mutlaqahKredit' => $this->get(14, 'debet'),
+            'alokasi' => $this->get(15, 'debet'),
+            'amilzakat' => $this->get(16, 'debet'),
+            'amilinfak' => $this->get(17, 'debet'),
+            'penerimaan' => $this->get(18, 'debet'),
+            'bebanPegawai' => $this->get(19, 'debet'),
+            'bebanUmum' => $this->get(20, 'debet'),
+            'bungaBank' => $this->get(21, 'debet'),
+            'giro' => $this->get(22, 'debet'),
+            'nonalalLainnya' => $this->get(23, 'debet'),
+            'penggunaanNonhalal' => $this->get(24,'debet')
         ], Response::HTTP_OK);
     }
 
