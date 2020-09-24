@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 21 Sep 2020 pada 10.15
+-- Waktu pembuatan: 24 Sep 2020 pada 06.48
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 5.6.38
 
@@ -71,29 +71,27 @@ INSERT INTO `akun` (`id`, `id_akun`, `no_akun`, `akun`, `debet`, `kredit`, `kete
 (1, 1, '1.4', 'Muzakki entitas', 'kas', 'muzakki entitas', 'kas'),
 (2, 1, '1.4', 'Muzakki individual', 'kas', 'muzakki individual', 'kas'),
 (3, 1, '1.4', 'Hasil penempatan', 'kas', 'Hasil penempatan', 'kas'),
-(4, 1, '1.4', 'Bagian amil', 'kas', 'Bagian amil', 'kas'),
-(5, 2, '1.4', 'Fakir - Miskin', 'Fakir - Miskin', 'kas', 'kredit'),
-(6, 2, '1.4', 'Riqab', 'Riqab', 'kas', 'kredit'),
-(7, 2, '1.4', 'Gharim', 'Gharim', 'kas', 'kredit'),
-(8, 2, '1.4', 'Muallaf', 'Muallaf', 'kas', 'kredit'),
-(9, 2, '1.4', 'Sabilillah', 'Sabilillah', 'kas', 'kredit'),
-(10, 2, '1.4', 'Ibnu sabil', 'Ibnu sabil', 'kas', 'kredit'),
-(11, 3, '1.4', 'Muqayyadah', 'Muqayyadah', 'kas', 'kredit'),
-(12, 3, '1.4', 'Mutlaqah', 'Mutlaqah', 'kas', 'kredit'),
-(13, 3, '1.4', 'Bagian amil', 'Bagian Amil', 'kas', 'kredit'),
-(14, 3, '1.4', 'Hasil pengelolaan', 'Hasil pengelolaan', 'kas', 'kredit'),
-(15, 4, '1.4', 'Muqayyadah', 'Muqayyadah', 'kas', 'kredit'),
-(16, 4, '1.4', 'Mutlaqah', 'Mutlaqah', 'kas', 'kredit'),
-(17, 4, '1.4', 'Alokasi pemanfaatan aset kelolaan', 'Alokasi pemanfaatan aset kelolaan', 'kas', 'kredit'),
-(18, 5, '1.4', 'Bagian amil dari dana sakat', 'kas', 'Bagian amil dari dana sakat', 'kas'),
-(19, 5, '1.4', 'Bagian amil dari dana infak sedekah', 'kas', 'Bagian amil dari dana infak sedekah', 'kas'),
-(20, 5, '1.4', 'Penerimaan lainnya', 'kas', 'Penerimaan lainnya', 'kas'),
-(21, 6, '1.4', 'Beban pegawai', 'kredit', 'Beban pegawai', 'kredit'),
-(22, 6, '1.4', 'Beban umum dan administrasi ', 'kredit', 'Beban umum dan administrasi ', 'kredit'),
-(23, 7, '1.4', 'Bunga bank', 'Bunga bank', 'kas', 'kas'),
-(24, 7, '1.4', 'Jasa giro', 'Jasa giro', 'kas', 'kas'),
-(25, 7, '1.4', 'Penerimaan dana nonhalal lainnya', 'Penerimaan dana nonhalal lainnya', 'kas', 'kas'),
-(26, 8, '1.4', 'Penggunaan dana nonhalal', 'kredit', 'Penggunaan dana nonhalal', 'kredit');
+(4, 2, '1.4', 'Fakir - Miskin', 'Fakir - Miskin', 'kas', 'kredit'),
+(5, 2, '1.4', 'Riqab', 'Riqab', 'kas', 'kredit'),
+(6, 2, '1.4', 'Gharim', 'Gharim', 'kas', 'kredit'),
+(7, 2, '1.4', 'Muallaf', 'Muallaf', 'kas', 'kredit'),
+(8, 2, '1.4', 'Sabilillah', 'Sabilillah', 'kas', 'kredit'),
+(9, 2, '1.4', 'Ibnu sabil', 'Ibnu sabil', 'kas', 'kredit'),
+(10, 3, '1.4', 'Muqayyadah', 'Muqayyadah', 'kas', 'kredit'),
+(11, 3, '1.4', 'Mutlaqah', 'Mutlaqah', 'kas', 'kredit'),
+(12, 3, '1.4', 'Hasil pengelolaan', 'Hasil pengelolaan', 'kas', 'kredit'),
+(13, 4, '1.4', 'Muqayyadah', 'Muqayyadah', 'kas', 'kredit'),
+(14, 4, '1.4', 'Mutlaqah', 'Mutlaqah', 'kas', 'kredit'),
+(15, 4, '1.4', 'Alokasi pemanfaatan aset kelolaan', 'Alokasi pemanfaatan aset kelolaan', 'kas', 'kredit'),
+(16, 5, '1.4', 'Bagian amil dari dana sakat', 'kas', 'Bagian amil dari dana sakat', 'kas'),
+(17, 5, '1.4', 'Bagian amil dari dana infak sedekah', 'kas', 'Bagian amil dari dana infak sedekah', 'kas'),
+(18, 5, '1.4', 'Penerimaan lainnya', 'kas', 'Penerimaan lainnya', 'kas'),
+(19, 6, '1.4', 'Beban pegawai', 'kredit', 'Beban pegawai', 'kredit'),
+(20, 6, '1.4', 'Beban umum dan administrasi ', 'kredit', 'Beban umum dan administrasi ', 'kredit'),
+(21, 7, '1.4', 'Bunga bank', 'Bunga bank', 'kas', 'kas'),
+(22, 7, '1.4', 'Jasa giro', 'Jasa giro', 'kas', 'kas'),
+(23, 7, '1.4', 'Penerimaan dana nonhalal lainnya', 'Penerimaan dana nonhalal lainnya', 'kas', 'kas'),
+(24, 8, '1.4', 'Penggunaan dana nonhalal', 'kredit', 'Penggunaan dana nonhalal', 'kredit');
 
 -- --------------------------------------------------------
 
@@ -198,7 +196,7 @@ ALTER TABLE `aktivitas`
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `jangka_waktu`

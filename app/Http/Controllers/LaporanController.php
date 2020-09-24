@@ -121,10 +121,9 @@ class LaporanController extends Controller
     public function LPD()
     {
         return response()->json([
-            'entitas' => $this->get(40, 'debet'),
-            'individual' => $this->get(41, 'debet'),
-            'penempatan' => $this->get(42, 'debet'),
-            'bagianAmilzakat' => $this->get(43, 'debet'),
+            'entitas' => $this->get(1, 'debet'),
+            'individual' => $this->get(2, 'debet'),
+            'penempatan' => $this->get(3, 'debet'),
             'fakir' => $this->get(44, 'debet'),
             'riqab' => $this->get(45, 'debet'),
             'gharim' => $this->get(46, 'debet'),
@@ -133,7 +132,6 @@ class LaporanController extends Controller
             'ibnuSabil' => $this->get(49, 'debet'),
             'muqayyadahKas' => $this->get(50, 'debet'),
             'mutlaqahKas' => $this->get(51, 'debet'),
-            'bagianAmilInfak' => $this->get(52, 'debet'),
             'pengelolaan' => $this->get(53, 'debet'),
             'muqayyadahKredit' => $this->get(54, 'debet'),
             'mutlaqahKredit' => $this->get(55, 'debet'),
