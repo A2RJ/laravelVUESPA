@@ -15,7 +15,7 @@ class CreateAkunTable extends Migration {
 			$table->string('akun', 40);
 			$table->string('debet', 50);
 			$table->string('kredit', 50);
-			$table->string('keterangan', 6);
+			$table->string('jenis', 6);
 		});
 	}
 
