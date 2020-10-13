@@ -17,50 +17,25 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-    <link href="{{ asset('package/src/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('package/src/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('package/src/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('package/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
     <!-- Custom CSS -->
-    <link href="{{ asset('package/src/dist/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+
     <div id="app">
 
     </div>
+    
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('package/src/assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script src="{{ asset('package/src/dist/js/app-style-switcher.js') }}"></script>
-    <script src="{{ asset('package/src/dist/js/feather.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/perfect-scrollbar.min.js"></script> -->
-    <script src="{{ asset('package/src/dist/js/sidebarmenu.js') }}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{ asset('package/src/dist/js/custom.min.js') }}"></script>
-    <!--This page JavaScript -->
-    <script src="{{ asset('package/src/assets/extra-libs/c3/d3.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/extra-libs/c3/c3.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/libs/chartist/dist/chartist.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
-    <script src="{{ asset('package/src/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('package/src/dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('assets/js/misc.js') }}"></script>
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/js/todolist.js') }}"></script>
 </body>
 </html>
