@@ -80,8 +80,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html">
-              <span class="menu-title">Dashboard</span>
-              <i class="mdi mdi-home menu-icon"></i>
+              <router-link class="sidebar-link" to="/Jurnal" aria-expanded="false"><i class="mdi mdi-home menu-icon"></i><span class="menu-title">Dashboard</span></router-link>
             </a>
           </li>
           <li class="nav-item">
@@ -142,6 +141,8 @@
               </ul>
             </nav>
           </div>
+                <router-view></router-view>
+
           <div class="row">
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-danger card-img-holder text-white">
