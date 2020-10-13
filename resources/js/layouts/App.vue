@@ -79,7 +79,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link">
               <router-link class="sidebar-link" to="/Jurnal" aria-expanded="false"><i class="mdi mdi-home menu-icon"></i><span class="menu-title">Dashboard</span></router-link>
             </a>
           </li>
