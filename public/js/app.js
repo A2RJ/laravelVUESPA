@@ -2217,168 +2217,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'app',
+  name: "app",
   components: {}
 });
 
@@ -2775,6 +2616,42 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39212,7 +39089,7 @@ var render = function() {
                           _c("i", {
                             staticClass: "mdi mdi-cached mr-2 text-success"
                           }),
-                          _vm._v(" Activity Log ")
+                          _vm._v(" Activity Log\n              ")
                         ]
                       ),
                       _vm._v(" "),
@@ -39225,7 +39102,7 @@ var render = function() {
                           _c("i", {
                             staticClass: "mdi mdi-logout mr-2 text-primary"
                           }),
-                          _vm._v(" Signout ")
+                          _vm._v(" Signout\n              ")
                         ]
                       )
                     ]
@@ -39324,12 +39201,150 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "sidebar-link",
-                        attrs: { to: "/Jurnal", "aria-expanded": "false" }
+                        attrs: { to: "/", "aria-expanded": "false" }
                       },
                       [
                         _c("i", { staticClass: "mdi mdi-home menu-icon" }),
                         _c("span", { staticClass: "menu-title" }, [
                           _vm._v("Dashboard")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "sidebar-link",
+                        attrs: { to: "/Jurnal", "aria-expanded": "false" }
+                      },
+                      [
+                        _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                        _c("span", { staticClass: "menu-title" }, [
+                          _vm._v("Jurnal")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "sidebar-link",
+                        attrs: { to: "/LPK", "aria-expanded": "false" }
+                      },
+                      [
+                        _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                        _c("span", { staticClass: "menu-title" }, [
+                          _vm._v("Neraca")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "sidebar-link",
+                        attrs: { to: "/Aktivitas", "aria-expanded": "false" }
+                      },
+                      [
+                        _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                        _c("span", { staticClass: "menu-title" }, [
+                          _vm._v("Aktivitas")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "sidebar-link",
+                        attrs: { to: "/ArusKas", "aria-expanded": "false" }
+                      },
+                      [
+                        _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                        _c("span", { staticClass: "menu-title" }, [
+                          _vm._v("Arus Kas")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "sidebar-link",
+                        attrs: { to: "/LPDana", "aria-expanded": "false" }
+                      },
+                      [
+                        _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                        _c("span", { staticClass: "menu-title" }, [
+                          _vm._v("LPD")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "sidebar-link",
+                        attrs: { to: "/PAK", "aria-expanded": "false" }
+                      },
+                      [
+                        _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                        _c("span", { staticClass: "menu-title" }, [
+                          _vm._v("PAK")
                         ])
                       ]
                     )
@@ -39427,7 +39442,11 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { href: "pages/samples/blank-page.html" }
                           },
-                          [_vm._v(" Blank Page ")]
+                          [
+                            _vm._v(
+                              "\n                    Blank Page\n                  "
+                            )
+                          ]
                         )
                       ]),
                       _vm._v(" "),
@@ -39438,7 +39457,11 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { href: "pages/samples/login.html" }
                           },
-                          [_vm._v(" Login ")]
+                          [
+                            _vm._v(
+                              "\n                    Login\n                  "
+                            )
+                          ]
                         )
                       ]),
                       _vm._v(" "),
@@ -39449,7 +39472,11 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { href: "pages/samples/register.html" }
                           },
-                          [_vm._v(" Register ")]
+                          [
+                            _vm._v(
+                              "\n                    Register\n                  "
+                            )
+                          ]
                         )
                       ]),
                       _vm._v(" "),
@@ -39460,7 +39487,11 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { href: "pages/samples/error-404.html" }
                           },
-                          [_vm._v(" 404 ")]
+                          [
+                            _vm._v(
+                              "\n                    404\n                  "
+                            )
+                          ]
                         )
                       ]),
                       _vm._v(" "),
@@ -39471,7 +39502,11 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { href: "pages/samples/error-500.html" }
                           },
-                          [_vm._v(" 500 ")]
+                          [
+                            _vm._v(
+                              "\n                    500\n                  "
+                            )
+                          ]
                         )
                       ])
                     ])
@@ -39495,7 +39530,7 @@ var render = function() {
                     [
                       _c("p", [
                         _vm._v(
-                          "Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!"
+                          "\n                  Get tons of UI components, Plugins, multiple layouts, 20+\n                  sample pages, and more!\n                "
                         )
                       ]),
                       _vm._v(" "),
@@ -39532,7 +39567,7 @@ var render = function() {
                     },
                     [_c("i", { staticClass: "mdi mdi-home" })]
                   ),
-                  _vm._v(" Dashboard ")
+                  _vm._v("\n              Dashboard\n            ")
                 ]),
                 _vm._v(" "),
                 _c("nav", { attrs: { "aria-label": "breadcrumb" } }, [
@@ -39545,7 +39580,7 @@ var render = function() {
                       },
                       [
                         _c("span"),
-                        _vm._v("Overview "),
+                        _vm._v("Overview\n                  "),
                         _c("i", {
                           staticClass:
                             "mdi mdi-alert-circle-outline icon-sm text-primary align-middle"
@@ -39556,793 +39591,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("router-view"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col-md-4 stretch-card grid-margin" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "card bg-gradient-danger card-img-holder text-white"
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("img", {
-                            staticClass: "card-img-absolute",
-                            attrs: {
-                              src: "assets/images/dashboard/circle.svg",
-                              alt: "circle-image"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-                            _vm._v("Weekly Sales "),
-                            _c("i", {
-                              staticClass:
-                                "mdi mdi-chart-line mdi-24px float-right"
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", { staticClass: "mb-5" }, [
-                            _vm._v("$ 15,0000")
-                          ]),
-                          _vm._v(" "),
-                          _c("h6", { staticClass: "card-text" }, [
-                            _vm._v("Increased by 60%")
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-md-4 stretch-card grid-margin" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "card bg-gradient-info card-img-holder text-white"
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("img", {
-                            staticClass: "card-img-absolute",
-                            attrs: {
-                              src: "assets/images/dashboard/circle.svg",
-                              alt: "circle-image"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-                            _vm._v("Weekly Orders "),
-                            _c("i", {
-                              staticClass:
-                                "mdi mdi-bookmark-outline mdi-24px float-right"
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", { staticClass: "mb-5" }, [
-                            _vm._v("45,6334")
-                          ]),
-                          _vm._v(" "),
-                          _c("h6", { staticClass: "card-text" }, [
-                            _vm._v("Decreased by 10%")
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-md-4 stretch-card grid-margin" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "card bg-gradient-success card-img-holder text-white"
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("img", {
-                            staticClass: "card-img-absolute",
-                            attrs: {
-                              src: "assets/images/dashboard/circle.svg",
-                              alt: "circle-image"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-                            _vm._v("Visitors Online "),
-                            _c("i", {
-                              staticClass:
-                                "mdi mdi-diamond mdi-24px float-right"
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("h2", { staticClass: "mb-5" }, [
-                            _vm._v("95,5741")
-                          ]),
-                          _vm._v(" "),
-                          _c("h6", { staticClass: "card-text" }, [
-                            _vm._v("Increased by 5%")
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col-md-7 grid-margin stretch-card" },
-                  [
-                    _c("div", { staticClass: "card" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("div", { staticClass: "clearfix" }, [
-                          _c("h4", { staticClass: "card-title float-left" }, [
-                            _vm._v("Visit And Sales Statistics")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", {
-                            staticClass:
-                              "rounded-legend legend-horizontal legend-top-right float-right",
-                            attrs: { id: "visit-sale-chart-legend" }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("canvas", {
-                          staticClass: "mt-4",
-                          attrs: { id: "visit-sale-chart" }
-                        })
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-md-5 grid-margin stretch-card" },
-                  [
-                    _c("div", { staticClass: "card" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h4", { staticClass: "card-title" }, [
-                          _vm._v("Traffic Sources")
-                        ]),
-                        _vm._v(" "),
-                        _c("canvas", { attrs: { id: "traffic-chart" } }),
-                        _vm._v(" "),
-                        _c("div", {
-                          staticClass:
-                            "rounded-legend legend-vertical legend-bottom-left pt-4",
-                          attrs: { id: "traffic-chart-legend" }
-                        })
-                      ])
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-12 grid-margin" }, [
-                  _c("div", { staticClass: "card" }, [
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h4", { staticClass: "card-title" }, [
-                        _vm._v("Jurnal")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "table-responsive" }, [
-                        _c("table", { staticClass: "table" }, [
-                          _c("thead", [
-                            _c("tr", [
-                              _c("th", [_vm._v(" Assignee ")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(" Subject ")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(" Status ")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(" Last Update ")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(" Tracking ID ")])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c("tr", [
-                              _c("td", [
-                                _c("img", {
-                                  staticClass: "mr-2",
-                                  attrs: {
-                                    src: "assets/images/faces/face1.jpg",
-                                    alt: "image"
-                                  }
-                                }),
-                                _vm._v(" David Grey ")
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Fund is not recieved ")]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "badge badge-gradient-success"
-                                  },
-                                  [_vm._v("DONE")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Dec 5, 2017 ")]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" WD-12345 ")])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("img", {
-                                  staticClass: "mr-2",
-                                  attrs: {
-                                    src: "assets/images/faces/face2.jpg",
-                                    alt: "image"
-                                  }
-                                }),
-                                _vm._v(" Stella Johnson ")
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" High loading time ")]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "badge badge-gradient-warning"
-                                  },
-                                  [_vm._v("PROGRESS")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Dec 12, 2017 ")]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" WD-12346 ")])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("img", {
-                                  staticClass: "mr-2",
-                                  attrs: {
-                                    src: "assets/images/faces/face3.jpg",
-                                    alt: "image"
-                                  }
-                                }),
-                                _vm._v(" Marina Michel ")
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Website down for one week ")]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c(
-                                  "label",
-                                  { staticClass: "badge badge-gradient-info" },
-                                  [_vm._v("ON HOLD")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Dec 16, 2017 ")]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" WD-12347 ")])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("img", {
-                                  staticClass: "mr-2",
-                                  attrs: {
-                                    src: "assets/images/faces/face4.jpg",
-                                    alt: "image"
-                                  }
-                                }),
-                                _vm._v(" John Doe ")
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Loosing control on server ")]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "badge badge-gradient-danger"
-                                  },
-                                  [_vm._v("REJECTED")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" Dec 3, 2017 ")]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(" WD-12348 ")])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-12 grid-margin stretch-card" }, [
-                  _c("div", { staticClass: "card" }, [
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h4", { staticClass: "card-title" }, [
-                        _vm._v("Recent Updates")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "d-flex" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "d-flex align-items-center mr-4 text-muted font-weight-light"
-                          },
-                          [
-                            _c("i", {
-                              staticClass:
-                                "mdi mdi-account-outline icon-sm mr-2"
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("jack Menqu")])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "d-flex align-items-center text-muted font-weight-light"
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "mdi mdi-clock icon-sm mr-2"
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("October 3rd, 2018")])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row mt-3" }, [
-                        _c("div", { staticClass: "col-6 pr-1" }, [
-                          _c("img", {
-                            staticClass: "mb-2 mw-100 w-100 rounded",
-                            attrs: {
-                              src: "assets/images/dashboard/img_1.jpg",
-                              alt: "image"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticClass: "mw-100 w-100 rounded",
-                            attrs: {
-                              src: "assets/images/dashboard/img_4.jpg",
-                              alt: "image"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-6 pl-1" }, [
-                          _c("img", {
-                            staticClass: "mb-2 mw-100 w-100 rounded",
-                            attrs: {
-                              src: "assets/images/dashboard/img_2.jpg",
-                              alt: "image"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticClass: "mw-100 w-100 rounded",
-                            attrs: {
-                              src: "assets/images/dashboard/img_3.jpg",
-                              alt: "image"
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "d-flex mt-5 align-items-top" },
-                        [
-                          _c("img", {
-                            staticClass: "img-sm rounded-circle mr-3",
-                            attrs: {
-                              src: "assets/images/faces/face3.jpg",
-                              alt: "image"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mb-0 flex-grow" }, [
-                            _c("h5", { staticClass: "mr-2 mb-2" }, [
-                              _vm._v("School Website - Authentication Module.")
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "mb-0 font-weight-light" }, [
-                              _vm._v(
-                                "It is a long established fact that a reader will be distracted\n                      by the readable content of a page."
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ml-auto" }, [
-                            _c("i", {
-                              staticClass: "mdi mdi-heart-outline text-muted"
-                            })
-                          ])
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col-md-7 grid-margin stretch-card" },
-                  [
-                    _c("div", { staticClass: "card" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h4", { staticClass: "card-title" }, [
-                          _vm._v("Project Status")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "table-responsive" }, [
-                          _c("table", { staticClass: "table" }, [
-                            _c("thead", [
-                              _c("tr", [
-                                _c("th", [_vm._v(" # ")]),
-                                _vm._v(" "),
-                                _c("th", [_vm._v(" Name ")]),
-                                _vm._v(" "),
-                                _c("th", [_vm._v(" Due Date ")]),
-                                _vm._v(" "),
-                                _c("th", [_vm._v(" Progress ")])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("tbody", [
-                              _c("tr", [
-                                _c("td", [_vm._v(" 1 ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Herman Beck ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" May 15, 2015 ")]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c("div", { staticClass: "progress" }, [
-                                    _c("div", {
-                                      staticClass:
-                                        "progress-bar bg-gradient-success",
-                                      staticStyle: { width: "25%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "25",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", [_vm._v(" 2 ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Messsy Adam ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Jul 01, 2015 ")]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c("div", { staticClass: "progress" }, [
-                                    _c("div", {
-                                      staticClass:
-                                        "progress-bar bg-gradient-danger",
-                                      staticStyle: { width: "75%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "75",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", [_vm._v(" 3 ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" John Richards ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Apr 12, 2015 ")]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c("div", { staticClass: "progress" }, [
-                                    _c("div", {
-                                      staticClass:
-                                        "progress-bar bg-gradient-warning",
-                                      staticStyle: { width: "90%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "90",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", [_vm._v(" 4 ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Peter Meggik ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" May 15, 2015 ")]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c("div", { staticClass: "progress" }, [
-                                    _c("div", {
-                                      staticClass:
-                                        "progress-bar bg-gradient-primary",
-                                      staticStyle: { width: "50%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "50",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", [_vm._v(" 5 ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Edward ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" May 03, 2015 ")]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c("div", { staticClass: "progress" }, [
-                                    _c("div", {
-                                      staticClass:
-                                        "progress-bar bg-gradient-danger",
-                                      staticStyle: { width: "35%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "35",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("tr", [
-                                _c("td", [_vm._v(" 5 ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Ronald ")]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(" Jun 05, 2015 ")]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _c("div", { staticClass: "progress" }, [
-                                    _c("div", {
-                                      staticClass:
-                                        "progress-bar bg-gradient-info",
-                                      staticStyle: { width: "65%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "65",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ])
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-md-5 grid-margin stretch-card" },
-                  [
-                    _c("div", { staticClass: "card" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h4", { staticClass: "card-title text-white" }, [
-                          _vm._v("Todo")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "add-items d-flex" }, [
-                          _c("input", {
-                            staticClass: "form-control todo-list-input",
-                            attrs: {
-                              type: "text",
-                              placeholder: "What do you need to do today?"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "add btn btn-gradient-primary font-weight-bold todo-list-add-btn",
-                              attrs: { id: "add-task" }
-                            },
-                            [_vm._v("Add")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "list-wrapper" }, [
-                          _c(
-                            "ul",
-                            {
-                              staticClass:
-                                "d-flex flex-column-reverse todo-list todo-list-custom"
-                            },
-                            [
-                              _c("li", [
-                                _c("div", { staticClass: "form-check" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "form-check-label" },
-                                    [
-                                      _c("input", {
-                                        staticClass: "checkbox",
-                                        attrs: { type: "checkbox" }
-                                      }),
-                                      _vm._v(" Meeting with Alisa ")
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("i", {
-                                  staticClass:
-                                    "remove mdi mdi-close-circle-outline"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "completed" }, [
-                                _c("div", { staticClass: "form-check" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "form-check-label" },
-                                    [
-                                      _c("input", {
-                                        staticClass: "checkbox",
-                                        attrs: { type: "checkbox", checked: "" }
-                                      }),
-                                      _vm._v(" Call John ")
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("i", {
-                                  staticClass:
-                                    "remove mdi mdi-close-circle-outline"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("div", { staticClass: "form-check" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "form-check-label" },
-                                    [
-                                      _c("input", {
-                                        staticClass: "checkbox",
-                                        attrs: { type: "checkbox" }
-                                      }),
-                                      _vm._v(" Create invoice ")
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("i", {
-                                  staticClass:
-                                    "remove mdi mdi-close-circle-outline"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("div", { staticClass: "form-check" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "form-check-label" },
-                                    [
-                                      _c("input", {
-                                        staticClass: "checkbox",
-                                        attrs: { type: "checkbox" }
-                                      }),
-                                      _vm._v(" Print Statements ")
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("i", {
-                                  staticClass:
-                                    "remove mdi mdi-close-circle-outline"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "completed" }, [
-                                _c("div", { staticClass: "form-check" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "form-check-label" },
-                                    [
-                                      _c("input", {
-                                        staticClass: "checkbox",
-                                        attrs: { type: "checkbox", checked: "" }
-                                      }),
-                                      _vm._v(" Prepare for presentation ")
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("i", {
-                                  staticClass:
-                                    "remove mdi mdi-close-circle-outline"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("div", { staticClass: "form-check" }, [
-                                  _c(
-                                    "label",
-                                    { staticClass: "form-check-label" },
-                                    [
-                                      _c("input", {
-                                        staticClass: "checkbox",
-                                        attrs: { type: "checkbox" }
-                                      }),
-                                      _vm._v(" Pick up kids from school ")
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("i", {
-                                  staticClass:
-                                    "remove mdi mdi-close-circle-outline"
-                                })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ])
+              _c("router-view")
             ],
             1
           )
@@ -40946,12 +40195,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "row" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row my-5" },
+      { staticClass: "col-md-4 stretch-card grid-margin" },
       [
-        _c("div", { staticClass: "col-sm-12 col-lg-8 offset-2" }, [
+        _c("div", {}, [
           _vm.message
             ? _c(
                 "div",
@@ -41293,7 +40548,105 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4 stretch-card grid-margin" }, [
+      _c(
+        "div",
+        { staticClass: "card bg-gradient-danger card-img-holder text-white" },
+        [
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", {
+              staticClass: "card-img-absolute",
+              attrs: {
+                src: "assets/images/dashboard/circle.svg",
+                alt: "circle-image"
+              }
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "font-weight-normal mb-3" }, [
+              _vm._v("Weekly Sales "),
+              _c("i", {
+                staticClass: "mdi mdi-chart-line mdi-24px float-right"
+              })
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "mb-5" }, [_vm._v("$ 15,0000")]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "card-text" }, [_vm._v("Increased by 60%")])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4 stretch-card grid-margin" }, [
+      _c(
+        "div",
+        { staticClass: "card bg-gradient-info card-img-holder text-white" },
+        [
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", {
+              staticClass: "card-img-absolute",
+              attrs: {
+                src: "assets/images/dashboard/circle.svg",
+                alt: "circle-image"
+              }
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "font-weight-normal mb-3" }, [
+              _vm._v("Weekly Orders "),
+              _c("i", {
+                staticClass: "mdi mdi-bookmark-outline mdi-24px float-right"
+              })
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "mb-5" }, [_vm._v("45,6334")]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "card-text" }, [_vm._v("Decreased by 10%")])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4 stretch-card grid-margin" }, [
+      _c(
+        "div",
+        { staticClass: "card bg-gradient-success card-img-holder text-white" },
+        [
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", {
+              staticClass: "card-img-absolute",
+              attrs: {
+                src: "assets/images/dashboard/circle.svg",
+                alt: "circle-image"
+              }
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "font-weight-normal mb-3" }, [
+              _vm._v("Visitors Online "),
+              _c("i", { staticClass: "mdi mdi-diamond mdi-24px float-right" })
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "mb-5" }, [_vm._v("95,5741")]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "card-text" }, [_vm._v("Increased by 5%")])
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
