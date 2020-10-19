@@ -4,7 +4,7 @@
             <div class="col-12">
                 <span class="d-flex align-items-center purchase-popup">
                     <form v-on:submit.prevent>
-                        <input type="text" v-model="keywords" placeholder="Search for customers..." />
+                        <input type="text" v-model="keywords" v-on:keyup="cari" placeholder="Cari jurnal" />
                     </form>
                     <a
                     href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template?utm_source=organic&utm_medium=banner&utm_campaign=free-preview"
@@ -15,7 +15,7 @@
                 </span>
             </div>
             <div class="col-12">
-                <table class="table table-responsive">
+                    <table class="table table-responsive">
                     <thead>
                         <!-- <div class="col-8 offset-2">
                             <h6 class="text-danger text-center">Maaf data jurnal tahun  tidak ditemukan, <a href="<?= base_url('Sikangmas'); ?>">Batal</a></h6>
@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(jurnal, index) in jurnals" :key="jurnal.index">
+                        <tr v-for="(jurnal, index) in jurnals.data" :key="index">  
                             <td>{{ index+1 }}</td>
                             <td>{{ jurnal.created_at }}</td>
                             <td>{{ jurnal.aktivitas }}</td>
@@ -59,7 +59,6 @@
                         <span slot="next-nav">Next &gt;</span>
                     </pagination>
                 </div>
-               
             </div>
         </div>
     </div>
@@ -70,37 +69,31 @@
         data: function() {
             return {
                 jurnals: {},
-                keywords: null
+                keywords: ''
             }
         },
         mounted() {
             this.getResult();
         },
-        watch: {
-            keywords(after, before) {
-                this.coba();
-            }
-        },
         methods: {
-            getResult(page) {
-            if (typeof page === 'undefined') {
-                page = 1;
-            }
-            axios.get('api/jurnals?page=' + page)
-                .then(response => {
-                    return response.data;
-                }).then(data => {
-                    this.jurnals = data.data;
-                });
+            cari(){
+                if (this.keywords === '') {
+                    this.getResult();
+                }else{
+                    this.cari1();
+                }
             },
-            coba(){
+            getResult(page) {
+                if (typeof page === 'undefined') {
+                    page = 1;
+                }
+                axios.get('api/jurnals?page=' + page)
+                .then(res => (this.jurnals = res.data))
+
+            },
+            cari1(page){
                 axios.get('api/jurnals/cari/' + this.keywords)
-                // .then(response => (console.log(response.data)))
-                .then(response => {
-                    return response.data;
-                }).then(data => {
-                    this.jurnals = data.data;
-                });
+                .then(res => (this.jurnals = res, console.log(res)))
             }
         }
     }

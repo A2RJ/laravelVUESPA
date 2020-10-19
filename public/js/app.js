@@ -2317,23 +2317,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       jurnals: {},
-      keywords: null
+      keywords: ''
     };
   },
   mounted: function mounted() {
     this.getResult();
   },
-  watch: {
-    keywords: function keywords(after, before) {
-      this.coba();
-    }
-  },
   methods: {
+    cari: function cari() {
+      if (this.keywords === '') {
+        this.getResult();
+      } else {
+        this.cari1();
+      }
+    },
     getResult: function getResult(page) {
       var _this = this;
 
@@ -2341,20 +2342,15 @@ __webpack_require__.r(__webpack_exports__);
         page = 1;
       }
 
-      axios.get('api/jurnals?page=' + page).then(function (response) {
-        return response.data;
-      }).then(function (data) {
-        _this.jurnals = data.data;
+      axios.get('api/jurnals?page=' + page).then(function (res) {
+        return _this.jurnals = res.data;
       });
     },
-    coba: function coba() {
+    cari1: function cari1(page) {
       var _this2 = this;
 
-      axios.get('api/jurnals/cari/' + this.keywords) // .then(response => (console.log(response.data)))
-      .then(function (response) {
-        return response.data;
-      }).then(function (data) {
-        _this2.jurnals = data.data;
+      axios.get('api/jurnals/cari/' + this.keywords).then(function (res) {
+        return _this2.jurnals = res, console.log(res);
       });
     }
   }
@@ -40305,12 +40301,10 @@ var render = function() {
                       expression: "keywords"
                     }
                   ],
-                  attrs: {
-                    type: "text",
-                    placeholder: "Search for customers..."
-                  },
+                  attrs: { type: "text", placeholder: "Cari jurnal" },
                   domProps: { value: _vm.keywords },
                   on: {
+                    keyup: _vm.cari,
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -40344,8 +40338,8 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
-            _vm._l(_vm.jurnals, function(jurnal, index) {
-              return _c("tr", { key: jurnal.index }, [
+            _vm._l(_vm.jurnals.data, function(jurnal, index) {
+              return _c("tr", { key: index }, [
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
