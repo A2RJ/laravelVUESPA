@@ -59,6 +59,6 @@ class Jurnal extends Model
             ->where('jurnal.created_at', 'LIKE','%'.$id.'%')
             ->orWhere('aktivitas.aktivitas', 'LIKE','%'.$id.'%')
             ->orWhere('jurnal.keterangan', 'LIKE','%'.$id.'%')
-            ->get();
+            ->paginate(3);
     }
 }

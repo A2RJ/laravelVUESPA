@@ -34,10 +34,10 @@ Route::group(['prefix'=>'jurnals'], function () {
                 'as' => 'jurnals.getwaktu',
                 'uses' => 'JurnalController@getWaktu'
                 ]);
-        Route::get('cari/{id}', [
-        'as' => 'jurnals.cari',
-        'uses' => 'JurnalController@cari'
-        ]);
+                Route::get('cari/{data}', [
+                'as' => 'jurnals.cari',
+                'uses' => 'JurnalController@cari'
+                ]);
         
 });
 

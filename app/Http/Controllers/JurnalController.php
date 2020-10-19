@@ -185,9 +185,10 @@ class JurnalController extends Controller
         return response()->json(JangkaWaktu::where('id_jangka_waktu', $id)->get(), 200);
     }
 
-    public function cari($id)
+    public function cari($data)
 	{
         $model = new Jurnal;
-        return response()->json($model->cari($id));
+        $data = $model->cari($data);
+        return response()->json($data);
 	}
 }

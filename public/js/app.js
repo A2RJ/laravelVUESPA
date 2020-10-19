@@ -2317,11 +2317,95 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       jurnals: {},
-      keywords: ''
+      keywords: ""
     };
   },
   mounted: function mounted() {
@@ -2329,7 +2413,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     cari: function cari() {
-      if (this.keywords === '') {
+      if (this.keywords === "") {
         this.getResult();
       } else {
         this.cari1();
@@ -2338,19 +2422,23 @@ __webpack_require__.r(__webpack_exports__);
     getResult: function getResult(page) {
       var _this = this;
 
-      if (typeof page === 'undefined') {
+      if (typeof page === "undefined") {
         page = 1;
       }
 
-      axios.get('api/jurnals?page=' + page).then(function (res) {
+      axios.get("api/jurnals?page=" + page).then(function (res) {
         return _this.jurnals = res.data;
       });
     },
     cari1: function cari1(page) {
       var _this2 = this;
 
-      axios.get('api/jurnals/cari/' + this.keywords).then(function (res) {
-        return _this2.jurnals = res, console.log(res);
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      axios.get("api/jurnals/cari/" + this.keywords + "?page=" + page).then(function (res) {
+        return _this2.jurnals = res.data;
       });
     }
   }
@@ -40326,102 +40414,270 @@ var render = function() {
                   target: "_blank"
                 }
               },
-              [_vm._v("Upgrade To Pro")]
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "sidebar-link",
+                    attrs: { to: "/input", "aria-expanded": "false" }
+                  },
+                  [
+                    _c("i", { staticClass: "mdi mdi-home menu-icon" }),
+                    _c("span", { staticClass: "menu-title" }, [
+                      _vm._v("Input Jurnal")
+                    ])
+                  ]
+                )
+              ],
+              1
             )
           ]
         )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
-        _c("table", { staticClass: "table table-responsive" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.jurnals.data, function(jurnal, index) {
-              return _c("tr", { key: index }, [
-                _c("td", [_vm._v(_vm._s(index + 1))]),
+        !_vm.keywords
+          ? _c("div", {}, [
+              _c("table", { staticClass: "table table-responsive" }, [
+                _vm._m(0),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(jurnal.aktivitas))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(jurnal.no_akun))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(jurnal.keterangan))]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm._v(_vm._s(jurnal.debet) + ": " + _vm._s(jurnal.jum_debet))
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm._v(
-                    _vm._s(jurnal.kredit) + ": " + _vm._s(jurnal.jum_kredit)
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", [
+                _c(
+                  "tbody",
+                  _vm._l(_vm.jurnals.data, function(jurnal, index) {
+                    return _c("tr", { key: index }, [
+                      _c("td", [_vm._v(_vm._s(index + 1))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.aktivitas))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.no_akun))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.keterangan))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(jurnal.debet) + ": " + _vm._s(jurnal.jum_debet)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(jurnal.kredit) +
+                            ": " +
+                            _vm._s(jurnal.jum_kredit)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-sm btn-outline-warning btn-rounded",
+                            on: {
+                              click: function($event) {
+                                return _vm.edit(_vm.user)
+                              }
+                            }
+                          },
+                          [_vm._v("\n                  Edit\n                ")]
+                        ),
+                        _vm._v("\n                ||\n                "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                            on: {
+                              click: function($event) {
+                                return _vm.del(_vm.user)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                  Delete\n                "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "d-flex justify-content-center mt-2" },
+                [
                   _c(
-                    "button",
+                    "pagination",
                     {
-                      staticClass: "btn btn-sm btn-outline-warning btn-rounded",
-                      on: {
-                        click: function($event) {
-                          return _vm.edit(_vm.user)
-                        }
-                      }
+                      attrs: { data: _vm.jurnals },
+                      on: { "pagination-change-page": _vm.getResult }
                     },
-                    [_vm._v("Edit")]
-                  ),
-                  _vm._v(" ||  "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "mt-1 btn btn-outline-danger btn-sm btn-rounded",
-                      on: {
-                        click: function($event) {
-                          return _vm.del(_vm.user)
-                        }
-                      }
-                    },
-                    [_vm._v("Delete")]
+                    [
+                      _c(
+                        "span",
+                        { attrs: { slot: "prev-nav" }, slot: "prev-nav" },
+                        [_vm._v("< Previous")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { attrs: { slot: "next-nav" }, slot: "next-nav" },
+                        [_vm._v("Next >")]
+                      )
+                    ]
                   )
-                ])
-              ])
-            }),
-            0
-          )
-        ]),
+                ],
+                1
+              )
+            ])
+          : _vm._e(),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "d-flex justify-content-center mt-2" },
-          [
-            _c(
-              "pagination",
-              {
-                attrs: { data: _vm.jurnals },
-                on: { "pagination-change-page": _vm.getResult }
-              },
-              [
-                _c("span", { attrs: { slot: "prev-nav" }, slot: "prev-nav" }, [
-                  _vm._v("< Previous")
-                ]),
+        _vm.keywords
+          ? _c("div", [
+              _c("table", { staticClass: "table table-responsive" }, [
+                _vm._m(1),
                 _vm._v(" "),
-                _c("span", { attrs: { slot: "next-nav" }, slot: "next-nav" }, [
-                  _vm._v("Next >")
-                ])
-              ]
-            )
-          ],
-          1
-        )
+                _c(
+                  "tbody",
+                  _vm._l(_vm.jurnals.data, function(jurnal, index) {
+                    return _c("tr", { key: index }, [
+                      _c("td", [_vm._v(_vm._s(index + 1))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.aktivitas))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.no_akun))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(jurnal.keterangan))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(jurnal.debet) + ": " + _vm._s(jurnal.jum_debet)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(jurnal.kredit) +
+                            ": " +
+                            _vm._s(jurnal.jum_kredit)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-sm btn-outline-warning btn-rounded",
+                            on: {
+                              click: function($event) {
+                                return _vm.edit(_vm.user)
+                              }
+                            }
+                          },
+                          [_vm._v("\n                  Edit\n                ")]
+                        ),
+                        _vm._v("\n                ||\n                "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                            on: {
+                              click: function($event) {
+                                return _vm.del(_vm.user)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                  Delete\n                "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "d-flex justify-content-center mt-2" },
+                [
+                  _c(
+                    "pagination",
+                    {
+                      attrs: { data: _vm.jurnals },
+                      on: { "pagination-change-page": _vm.cari1 }
+                    },
+                    [
+                      _c(
+                        "span",
+                        { attrs: { slot: "prev-nav" }, slot: "prev-nav" },
+                        [_vm._v("< Previous")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { attrs: { slot: "next-nav" }, slot: "next-nav" },
+                        [_vm._v("Next >")]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          : _vm._e()
       ])
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "text-center" }, [
+        _c("th", { attrs: { colspan: "8" } }, [
+          _c("div", { staticClass: "text-title" }, [
+            _c("h5", [_vm._v("Jurnal Tahun")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
+          _vm._v("Tgl")
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No. Akun")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Keterangan")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Debet")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Kredit")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Opsi")])
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
