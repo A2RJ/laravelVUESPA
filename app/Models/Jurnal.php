@@ -47,7 +47,9 @@ class Jurnal extends Model
         ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
         ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
         ->select('jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
-        ->get();
+        ->paginate(15);
     }
+
+    
 
 }

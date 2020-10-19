@@ -1,6 +1,19 @@
 <template>
     <div class="container">
-        <div class="row my-5"> 
+        <div class="row">
+            <div class="col-12">
+                <span class="d-flex align-items-center purchase-popup">
+                    <form v-on:submit.prevent>
+                        <input type="text" v-model="keywords" placeholder="Search for customers..." />
+                    </form>
+                    <a
+                    href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template?utm_source=organic&utm_medium=banner&utm_campaign=free-preview"
+                    target="_blank"
+                    class="btn download-button purchase-button ml-auto"
+                    >Upgrade To Pro</a
+                    >
+                </span>
+            </div>
             <div class="col-12">
                 <table class="table table-responsive">
                     <thead>
@@ -26,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(jurnal, index) in jurnals" :key="index">
+                        <tr v-for="(jurnal, index) in jurnals" :key="jurnal.index">
                             <td>{{ index+1 }}</td>
                             <td>{{ jurnal.created_at }}</td>
                             <td>{{ jurnal.aktivitas }}</td>
@@ -40,6 +53,13 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center mt-2">
+                    <pagination :data="jurnals" @pagination-change-page="getResult">
+                        <span slot="prev-nav">&lt; Previous</span>
+                        <span slot="next-nav">Next &gt;</span>
+                    </pagination>
+                </div>
+               
             </div>
         </div>
     </div>
@@ -49,24 +69,38 @@
     export default {
         data: function() {
             return {
-                jurnals: []
+                jurnals: {},
+                keywords: null
             }
         },
-        created() {
-            this.axios
-                .get('/api/jurnals')
-                .then(response => {
-                    this.jurnals = response.data;
-                }
-            );
+        mounted() {
+            this.getResult();
+        },
+        watch: {
+            keywords(after, before) {
+                this.coba();
+            }
         },
         methods: {
-            del(user){
-                axios.delete('http://localhost:3000/users/' + user.id).then(res =>{
-                    this.load()
-                    let index = this.users.indexOf(form.name)
-                    this.users.splice(index,1)
-                })
+            getResult(page) {
+            if (typeof page === 'undefined') {
+                page = 1;
+            }
+            axios.get('api/jurnals?page=' + page)
+                .then(response => {
+                    return response.data;
+                }).then(data => {
+                    this.jurnals = data.data;
+                });
+            },
+            coba(){
+                axios.get('api/jurnals/cari/' + this.keywords)
+                // .then(response => (console.log(response.data)))
+                .then(response => {
+                    return response.data;
+                }).then(data => {
+                    this.jurnals = data.data;
+                });
             }
         }
     }

@@ -29,7 +29,15 @@ class JurnalController extends Controller
     {
         $model = new Jurnal;
         return response()->json($model->joinTable());
-    }    /**
+        
+        // if ($id == null) {
+        //     return response()->json($model->joinTable());
+        // }else{
+        //     return response()->json($model->cari($id));
+        // }
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  Request  $request
@@ -182,4 +190,20 @@ class JurnalController extends Controller
     {
         return response()->json(JangkaWaktu::where('id_jangka_waktu', $id)->get(), 200);
     }
+
+    public function cari($id)
+	{
+        if (empty($id)) {
+            $this.index();
+        }else{
+            return DB::table('jurnal')
+            ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
+            ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
+            ->select('jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
+            ->where('jurnal.created_at', $id)
+            ->orWhere('aktivitas.aktivitas', $id)
+            ->orWhere('jurnal.keterangan', $id)
+            ->paginate(15);
+        }
+	}
 }

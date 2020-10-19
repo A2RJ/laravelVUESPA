@@ -5,9 +5,12 @@ import App from './layouts/App.vue';
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-import { Plugin } from 'vue-fragment';
-import { Fragment } from "vue-fragment";
+import { Plugin, Fragment } from 'vue-fragment';
 import Vue2Filters from 'vue2-filters';
+Vue.component('pagination', require('laravel-vue-pagination'));
+// import DataTable from 'laravel-vue-datatable';
+// Vue.use(DataTable);
+Vue.component('fragment', require('vue-fragment'));
 import VueLoadImage from 'vue-load-image'
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 // import 'bootstrap/dist/css/bootstrap.css';
@@ -20,6 +23,7 @@ import VueLoadImage from 'vue-load-image'
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Plugin)
+Vue.use(Fragment)
 Vue.use(Vue2Filters)
 
 import AllJurnals from './views/AllJurnals.vue';
@@ -33,13 +37,17 @@ import PAK from './views/PerubahanAsetKelolaan.vue';
 const routes = [
     {
         name: 'Home',
-        path: '/',
-        component: Input
+        path: '/'
     },
     {
         name: 'Jurnal',
         path: '/jurnal',
         component: AllJurnals
+    },
+    {
+        name: 'Input',
+        path: '/input',
+        component: Input
     },
     {
         name: 'LPK',

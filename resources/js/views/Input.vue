@@ -86,7 +86,6 @@
                     <button type="submit" class="btn btn-md btn-outline-primary btn-rounded float-right">Submit</button>
                 </form>
             </div>
-            <M />
         </div>
     </div>
 </template>
