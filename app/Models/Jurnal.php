@@ -46,7 +46,7 @@ class Jurnal extends Model
         return DB::table('jurnal')
             ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
             ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
-            ->select('jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
+            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
             ->paginate(3);
     }
 
@@ -55,7 +55,7 @@ class Jurnal extends Model
         return DB::table('jurnal')
             ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
             ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
-            ->select('jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
+            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
             ->where('jurnal.created_at', 'LIKE','%'.$id.'%')
             ->orWhere('aktivitas.aktivitas', 'LIKE','%'.$id.'%')
             ->orWhere('jurnal.keterangan', 'LIKE','%'.$id.'%')

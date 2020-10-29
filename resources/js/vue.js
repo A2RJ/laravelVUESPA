@@ -7,18 +7,10 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { Plugin, Fragment } from 'vue-fragment';
 import Vue2Filters from 'vue2-filters';
-Vue.component('pagination', require('laravel-vue-pagination'));
-// import DataTable from 'laravel-vue-datatable';
-// Vue.use(DataTable);
-Vue.component('fragment', require('vue-fragment'));
 import VueLoadImage from 'vue-load-image'
-// import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-// Vue.use(BootstrapVue);
-// Optionally install the BootstrapVue icon components plugin
-// Vue.use(IconsPlugin);
+Vue.component('pagination', require('laravel-vue-pagination'));
+Vue.component('fragment', require('vue-fragment'));
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -77,7 +69,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    routes // short for `routes: routes`
+    routes
 })
 
 const app = new Vue({

@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Aktivitas;
 use App\Models\Akun;
@@ -148,31 +147,15 @@ class JurnalController extends Controller
     public function destroy(Request $request, Jurnal $jurnal)
     {
         if ($jurnal->delete()) {
-                session()->flash('app_message', 'Jurnal successfully deleted');
-            } else {
-                session()->flash('app_error', 'Error occurred while deleting Jurnal');
-            }
-
-        return redirect()->back();
+            return response()->json(['data' => 'Jurnal successfully deleted']);
+        } else {
+            return response()->json(['data' => 'Error occurred while deleting Jurnal']);
+        }
     }
 
     public function getAktivitas()
     {
-        // return response([
-        //     'success' => true,
-        //     'message' => 'List Aktivitas',
-        //     'data' => Aktivitas::all()
-        // ], 200);
-        if (Aktivitas::all()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'List data',
-                'data' => Aktivitas::all()
-            ], 200);
-        } else {
-            // return response::make::('Not Found', 400);
-        }
-        // return response()->json(Aktivitas::all());
+        return response()->json(Aktivitas::all());
     }
 
     public function getAkun($id)
@@ -190,5 +173,11 @@ class JurnalController extends Controller
         $model = new Jurnal;
         $data = $model->cari($data);
         return response()->json($data);
-	}
+    }
+    
+    public function hapus($id)
+    {
+        $model = new Jurnal();
+        return response()->json(['data' => $model::find($id)]);
+    }
 }
