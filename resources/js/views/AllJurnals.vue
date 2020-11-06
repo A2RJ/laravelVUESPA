@@ -195,7 +195,7 @@ export default {
         page = 1;
       }
       axios
-        .get("api/jurnals/cari/" + this.keywords + "?page=" + page)
+        .get("api/cari/" + this.keywords + "?page=" + page)
         .then((res) => (this.jurnals = res.data));
     },
     hapus(jurnal) {

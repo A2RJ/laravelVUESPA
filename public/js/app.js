@@ -2459,7 +2459,7 @@ __webpack_require__.r(__webpack_exports__);
         page = 1;
       }
 
-      axios.get("api/jurnals/cari/" + this.keywords + "?page=" + page).then(function (res) {
+      axios.get("api/cari/" + this.keywords + "?page=" + page).then(function (res) {
         return _this2.jurnals = res.data;
       });
     },
@@ -59709,8 +59709,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/a2rj/Programming/Web/LARAVEL/laravelVUESPA/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/a2rj/Programming/Web/LARAVEL/laravelVUESPA/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/a2rj/Programming/Web/LARAVEL/sikangmasL8VJs/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/a2rj/Programming/Web/LARAVEL/sikangmasL8VJs/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

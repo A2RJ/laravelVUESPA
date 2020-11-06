@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\Jurnal;
-use App\Models\Aktiva;
+use App\Models\Akun;
 
 class LaporanController extends Controller
 {
@@ -98,12 +98,14 @@ class LaporanController extends Controller
     **/
     public function LPK()
     {
-        return response()->json([
-            'zakat'=> $this->total('zakat'),
-            'infak'=> $this->total('infak'),
-            'amil'=> $this->total('amil'),
-            'nonhalal'=> $this->total('nonhalal')
-        ], Response::HTTP_OK);
+        $jurnal = new Jurnal();
+        return $jurnal->joinTable();
+        // return response()->json([
+        //     'zakat'=> $this->total('zakat'),
+        //     'infak'=> $this->total('infak'),
+        //     'amil'=> $this->total('amil'),
+        //     'nonhalal'=> $this->total('nonhalal')
+        // ], Response::HTTP_OK);
     }
 
     /** 

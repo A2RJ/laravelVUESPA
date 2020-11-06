@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+
 /**
     @property varchar $aktivitas aktivitas
     @property varchar $jangka_waktu jangka waktu
@@ -15,50 +17,56 @@ use Illuminate\Support\Facades\DB;
     @property timestamp $deleted_at deleted at
    
  */
-class Jurnal extends Model 
+class Jurnal extends Model
 {
-    
+
     /**
-    * Database table name
-    */
+     * Database table name
+     */
     protected $table = 'jurnal';
 
     /**
-    * Mass assignable columns
-    */
+     * Mass assignable columns
+     */
     protected $guarded = [];
-    protected $fillable=[
+    protected $fillable = [
         'id_aktivitas',
         'jangka_waktu',
         'no_akun',
         'keterangan',
         'jum_debet',
         'jum_kredit'
-        ];
+    ];
 
     /**
-    * Date time columns.
-    */
-    protected $dates=[];
+     * Date time columns.
+     */
+    protected $dates = [];
 
     public function joinTable()
     {
         return DB::table('jurnal')
-            ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
-            ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
-            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
+            ->Join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
+            ->Join('akun', [
+                ['jurnal.id_aktivitas', '=', 'akun.id_akun'],
+                ['jurnal.no_akun', '=', 'akun.no_akun']
+            ])
+            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
             ->paginate(3);
     }
 
     public function cari($id)
     {
         return DB::table('jurnal')
-            ->join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
-            ->join('akun', 'jurnal.no_akun', '=', 'akun.id')
-            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit',)
-            ->where('jurnal.created_at', 'LIKE','%'.$id.'%')
-            ->orWhere('aktivitas.aktivitas', 'LIKE','%'.$id.'%')
-            ->orWhere('jurnal.keterangan', 'LIKE','%'.$id.'%')
+            ->Join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
+            ->Join('akun', [
+                ['jurnal.id_aktivitas', '=', 'akun.id_akun'],
+                ['jurnal.no_akun', '=', 'akun.no_akun']
+            ])
+            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
+            ->where('jurnal.created_at', 'LIKE', '%' . $id . '%')
+            ->orWhere('aktivitas.aktivitas', 'LIKE', '%' . $id . '%')
+            ->orWhere('jurnal.keterangan', 'LIKE', '%' . $id . '%')
             ->paginate(3);
     }
 }

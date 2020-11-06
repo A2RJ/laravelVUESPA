@@ -67,42 +67,32 @@ class JurnalController extends Controller
         $model->fill($request->all());
 
         if ($model->save()) {
-            $keterangan = Akun::select('keterangan')->where('id_akun', $request->input("id_aktivitas"))->where('id', $request->input("no_akun"))->get();
+            $keterangan = Akun::where('id_akun', $request->input("id_aktivitas"))->where('id', $request->input("no_akun"))->first();
             
-            if ($keterangan[0]['keterangan'] == '?') {
+            // Ketika pembelian aset maka akan ada penyusutan, ex 9, 10 dan 11.
+            // Untuk id_akun 3 memang ada penyusutan untuk beberapa akun krn aset tidak lancar
+            if ($keterangan)
+            if (($keterangan['id_akun'] == '9') || 
+            ($keterangan['id_akun'] == '10') || 
+            ($keterangan['id_akun'] == '11') || 
+            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.4) ||
+            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.5) ||
+            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.6) ||
+            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.7)) {
                 // create beban penyusutan perlatan dan bangunan
                 DB::table('jurnal')->insert([
-                    [
                         'id_aktivitas' => $request->input('id_aktivitas'),
                         'jangka_waktu' => $request->input('jangka_waktu'),
                         'no_akun' => $request->input('no_akun'),
                         'keterangan' => $request->input('keterangan'),
                         'jum_debet' => $request->input('jum_debet'),
                         'jum_kredit' => $request->input('jum_kredit')
-                    ],
-                    [
-                        'id_aktivitas' => $request->input('id_aktivitas'),
-                        'jangka_waktu' => $request->input('jangka_waktu'),
-                        'no_akun' => $request->input('no_akun'),
-                        'keterangan' => $request->input('keterangan'),
-                        'jum_debet' => $request->input('jum_debet'),
-                        'jum_kredit' => $request->input('jum_kredit')
-                    ]
                 ]);
             }
             return response()->json(['success' => true], 200);
         } else {
             return response()->json(['success' => false], 400);
         }
-
-
-        
-        // if ($model->save()) {
-        //         return redirect('jurnal')->with('status', 'Jurnal saved successfully');
-        //     } else {
-        //         session()->flash('app_message', 'Something is wrong while saving Jurnal');
-        //     }
-        // return redirect()->back();
     } /**
      * Show the form for editing the specified resource.
      *
