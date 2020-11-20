@@ -101,7 +101,7 @@
               v-model="form.no_akun"
             >
               <option value="0">Pilih Akun</option>
-              <option v-for="akun in listAkun" :key="akun.id" :value="akun.id">
+              <option v-for="akun in listAkun" :key="akun.id" :value="akun.no_akun">
                 {{ akun.no_akun }} {{ akun.akun }}
               </option>
             </select>

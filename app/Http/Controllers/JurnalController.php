@@ -9,13 +9,6 @@ use App\Models\Akun;
 use App\Models\JangkaWaktu;
 use App\Models\Jurnal;
 
-
-/**
- * Description of JurnalController
- *
- * @author Tuhin Bepari <digitaldreams40@gmail.com>
- */
-
 class JurnalController extends Controller
 {
        /**
@@ -29,33 +22,7 @@ class JurnalController extends Controller
         $model = new Jurnal;
         return response()->json($model->joinTable());
     }
-
     /**
-     * Display the specified resource.
-     *
-     * @param  Request  $request
-     * @param  Jurnal  $jurnal
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request, Jurnal $jurnal)
-    {
-        return view('pages.jurnal.show', [
-                'record' =>$jurnal,
-        ]);
-
-    }    /**
-     * Show the form for creating a new resource.
-     *
-     * @param  Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-        return view('pages.jurnal.create', [
-            'model' => new Jurnal,
-
-        ]);
-    }    /**
      * Store a newly created resource in storage.
      *
      * @param  Request  $request
@@ -68,79 +35,28 @@ class JurnalController extends Controller
 
         if ($model->save()) {
             $keterangan = Akun::where('id_akun', $request->input("id_aktivitas"))->where('id', $request->input("no_akun"))->first();
-            
-            // Ketika pembelian aset maka akan ada penyusutan, ex 9, 10 dan 11.
-            // Untuk id_akun 3 memang ada penyusutan untuk beberapa akun krn aset tidak lancar
-            if ($keterangan)
-            if (($keterangan['id_akun'] == '9') || 
-            ($keterangan['id_akun'] == '10') || 
-            ($keterangan['id_akun'] == '11') || 
-            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.4) ||
-            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.5) ||
-            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.6) ||
-            ($keterangan['id_akun'] == '3' && $keterangan['no_akun'] == 1.7)) {
-                // create beban penyusutan perlatan dan bangunan
-                DB::table('jurnal')->insert([
-                        'id_aktivitas' => $request->input('id_aktivitas'),
-                        'jangka_waktu' => $request->input('jangka_waktu'),
-                        'no_akun' => $request->input('no_akun'),
-                        'keterangan' => $request->input('keterangan'),
-                        'jum_debet' => $request->input('jum_debet'),
-                        'jum_kredit' => $request->input('jum_kredit')
-                ]);
+
+            if ($keterangan) {
+                if (
+                    ($keterangan['id_akun'] == 3 and $keterangan['no_akun'] == 2.1) or
+                    ($keterangan['id_akun'] == 9 and $keterangan['no_akun'] == 2.1) or
+                    ($keterangan['id_akun'] == 10 and $keterangan['no_akun'] == 2.1) or
+                    ($keterangan['id_akun'] == 11 and $keterangan['no_akun'] == 2.1)
+                 ){
+                    $model->APenyPeralatan($request);
+                }elseif (
+                    ($keterangan['id_akun'] == 3 and $keterangan['no_akun'] == 2.3) or
+                    ($keterangan['id_akun'] == 9 and $keterangan['no_akun'] == 2.3) or
+                    ($keterangan['id_akun'] == 10 and $keterangan['no_akun'] == 2.3) or
+                    ($keterangan['id_akun'] == 11 and $keterangan['no_akun'] == 2.3)
+                 ) {
+                     $model->APenyGnB($request);
+                 }
             }
-            return response()->json(['success' => true], 200);
         } else {
-            return response()->json(['success' => false], 400);
+            return response()->json(['message' => false]);
         }
-    } /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  Request  $request
-     * @param  Jurnal  $jurnal
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Request $request, Jurnal $jurnal)
-    {
-
-        return view('pages.jurnal.edit', [
-            'model' => $jurnal,
-
-            ]);
-    }    /**
-     * Update a existing resource in storage.
-     *
-     * @param  Request  $request
-     * @param  Jurnal  $jurnal
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request,Jurnal $jurnal)
-    {
-        $jurnal->fill($request->all());
-
-        if ($jurnal->save()) {
-            
-            session()->flash('app_message', 'Jurnal successfully updated');
-            return redirect()->route('jurnal.index');
-            } else {
-                session()->flash('app_error', 'Something is wrong while updating Jurnal');
-            }
-        return redirect()->back();
-    }    /**
-     * Delete a  resource from  storage.
-     *
-     * @param  Request  $request
-     * @param  Jurnal  $jurnal
-     * @return \Illuminate\Http\Response
-     * @throws \Exception
-     */
-    public function destroy(Request $request, Jurnal $jurnal)
-    {
-        if ($jurnal->delete()) {
-            return response()->json(['data' => 'Jurnal successfully deleted']);
-        } else {
-            return response()->json(['data' => 'Error occurred while deleting Jurnal']);
-        }
+        return response()->json(['message' => true]);
     }
 
     public function getAktivitas()
@@ -170,4 +86,5 @@ class JurnalController extends Controller
         $model = new Jurnal();
         return response()->json(['data' => $model::find($id)]);
     }
+    
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 19 Nov 2020 pada 07.41
+-- Waktu pembuatan: 20 Nov 2020 pada 19.16
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -75,58 +75,57 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`id`, `id_akun`, `no_akun`, `akun`, `debet`, `kredit`, `keterangan`) VALUES
-(1, 1, '1.4', 'Muzakki entitas', 'kas', 'muzakki entitas', 'kas'),
-(2, 1, '1.4', 'Muzakki individual', 'kas', 'muzakki individual', 'kas'),
-(3, 1, '1.4', 'Hasil penempatan', 'kas', 'Hasil penempatan', 'kas'),
-(4, 2, '1.4', 'Fakir - Miskin', 'Fakir - Miskin', 'kas', 'kredit'),
-(6, 2, '1.4', 'Gharim', 'Gharim', 'kas', 'kredit'),
-(7, 2, '1.4', 'Muallaf', 'Muallaf', 'kas', 'kredit'),
-(8, 2, '1.4', 'Sabilillah', 'Sabilillah', 'kas', 'kredit'),
-(9, 2, '1.4', 'Ibnu sabil', 'Ibnu sabil', 'kas', 'kredit'),
-(10, 3, '1.4', 'Muqayyadah', 'Kas', 'Muqayyadah', 'kas'),
-(11, 3, '1.4', 'Mutlaqah', 'Kas', 'Mutlaqah', 'kas'),
-(12, 3, '1.4', 'Hasil pengelolaan', 'Kas', 'Hasil pengelolaan', 'kas'),
-(13, 4, '1.4', 'Muqayyadah', 'Muqayyadah', 'kas', 'kredit'),
-(14, 4, '1.4', 'Mutlaqah', 'Mutlaqah', 'kas', 'kredit'),
-(16, 5, '1.4', 'Bagian amil dari dana zakat', 'kas', 'Bagian amil dari dana zakat', 'kas'),
-(17, 5, '1.4', 'Bagian amil dari dana infak sedekah', 'kas', 'Bagian amil dari dana infak sedekah', 'kas'),
-(18, 5, '1.4', 'Penerimaan lainnya', 'kas', 'Penerimaan lainnya', 'kas'),
-(21, 7, '1.4', 'Bunga bank', 'Kas', 'Bunga bank', 'Kas'),
-(22, 7, '1.4', 'Jasa giro', 'Kas', 'Jasa giro', 'Kas'),
-(23, 7, '1.4', 'Penerimaan dana nonhalal lainnya', 'Kas', 'Penerimaan dana nonhalal lainnya', 'Kas'),
-(24, 8, '1.4', 'Penggunaan dana nonhalal', 'Penggunaan dana nonhalal', 'Kas', 'Kas'),
-(25, 8, '1.4', 'Beban administrasi bank', 'Beban administrasi bank', 'Kas', 'Kredit'),
-(26, 17, '1.8', 'Setor', 'Setor', 'Kas', 'Kredit'),
-(27, 17, '1.8', 'Tarik', 'Kas', 'Tarik', 'Kas'),
-(28, 9, '1.4', 'Peralatan', 'Tes', 'Tes', 'Kredit'),
-(29, 9, '-', 'Perlengkapan', '-', '-', 'Kredit'),
-(30, 9, '-', 'Gedung dan Bangunan', '-', '-', 'Kredit'),
-(31, 9, '-', 'Tanah', '-', '-', 'Kredit'),
-(32, 10, '1.4', 'Peralatan', 'Coba', 'Coba', 'Kredit'),
-(33, 10, '-', 'Perlengkapan', '-', '-', 'Kredit'),
-(34, 10, '-', 'Gedung dan Bangunan', '-', '-', 'Kredit'),
-(35, 10, '-', 'Tanah', '-', '-', 'Kredit'),
-(36, 11, '-', 'Peralatan', '-', '-', 'Kredit'),
-(37, 11, '-', 'Perlengkapan', '-', '-', 'Kredit'),
-(38, 11, '-', 'Gedung dan Bangunan', '-', '-', 'Kredit'),
-(39, 11, '-', 'Tanah', '-', '-', 'Kredit'),
-(40, 12, '-', 'Peralatan', '-', '-', 'Kas'),
-(41, 12, '-', 'Perlengkapan', '-', '-', 'Kas'),
-(42, 12, '-', 'Gedung dan Bangunan', '-', '-', 'Kas'),
-(43, 12, '-', 'Tanah', '-', '-', 'Kas'),
-(44, 13, '-', 'Gaji', '-', '-', 'Kredit'),
-(45, 13, '-', 'Listrik', '-', '-', 'Kredit'),
-(46, 13, '-', 'Air', '-', '-', 'Kredit'),
-(47, 13, '-', 'Internet', '-', '-', 'Kredit'),
-(48, 13, '-', 'Pemeliharaan', '-', '-', 'Kredit'),
-(49, 13, '-', 'Administrasi dan Umum', '-', '-', 'Kredit'),
-(50, 13, '-', 'Pajak', '-', '-', 'Kredit'),
-(51, 13, '-', 'PHBI', '-', '-', 'Kredit'),
-(52, 13, '-', 'Transportasi', '-', '-', 'Kredit'),
-(53, 3, '1.4', 'Peralatan', 'Kas', 'Peralatan', 'kas'),
-(54, 3, '1.5', 'Perlengkapan', 'Kas', 'Perlengkapan', 'kas'),
-(55, 3, '1.6', 'Gedung dan Bangunan', 'Kas', 'Gedung dan Bangunan', 'kas'),
-(56, 3, '1.7', 'Tanah', 'Kas', 'Tanah', 'kas');
+(1, 1, '4.8', 'Muzakki entitas', 'kas', 'muzakki entitas', 'kas'),
+(2, 1, '4.9', 'Muzakki individual', 'kas', 'muzakki individual', 'kas'),
+(3, 1, '4.10', 'Hasil penempatan', 'kas', 'Hasil penempatan', 'kas'),
+(4, 2, '5.13', 'Fakir - Miskin', 'Fakir - Miskin', 'kas', 'kredit'),
+(6, 2, '5.14', 'Gharim', 'Gharim', 'kas', 'kredit'),
+(7, 2, '5.15', 'Muallaf', 'Muallaf', 'kas', 'kredit'),
+(8, 2, '5.16', 'Sabilillah', 'Sabilillah', 'kas', 'kredit'),
+(9, 2, '5.17', 'Ibnu sabil', 'Ibnu sabil', 'kas', 'kredit'),
+(10, 3, '4.11', 'Muqayyadah', 'Kas', 'Muqayyadah', 'kas'),
+(11, 3, '4.12', 'Mutlaqah', 'Kas', 'Mutlaqah', 'kas'),
+(12, 3, '4.13', 'Hasil pengelolaan', 'Kas', 'Hasil pengelolaan', 'kas'),
+(13, 4, '5.18', 'Muqayyadah', 'Muqayyadah', 'kas', 'kredit'),
+(14, 4, '5.19', 'Mutlaqah', 'Mutlaqah', 'kas', 'kredit'),
+(16, 5, '4.1', 'Sumbangan', 'kas', 'Sumbangan', 'kas'),
+(17, 5, '4.2', 'Bagian amil dari dana zakat', 'kas', 'Bagian amil dari dana zakat', 'kas'),
+(18, 5, '4.3', 'Bagian amil dari dana infak sedekah', 'kas', 'Bagian amil dari dana infak sedekah', 'kas'),
+(21, 7, '4.5', 'Bunga bank', 'Kas', 'Bunga bank', 'Kas'),
+(22, 7, '4.6', 'Jasa giro', 'Kas', 'Jasa giro', 'Kas'),
+(23, 7, '4.7', 'Penerimaan dana nonhalal lainnya', 'Kas', 'Penerimaan dana nonhalal lainnya', 'Kas'),
+(24, 8, '5.11', 'Penggunaan dana nonhalal', 'Penggunaan dana nonhalal', 'Kas', 'Kas'),
+(25, 8, '5.12', 'Beban administrasi bank', 'Beban administrasi bank', 'Kas', 'Kredit'),
+(26, 17, '1.2', 'Setor', 'Setor', 'Kas', 'Kredit'),
+(27, 17, '1.2', 'Tarik', 'Kas', 'Tarik', 'Kas'),
+(28, 9, '1.4', 'Perlengkapan', 'Perlengkapan', 'Kas', 'Kredit'),
+(29, 9, '2.1', 'Peralatan', 'Peralatan', 'Kas', 'Kredit'),
+(30, 9, '2.3', 'Gedung dan Bangunan', 'Gedung dan Bangunan', 'Kas', 'Kredit'),
+(31, 9, '2.5', 'Tanah', 'Tanah', 'Kas', 'Kredit'),
+(32, 10, '1.4', 'Perlengkapan', 'Perlengkapan', 'Kas', 'Kredit'),
+(33, 10, '2.1', 'Peralatan', 'Peralatan', 'Kas', 'Kredit'),
+(34, 10, '2.3', 'Gedung dan Bangunan', 'Gedung dan Bangunan', 'Kas', 'Kredit'),
+(35, 10, '2.5', 'Tanah', 'Tanah', 'Kas', 'Kredit'),
+(36, 11, '1.4', 'Perlengkapan', 'Perlengkapan', 'Kas', 'Kredit'),
+(37, 11, '2.1', 'Peralatan', 'Peralatan', 'Kas', 'Kredit'),
+(38, 11, '2.3', 'Gedung dan Bangunan', 'Gedung dan Bangunan', 'Kas', 'Kredit'),
+(39, 11, '2.5', 'Tanah', 'Tanah', 'Kas', 'Kredit'),
+(40, 12, '1.4', 'Perlengkapan', 'Kas', 'Perlengkapan', 'Kas'),
+(41, 12, '2.1', 'Peralatan', 'Kas', 'Peralatan', 'Kas'),
+(42, 12, '2.3', 'Gedung dan Bangunan', 'Kas', 'Gedung dan Bangunan', 'Kas'),
+(43, 12, '2.5', 'Tanah', 'Kas', 'Tanah', 'Kas'),
+(44, 13, '5.1', 'Gaji', 'Gaji', 'Kas', 'Kredit'),
+(45, 13, '5.2', 'Listrik', 'Listrik', 'Kas', 'Kredit'),
+(46, 13, '5.3', 'Air', 'Air', 'Kas', 'Kredit'),
+(47, 13, '5.4', 'Internet', 'Internet', 'Kas', 'Kredit'),
+(48, 13, '5.5', 'Pemeliharaan', 'Pemeliharaan', 'Kas', 'Kredit'),
+(49, 13, '5.6', 'Administrasi dan Umum', 'Administrasi dan Umum', 'Kas', 'Kredit'),
+(50, 13, '5.7', 'Pajak', 'Pajak', 'Kas', 'Kredit'),
+(51, 13, '5.8', 'PHBI', 'PHBI', 'Kas', 'Kredit'),
+(52, 13, '5.9', 'Transportasi', 'Transportasi', 'Kas', 'Kredit'),
+(53, 3, '2.1', 'Peralatan', 'Kas', 'Peralatan', 'kas'),
+(55, 3, '2.3', 'Gedung dan Bangunan', 'Kas', 'Gedung dan Bangunan', 'kas'),
+(56, 3, '2.5', 'Tanah', 'Kas', 'Tanah', 'kas');
 
 -- --------------------------------------------------------
 
@@ -165,7 +164,9 @@ CREATE TABLE `jurnal` (
 
 INSERT INTO `jurnal` (`id`, `id_aktivitas`, `jangka_waktu`, `no_akun`, `keterangan`, `jum_debet`, `jum_kredit`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (52, '9', NULL, '1.4', 'wew', '33', '33', '2020-10-31 12:50:18', '2020-10-31 12:50:18', NULL),
-(57, '10', NULL, '1.4', 'wew', '33', '33', '2020-10-31 12:50:18', '2020-10-31 12:50:18', NULL);
+(57, '10', NULL, '1.4', 'wew', '33', '33', '2020-10-31 12:50:18', '2020-10-31 12:50:18', NULL),
+(58, '9', NULL, '1.4', 'sdsdsds', '200000', '200000', '2020-11-20 10:39:21', '2020-11-20 10:39:21', NULL),
+(59, '9', NULL, '1.4', 'asdas', '23', '23', '2020-11-20 10:43:22', '2020-11-20 10:43:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -251,7 +252,7 @@ ALTER TABLE `jangka_waktu`
 -- AUTO_INCREMENT untuk tabel `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`

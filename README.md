@@ -27,9 +27,11 @@ neraca (25 November)<br>
 
 [+] Styling ulang UI/UX. ex: notif dll<br>
 
+Note:
+- Jumlah yg masih harus dibayar = sisa cicilan yg harus dibayar
 
 [=] Penomoran akun mulai dari aset paling cepat diuangkan
-[Aset]
+[Aset / Kas]
 [+] Kas
 [+] Bank
 [+] Piutang
