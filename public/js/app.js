@@ -2891,6 +2891,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -2938,7 +2946,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.axios.post("/api/jurnals/", this.form).then(function (res) {
         _this3.form.id_aktivitas = "", _this3.form.jangka_waktu = "", _this3.form.no_akun = "", _this3.form.keterangan = "", _this3.form.jum_debet = "", _this3.form.jum_kredit = "";
-        console.log(res); // window.location.href = "/";
+        routers.push("/");
       })["catch"](function (err) {
         console.log(err);
       });
@@ -41298,7 +41306,9 @@ var render = function() {
       _c("div", {}, [
         _vm.message
           ? _c("div", {}, [
-              _vm._v("\n        " + _vm._s(_vm.message) + "\n      ")
+              _vm._v(
+                "\n                " + _vm._s(_vm.message) + "\n            "
+              )
             ])
           : _vm._e(),
         _vm._v(" "),
@@ -41368,9 +41378,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n                            " +
                             _vm._s(aktivitas.aktivitas) +
-                            "\n            "
+                            "\n                        "
                         )
                       ]
                     )
@@ -41430,9 +41440,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n                            " +
                             _vm._s(waktu.jangka_waktu) +
-                            "\n            "
+                            "\n                        "
                         )
                       ]
                     )
@@ -41489,11 +41499,11 @@ var render = function() {
                       { key: akun.id, domProps: { value: akun.no_akun } },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n                            " +
                             _vm._s(akun.no_akun) +
                             " " +
                             _vm._s(akun.akun) +
-                            "\n            "
+                            "\n                        "
                         )
                       ]
                     )
@@ -41606,7 +41616,7 @@ var render = function() {
                   "btn btn-md btn-outline-primary btn-rounded float-right",
                 attrs: { type: "submit" }
               },
-              [_vm._v("\n          Submit\n        ")]
+              [_vm._v("\n                    Submit\n                ")]
             )
           ]
         )
@@ -41634,7 +41644,9 @@ var staticRenderFns = [
             }),
             _vm._v(" "),
             _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-              _vm._v("\n          Weekly Sales "),
+              _vm._v(
+                "\n                    Weekly Sales\n                    "
+              ),
               _c("i", {
                 staticClass: "mdi mdi-chart-line mdi-24px float-right"
               })
@@ -41667,7 +41679,9 @@ var staticRenderFns = [
             }),
             _vm._v(" "),
             _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-              _vm._v("\n          Weekly Orders\n          "),
+              _vm._v(
+                "\n                    Weekly Orders\n                    "
+              ),
               _c("i", {
                 staticClass: "mdi mdi-bookmark-outline mdi-24px float-right"
               })
@@ -41700,7 +41714,9 @@ var staticRenderFns = [
             }),
             _vm._v(" "),
             _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-              _vm._v("\n          Visitors Online "),
+              _vm._v(
+                "\n                    Visitors Online\n                    "
+              ),
               _c("i", { staticClass: "mdi mdi-diamond mdi-24px float-right" })
             ]),
             _vm._v(" "),

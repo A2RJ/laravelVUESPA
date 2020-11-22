@@ -52,7 +52,7 @@ class Jurnal extends Model
                 ['jurnal.no_akun', '=', 'akun.no_akun']
             ])
             ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
-            ->paginate(3);
+            ->paginate(10);
     }
 
     public function cari($id)
@@ -67,6 +67,6 @@ class Jurnal extends Model
             ->where('jurnal.created_at', 'LIKE', '%' . $id . '%')
             ->orWhere('aktivitas.aktivitas', 'LIKE', '%' . $id . '%')
             ->orWhere('jurnal.keterangan', 'LIKE', '%' . $id . '%')
-            ->paginate(3);
+            ->paginate(10);
     }
 }
