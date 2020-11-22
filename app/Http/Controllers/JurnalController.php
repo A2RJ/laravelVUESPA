@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +12,7 @@ use App\Models\Jurnal;
 
 class JurnalController extends Controller
 {
-       /**
+    /**
      * Display a listing of the resource.
      *
      * @param  Request  $request
@@ -30,33 +31,48 @@ class JurnalController extends Controller
      */
     public function store(Request $request)
     {
-        $model=new Jurnal;
+        $model = new Jurnal;
         $model->fill($request->all());
 
         if ($model->save()) {
-            $keterangan = Akun::where('id_akun', $request->input("id_aktivitas"))->where('id', $request->input("no_akun"))->first();
-
-            if ($keterangan) {
-                if (
-                    ($keterangan['id_akun'] == 3 and $keterangan['no_akun'] == 2.1) or
-                    ($keterangan['id_akun'] == 9 and $keterangan['no_akun'] == 2.1) or
-                    ($keterangan['id_akun'] == 10 and $keterangan['no_akun'] == 2.1) or
-                    ($keterangan['id_akun'] == 11 and $keterangan['no_akun'] == 2.1)
-                 ){
-                    $model->APenyPeralatan($request);
-                }elseif (
-                    ($keterangan['id_akun'] == 3 and $keterangan['no_akun'] == 2.3) or
-                    ($keterangan['id_akun'] == 9 and $keterangan['no_akun'] == 2.3) or
-                    ($keterangan['id_akun'] == 10 and $keterangan['no_akun'] == 2.3) or
-                    ($keterangan['id_akun'] == 11 and $keterangan['no_akun'] == 2.3)
-                 ) {
-                     $model->APenyGnB($request);
-                 }
+            if (
+                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "3" or
+                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "3" or
+                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "9" or
+                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "10" or
+                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "11"
+            ) {
+                $jumlah = $request->input("jum_debet") / 5;
+                Jurnal::create([
+                    'id_aktivitas' => $request->input("id_aktivitas"),
+                    'jangka_waktu' => $request->input("jangka_waktu"),
+                    'no_akun' => 2.2,
+                    'keterangan' => $request->input("keterangan"),
+                    'jum_debet' => $jumlah,
+                    'jum_kredit' => $jumlah
+                ]);
+                return response()->json(['message' => "Berhasil perlatan"]);
+            } elseif (
+                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "3" or
+                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "3" or
+                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "9" or
+                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "10" or
+                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "11"
+            ) {
+                $jumlah = $request->input("jum_debet") / 30;
+                Jurnal::create([
+                    'id_aktivitas' => $request->input("id_aktivitas"),
+                    'jangka_waktu' => $request->input("jangka_waktu"),
+                    'no_akun' => 2.4,
+                    'keterangan' => $request->input("keterangan"),
+                    'jum_debet' => $jumlah,
+                    'jum_kredit' => $jumlah
+                ]);
+                return response()->json(['message' => "Berhasil GnB"]);
             }
         } else {
             return response()->json(['message' => false]);
         }
-        return response()->json(['message' => true]);
     }
 
     public function getAktivitas()
@@ -66,7 +82,7 @@ class JurnalController extends Controller
 
     public function getAkun($id)
     {
-        return response()->json(Akun::where('id_akun', $id)->get(), 200);
+        return response()->json(Akun::where('id_akun', $id)->where('no_akun', '!=', '2.2')->where('no_akun', '!=', '2.4')->get(), 200);
     }
 
     public function getWaktu($id)
@@ -75,16 +91,14 @@ class JurnalController extends Controller
     }
 
     public function cari($data)
-	{
+    {
         $model = new Jurnal;
         $data = $model->cari($data);
         return response()->json($data);
     }
-    
+
     public function hapus($id)
     {
-        $model = new Jurnal();
-        return response()->json(['data' => $model::find($id)]);
+        return response()->json(['data' => Jurnal::find($id)]);
     }
-    
 }

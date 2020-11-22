@@ -11,13 +11,14 @@
 
 [x] Fitur pencarian <br>
 
-[+] Cari jurnal langkah2 menyusun pelaporan PSAK (19 November) <br>
+[x] Cari jurnal langkah2 menyusun pelaporan PSAK (19 November) <br>
 
-[+] Perbaiki masalah penomoran akun sesuai aktivitas (hanya akun yg memiliki nomor akun) (19 November) - Langkah awal adalah mana aset yg paling mudah dicairkan<br>
+[x] Perbaiki masalah penomoran akun sesuai aktivitas (hanya akun yg memiliki nomor akun) (19 November) - Langkah awal adalah mana aset yg paling mudah dicairkan<br>
 
-[+] Implementasi beban penyusutan (Hanya aktivitas pembelian aset saja yg mempunyai beban penyusutan) (20 November)<br>
+[x] Implementasi beban penyusutan (Hanya aktivitas pembelian aset saja yg mempunyai beban penyusutan) (20 November)<br>
 
 [+] Panggil nilai sesuai akun untuk setiap halaman. <br>
+Ambil nilai untuk masing akun dicontroller setelah halaman request masing2 nilai sesuai halaman <br>
 ex:<br>
 aktivitas (21 November)<br>
 arus kas (22 November)<br>
@@ -28,7 +29,7 @@ neraca (25 November)<br>
 [+] Styling ulang UI/UX. ex: notif dll<br>
 
 Note:
-- Jumlah yg masih harus dibayar = sisa cicilan yg harus dibayar
+- Jumlah yg masih harus dibayar = sisa cicilan yg harus  <br>
 
 [=] Penomoran akun mulai dari aset paling cepat diuangkan
 [Aset / Kas]

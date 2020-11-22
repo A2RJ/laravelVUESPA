@@ -2938,7 +2938,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.axios.post("/api/jurnals/", this.form).then(function (res) {
         _this3.form.id_aktivitas = "", _this3.form.jangka_waktu = "", _this3.form.no_akun = "", _this3.form.keterangan = "", _this3.form.jum_debet = "", _this3.form.jum_kredit = "";
-        window.location.href = "/";
+        console.log(res); // window.location.href = "/";
       })["catch"](function (err) {
         console.log(err);
       });

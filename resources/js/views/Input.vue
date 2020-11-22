@@ -212,8 +212,8 @@ export default {
             (this.form.keterangan = ""),
             (this.form.jum_debet = ""),
             (this.form.jum_kredit = "");
-
-          window.location.href = "/";
+            console.log(res)
+          // window.location.href = "/";
         })
         .catch((err) => {
           console.log(err);
