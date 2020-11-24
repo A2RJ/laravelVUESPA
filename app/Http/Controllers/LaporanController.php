@@ -2,163 +2,107 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use App\Models\Jurnal;
-use App\Models\Akun;
 
 class LaporanController extends Controller
 {
     /**  
-        @dari routes masuk ditangkap oleh functions index dan diteruskan ke function sesuai params
-    **/
+     * Dari routes masuk ditangkap oleh functions index 
+     * dan diteruskan ke function sesuai params
+     **/
     public function index($any)
     {
         return $this->$any();
     }
 
-    /**
-     * FUNGSI UNTUK KELOLA JURNAL
-     * 
-     * Dapat digunakan untuk mengambil 1 nilai langsung **/
-    public function get($id, $jenis)
+    /** 
+     * Dapat digunakan untuk mengambil 1 nilai langsung berdasarkan 
+     * aktivitas, aktivitas + akun, aktivitas + akun + jenis
+     * tidak bisa jika hanya akun, aktivitas + jenis
+     **/
+    public function get($id, $no = false, $jenis = false)
     {
-        return Jurnal::where('no_akun', $id)->sum('jum_' . $jenis);
-    }
-    
-    /* Get nilai total */
-    public function total($id)
-    {
-        if($id == 'zakat'){
-
-            $a = $this->get(1, 'debet') + 
-            $this->get(2, 'debet') + 
-            $this->get(3, 'debet');
-            $b = $this->get(4, 'debet') +
-            $this->get(5, 'debet') + 
-            $this->get(6, 'debet') + 
-            $this->get(7, 'debet') + 
-            $this->get(8, 'debet') + 
-            $this->get(9, 'debet');
-
-            return response()->json([
-                'total' => $a - $b,
-                'kas' => $a,
-                'kredit' => $b
-            ]);
-        }elseif ($id == 'infak') {
-
-            $a = $this->get(10, 'debet') + 
-            $this->get(11, 'debet') + 
-            $this->get(12, 'debet');
-            $b = $this->get(13, 'debet') +
-            $this->get(14, 'debet') + 
-            $this->get('penyisihan', 'debet');
-
-            return response()->json([
-                'total' => $a - $b,
-                'kas' => $a,
-                'kredit' => $b
-            ]);
-        }elseif ($id == 'amil') {
-
-            $a = $this->get(16, 'debet') + 
-            $this->get(17, 'debet') + 
-            $this->get(18, 'debet');
-            $b = $this->get(19, 'debet') +
-            $this->get('penyusutan', 'debet');
-            $this->get('20', 'debet');
-
-            return response()->json([
-                'total' => $a - $b,
-                'kas' => $a,
-                'kredit' => $b
-            ]);
-        }elseif ($id == 'nonhalal') {
-
-            $a = $this->get(21, 'debet') + 
-            $this->get(22, 'debet') + 
-            $this->get(23, 'debet');
-            $b = $this->get(24, 'debet');
-
-            return response()->json([
-                'total' => $a - $b,
-                'kas' => $a,
-                'kredit' => $b
-            ]);
+        if ($no) {
+            if ($jenis) {
+                return Jurnal::where('id_aktivitas', $id)->where('no_akun', $no)->sum('jum_' . $jenis);
+            } else {
+                return Jurnal::where('id_aktivitas', $id)->where('no_akun', $no)->sum('jum_debet');
+            }
+        } else {
+            return Jurnal::where('id_aktivitas', $id)->sum('jum_debet');
         }
     }
 
     /** 
      * FUNGSI UNTUK LAPORAN
      * 
-        @Untuk Halaman Laporan Posisi Keuangan
-    **/
+     * Untuk Halaman Laporan Posisi Keuangan
+     **/
     public function LPK()
     {
-        $jurnal = new Jurnal();
-        return $jurnal->joinTable();
-        // return response()->json([
-        //     'zakat'=> $this->total('zakat'),
-        //     'infak'=> $this->total('infak'),
-        //     'amil'=> $this->total('amil'),
-        //     'nonhalal'=> $this->total('nonhalal')
-        // ], Response::HTTP_OK);
+        return response()->json([
+            'success' => "success",
+        ]);
     }
 
     /** 
-        @Untuk Halaman Aktivitas 
-    **/
+     * Untuk Halaman Aktivitas 
+     **/
     public function aktivitas()
     {
         return response()->json([
-                'sumbangan' => Jurnal::where('no_akun', 1)->sum('jum_debet')
-        ], Response::HTTP_OK);
+            'success' => "success",
+        ]);
     }
-    
+
     /** 
-        @Untuk Halaman Arus Kas
-    **/
+     * Untuk Halaman Arus Kas
+     **/
     public function arusKas()
     {
         return response()->json([
-            'success'=> "success",
+            'success' => "success",
         ]);
     }
     /** 
-        @Untuk Halaman Laporan Perubahan Dana
-    **/
+     * Untuk Halaman Laporan Perubahan Dana
+     **/
     public function LPD()
     {
         return response()->json([
-            'entitas' => $this->get(1, 'debet'),
-            'individual' => $this->get(2, 'debet'),
-            'penempatan' => $this->get(3, 'debet'),
-            'fakir' => $this->get(4, 'debet'),
-            'riqab' => $this->get(5, 'debet'),
-            'gharim' => $this->get(6, 'debet'),
-            'muallaf' => $this->get(7, 'debet'),
-            'sabilillah' => $this->get(8, 'debet'),
-            'ibnuSabil' => $this->get(9, 'debet'),
-            'muqayyadahKas' => $this->get(10, 'debet'),
-            'mutlaqahKas' => $this->get(11, 'debet'),
-            'pengelolaan' => $this->get(12, 'debet'),
-            'muqayyadahKredit' => $this->get(13, 'debet'),
-            'mutlaqahKredit' => $this->get(14, 'debet'),
-            'alokasi' => $this->get(15, 'debet'),
-            'amilzakat' => $this->get(16, 'debet'),
-            'amilinfak' => $this->get(17, 'debet'),
-            'penerimaan' => $this->get(18, 'debet'),
-            'bebanPegawai' => $this->get(19, 'debet'),
-            'bebanUmum' => $this->get(20, 'debet'),
-            'bungaBank' => $this->get(21, 'debet'),
-            'giro' => $this->get(22, 'debet'),
-            'nonalalLainnya' => $this->get(23, 'debet'),
-            'penggunaanNonhalal' => $this->get(24,'debet')
-        ], Response::HTTP_OK);
+            'entitas' => $this->get(1, 4.8),
+            'individual' => $this->get(1, 4.9),
+            'penempatan' => $this->get(1, 4.10),
+            'fakir' => $this->get(2, 5.13),
+            'gharim' => $this->get(2, 5.14),
+            'muallaf' => $this->get(2, 5.15),
+            'sabilillah' => $this->get(2, 5.16),
+            'ibnuSabil' => $this->get(2, 5.17),
+            'muqayyadahKas' => $this->get(3, 4.11),
+            'mutlaqahKas' => $this->get(3, 4.12),
+            'pengelolaan' => $this->get(3, 3.13),
+            'peralatan3' => $this->get(3, 2.1),
+            'gnb3' => $this->get(3, 2.3),
+            'tanah3' => $this->get(3, 2.5),
+            'muqayyadahKredit' => $this->get(4, 5.18),
+            'mutlaqahKredit' => $this->get(4, 5.19),
+            'peralatan4' => $this->get(4, 2.1),
+            'gnb4' => $this->get(4, 2.3),
+            'tanah4' => $this->get(4, 2.5),
+            'APperalatan' => $this->get(3, 2.2),
+            'APgnb' => $this->get(3, 2.4),
+            'sumbangan' => $this->get(5, 4.1),
+            'amilzakat' => $this->get(5, 4.2),
+            'amilinfak' => $this->get(5, 4.3),
+            'penerimaanlainnya' => $this->get(12) + $this->get(15) + $this->get(17, 1.2),
+            'bebanAmil' => $this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17, 1.2),
+            'bungaBank' => $this->get(7, 4.5),
+            'giro' => $this->get(7, 4.6),
+            'nonHalalLainKas' => $this->get(7, 4.7),
+            'administrasiBank' => $this->get(8, 5.11),
+            'nonHalalLainKredit' => $this->get(8, 5.12)
+        ]);
     }
-
-
 }

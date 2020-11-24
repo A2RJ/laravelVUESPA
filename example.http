@@ -1,1 +1,1 @@
-GET http://127.0.0.1:8000/api/abcd HTTP/1.1
+GET http://127.0.0.1:8000/api/laporan/lpd HTTP/1.1
