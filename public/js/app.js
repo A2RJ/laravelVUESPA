@@ -2419,6 +2419,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3536,6 +3537,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3546,7 +3572,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("api/laporan/lpd").then(function (response) {
-      return _this.data = response.data;
+      return _this.data = response.data.data;
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -39736,6 +39762,21 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="fun
 
 /***/ }),
 
+/***/ "./node_modules/vue-currency-filter/dist/vue-currency-filter.module.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/vue-currency-filter/dist/vue-currency-filter.module.js ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var r=Array.prototype.map,t=Array.isArray,n=Object.prototype.toString;function e(r){return!!(""===r||r&&r.charCodeAt&&r.substr)}function o(r){return t?t(r):"[object Array]"===n.call(r)}function a(r){return r&&"[object Object]"===n.call(r)}function i(r,t){var n;for(n in r=r||{},t=t||{})t.hasOwnProperty(n)&&null==r[n]&&(r[n]=t[n]);return r}function s(t,n,e){if(!t)return[];if(r&&t.map===r)return t.map(n,e);var o,a=[],i=0;for(i=0,o=t.length;i<o;i++)a[i]=n.call(e,t[i],i,t);return a}var c={settings:{currency:{symbol:"$",format:"%s%v",decimal:".",thousand:",",precision:2,grouping:3},number:{precision:0,grouping:3,thousand:",",decimal:"."}}};function u(r,t){return void 0===t&&(t=0),r=Math.round(Math.abs(r)),isNaN(r)?t:r}var l=function r(t,n){if(o(t))return s(t,function(t){return r(t,n)});if("number"==typeof(t=t||0))return t;n=n||c.settings.number.decimal;var e=new RegExp("[^0-9-"+n+"]",["g"]),a=parseFloat((""+t).replace(/\((?=\d+)(.*)\)/,"-$1").replace(e,"").replace(n,"."));return isNaN(a)?0:a},p=function(r,t){t=u(t,c.settings.number.precision);var n=Number(l(r)+"e"+t),e=Math.round(n);return Number(e+"e-"+t).toFixed(t)},f={name:"currency",symbol:"",thousandsSeparator:".",fractionCount:0,fractionSeparator:",",symbolPosition:"front",symbolSpacing:!0,avoidEmptyDecimals:void 0},m={install:function(r,t){var n=function(t){null==t&&(t={});var n=i(t,f),m=n.name,y=function(r,t){if(null==r)return{};var n,e,o={},a=Object.keys(r);for(e=0;e<a.length;e++)t.indexOf(n=a[e])>=0||(o[n]=r[n]);return o}(n,["name"]),d=function(r,t,n,f,m,d,v,b){var g=i({symbol:t,thousandsSeparator:n,fractionCount:f,fractionSeparator:m,symbolPosition:d,symbolSpacing:v,avoidEmptyDecimals:b},y);"object"==typeof t&&(g=i(t,y));var h=0,S="-"===String(r).charAt(0);S&&(r=String(r).slice(1));var A,C=parseFloat(r);return isNaN(C)||(h=C),A="front"===g.symbolPosition?g.symbolSpacing?"%s %v":"%s%v":g.symbolSpacing?"%v %s":"%v%s",g.fractionCount>0&&(r=p(r,g.fractionCount)),h=function r(t,n,f,m,y,d,v){if(o(t))return s(t,function(t){return r(t,n,f,m,y,d,v)});t=l(t);var b=i(a(n)?n:{symbol:n,precision:f,thousand:m,decimal:y,format:d,avoidEmptyDecimals:v},c.settings.currency),g=function(r){var t=c.settings.currency.format;return"function"==typeof r&&(r=r()),e(r)&&r.match("%v")?{pos:r,neg:r.replace("-","").replace("%v","-%v"),zero:r}:r&&r.pos&&r.pos.match("%v")?r:e(t)?c.settings.currency.format={pos:t,neg:t.replace("%v","-%v"),zero:t}:t}(b.format);return(t>0?g.pos:t<0?g.neg:g.zero).replace("%s",b.symbol).replace("%v",function r(t,n,e,f,m){if(o(t))return s(t,function(t){return r(t,n,e,f,m)});t=l(t);var y=i(a(n)?n:{precision:n,thousand:e,decimal:f},c.settings.number),d=u(y.precision),v=t<0?"-":"",b=parseInt(p(Math.abs(t||0),d),10)+"",g=b.length>3?b.length%3:0,h="";return d&&(h=y.decimal+p(Math.abs(t),d).split(".")[1],void 0!==m&&parseInt(p(Math.abs(t||0),1),10)==t&&(h=""===m?"":y.decimal+m)),v+(g?b.substr(0,g)+y.thousand:"")+b.substr(g).replace(/(\d{3})(?=\d)/g,"$1"+y.thousand)+h}(Math.abs(t),u(b.precision),b.thousand,b.decimal,b.avoidEmptyDecimals))}(r,{format:A,symbol:g.symbol,precision:g.fractionCount,thousand:g.thousandsSeparator,decimal:g.fractionSeparator,avoidEmptyDecimals:g.avoidEmptyDecimals}),S&&(h="-"+h),h};r.filter(m,d),r.prototype["$"+m]={setConfig:function(r){y=i(r,f)},getConfig:function(){return y},format:d}};Array.isArray(t)?t.forEach(function(r){return n(r)}):n(t)}};/* harmony default export */ __webpack_exports__["default"] = (m);
+//# sourceMappingURL=vue-currency-filter.module.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-fragment/dist/vue-fragment.esm.js":
 /*!************************************************************!*\
   !*** ./node_modules/vue-fragment/dist/vue-fragment.esm.js ***!
@@ -39750,22 +39791,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Plugin", function() { return Plugin; });
 function _defineProperty(e,n,t){return n in e?Object.defineProperty(e,n,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[n]=t,e}function _objectSpread(e){for(var n=1;n<arguments.length;n++){var t=null!=arguments[n]?arguments[n]:{},r=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),r.forEach(function(n){_defineProperty(e,n,t[n])})}return e}var freeze=function(e,n,t){Object.defineProperty(e,n,{configurable:!0,get:function(){return t},set:function(e){console.warn("tried to set frozen property ".concat(n," with ").concat(e))}})},unfreeze=function(e,n){var t=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null;Object.defineProperty(e,n,{configurable:!0,writable:!0,value:t})},component={abstract:!0,name:"Fragment",props:{name:{type:String,default:function(){return Math.floor(Date.now()*Math.random()).toString(16)}}},mounted:function(){var e=this.$el,n=e.parentNode,t=document.createComment("fragment#".concat(this.name,"#head")),r=document.createComment("fragment#".concat(this.name,"#tail"));n.insertBefore(t,e),n.insertBefore(r,e),e.appendChild=function(t){n.insertBefore(t,r),freeze(t,"parentNode",e)},e.insertBefore=function(t,r){n.insertBefore(t,r),freeze(t,"parentNode",e)},e.removeChild=function(e){n.removeChild(e),unfreeze(e,"parentNode")},Array.from(e.childNodes).forEach(function(n){return e.appendChild(n)}),n.removeChild(e),freeze(e,"parentNode",n),freeze(e,"nextSibling",r.nextSibling);var o=n.insertBefore;n.insertBefore=function(r,i){o.call(n,r,i!==e?i:t)};var i=n.removeChild;n.removeChild=function(a){if(a===e){for(;t.nextSibling!==r;)e.removeChild(t.nextSibling);n.removeChild(t),n.removeChild(r),unfreeze(e,"parentNode"),n.insertBefore=o,n.removeChild=i}else i.call(n,a)}},render:function(e){var n=this,t=this.$slots.default;return t&&t.length&&t.forEach(function(e){return e.data=_objectSpread({},e.data,{attrs:_objectSpread({fragment:n.name},(e.data||{}).attrs)})}),e("div",{attrs:{fragment:this.name}},t)}};function ssr(e,n){ true&&console.warn("v-fragment SSR is not implemented yet.")}var Fragment=component,SSR=ssr,Plugin={install:function(e){e.component("fragment",component)}},index={Fragment:component,Plugin:Plugin,SSR:ssr};/* harmony default export */ __webpack_exports__["default"] = (index);
 
-
-/***/ }),
-
-/***/ "./node_modules/vue-load-image/dist/vue-load-image.js":
-/*!************************************************************!*\
-  !*** ./node_modules/vue-load-image/dist/vue-load-image.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * vue-load-image v0.1.11
- * (c) 2020 Sangwon Lee <lsw0150305@gmail.com>
- * Released under the MIT License.
- */
-!function(t,e){if(true)module.exports=e();else { var n, r; }}(window,function(){return function(t){var e={};function r(n){if(e[n])return e[n].exports;var o=e[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}return r.m=t,r.c=e,r.d=function(t,e,n){r.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:n})},r.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},r.t=function(t,e){if(1&e&&(t=r(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)r.d(n,o,function(e){return t[e]}.bind(null,o));return n},r.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(e,"a",e),e},r.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r.p="",r(r.s=0)}([function(t,e,r){"use strict";r.r(e);var n="pending",o="loading",i="loaded",s="failed";var a=function(t,e,r,n,o,i,s,a){var u,d="function"==typeof t?t.options:t;if(e&&(d.render=e,d.staticRenderFns=r,d._compiled=!0),n&&(d.functional=!0),i&&(d._scopeId="data-v-"+i),s?(u=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),o&&o.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(s)},d._ssrRegister=u):o&&(u=a?function(){o.call(this,this.$root.$options.shadowRoot)}:o),u)if(d.functional){d._injectStyles=u;var l=d.render;d.render=function(t,e){return u.call(e),l(t,e)}}else{var c=d.beforeCreate;d.beforeCreate=c?[].concat(c,u):[u]}return{exports:t,options:d}}({data:function(){return{status:null,img:null,src:null}},created:function(){var t=this.$slots.image[0].data.attrs;if(this.src=t.src||t["data-src"],this.src)return this.status=o,void this.createLoader();this.status=n},updated:function(){var t=this.$slots.image[0].data.attrs,e=t.src||t["data-src"];this.status!==o||this.img?this.src!==e&&(this.src=e,this.createLoader()):this.createLoader()},watch:{src:function(t){this.status=t?o:n}},methods:{createLoader:function(){this.destroyLoader(),this.img=new Image,this.img.onload=this.handleLoad,this.img.onerror=this.handleError,this.img.src=this.src},destroyLoader:function(){this.img&&(this.img.onload=null,this.img.onerror=null,this.img=null)},handleLoad:function(){this.destroyLoader(),this.status=i,this.$emit("onLoad")},handleError:function(t){this.destroyLoader(),this.status=s,this.$emit("onError",t)}}},function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"vue-load-image"},["loaded"===this.status?this._t("image"):"failed"===this.status?this._t("error"):"loading"===this.status?this._t("preloader"):this._e()],2)},[],!1,null,null,null);a.options.__file="VueLoadImage.vue";var u=a.exports;e.default=u}])});
 
 /***/ }),
 
@@ -40525,7 +40550,8 @@ var render = function() {
                       _vm._v("Input Jurnal")
                     ])
                   ]
-                )
+                ),
+                _vm._v("\n          " + _vm._s(_vm._f("currency")(5000)))
               ],
               1
             )
@@ -40593,7 +40619,7 @@ var render = function() {
                               _vm._v(
                                 _vm._s(jurnal.debet) +
                                   ": " +
-                                  _vm._s(jurnal.jum_debet)
+                                  _vm._s(_vm._f("currency")(jurnal.jum_debet))
                               )
                             ]),
                             _vm._v(" "),
@@ -40601,7 +40627,7 @@ var render = function() {
                               _vm._v(
                                 _vm._s(jurnal.kredit) +
                                   ": " +
-                                  _vm._s(jurnal.jum_kredit)
+                                  _vm._s(_vm._f("currency")(jurnal.jum_kredit))
                               )
                             ]),
                             _vm._v(" "),
@@ -40703,7 +40729,7 @@ var render = function() {
                               _vm._v(
                                 _vm._s(jurnal.debet) +
                                   ": " +
-                                  _vm._s(jurnal.jum_debet)
+                                  _vm._s(_vm._f("currency")(jurnal.jum_debet))
                               )
                             ]),
                             _vm._v(" "),
@@ -40711,7 +40737,7 @@ var render = function() {
                               _vm._v(
                                 _vm._s(jurnal.kredit) +
                                   ": " +
-                                  _vm._s(jurnal.jum_kredit)
+                                  _vm._s(_vm._f("currency")(jurnal.jum_kredit))
                               )
                             ]),
                             _vm._v(" "),
@@ -42127,7 +42153,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("muzakki entitas")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.entitas))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.entitas)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42135,7 +42161,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Muzakki individual")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.individual))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.individual)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42143,7 +42169,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Hasil penempatan")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.penempatan))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.penempatan)))])
               ]),
               _vm._v(" "),
               _vm._m(4),
@@ -42153,7 +42179,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Bagian amil atas penerimaan dana zakat")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.bagianAmilzakat))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.amilzakat)))])
               ]),
               _vm._v(" "),
               _vm._m(5),
@@ -42167,15 +42193,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Fakir-Miskin")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.fakir))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td"),
-                _vm._v(" "),
-                _c("td", [_vm._v("Riqab")]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.riqab))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.fakir)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42183,7 +42201,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Gharim")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.gharim))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.gharim)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42191,7 +42209,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Muallaf")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.muallaf))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.muallaf)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42199,7 +42217,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Sabilillah")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.sabilillah))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.sabilillah)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42207,7 +42225,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Ibnu sabil")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.ibnusabil))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.ibnusabil)))])
               ]),
               _vm._v(" "),
               _vm._m(8),
@@ -42229,7 +42247,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Muqayyadah")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.muqayyadahKas))])
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.muqayyadahKas)))
+                ])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42237,7 +42257,31 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Mutlaqah")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.mutlaqahKas))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.mutlaqahKas)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [_vm._v("peralatan")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.peralatan3)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [_vm._v("Gedung dan Bangunan")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.gnb3)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [_vm._v("Tanah")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.tanah3)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42247,7 +42291,7 @@ var render = function() {
                   _vm._v("Bagian amil atas penerimaan dana infak/sedekah")
                 ]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.bagianAmilInfak))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.amilinfak)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42255,7 +42299,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Hasil pengelolaan")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.pengelolaan))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.pengelolaan)))])
               ]),
               _vm._v(" "),
               _vm._m(15),
@@ -42269,7 +42313,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Muqayyadah")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.muqayyadahKredit))])
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.muqayyadahKredit)))
+                ])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42277,15 +42323,55 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Mutlaqah")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.mutlaqahKredit))])
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.mutlaqahKredit)))
+                ])
               ]),
               _vm._v(" "),
               _c("tr", [
                 _c("td"),
                 _vm._v(" "),
-                _c("td", [_vm._v("Beban penyusutan dan penyisihan")]),
+                _c("td", [_vm._v("peralatan")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.alokasi))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.peralatan4)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v("Akumulasi penyusutan dan penyisihan Peralatan")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.APperalatan)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [_vm._v("Gedung dan Bangunan")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.gnb4)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    "Akumulasi penyusutan dan penyisihan Gedung dan Bangunan"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.APgnb)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [_vm._v("Tanah")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.tanah4)))])
               ]),
               _vm._v(" "),
               _vm._m(18),
@@ -42305,7 +42391,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Bagian amil dari dana zakat")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.amilzakat))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.amilzakat)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42313,7 +42399,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Bagian amil dari dana infak/sedekah")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.amilinfak))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.amilinfak)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42321,7 +42407,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Penerimaan lainnya")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.penerimaan))])
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.penerimaanlainnya)))
+                ])
               ]),
               _vm._v(" "),
               _vm._m(24),
@@ -42333,25 +42421,9 @@ var render = function() {
               _c("tr", [
                 _c("td"),
                 _vm._v(" "),
-                _c("td", [_vm._v("Beban pegawai")]),
+                _c("td", [_vm._v("Penggunaan dana amil")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.bebanPegawai))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td"),
-                _vm._v(" "),
-                _c("td", [_vm._v("Beban penyusutan")]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.bebanPenyusutan))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td"),
-                _vm._v(" "),
-                _c("td", [_vm._v("Beban umum dan administrasi")]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.bebanUmum))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.bebanAmil)))])
               ]),
               _vm._v(" "),
               _vm._m(27),
@@ -42373,7 +42445,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Bunga bank")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.bungaBank))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.bungaBank)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42381,7 +42453,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Jasa giro")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.giro))])
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.giro)))])
               ]),
               _vm._v(" "),
               _c("tr", [
@@ -42389,7 +42461,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("Penerimaan nonhalal lainnya")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.nonalalLainnya))])
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.nonHalalLainKas)))
+                ])
               ]),
               _vm._v(" "),
               _vm._m(34),
@@ -42401,9 +42475,21 @@ var render = function() {
               _c("tr", [
                 _c("td"),
                 _vm._v(" "),
+                _c("td", [_vm._v("Administrasi Bank")]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.administrasiBank)))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
                 _c("td", [_vm._v("Jumlah penggunaan dana nonhalal")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.data.penggunaanNonhalal))])
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.nonHalalLainKredit)))
+                ])
               ]),
               _vm._v(" "),
               _vm._m(37),
@@ -59631,8 +59717,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_fragment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-fragment */ "./node_modules/vue-fragment/dist/vue-fragment.esm.js");
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue2-filters */ "./node_modules/vue2-filters/dist/vue2-filters.js");
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue2_filters__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var vue_load_image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-load-image */ "./node_modules/vue-load-image/dist/vue-load-image.js");
-/* harmony import */ var vue_load_image__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_load_image__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-currency-filter */ "./node_modules/vue-currency-filter/dist/vue-currency-filter.module.js");
 /* harmony import */ var _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/AllJurnals.vue */ "./resources/js/views/AllJurnals.vue");
 /* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
 /* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
@@ -59647,6 +59732,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
+ // import VueLoadImage from 'vue-load-image'
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
@@ -59656,6 +59742,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODUL
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Plugin"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Fragment"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_6___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  name: 'currency',
+  symbol: 'Rp.',
+  thousandsSeparator: '.',
+  fractionCount: 0,
+  fractionSeparator: ',',
+  symbolPosition: 'front',
+  symbolSpacing: true
+});
 
 
 

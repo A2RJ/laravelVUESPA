@@ -7,7 +7,8 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import { Plugin, Fragment } from 'vue-fragment';
 import Vue2Filters from 'vue2-filters';
-import VueLoadImage from 'vue-load-image'
+// import VueLoadImage from 'vue-load-image'
+import VueCurrencyFilter from 'vue-currency-filter'
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.component('fragment', require('vue-fragment'));
@@ -17,6 +18,16 @@ Vue.use(VueAxios, axios);
 Vue.use(Plugin)
 Vue.use(Fragment)
 Vue.use(Vue2Filters)
+Vue.use(VueCurrencyFilter,
+    {
+        name: 'currency',
+        symbol: 'Rp.',
+        thousandsSeparator: '.',
+        fractionCount: 0,
+        fractionSeparator: ',',
+        symbolPosition: 'front',
+        symbolSpacing: true
+    })
 
 import AllJurnals from './views/AllJurnals.vue';
 import Input from './views/Input.vue';

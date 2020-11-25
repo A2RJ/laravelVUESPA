@@ -28,6 +28,7 @@
         "laravel-vue-pagination": "^2.3.1",
         "vue": "^2.6.11",
         "vue-axios": "^2.1.5",
+        "vue-currency-filter": "^5.2.0",
         "vue-fragment": "^1.5.1",
         "vue-load-image": "^0.1.11",
         "vue-m-message": "^3.0.0",

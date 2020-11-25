@@ -19,7 +19,8 @@
             ><router-link class="sidebar-link" to="/input" aria-expanded="false"
               ><i class="mdi mdi-home menu-icon"></i
               ><span class="menu-title">Input Jurnal</span></router-link
-            ></a
+            >
+            {{ 5000  | currency}}</a
           >
         </span>
       </div>
@@ -71,8 +72,8 @@
                   <td>{{ jurnal.aktivitas }}</td>
                   <td>{{ jurnal.no_akun }}</td>
                   <td>{{ jurnal.keterangan }}</td>
-                  <td>{{ jurnal.debet }}: {{ jurnal.jum_debet }}</td>
-                  <td>{{ jurnal.kredit }}: {{ jurnal.jum_kredit }}</td>
+                  <td>{{ jurnal.debet }}: {{ jurnal.jum_debet | currency }}</td>
+                  <td>{{ jurnal.kredit }}: {{ jurnal.jum_kredit | currency }}</td>
                   <td>
                     <button
                       @click="edit(user)"
@@ -126,8 +127,8 @@
                   <td>{{ jurnal.aktivitas }}</td>
                   <td>{{ jurnal.no_akun }}</td>
                   <td>{{ jurnal.keterangan }}</td>
-                  <td>{{ jurnal.debet }}: {{ jurnal.jum_debet }}</td>
-                  <td>{{ jurnal.kredit }}: {{ jurnal.jum_kredit }}</td>
+                  <td>{{ jurnal.debet }}: {{ jurnal.jum_debet | currency }}</td>
+                  <td>{{ jurnal.kredit }}: {{ jurnal.jum_kredit | currency }}</td>
                   <td>
                     <button
                       @click="edit(user)"
