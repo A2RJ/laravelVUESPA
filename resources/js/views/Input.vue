@@ -168,14 +168,7 @@ export default {
             listAktivitas: [],
             listWaktu: [],
             listAkun: [],
-            form: {
-                id_aktivitas: "",
-                jangka_waktu: "",
-                no_akun: "",
-                keterangan: "",
-                jum_debet: "",
-                jum_kredit: ""
-            },
+            form: {},
             message: false
         };
     },
@@ -214,13 +207,7 @@ export default {
             this.axios
                 .post("/api/jurnals/", this.form)
                 .then(res => {
-                    (this.form.id_aktivitas = ""),
-                        (this.form.jangka_waktu = ""),
-                        (this.form.no_akun = ""),
-                        (this.form.keterangan = ""),
-                        (this.form.jum_debet = ""),
-                        (this.form.jum_kredit = "");
-                    routers.push("/")
+                    window.location.replace('/')
                 })
                 .catch(err => {
                     console.log(err);

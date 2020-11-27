@@ -6,19 +6,19 @@
           <thead>
             <tr>
               <th></th>
-              <th>Keterangan</th>
-              <th>Jumlah</th>
+              <th class="font-weight-bold">Keterangan</th>
+              <th class="font-weight-bold">Jumlah</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td></td>
-              <td class="bold">Dana zakat</td>
+              <td class="font-weight-bold">Dana zakat</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Penerimaan</td>
+              <td class="font-weight-bold">Penerimaan</td>
               <td></td>
             </tr>
             <tr>
@@ -29,32 +29,32 @@
             <tr>
               <td></td>
               <td>muzakki entitas</td>
-              <td>{{ entitas | currency }}</td>
+              <td>{{ data.entitas | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Muzakki individual</td>
-              <td>{{ individual | currency }}</td>
+              <td>{{ data.individual | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Hasil penempatan</td>
-              <td>{{ penempatan | currency }}</td>
+              <td>{{ data.penempatan | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penerimaan dana zakat</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penerimaan dana zakat</td>
+              <td>{{ data.penempatan + data.entitas + data.individual | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Bagian amil atas penerimaan dana zakat</td>
-              <td>{{ amilzakat | currency }}</td>
+              <td>{{ data.amilzakat | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>jumlah penerimaan dana zakat setelah bagian amil</td>
-              <td></td>
+              <td>{{ data.penempatan + data.entitas + data.individual + data.amilzakat | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -63,108 +63,108 @@
             </tr>
             <tr>
               <td></td>
-              <td>Penyaluran</td>
+              <td class="font-weight-bold">Penyaluran</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Fakir-Miskin</td>
-              <td>{{ fakir | currency }}</td>
+              <td>{{ data.fakir | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Gharim</td>
-              <td>{{ gharim | currency }}</td>
+              <td>{{ data.gharim | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Muallaf</td>
-              <td>{{ muallaf | currency }}</td>
+              <td>{{ data.muallaf | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Sabilillah</td>
-              <td>{{ sabilillah | currency }}</td>
+              <td>{{ data.sabilillah | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Ibnu sabil</td>
-              <td>{{ ibnusabil | currency }}</td>
+              <td>{{ data.ibnusabil | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penyaluran dana zakat</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penyaluran dana zakat</td>
+              <td>{{ data.fakir + data.gharim + data.muallaf + data.sabilillah + data.ibnuSabil | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Surplus</td>
-              <td></td>
+              <td class="font-weight-bold">Surplus (Defisit)</td>
+              <td>{{ (data.penempatan + data.entitas + data.individual + data.amilzakat) - (data.fakir + data.gharim + data.muallaf + data.sabilillah + data.ibnuSabil) }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Saldo awal</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Saldo akhir</td>
+              <td class="font-weight-bold">Saldo awal</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
+              <td class="font-weight-bold">Saldo akhir</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>DANA INFAK/SEDEKAH</td>
+              <td class="font-weight-bold">DANA INFAK/SEDEKAH</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Penerimaan</td>
+              <td class="font-weight-bold">Penerimaan</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Muqayyadah</td>
-              <td>{{ muqayyadahKas | currency }}</td>
+              <td>{{ data.muqayyadahKas | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Mutlaqah</td>
-              <td>{{ mutlaqahKas | currency }}</td>
+              <td>{{ data.mutlaqahKas | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>peralatan</td>
-              <td>{{ peralatan3 | currency }}</td>
+              <td>{{ data.peralatan3 | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Gedung dan Bangunan</td>
-              <td>{{ gnb3 | currency }}</td>
+              <td>{{ data.gnb3 | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Tanah</td>
-              <td>{{ tanah3 | currency }}</td>
+              <td>{{ data.tanah3 | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Bagian amil atas penerimaan dana infak/sedekah</td>
-              <td>{{ amilinfak | currency }}</td>
+              <td>{{ data.amilinfak | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Hasil pengelolaan</td>
-              <td>{{ pengelolaan | currency }}</td>
+              <td>{{ data.pengelolaan | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penerimaan dana infak/sedekah</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penerimaan dana infak/sedekah</td>
+              <td>{{ data.muqayyadahKas + data.mutlaqahKas + data.pengelolaan + data.peralatan3 + data.gnb3 + data.tanah3 + data.amilinfak | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -173,93 +173,93 @@
             </tr>
             <tr>
               <td></td>
-              <td>Penyaluran</td>
+              <td class="font-weight-bold">Penyaluran</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Muqayyadah</td>
-              <td>{{ muqayyadahKredit | currency }}</td>
+              <td>{{ data.muqayyadahKredit | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Mutlaqah</td>
-              <td>{{ mutlaqahKredit | currency }}</td>
+              <td>{{ data.mutlaqahKredit | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>peralatan</td>
-              <td>{{ peralatan4 | currency }}</td>
+              <td>{{ data.peralatan4 | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Akumulasi penyusutan dan penyisihan Peralatan</td>
-              <td>{{ APperalatan | currency }}</td>
+              <td>{{ data.APperalatan | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Gedung dan Bangunan</td>
-              <td>{{ gnb4 | currency }}</td>
+              <td>{{ data.gnb4 | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Akumulasi penyusutan dan penyisihan Gedung dan Bangunan</td>
-              <td>{{ APgnb | currency }}</td>
+              <td>{{ data.APgnb | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Tanah</td>
-              <td>{{ tanah4 | currency }}</td>
+              <td>{{ data.tanah4 | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penyaluran dana infak/sedekah</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penyaluran dana infak/sedekah</td>
+              <td>{{ data.muqayyadahKredit + data.mutlaqahKredit + data.peralatan4 + data.APperalatan + data.gnb4 + data.APgnb + data.tanah4 | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Surplus (Defisit)</td>
-              <td></td>
+              <td class="font-weight-bold">Surplus (Defisit)</td>
+              <td>{{ (data.muqayyadahKas + data.mutlaqahKas + data.peralatan3 + data.gnb3 + data.tanah3 + data.amilinfak + data.pengelolaan) - (data.muqayyadahKredit + data.mutlaqahKredit + data.peralatan4 + data.APperalatan + data.gnb4 + data.APgnb + data.tanah4) }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Saldo awal</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Saldo akhir</td>
+              <td class="font-weight-bold">Saldo awal</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>DANA AMIL</td>
+              <td class="font-weight-bold">Saldo akhir</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Penerimaan</td>
+              <td class="font-weight-bold">DANA AMIL</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="font-weight-bold">Penerimaan</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Bagian amil dari dana zakat</td>
-              <td>{{ amilzakat | currency }}</td>
+              <td>{{ data.amilzakat | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Bagian amil dari dana infak/sedekah</td>
-              <td>{{ amilinfak | currency }}</td>
+              <td>{{ data.amilinfak | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Penerimaan lainnya</td>
-              <td>{{ penerimaanlainnya | currency }}</td>
+              <td>{{ data.penerimaanlainnya | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penerimaan dana amil</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penerimaan dana amil</td>
+              <td>{{ data.amilzakat + data.amilinfak + data.penerimaanlainnya | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -268,68 +268,68 @@
             </tr>
             <tr>
               <td></td>
-              <td>Penggunaan</td>
+              <td class="font-weight-bold">Penggunaan</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Penggunaan dana amil</td>
-              <td>{{ bebanAmil | currency }}</td>
+              <td>{{ data.bebanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penggunaan dana amil</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penggunaan dana amil</td>
+              <td>{{ data.bebanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Surplus (Defisit)</td>
-              <td></td>
+              <td class="font-weight-bold">Surplus (Defisit)</td>
+              <td>{{ (data.amilzakat + data.amilinfak + data.penerimaanlainnya) - data.bebanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Saldo awal</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Saldo akhir</td>
+              <td class="font-weight-bold">Saldo awal</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
+              <td class="font-weight-bold">Saldo akhir</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>DANA NONHALAL</td>
+              <td class="font-weight-bold">DANA NONHALAL</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Penerimaan</td>
+              <td class="font-weight-bold">Penerimaan</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Bunga bank</td>
-              <td>{{ bungaBank | currency }}</td>
+              <td>{{ data.bungaBank | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Jasa giro</td>
-              <td>{{ giro | currency }}</td>
+              <td>{{ data.giro | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td>Penerimaan nonhalal lainnya</td>
-              <td>{{ nonHalalLainKas | currency }}</td>
+              <td>{{ data.nonHalalLainKas | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penerimaan dana nonhalal</td>
-              <td></td>
+              <td class="font-weight-bold">Jumlah penerimaan dana nonhalal</td>
+              <td>{{ data.bungaBank + data.giro + data.nonHalalLainKas | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -338,47 +338,47 @@
             </tr>
             <tr>
               <td></td>
-              <td>Penggunaan</td>
+              <td class="font-weight-bold">Penggunaan</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
               <td>Administrasi Bank</td>
-              <td>{{ administrasiBank | currency }}</td>
+              <td>{{ data.administrasiBank | currency }}</td>
+            </tr> 
+            <tr>
+              <td></td>
+              <td>Penggunaan dana nonhalal lainnya</td>
+              <td>{{ data.nonHalalLainKredit | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Jumlah penggunaan dana nonhalal</td>
-              <td>{{ nonHalalLainKredit | currency }}</td>
+              <td class="font-weight-bold">Jumlah penggunaan dana nonhalal</td>
+              <td>{{ data.administrasiBank + data.nonHalalLainKredit | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td></td>
-              <td></td>
+              <td class="font-weight-bold">Surplus (Defisit)</td>
+              <td>{{ (data.bungaBank + data.giro + data.nonHalalLainKas) - (data.administrasiBank + data.nonHalalLainKredit) | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Surplus (Defisit)</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Saldo awal</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Saldo akhir</td>
+              <td class="font-weight-bold">Saldo awal</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
+              <td class="font-weight-bold">Saldo akhir</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>
+              <td class="font-weight-bold">
                 Jumlah saldo dana zakat, dana infak/sedekah, dana amil dan dana
                 nonhalal.
               </td>
@@ -401,9 +401,9 @@ export default {
   mounted() {
     axios
       .get("api/laporan/lpd")
-      .then((response) => (this.data = response.data.data))
+      .then((response) => (this.data = response.data))
       .catch((error) => console.log(error));
-  },
+  }
 };
 </script>
 

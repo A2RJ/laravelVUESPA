@@ -13,11 +13,21 @@
               <td>2.1</td>
               <td>Sumbangan</td>
               <td></td>
-              <td rowspan="3"></td>
+              <td rowspan="5"></td>
             </tr>
             <tr>
               <td>1.2</td>
               <td>Bank</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1.2</td>
+              <td>Infaq</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1.2</td>
+              <td>sakat</td>
               <td></td>
             </tr>
             <tr>
@@ -90,11 +100,6 @@
               <td></td>
             </tr>
             <tr>
-              <td>5.8</td>
-              <td>Sedekah</td>
-              <td></td>
-            </tr>
-            <tr>
               <td>5.9</td>
               <td>Beban Transportasi</td>
               <td></td>
@@ -113,10 +118,6 @@
             <tr class="bold">
               <td colspan="4" class="font-weight-bold">Aktivitas investasi</td>
             </tr>
-            <!-- <tr class="bold">
-                            <th colspan="4">Arus Kas Masuk</th>
-                        </tr> -->
-
             <tr>
               <td>1.5</td>
               <td>Peralatan</td>
@@ -167,11 +168,6 @@
             <tr class="bold">
               <td colspan="4" class="font-weight-bold">Aktivitas Pendanaan</td>
             </tr>
-
-            <!-- <tr class="bold">
-                            <th colspan="4">Arus Kas Masuk</th>
-                        </tr> -->
-
             <tr>
               <td></td>
               <td colspan="2">Penerimaan Peminjaman</td>
@@ -192,9 +188,6 @@
               <td colspan="2">Jumlah</td>
               <td></td>
             </tr>
-            <!-- <tr class="bold">
-                            <th colspan="4">Arus Kas Keluar</th>
-                        </tr> -->
             <tr>
               <td></td>
               <td colspan="2">Pemberian Peminjaman</td>

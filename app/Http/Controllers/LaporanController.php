@@ -66,6 +66,21 @@ class LaporanController extends Controller
             'success' => "success",
         ]);
     }
+
+    /** 
+     * Untuk Halaman Arus Kas
+     **/
+    public function LPAK()
+    {
+        return response()->json([
+            'lancarKas' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 3.13),
+            'lancarKredit' => $this->get(4, 5.18) + $this->get(4, 5.19),
+            'penyisihan' => '',
+            'tdkLancarKas' => $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5),
+            'tdkLancarKredit' => $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5),
+            'penyusutan' => $this->get(3, 2.2) + $this->get(3, 2.4),
+        ]);
+    }
     /** 
      * Untuk Halaman Laporan Perubahan Dana
      **/
