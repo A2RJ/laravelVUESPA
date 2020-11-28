@@ -66,7 +66,7 @@ class LaporanController extends Controller
             'success' => "success",
         ]);
     }
-
+ 
     /** 
      * Untuk Halaman Arus Kas
      **/
