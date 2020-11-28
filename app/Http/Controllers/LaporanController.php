@@ -53,7 +53,20 @@ class LaporanController extends Controller
     public function aktivitas()
     {
         return response()->json([
-            'success' => "success",
+            'sumbangan' => $this->get(5, 4.1),
+            'amilzakat' => $this->get(5, 4.2),
+            'amilInfak' => $this->get(5, 4.3),
+            'gaji' => $this->get(13, 5.1),
+            'listrik' => $this->get(13, 5.2),
+            'air' => $this->get(13, 5.3),
+            'internet' => $this->get(13, 5.4),
+            'pemeliharaan' => $this->get(13, 5.5),
+            'adminUmum' => $this->get(13, 5.6),
+            'pajak' => $this->get(13, 5.7),
+            'transportasi' => $this->get(13, 5.9),
+            'bebanPeralatan' => $this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2),
+            'bebanBangunan' => $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4)
+            // bagaimana dengan dana hibah, sedangkan infak dan hibah itu berbeda
         ]);
     }
 
