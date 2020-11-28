@@ -17,17 +17,17 @@
             </tr>
             <tr>
               <td>1.2</td>
-              <td>Bank</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1.2</td>
               <td>Infaq</td>
               <td></td>
             </tr>
             <tr>
               <td>1.2</td>
               <td>sakat</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1.2</td>
+              <td>Bank</td>
               <td></td>
             </tr>
             <tr>

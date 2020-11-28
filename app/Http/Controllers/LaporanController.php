@@ -63,7 +63,42 @@ class LaporanController extends Controller
     public function arusKas()
     {
         return response()->json([
-            'success' => "success",
+            'sumbangan' => $this->get(5, 4.1),
+            'amilzakat' => $this->get(5, 4.2),
+            'amilInfak' => $this->get(5, 4.3),
+            'tarik' => $this->get(18, 1.2),
+            'piutangKas' => $this->get(15, 2.3),
+            'aktivitasKas' => 0,
+            'setor' => $this->get(17, 1.2),
+            'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4),
+            'utangPendek' => $this->get(15, 2.1),
+            'utangPanjang' => $this->get(15, 2.2),
+            'gaji' => $this->get(13, 5.1),
+            'listrik' => $this->get(13, 5.2),
+            'air' => $this->get(13, 5.3),
+            'internet' => $this->get(13, 5.4),
+            'pemeliharaan' => $this->get(13, 5.5),
+            'adminUmum' => $this->get(13, 5.6),
+            'pajak' => $this->get(13, 5.7),
+            'phbi' => $this->get(13, 5.8),
+            'transportasi' => $this->get(13, 5.9),
+            'aktivitasKredit' => 0,
+            'peralatanKas' => $this->get(12, 2.1),
+            'gnbKas' => $this->get(12, 2.3),
+            'tanahKas' => $this->get(12, 2.5),
+            'investasiKas' => 0,
+            'peralatanKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1),
+            'gnbKredit' => $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3),
+            'tanahKredit' => $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4),
+            'investasiKredit' => 0,
+            'utangJPendek' => $this->get(16, 2.1),
+            'utangJPanjang' => $this->get(16, 2.2),
+            'pendanaanKas' => 0,
+            'piutangKredit' => $this->get(14, 2.3),
+            'pendanaanKredit' => 0,
+            'defisit' => 0,
+            'awalTahun' => 0,
+            'akhirTahun' => 0
         ]);
     }
  
