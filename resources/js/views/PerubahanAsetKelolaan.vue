@@ -21,7 +21,7 @@
               <td>{{ data.lancarKas | currency }}</td>
               <td>{{ data.lancarKredit | currency }}</td>
               <td>{{ data.penyisihan | currency }}</td>
-              <td></td>
+              <td>-</td>
               <td></td>
             </tr>
             <tr>

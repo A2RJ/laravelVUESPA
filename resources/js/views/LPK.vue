@@ -12,9 +12,9 @@
               <th>Keterangan</th>
               <th>Jumlah</th>
             </tr>
-            <tr class="bold">
+            <tr>
               <td></td>
-              <td>Aset</td>
+              <td>Aktiva lancar</td>
               <td></td>
               <td></td>
               <td>Kewajiban</td>
@@ -24,26 +24,18 @@
           <tbody>
             <tr>
               <td></td>
-              <td class="bold">Aset lancar</td>
+              <td>Kas</td>
               <td></td>
               <td></td>
-              <td class="bold">Kewajiban jangka pendek</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Kas dan setara kas</td>
-              <td></td>
-              <td></td>
-              <td>Biaya yang masih harus dibayar</td>
+              <td>Utang jangka pendek</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Instrumen keuangan</td>
+              <td>Bank</td>
               <td></td>
               <td></td>
-              <td></td>
+              <td>Utang jangka panjang</td>
               <td></td>
             </tr>
             <tr>
@@ -56,39 +48,31 @@
             </tr>
             <tr>
               <td></td>
+              <td>Perlengkapan</td>
               <td></td>
               <td></td>
               <td></td>
-              <td>Kewajiban jangka panjang</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
+              <td>Jumlah</td>
               <td></td>
               <td></td>
-              <td></td>
-              <td>Imbalan kerja jangka panjang</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Aset tidak lancar</td>
-              <td></td>
-              <td></td>
-              <td class="bold">Jumlah kewajiban</td>
+              <td>Jumlah</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Aset tetap</td>
+              <td>Aktiva tetap</td>
               <td></td>
               <td></td>
-              <td class="bold">Saldo dana</td>
+              <td>Saldo dana</td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td>Akumulasi penyusutan</td>
+              <td>Peralatan</td>
               <td></td>
               <td></td>
               <td>Dana sakat</td>
@@ -96,7 +80,7 @@
             </tr>
             <tr>
               <td></td>
-              <td></td>
+              <td>Akumulasi penyusutan peralatan</td>
               <td></td>
               <td></td>
               <td>Dana infak/sedekah</td>
@@ -104,7 +88,7 @@
             </tr>
             <tr>
               <td></td>
-              <td></td>
+              <td>Gedung dan bangunan</td>
               <td></td>
               <td></td>
               <td>Dana amil</td>
@@ -112,7 +96,7 @@
             </tr>
             <tr>
               <td></td>
-              <td></td>
+              <td>Akumulasi penyusutan gedung dan bangunan</td>
               <td></td>
               <td></td>
               <td>Dana non halal</td>
@@ -120,10 +104,26 @@
             </tr>
             <tr>
               <td></td>
+              <td>Tanah</td>
               <td></td>
               <td></td>
               <td></td>
-              <td class="bold">Jumlah dana</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Jumlah dana</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Jumlah Aset</td>
+              <td></td>
+              <td></td>
+              <td>Jumlah Kewajiban dan Saldo Dana</td>
               <td></td>
             </tr>
           </tbody>

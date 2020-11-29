@@ -193,23 +193,23 @@
             </tr>
             <tr>
               <td></td>
-              <td>Akumulasi penyusutan dan penyisihan Peralatan</td>
-              <td>{{ data.APperalatan | currency }}</td>
-            </tr>
-            <tr>
-              <td></td>
               <td>Gedung dan Bangunan</td>
               <td>{{ data.gnb4 | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Akumulasi penyusutan dan penyisihan Gedung dan Bangunan</td>
-              <td>{{ data.APgnb | currency }}</td>
+              <td>Tanah</td>
+              <td>{{ data.tanah4 | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Tanah</td>
-              <td>{{ data.tanah4 | currency }}</td>
+              <td>Akumulasi penyusutan dan penyisihan Peralatan</td>
+              <td>{{ data.APperalatan | currency }}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Akumulasi penyusutan dan penyisihan Gedung dan Bangunan</td>
+              <td>{{ data.APgnb | currency }}</td>
             </tr>
             <tr>
               <td></td>

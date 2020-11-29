@@ -2770,19 +2770,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3213,8 +3200,8 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get("api/laporan/lpd").then(function (response) {
-      return _this.data = response.data;
+    axios.get("api/laporan/lpak").then(function (response) {
+      return _this.data = response.data, console.log(_this.data);
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -41054,14 +41041,6 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td", [_vm._v("1.2")]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Bank")]),
-                  _vm._v(" "),
-                  _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1.2")]),
-                  _vm._v(" "),
                   _c("td", [_vm._v("Infaq")]),
                   _vm._v(" "),
                   _c("td")
@@ -41071,6 +41050,14 @@ var staticRenderFns = [
                   _c("td", [_vm._v("1.2")]),
                   _vm._v(" "),
                   _c("td", [_vm._v("sakat")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("1.2")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Bank")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -41188,14 +41175,6 @@ var staticRenderFns = [
                   _c("td", [_vm._v("5.7")]),
                   _vm._v(" "),
                   _c("td", [_vm._v("Beban Pajak")]),
-                  _vm._v(" "),
-                  _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("5.8")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Sedekah")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -41928,10 +41907,10 @@ var staticRenderFns = [
                   _c("th", [_vm._v("Jumlah")])
                 ]),
                 _vm._v(" "),
-                _c("tr", { staticClass: "bold" }, [
+                _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aset")]),
+                  _c("td", [_vm._v("Aktiva lancar")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -41947,15 +41926,13 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", { staticClass: "bold" }, [_vm._v("Aset lancar")]),
+                  _c("td", [_vm._v("Kas")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", { staticClass: "bold" }, [
-                    _vm._v("Kewajiban jangka pendek")
-                  ]),
+                  _c("td", [_vm._v("Utang jangka pendek")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -41963,27 +41940,13 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Kas dan setara kas")]),
+                  _c("td", [_vm._v("Bank")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Biaya yang masih harus dibayar")]),
-                  _vm._v(" "),
-                  _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Instrumen keuangan")]),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td"),
+                  _c("td", [_vm._v("Utang jangka panjang")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -42005,13 +41968,13 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [_vm._v("Perlengkapan")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Kewajiban jangka panjang")]),
+                  _c("td"),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -42019,13 +41982,13 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [_vm._v("Jumlah")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Imbalan kerja jangka panjang")]),
+                  _c("td", [_vm._v("Jumlah")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -42033,15 +41996,13 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aset tidak lancar")]),
+                  _c("td", [_vm._v("Aktiva tetap")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", { staticClass: "bold" }, [
-                    _vm._v("Jumlah kewajiban")
-                  ]),
+                  _c("td", [_vm._v("Saldo dana")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -42049,21 +42010,7 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Aset tetap")]),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "bold" }, [_vm._v("Saldo dana")]),
-                  _vm._v(" "),
-                  _c("td")
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td"),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Akumulasi penyusutan")]),
+                  _c("td", [_vm._v("Peralatan")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -42077,7 +42024,7 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [_vm._v("Akumulasi penyusutan peralatan")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -42091,7 +42038,7 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [_vm._v("Gedung dan bangunan")]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -42105,7 +42052,9 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [
+                    _vm._v("Akumulasi penyusutan gedung dan bangunan")
+                  ]),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
@@ -42119,13 +42068,41 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td"),
                   _vm._v(" "),
+                  _c("td", [_vm._v("Tanah")]),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
                   _c("td"),
                   _vm._v(" "),
-                  _c("td", { staticClass: "bold" }, [_vm._v("Jumlah dana")]),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah dana")]),
+                  _vm._v(" "),
+                  _c("td")
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah Aset")]),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td"),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Jumlah Kewajiban dan Saldo Dana")]),
                   _vm._v(" "),
                   _c("td")
                 ])
@@ -42179,30 +42156,18 @@ var render = function() {
                   _c("td", [_vm._v("Saldo Awal")]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.muqayyadahKas +
-                            _vm.data.mutlaqahKas +
-                            _vm.data.pengelolaan
-                        )
-                      )
-                    )
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.data.lancarKas)))
                   ]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.muqayyadahKredit + _vm.data.mutlaqahKredit
-                        )
-                      )
-                    )
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.data.lancarKredit)))
                   ]),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.data.penyisihan)))
+                  ]),
                   _vm._v(" "),
-                  _c("td"),
+                  _c("td", [_vm._v("-")]),
                   _vm._v(" "),
                   _c("td")
                 ]),
@@ -42215,28 +42180,16 @@ var render = function() {
                   _c("td", [_vm._v("Saldo Awal")]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.peralatan3 + _vm.data.gnb3 + _vm.data.tanah3
-                        )
-                      )
-                    )
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.data.tdkLancarKas)))
                   ]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(
-                      _vm._s(
-                        _vm.data.peralatan4 + _vm.data.gnb4 + _vm.data.tanah4
-                      )
-                    )
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.data.tdkLancarKredit)))
                   ]),
                   _vm._v(" "),
                   _c("td", [_vm._v("-")]),
                   _vm._v(" "),
-                  _c("td", [
-                    _vm._v(_vm._s(_vm.data.APperalatan + _vm.data.APgnb))
-                  ]),
+                  _c("td", [_vm._v(_vm._s(_vm.data.penyusutan))]),
                   _vm._v(" "),
                   _c("td")
                 ])
@@ -42621,6 +42574,22 @@ var render = function() {
               _c("tr", [
                 _c("td"),
                 _vm._v(" "),
+                _c("td", [_vm._v("Gedung dan Bangunan")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.data.gnb4)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [_vm._v("Tanah")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.data.tanah4)))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
                 _c("td", [
                   _vm._v("Akumulasi penyusutan dan penyisihan Peralatan")
                 ]),
@@ -42633,14 +42602,6 @@ var render = function() {
               _c("tr", [
                 _c("td"),
                 _vm._v(" "),
-                _c("td", [_vm._v("Gedung dan Bangunan")]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.data.gnb4)))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td"),
-                _vm._v(" "),
                 _c("td", [
                   _vm._v(
                     "Akumulasi penyusutan dan penyisihan Gedung dan Bangunan"
@@ -42648,14 +42609,6 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.data.APgnb)))])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td"),
-                _vm._v(" "),
-                _c("td", [_vm._v("Tanah")]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm._f("currency")(_vm.data.tanah4)))])
               ]),
               _vm._v(" "),
               _c("tr", [

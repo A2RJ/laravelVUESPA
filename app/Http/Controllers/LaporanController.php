@@ -43,7 +43,25 @@ class LaporanController extends Controller
     public function LPK()
     {
         return response()->json([
-            'success' => "success",
+            'kas' => 0,
+            'bank' => 0,
+            'piutang' => 0,
+            'perlengkapan' => 0,
+            'aktivaLancar' => 0,
+            'peralatan' => 0,
+            'AkmPeralatan' => 0,
+            'gnb' => 0,
+            'AkmGnB' => 0,
+            'tanah' => 0,
+            'aktivaTdkLancar' => 0,
+            'UJPendek' => 0,
+            'UJPanjang' => 0,
+            'jumlahUtang' => 0,
+            'zakat' => 0,
+            'infak' => 0,
+            'amil' => 0,
+            'nonHalal' => 0,
+            'jumlahDana' => 0
         ]);
     }
 
@@ -114,7 +132,7 @@ class LaporanController extends Controller
             'akhirTahun' => 0
         ]);
     }
- 
+
     /** 
      * Untuk Halaman Arus Kas
      **/
@@ -124,9 +142,11 @@ class LaporanController extends Controller
             'lancarKas' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 3.13),
             'lancarKredit' => $this->get(4, 5.18) + $this->get(4, 5.19),
             'penyisihan' => '',
+            'jumlahLancar' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 3.13) + $this->get(4, 5.18) + $this->get(4, 5.19),
             'tdkLancarKas' => $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5),
             'tdkLancarKredit' => $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5),
             'penyusutan' => $this->get(3, 2.2) + $this->get(3, 2.4),
+            'jumlahTdkLancar' => $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5) + $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5) + $this->get(3, 2.2) + $this->get(3, 2.4)
         ]);
     }
     /** 
@@ -138,17 +158,20 @@ class LaporanController extends Controller
             'entitas' => $this->get(1, 4.8),
             'individual' => $this->get(1, 4.9),
             'penempatan' => $this->get(1, 4.10),
+            'penerimaanZakat' => $this->get(1, 4.8) + $this->get(1, 4.9) + $this->get(1, 4.10),
             'fakir' => $this->get(2, 5.13),
             'gharim' => $this->get(2, 5.14),
             'muallaf' => $this->get(2, 5.15),
             'sabilillah' => $this->get(2, 5.16),
             'ibnuSabil' => $this->get(2, 5.17),
+            'penyaluranZakat' => $this->get(2, 5.13) + $this->get(2, 5.14) + $this->get(2, 5.15) + $this->get(2, 5.16) + $this->get(2, 5.17),
             'muqayyadahKas' => $this->get(3, 4.11),
             'mutlaqahKas' => $this->get(3, 4.12),
             'pengelolaan' => $this->get(3, 3.13),
             'peralatan3' => $this->get(3, 2.1),
             'gnb3' => $this->get(3, 2.3),
             'tanah3' => $this->get(3, 2.5),
+            'penerimaanInfak' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5),
             'muqayyadahKredit' => $this->get(4, 5.18),
             'mutlaqahKredit' => $this->get(4, 5.19),
             'peralatan4' => $this->get(4, 2.1),
@@ -156,16 +179,20 @@ class LaporanController extends Controller
             'tanah4' => $this->get(4, 2.5),
             'APperalatan' => $this->get(3, 2.2),
             'APgnb' => $this->get(3, 2.4),
+            'penyaluranInfak' => $this->get(4, 5.18) + $this->get(4, 5.19) + $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5) + $this->get(3, 2.2) + $this->get(3, 2.4),
             'sumbangan' => $this->get(5, 4.1),
             'amilzakat' => $this->get(5, 4.2),
             'amilinfak' => $this->get(5, 4.3),
             'penerimaanlainnya' => $this->get(12) + $this->get(15) + $this->get(17, 1.2),
+            'penerimaanAmil' => $this->get(5, 4.1) + $this->get(5, 4.2) + $this->get(5, 4.3) + $this->get(12) + $this->get(15) + $this->get(17, 1.2),
             'bebanAmil' => $this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17, 1.2),
             'bungaBank' => $this->get(7, 4.5),
             'giro' => $this->get(7, 4.6),
             'nonHalalLainKas' => $this->get(7, 4.7),
+            'penerimaanNonHalal' => $this->get(7, 4.5) + $this->get(7, 4.6) + $this->get(7, 4.7),
             'administrasiBank' => $this->get(8, 5.11),
-            'nonHalalLainKredit' => $this->get(8, 5.12)
+            'nonHalalLainKredit' => $this->get(8, 5.12),
+            'penyaluranNonHalal' => $this->get(8, 5.11) + $this->get(8, 5.12)
         ]);
     }
 }
