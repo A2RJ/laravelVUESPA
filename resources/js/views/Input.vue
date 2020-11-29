@@ -207,7 +207,7 @@ export default {
             this.axios
                 .post("/api/jurnals/", this.form)
                 .then(res => {
-                    window.location.replace('/')
+                    // window.location.replace('/')
                 })
                 .catch(err => {
                     console.log(err);

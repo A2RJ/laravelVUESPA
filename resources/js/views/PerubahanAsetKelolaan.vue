@@ -50,7 +50,7 @@ export default {
   mounted() {
     axios
       .get("api/laporan/lpak")
-      .then((response) => (this.data = response.data, console.log(this.data)))
+      .then((response) => (this.data = response.data))
       .catch((error) => console.log(error));
   }
 };

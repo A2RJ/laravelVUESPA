@@ -89,7 +89,7 @@
             <tr>
               <td></td>
               <td>Ibnu sabil</td>
-              <td>{{ data.ibnusabil | currency }}</td>
+              <td>{{ data.ibnuSabil | currency }}</td>
             </tr>
             <tr>
               <td></td>

@@ -57,12 +57,12 @@
             <tr>
               <td>2.1</td>
               <td>Utang Jangka Pendek</td>
-              <td><{{ data.utangPendek | currency }}/td>
+              <td>{{ data.utangPendek | currency }}</td>
             </tr>
             <tr>
               <td>2.2</td>
               <td>Utang Jangka Panjang</td>
-              <td>{{ data. | currency }}</td>
+              <td>{{ data.utangPanjang | currency }}</td>
             </tr>
             <tr>
               <td>5.1</td>
@@ -223,11 +223,11 @@
             </tr>
             <tr class="bold">
               <td colspan="3">Kas setara kas awal tahun</td>
-              <td>{{ data. | currency }}</td>
+              <td></td>
             </tr>
             <tr class="bold">
               <td colspan="3">Kas setara kas akhir tahun</td>
-              <td>{{ data. | currency }}</td>
+              <td></td>
             </tr>
           </tbody>
         </table>
@@ -246,7 +246,7 @@ export default {
   mounted() {
     axios
       .get("api/laporan/arusKas")
-      .then((response) => (this.data = response.data, console.log(this.data)))
+      .then((response) => (this.data = response.data))
       .catch((error) => console.log(error));
   }
 };

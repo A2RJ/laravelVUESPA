@@ -25,23 +25,23 @@
             <tr>
               <td></td>
               <td>Kas</td>
-              <td></td>
+              <td>{{ data.kas | currency}}</td>
               <td></td>
               <td>Utang jangka pendek</td>
-              <td></td>
+              <td>{{ data.UJPendek | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Bank</td>
-              <td></td>
+              <td>{{ data.bank | currency}}</td>
               <td></td>
               <td>Utang jangka panjang</td>
-              <td></td>
+              <td>{{ data.UJPanjang | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Piutang</td>
-              <td></td>
+              <td>{{ data.piutang | currency}}</td>
               <td></td>
               <td></td>
               <td></td>
@@ -49,7 +49,7 @@
             <tr>
               <td></td>
               <td>Perlengkapan</td>
-              <td></td>
+              <td>{{ data.perlengkapan | currency}}</td>
               <td></td>
               <td></td>
               <td></td>
@@ -57,10 +57,10 @@
             <tr>
               <td></td>
               <td>Jumlah</td>
-              <td></td>
+              <td>{{ data.aktivaLancar | currency}}</td>
               <td></td>
               <td>Jumlah</td>
-              <td></td>
+              <td>{{ data.jumlahUtang | currency}}</td>
             </tr>
             <tr>
               <td></td>
@@ -73,58 +73,50 @@
             <tr>
               <td></td>
               <td>Peralatan</td>
+              <td>{{ data.peralatan | currency}}</td>
               <td></td>
-              <td></td>
-              <td>Dana sakat</td>
-              <td></td>
+              <td>Dana zakat</td>
+              <td>{{ data.zakat | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Akumulasi penyusutan peralatan</td>
-              <td></td>
+              <td>{{ data.AkmPeralatan | currency}}</td>
               <td></td>
               <td>Dana infak/sedekah</td>
-              <td></td>
+              <td>{{ data.infak | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Gedung dan bangunan</td>
-              <td></td>
+              <td>{{ data.gnb | currency}}</td>
               <td></td>
               <td>Dana amil</td>
-              <td></td>
+              <td>{{ data.amil | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Akumulasi penyusutan gedung dan bangunan</td>
-              <td></td>
+              <td>{{ data.AkmGnB | currency}}</td>
               <td></td>
               <td>Dana non halal</td>
-              <td></td>
+              <td>{{ data.nonHalal | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Tanah</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{ data.tanah | currency}}</td>
               <td></td>
               <td>Jumlah dana</td>
-              <td></td>
+              <td>{{ data.zakat + data.infak + data.amil + data.nonHalal | currency}}</td>
             </tr>
             <tr>
               <td></td>
               <td>Jumlah Aset</td>
-              <td></td>
+              <td>{{ data.zakat | currency}}</td>
               <td></td>
               <td>Jumlah Kewajiban dan Saldo Dana</td>
-              <td></td>
+              <td>{{ data.zakat + data.infak + data.amil + data.nonHalal - data.jumlahUtang | currency}}</td>
             </tr>
           </tbody>
         </table>
@@ -134,7 +126,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      data: [],
+    };
+  },
+  mounted() {
+    axios
+      .get("api/laporan/lpk")
+      .then((response) => (this.data = response.data))
+      .catch((error) => console.log(error));
+  }
+};
 </script>
 
 <style>
