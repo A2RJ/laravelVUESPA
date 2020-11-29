@@ -54,7 +54,7 @@
             <tr>
               <td></td>
               <td>jumlah penerimaan dana zakat setelah bagian amil</td>
-              <td>{{ data.penempatan + data.entitas + data.individual + data.amilzakat | currency }}</td>
+              <td>{{ data.penerimaanZakat + data.amilzakat | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -94,12 +94,12 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penyaluran dana zakat</td>
-              <td>{{ data.fakir + data.gharim + data.muallaf + data.sabilillah + data.ibnuSabil | currency }}</td>
+              <td>{{ data.penyaluranZakat | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td class="font-weight-bold">Surplus (Defisit)</td>
-              <td>{{ (data.penempatan + data.entitas + data.individual + data.amilzakat) - (data.fakir + data.gharim + data.muallaf + data.sabilillah + data.ibnuSabil) }}</td>
+              <td>{{ data.penerimaanZakat + data.amilzakat - data.penyaluranZakat | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -164,7 +164,7 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penerimaan dana infak/sedekah</td>
-              <td>{{ data.muqayyadahKas + data.mutlaqahKas + data.pengelolaan + data.peralatan3 + data.gnb3 + data.tanah3 + data.amilinfak | currency }}</td>
+              <td>{{ data.penerimaanInfak + data.amilinfak | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -214,12 +214,12 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penyaluran dana infak/sedekah</td>
-              <td>{{ data.muqayyadahKredit + data.mutlaqahKredit + data.peralatan4 + data.APperalatan + data.gnb4 + data.APgnb + data.tanah4 | currency }}</td>
+              <td>{{ data.penyaluranInfak | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td class="font-weight-bold">Surplus (Defisit)</td>
-              <td>{{ (data.muqayyadahKas + data.mutlaqahKas + data.peralatan3 + data.gnb3 + data.tanah3 + data.amilinfak + data.pengelolaan) - (data.muqayyadahKredit + data.mutlaqahKredit + data.peralatan4 + data.APperalatan + data.gnb4 + data.APgnb + data.tanah4) }}</td>
+              <td>{{ data.penerimaanInfak + data.amilinfak - data.penyaluranInfak | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -253,13 +253,18 @@
             </tr>
             <tr>
               <td></td>
+              <td>Sumbangan</td>
+              <td>{{ data.sumbangan | currency }}</td>
+            </tr>
+            <tr>
+              <td></td>
               <td>Penerimaan lainnya</td>
               <td>{{ data.penerimaanlainnya | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penerimaan dana amil</td>
-              <td>{{ data.amilzakat + data.amilinfak + data.penerimaanlainnya | currency }}</td>
+              <td>{{ data.penerimaanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -284,7 +289,7 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Surplus (Defisit)</td>
-              <td>{{ (data.amilzakat + data.amilinfak + data.penerimaanlainnya) - data.bebanAmil | currency }}</td>
+              <td>{{ data.penerimaanAmil - data.bebanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -329,7 +334,7 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penerimaan dana nonhalal</td>
-              <td>{{ data.bungaBank + data.giro + data.nonHalalLainKas | currency }}</td>
+              <td>{{ data.penerimaanNonHalal | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -354,12 +359,12 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penggunaan dana nonhalal</td>
-              <td>{{ data.administrasiBank + data.nonHalalLainKredit | currency }}</td>
+              <td>{{ data.penyaluranNonHalal | currency }}</td>
             </tr>
             <tr>
               <td></td>
               <td class="font-weight-bold">Surplus (Defisit)</td>
-              <td>{{ (data.bungaBank + data.giro + data.nonHalalLainKas) - (data.administrasiBank + data.nonHalalLainKredit) | currency }}</td>
+              <td>{{ data.penerimaanNonHalal - data.penyaluranNonHalal | currency }}</td>
             </tr>
             <tr>
               <td></td>

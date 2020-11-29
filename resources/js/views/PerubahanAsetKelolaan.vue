@@ -22,7 +22,7 @@
               <td>{{ data.lancarKredit | currency }}</td>
               <td>{{ data.penyisihan | currency }}</td>
               <td>-</td>
-              <td></td>
+              <td>{{ data.jumlahLancar | currency}}</td>
             </tr>
             <tr>
               <td>Dana infak/sedekah - aset kelolaan tidak lancar</td>
@@ -31,7 +31,7 @@
               <td>{{ data.tdkLancarKredit | currency }}</td>
               <td>-</td>
               <td>{{ data.penyusutan }}</td>
-              <td></td>
+              <td>{{ data.jumlahTdkLancar | currency}}</td>
             </tr>
           </tbody>
         </table>

@@ -12,33 +12,33 @@
             <tr>
               <td>2.1</td>
               <td>Sumbangan</td>
-              <td></td>
+              <td>{{ data.sumbangan | currency }}</td>
               <td rowspan="5"></td>
             </tr>
             <tr>
               <td>1.2</td>
               <td>Infaq</td>
-              <td></td>
+              <td>{{ data.amilInfak | currency }}</td>
             </tr>
             <tr>
               <td>1.2</td>
               <td>sakat</td>
-              <td></td>
+              <td>{{ data.amilzakat | currency }}</td>
             </tr>
             <tr>
               <td>1.2</td>
               <td>Bank</td>
-              <td></td>
+              <td>{{ data.tarik | currency }}</td>
             </tr>
             <tr>
               <td>1.3</td>
               <td>Piutang</td>
-              <td></td>
+              <td>{{ data.piutangKas | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Jumlah</td>
-              <td></td>
+              <td>{{ data.aktivitasKas | currency }}</td>
             </tr>
             <tr>
               <td colspan="4" class="font-weight-bold">Beban</td>
@@ -46,73 +46,78 @@
             <tr>
               <td>1.2</td>
               <td>Bank</td>
-              <td></td>
+              <td>{{ data.setor | currency }}</td>
               <td rowspan="13"></td>
             </tr>
             <tr>
               <td>1.4</td>
               <td>Perlengkapan</td>
-              <td></td>
+              <td>{{ data.perlengkapan | currency }}</td>
             </tr>
             <tr>
               <td>2.1</td>
               <td>Utang Jangka Pendek</td>
-              <td></td>
+              <td><{{ data.utangPendek | currency }}/td>
             </tr>
             <tr>
               <td>2.2</td>
               <td>Utang Jangka Panjang</td>
-              <td></td>
+              <td>{{ data. | currency }}</td>
             </tr>
             <tr>
               <td>5.1</td>
               <td>Beban Gaji</td>
-              <td></td>
+              <td>{{ data.gaji | currency }}</td>
             </tr>
             <tr>
               <td>5.2</td>
               <td>Beban listrik</td>
-              <td></td>
+              <td>{{ data.listrik | currency }}</td>
             </tr>
             <tr>
               <td>5.3</td>
               <td>Beban air</td>
-              <td></td>
+              <td>{{ data.air | currency }}</td>
             </tr>
             <tr>
               <td>5.4</td>
               <td>Beban internet</td>
-              <td></td>
+              <td>{{ data.internet | currency }}</td>
             </tr>
             <tr>
               <td>5.5</td>
               <td>Beban Pemeliharaan</td>
-              <td></td>
+              <td>{{ data.pemeliharaan | currency }}</td>
             </tr>
             <tr>
               <td>5.6</td>
               <td>Beban administasi dan umum</td>
-              <td></td>
+              <td>{{ data.adminUmum | currency }}</td>
             </tr>
             <tr>
               <td>5.7</td>
               <td>Beban Pajak</td>
-              <td></td>
+              <td>{{ data.pajak | currency }}</td>
+            </tr>
+            <tr>
+              <td>5.9</td>
+              <td>Beban PHBI</td>
+              <td>{{ data.phbi | currency }}</td>
             </tr>
             <tr>
               <td>5.9</td>
               <td>Beban Transportasi</td>
-              <td></td>
+              <td>{{ data.transportasi | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Jumlah</td>
-              <td></td>
+              <td>{{ data.aktivitasKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Total</td>
-              <td></td>
+              <td>{{ data.aktivitasKas - data.aktivitasKredit | currency }}</td>
             </tr>
 
             <tr class="bold">
@@ -121,49 +126,49 @@
             <tr>
               <td>1.5</td>
               <td>Peralatan</td>
-              <td></td>
+              <td>{{ data.peralatanKas | currency }}</td>
               <td rowspan="3"></td>
             </tr>
             <tr>
               <td>1.7</td>
               <td>Gedung dan Bangunan</td>
-              <td></td>
+              <td>{{ data.gnbKas | currency }}</td>
             </tr>
             <tr>
               <td>1.9</td>
               <td>Tanah</td>
-              <td></td>
+              <td>{{ data.tanahKas | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Jumlah</td>
-              <td></td>
+              <td>{{ data.investasiKas | currency }}</td>
             </tr>
             <tr>
               <td>1.5</td>
               <td>Peralatan</td>
-              <td></td>
+              <td>{{ data.peralatanKredit | currency }}</td>
               <td rowspan="3"></td>
             </tr>
             <tr>
               <td>1.7</td>
               <td>Gedung dan Bangunan</td>
-              <td></td>
+              <td>{{ data.gnbKredit | currency }}</td>
             </tr>
             <tr>
               <td>1.9</td>
               <td>Tanah</td>
-              <td></td>
+              <td>{{ data.tanahKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Jumlah</td>
-              <td></td>
+              <td>{{ data.investasiKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Total</td>
-              <td></td>
+              <td>{{ data.investasiKas - data.investasiKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td colspan="4" class="font-weight-bold">Aktivitas Pendanaan</td>
@@ -176,17 +181,17 @@
             <tr>
               <td>2.1</td>
               <td>Utang Jangka Pendek</td>
-              <td></td>
+              <td>{{ data.utangJPendek | currency }}</td>
             </tr>
             <tr>
               <td>2.2</td>
               <td>Utang Jangka Panjang</td>
-              <td></td>
+              <td>{{ data.utangJPanjang | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Jumlah</td>
-              <td></td>
+              <td>{{ data.pendanaanKas | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -196,17 +201,17 @@
             <tr>
               <td>1.3</td>
               <td>Piutang</td>
-              <td></td>
+              <td>{{ data.piutangKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Jumlah</td>
-              <td></td>
+              <td>{{ data.piutangKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td></td>
               <td colspan="2">Total</td>
-              <td></td>
+              <td>{{ data.pendanaanKas - data.piutangKredit | currency }}</td>
             </tr>
 
             <tr>
@@ -214,15 +219,15 @@
             </tr>
             <tr class="bold">
               <td colspan="3">Kenaikan/Penurunan kas</td>
-              <td></td>
+              <td>{{ data.aktivitasKas - data.aktivitasKredit + data.investasiKas - data.investasiKredit + data.pendanaanKas - data.piutangKredit | currency }}</td>
             </tr>
             <tr class="bold">
               <td colspan="3">Kas setara kas awal tahun</td>
-              <td></td>
+              <td>{{ data. | currency }}</td>
             </tr>
             <tr class="bold">
               <td colspan="3">Kas setara kas akhir tahun</td>
-              <td></td>
+              <td>{{ data. | currency }}</td>
             </tr>
           </tbody>
         </table>
@@ -232,7 +237,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      data: [],
+    };
+  },
+  mounted() {
+    axios
+      .get("api/laporan/arusKas")
+      .then((response) => (this.data = response.data, console.log(this.data)))
+      .catch((error) => console.log(error));
+  }
+};
 </script>
 
 <style>
