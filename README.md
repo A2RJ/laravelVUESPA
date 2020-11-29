@@ -7,40 +7,4 @@
 
 [+] On progress     [x] Finish
 
-[x] Hasil query join masih ada kesalahan untuk nama akun, lakukan pemeriksaan query dan hasil query karena harus ada 2 kondisi pada tb. akun untuk mendapatkan data akun yang sesuai <br>
-
-[x] Fitur pencarian <br>
-
-[x] Cari jurnal langkah2 menyusun pelaporan PSAK (19 November) <br>
-
-[x] Perbaiki masalah penomoran akun sesuai aktivitas (hanya akun yg memiliki nomor akun) (19 November) - Langkah awal adalah mana aset yg paling mudah dicairkan<br>
-
-[x] Implementasi beban penyusutan (Hanya aktivitas pembelian aset saja yg mempunyai beban penyusutan) (20 November)<br>
-
-[+] Panggil nilai sesuai akun untuk setiap halaman. <br>
-# Pelajari dan buat design halaman
-# Ambil nilai untuk masing akun dicontroller setelah halaman request masing2 nilai sesuai halaman
-# Tampilkan data
-perubahan dana (24 November)<br>
-aktivitas (21 November)<br>
-arus kas (22 November)<br>
-perubahan aset kelolaan (23 November)<br>
-neraca (25 November)<br>
-
-[+] Styling ulang UI/UX. ex: notif dll<br>
-
-Note:
-- Jumlah yg masih harus dibayar = sisa cicilan yg harus  <br>
-
-[=] Penomoran akun mulai dari aset paling cepat diuangkan
-[Aset / Kas]
-[+] Kas
-[+] Bank
-[+] Piutang
-[+] Perlengkapan
-[Aset Tetap]
-[+] Tanah
-[+] G&B
-[+] Akumulasi
-[+] peralatan
-[+] Akumulasi
+#[x] Input semua nilai dan cek pada setiap halaman
