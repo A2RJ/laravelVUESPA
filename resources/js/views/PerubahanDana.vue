@@ -219,7 +219,7 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Surplus (Defisit)</td>
-              <td>{{ data.penerimaanInfak + data.amilinfak - data.penyaluranInfak | currency }}</td>
+              <td>{{ data.penerimaanInfak - data.penyaluranInfak | currency }}</td>
             </tr>
             <tr>
               <td></td>

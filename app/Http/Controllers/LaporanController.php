@@ -42,12 +42,14 @@ class LaporanController extends Controller
      **/
     public function LPK()
     {
+        $kas = ($this->get(5) + $this->get(12) + $this->get(15) + $this->get(18)) - ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(12) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17));
+
         return response()->json([
-            'kas' => 0,
-            'bank' => $this->get(18) - $this->get(17, 1.2),
+            'kas' => $kas,
+            'bank' => $this->get(17) - $this->get(18),
             'piutang' => $this->get(15, 2.3) - $this->get(14, 2.3),
-            'perlengkapan' => $this->get(12, 1.4) - $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4),
-            'aktivaLancar' => ($this->get(18) - $this->get(17, 1.2)) + ($this->get(15, 2.3) - $this->get(14, 2.3)) + ($this->get(12, 1.4) - $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4)),
+            'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4) - $this->get(12, 1.4),
+            'aktivaLancar' => 0,
             'peralatan' => $this->get(12, 2.1) - $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1),
             'AkmPeralatan' => $this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2),
             'gnb' => $this->get(12, 2.3) - $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3),
@@ -59,7 +61,7 @@ class LaporanController extends Controller
             'jumlahUtang' => ($this->get(16, 2.1) - $this->get(15, 2.1)) + ($this->get(16, 2.2) - $this->get(15, 2.2)),
             'zakat' => ($this->get(1, 4.8) + $this->get(1, 4.9) + $this->get(1, '4.10')) - ($this->get(2, 5.13) + $this->get(2, 5.14) + $this->get(2, 5.15) + $this->get(2, 5.16) + $this->get(2, 5.17)),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - ($this->get(4, 5.18) + $this->get(4, 5.19) + $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5) + $this->get(3, 2.2) + $this->get(3, 2.4)),
-            'amil' => ($this->get(5, 4.1) + $this->get(5, 4.2) + $this->get(5, 4.3) + $this->get(12) + $this->get(15) + $this->get(18)) - ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17)),
+            'amil' => $this->get(5) + $this->get(12) + $this->get(15) + $this->get(18),
             'nonHalal' => ($this->get(7, 4.5) + $this->get(7, 4.6) + $this->get(7, 4.7)) - ($this->get(8, 5.11) + $this->get(8, 5.12))
         ]);
     }
@@ -136,14 +138,14 @@ class LaporanController extends Controller
     public function LPAK()
     {
         return response()->json([
-            'lancarKas' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 3.13),
+            'lancarKas' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13),
             'lancarKredit' => $this->get(4, 5.18) + $this->get(4, 5.19),
             'penyisihan' => '',
-            'jumlahLancar' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 3.13) + $this->get(4, 5.18) + $this->get(4, 5.19),
+            'jumlahLancar' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) - $this->get(4, 5.18) + $this->get(4, 5.19),
             'tdkLancarKas' => $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5),
             'tdkLancarKredit' => $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5),
             'penyusutan' => $this->get(3, 2.2) + $this->get(3, 2.4),
-            'jumlahTdkLancar' => $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5) + $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5) + $this->get(3, 2.2) + $this->get(3, 2.4)
+            'jumlahTdkLancar' => ($this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - ($this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5)) - ($this->get(3, 2.2) + $this->get(3, 2.4))
         ]);
     }
     /** 
@@ -164,7 +166,7 @@ class LaporanController extends Controller
             'penyaluranZakat' => $this->get(2, 5.13) + $this->get(2, 5.14) + $this->get(2, 5.15) + $this->get(2, 5.16) + $this->get(2, 5.17),
             'muqayyadahKas' => $this->get(3, 4.11),
             'mutlaqahKas' => $this->get(3, 4.12),
-            'pengelolaan' => $this->get(3, 3.13),
+            'pengelolaan' => $this->get(3, 4.13),
             'peralatan3' => $this->get(3, 2.1),
             'gnb3' => $this->get(3, 2.3),
             'tanah3' => $this->get(3, 2.5),

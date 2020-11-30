@@ -57,7 +57,7 @@
             <tr>
               <td></td>
               <td>Jumlah</td>
-              <td>{{ data.aktivaLancar | currency}}</td>
+              <td>{{ data.kas + data.bank + data.piutang + data.perlengkapan | currency}}</td>
               <td></td>
               <td>Jumlah</td>
               <td>{{ data.jumlahUtang | currency}}</td>
@@ -113,7 +113,7 @@
             <tr>
               <td></td>
               <td>Jumlah Aset</td>
-              <td>{{ data.zakat | currency}}</td>
+              <td>{{ data.aktivaLancar - data.aktivaTdkLancar | currency}}</td>
               <td></td>
               <td>Jumlah Kewajiban dan Saldo Dana</td>
               <td>{{ data.zakat + data.infak + data.amil + data.nonHalal - data.jumlahUtang | currency}}</td>

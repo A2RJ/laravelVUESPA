@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 20 Nov 2020 pada 19.16
+-- Waktu pembuatan: 30 Nov 2020 pada 12.08
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -52,7 +52,8 @@ INSERT INTO `aktivitas` (`id_aktivitas`, `aktivitas`) VALUES
 (14, 'Pemberian peminjaman'),
 (15, 'Pelunasan peminjaman'),
 (16, 'Penerimaan peminjaman'),
-(17, 'Bank');
+(17, 'Setor'),
+(18, 'Tarik');
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,7 @@ INSERT INTO `akun` (`id`, `id_akun`, `no_akun`, `akun`, `debet`, `kredit`, `kete
 (24, 8, '5.11', 'Penggunaan dana nonhalal', 'Penggunaan dana nonhalal', 'Kas', 'Kas'),
 (25, 8, '5.12', 'Beban administrasi bank', 'Beban administrasi bank', 'Kas', 'Kredit'),
 (26, 17, '1.2', 'Setor', 'Setor', 'Kas', 'Kredit'),
-(27, 17, '1.2', 'Tarik', 'Kas', 'Tarik', 'Kas'),
+(27, 18, '1.2', 'Tarik', 'Kas', 'Tarik', 'Kas'),
 (28, 9, '1.4', 'Perlengkapan', 'Perlengkapan', 'Kas', 'Kredit'),
 (29, 9, '2.1', 'Peralatan', 'Peralatan', 'Kas', 'Kredit'),
 (30, 9, '2.3', 'Gedung dan Bangunan', 'Gedung dan Bangunan', 'Kas', 'Kredit'),
@@ -125,7 +126,18 @@ INSERT INTO `akun` (`id`, `id_akun`, `no_akun`, `akun`, `debet`, `kredit`, `kete
 (52, 13, '5.9', 'Transportasi', 'Transportasi', 'Kas', 'Kredit'),
 (53, 3, '2.1', 'Peralatan', 'Kas', 'Peralatan', 'kas'),
 (55, 3, '2.3', 'Gedung dan Bangunan', 'Kas', 'Gedung dan Bangunan', 'kas'),
-(56, 3, '2.5', 'Tanah', 'Kas', 'Tanah', 'kas');
+(56, 3, '2.5', 'Tanah', 'Kas', 'Tanah', 'kas'),
+(57, 3, '2.2', 'Penyusutan Peralatan', 'B. P. Peralatan', 'A. P. Peralatan', 'Kredit'),
+(58, 3, '2.4', 'Penyusutan Gedung dan Bangunan', 'B. P. Gedung dan Bangunan', 'A. P Gedung dan Bangunan', 'Kredit'),
+(59, 9, '2.2', 'Penyusutan Peralatan', 'B. P. Peralatan', 'A. P. Peralatan', 'Kredit'),
+(60, 9, '2.4', 'Penyusutan Gedung dan Bangunan', 'B. P. Gedung dan Bangunan', 'A. P. Gedung dan Bangunan', 'Kredit'),
+(61, 10, '2.2', 'Penyusutan Peralatan', 'B. P. Peralatan', 'A. P. Peralatan', 'Kredit'),
+(62, 10, '2.4', 'Penyusutan Gedung dan Bangunan', 'B. P. Gedung dan Bangunan', 'A. P. Gedung dan Bangunan', 'Kredit'),
+(63, 11, '2.2', 'Penyusutan Peralatan', 'B. P Peralatan', 'A. P. Peralatan', 'Kredit'),
+(64, 11, '2.4', 'Penyusutan Gedung dan Bangunan', 'B. P. Gedung dan Bangunan', 'A. P. Gedung dan Bangunan', 'Kredit'),
+(65, 4, '2.1', 'Peralatan', 'Peralatan', 'Kas', 'Kredit'),
+(66, 4, '2.3', 'Gedung dan Bangunan', 'Gedung dan Bangunan', 'Kas', 'Kredit'),
+(67, 4, '2.5', 'Tanah', 'Tanah', 'Kas', 'Kredit');
 
 -- --------------------------------------------------------
 
@@ -157,16 +169,6 @@ CREATE TABLE `jurnal` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `jurnal`
---
-
-INSERT INTO `jurnal` (`id`, `id_aktivitas`, `jangka_waktu`, `no_akun`, `keterangan`, `jum_debet`, `jum_kredit`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(52, '9', NULL, '1.4', 'wew', '33', '33', '2020-10-31 12:50:18', '2020-10-31 12:50:18', NULL),
-(57, '10', NULL, '1.4', 'wew', '33', '33', '2020-10-31 12:50:18', '2020-10-31 12:50:18', NULL),
-(58, '9', NULL, '1.4', 'sdsdsds', '200000', '200000', '2020-11-20 10:39:21', '2020-11-20 10:39:21', NULL),
-(59, '9', NULL, '1.4', 'asdas', '23', '23', '2020-11-20 10:43:22', '2020-11-20 10:43:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -234,13 +236,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `aktivitas`
 --
 ALTER TABLE `aktivitas`
-  MODIFY `id_aktivitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_aktivitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT untuk tabel `jangka_waktu`
@@ -252,7 +254,7 @@ ALTER TABLE `jangka_waktu`
 -- AUTO_INCREMENT untuk tabel `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`

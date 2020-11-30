@@ -37,7 +37,6 @@ class JurnalController extends Controller
         if ($model->save()) {
             if (
                 $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "3" or
-                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "3" or
                 $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "9" or
                 $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "10" or
                 $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "11"
@@ -53,7 +52,6 @@ class JurnalController extends Controller
                 ]);
                 return response()->json(['message' => "Berhasil perlatan"]);
             } elseif (
-                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "3" or
                 $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "3" or
                 $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "9" or
                 $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "10" or
