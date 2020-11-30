@@ -97,6 +97,6 @@ class JurnalController extends Controller
 
     public function hapus($id)
     {
-        return response()->json(['data' => Jurnal::find($id)]);
+        return response()->json(['data' => Jurnal::find($id)->delete(), 'msg' => 'Berhasil hapus jurnal']);
     }
 }

@@ -350,7 +350,7 @@
               <td></td>
               <td>Administrasi Bank</td>
               <td>{{ data.administrasiBank | currency }}</td>
-            </tr> 
+            </tr>
             <tr>
               <td></td>
               <td>Penggunaan dana nonhalal lainnya</td>
@@ -397,19 +397,19 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      data: [],
-    };
-  },
-  mounted() {
-    axios
-      .get("api/laporan/lpd")
-      .then((response) => (this.data = response.data))
-      .catch((error) => console.log(error));
-  }
-};
+  export default {
+    data() {
+      return {
+        data: [],
+      };
+    },
+    mounted() {
+      axios
+        .get("api/laporan/lpd")
+        .then((response) => (this.data = response.data))
+        .catch((error) => console.log(error));
+    }
+  };
 </script>
 
 <style>

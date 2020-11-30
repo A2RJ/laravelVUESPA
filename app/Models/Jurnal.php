@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 /**
     @property varchar $aktivitas aktivitas
     @property varchar $jangka_waktu jangka waktu
@@ -19,12 +19,12 @@ use Illuminate\Support\Facades\DB;
  */
 class Jurnal extends Model
 {
+    // use SoftDeletes;
 
     /**
      * Database table name
      */
     protected $table = 'jurnal';
-
     /**
      * Mass assignable columns
      */

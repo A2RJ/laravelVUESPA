@@ -41,19 +41,19 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      data: [],
-    };
-  },
-  mounted() {
-    axios
-      .get("api/laporan/lpak")
-      .then((response) => (this.data = response.data))
-      .catch((error) => console.log(error));
-  }
-};
+  export default {
+    data() {
+      return {
+        data: [],
+      };
+    },
+    mounted() {
+      axios
+        .get("api/laporan/lpak")
+        .then((response) => (this.data = response.data))
+        .catch((error) => console.log(error));
+    }
+  };
 </script>
 
 <style>

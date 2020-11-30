@@ -61,7 +61,7 @@ class LaporanController extends Controller
             'jumlahUtang' => ($this->get(16, 2.1) - $this->get(15, 2.1)) + ($this->get(16, 2.2) - $this->get(15, 2.2)),
             'zakat' => ($this->get(1, 4.8) + $this->get(1, 4.9) + $this->get(1, '4.10')) - ($this->get(2, 5.13) + $this->get(2, 5.14) + $this->get(2, 5.15) + $this->get(2, 5.16) + $this->get(2, 5.17)),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - ($this->get(4, 5.18) + $this->get(4, 5.19) + $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5) + $this->get(3, 2.2) + $this->get(3, 2.4)),
-            'amil' => $this->get(5) + $this->get(12) + $this->get(15) + $this->get(18),
+            'amil' => $kas,
             'nonHalal' => ($this->get(7, 4.5) + $this->get(7, 4.6) + $this->get(7, 4.7)) - ($this->get(8, 5.11) + $this->get(8, 5.12))
         ]);
     }

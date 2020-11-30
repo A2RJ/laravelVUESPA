@@ -29,6 +29,6 @@ Route::get('waktu/{id}', [JurnalController::class, 'getWaktu']);
 
 Route::get('cari/{data}', [JurnalController::class, 'cari']);
 
-Route::get('abcd', [JurnalController::class, 'abcd']);
+Route::get('hapus/{id}', [JurnalController::class, 'hapus']);
 
 Route::get('laporan/{id}', [LaporanController::class, 'index']);

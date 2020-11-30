@@ -1,18 +1,24 @@
-window.Vue = require('vue');
+window.Vue = require('vue')
 
-import Vue from 'vue';
-import App from './layouts/App.vue';
-import VueRouter from 'vue-router';
-import VueAxios from 'vue-axios';
-import axios from 'axios';
-import { Plugin, Fragment } from 'vue-fragment';
-import Vue2Filters from 'vue2-filters';
-// import VueLoadImage from 'vue-load-image'
+import Vue from 'vue'
+import App from './layouts/App.vue'
+import VueRouter from 'vue-router'
+import VueAxios from 'vue-axios'
+import axios from 'axios'
+import { Plugin, Fragment } from 'vue-fragment'
+import Vue2Filters from 'vue2-filters'
 import VueCurrencyFilter from 'vue-currency-filter'
+import VueSweetalert2 from 'vue-sweetalert2';
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.component('fragment', require('vue-fragment'));
-
+ 
+const options = {
+  confirmButtonColor: '#41b882',
+  cancelButtonColor: '#ff7674',
+};
+ 
+Vue.use(VueSweetalert2, options);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Plugin)

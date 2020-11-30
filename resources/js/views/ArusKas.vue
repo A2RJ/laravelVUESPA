@@ -219,7 +219,9 @@
             </tr>
             <tr class="bold">
               <td colspan="3">Kenaikan/Penurunan kas</td>
-              <td>{{ data.aktivitasKas - data.aktivitasKredit + data.investasiKas - data.investasiKredit + data.pendanaanKas - data.piutangKredit | currency }}</td>
+              <td>
+                {{ data.aktivitasKas - data.aktivitasKredit + data.investasiKas - data.investasiKredit + data.pendanaanKas - data.piutangKredit | currency }}
+              </td>
             </tr>
             <tr class="bold">
               <td colspan="3">Kas setara kas awal tahun</td>
@@ -237,19 +239,19 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      data: [],
-    };
-  },
-  mounted() {
-    axios
-      .get("api/laporan/arusKas")
-      .then((response) => (this.data = response.data))
-      .catch((error) => console.log(error));
-  }
-};
+  export default {
+    data() {
+      return {
+        data: [],
+      };
+    },
+    mounted() {
+      axios
+        .get("api/laporan/arusKas")
+        .then((response) => (this.data = response.data))
+        .catch((error) => console.log(error));
+    }
+  };
 </script>
 
 <style>
