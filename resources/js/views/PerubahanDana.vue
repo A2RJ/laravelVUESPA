@@ -258,13 +258,18 @@
             </tr>
             <tr>
               <td></td>
+              <td class="font-weight-bold">Jumlah penerimaan dana amil</td>
+              <td>{{ data.penerimaanAmil | currency }}</td>
+            </tr>
+            <tr>
+              <td></td>
               <td>Penerimaan lainnya</td>
               <td>{{ data.penerimaanlainnya | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td class="font-weight-bold">Jumlah penerimaan dana amil</td>
-              <td>{{ data.penerimaanAmil | currency }}</td>
+              <td class="font-weight-bold">Jumlah penerimaan dana amil dan lainnya</td>
+              <td>{{ data.penerimaanAmilLainnya | currency }}</td>
             </tr>
             <tr>
               <td></td>

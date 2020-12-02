@@ -3072,9 +3072,16 @@ __webpack_require__.r(__webpack_exports__);
         _this3.form.no_akun = '';
         _this3.form.keterangan = '';
         _this3.form.jum_debet = '';
-        _this3.form.jum_kredit = ''; // window.location.replace('/')
+        _this3.form.jum_kredit = '';
       })["catch"](function (err) {
         console.log(err);
+
+        _this3.$swal({
+          icon: 'error',
+          title: 'Oops...',
+          text: "Pastikan semua field terisi",
+          footer: err
+        });
       });
     }
   }
@@ -3318,6 +3325,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -47588,29 +47600,22 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link",
-                          attrs: { href: "#", "aria-expanded": "false" }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "tag" }
-                          }),
-                          _c(
-                            "span",
-                            { staticClass: "hide-menu" },
-                            [
-                              _c("router-link", { attrs: { to: "/Input" } }, [
-                                _vm._v("Input")
-                              ])
-                            ],
-                            1
-                          )
-                        ]
-                      )
+                      _c("a", { staticClass: "sidebar-link" }, [
+                        _c("i", {
+                          staticClass: "feather-icon",
+                          attrs: { "data-feather": "tag" }
+                        }),
+                        _c(
+                          "span",
+                          { staticClass: "hide-menu" },
+                          [
+                            _c("router-link", { attrs: { to: "/Input" } }, [
+                              _vm._v("Input")
+                            ])
+                          ],
+                          1
+                        )
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
@@ -50492,6 +50497,18 @@ var render = function() {
               _c("tr", [
                 _c("td"),
                 _vm._v(" "),
+                _c("td", { staticClass: "font-weight-bold" }, [
+                  _vm._v("Jumlah penerimaan dana amil")
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.data.penerimaanAmil)))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
                 _c("td", [_vm._v("Penerimaan lainnya")]),
                 _vm._v(" "),
                 _c("td", [
@@ -50503,11 +50520,13 @@ var render = function() {
                 _c("td"),
                 _vm._v(" "),
                 _c("td", { staticClass: "font-weight-bold" }, [
-                  _vm._v("Jumlah penerimaan dana amil")
+                  _vm._v("Jumlah penerimaan dana amil dan lainnya")
                 ]),
                 _vm._v(" "),
                 _c("td", [
-                  _vm._v(_vm._s(_vm._f("currency")(_vm.data.penerimaanAmil)))
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.data.penerimaanAmilLainnya))
+                  )
                 ])
               ]),
               _vm._v(" "),
@@ -67245,31 +67264,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// $("#selectAktivitas").click(function(){
-//     const aktivitas = $("#selectAktivitas").val();
-//     $("#selectAkun").empty();
-//     $("#selectAkun").append('<option value="">Pilih Akun</option>');
-//     $.get( "/api/jurnals/akun/"+aktivitas, function( data ) {
-//         var i;
-//         for (i = 0; i < data.length; i++) {
-//             $('#selectAkun').append($("<option value="+ data[i]['id'] +"></option>").text(data[i]['no_akun'] + " " + data[i]['akun']));
-//         }
-//     });
-// });
-// $("#selectAktivitas").click(function(){
-//     const aktivitas = $("#selectAktivitas").val();
-//     $("#selectWaktu").empty();
-//     $("#selectWaktu").append('<option value="">Pilih Waktu</option>');
-//     $.get( "/api/jurnals/waktu/"+aktivitas, function( data ) {
-//         var i;
-//         for (i = 0; i < data.length; i++) {
-//             $('#selectWaktu').append($("<option value="+ data[i]['id'] +"></option>").text(data[i]['jangka_waktu']));
-//         }
-//     });
-// });
-// $("li").click(function(){
-//     $("li").addClass("selected")
-// })
 var header = document.getElementById("sidebarnav");
 var li = header.getElementsByClassName("sidebar-item");
 
@@ -67277,7 +67271,7 @@ for (var i = 0; i < li.length; i++) {
   li[i].addEventListener("click", function () {
     var current = document.getElementsByClassName("selected");
     current[0].className = current[0].className.replace(" selected", "");
-    this.className += " selected";
+    this.className += " selected"; // this.className.addClass('selected')
   });
 }
 

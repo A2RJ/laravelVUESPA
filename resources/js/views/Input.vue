@@ -122,10 +122,15 @@
                         this.form.keterangan = ''
                         this.form.jum_debet = ''
                         this.form.jum_kredit = ''
-                        // window.location.replace('/')
                     })
                     .catch(err => {
                         console.log(err);
+                        this.$swal({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: "Pastikan semua field terisi",
+                            footer: err
+                        })
                     });
             }
         }
