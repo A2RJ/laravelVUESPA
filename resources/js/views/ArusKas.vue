@@ -2,7 +2,7 @@
   <div class="row container d-flex justify-content-center">
     <div class="col-sm-12">
       <div class="mb-4 mt-5">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
           <thead>
             <tr>
               <th colspan="4">Aktivitas operasi</th>

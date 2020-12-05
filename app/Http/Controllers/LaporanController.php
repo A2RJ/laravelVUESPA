@@ -35,6 +35,77 @@ class LaporanController extends Controller
         }
     }
 
+    public function hitungDanaAmil()
+    {
+        $sumbangan = $this->get(5, 4.1);
+        $zakat = $this->get(5, 4.2);
+        $infak = $this->get(5, 4.3);
+        $penerimaanLainAmil = $this->get(12) + $this->get(15) + $this->get(18);
+        $kredit = $this->get(9) + $this->get(10) + $this->get(11) + $this->get(12) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17);
+        $kreditAmil = $kredit;
+
+        $kredit = $sumbangan - $kredit;
+
+        if($kredit <= 0) {
+            
+            $sumbangan = 0;
+            $kredit = abs($kredit);
+            $kredit = $zakat - $kredit;
+            
+            if($kredit <= 0){
+                
+                $zakat = 0;
+                $kredit = abs($kredit);
+                $kredit = $infak - $kredit;
+                
+                if($kredit <= 0){
+                    return response()->json([
+                        'msg' => 'Jumlah kas tidak sesuai dengan kredit'
+                    ]);
+                }else{
+                    $infak = $kredit;
+                    $kredit = 0;
+                    return response()->json([
+                        'msg' => 'Kas infak : ' . $this->get(5, 4.3) . "-" . $kreditAmil,
+                        'sumbangan' => $sumbangan,
+                        'zakat' => $zakat,
+                        'infak' => $infak,
+                        'penerimaanLainAmil' => $penerimaanLainAmil,
+                        'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil,
+                        'kredit' => $kredit,
+                        'kreditAwal' => $kreditAmil
+                    ]);
+                }
+            }else{
+                $zakat = $kredit;
+                $kredit = 0;
+                return response()->json([
+                    'msg' => 'Kas zakat : ' . $this->get(5, 4.2) . "-" . $kreditAmil,
+                    'sumbangan' => $sumbangan,
+                    'zakat' => $zakat,
+                    'infak' => $infak,
+                    'penerimaanLainAmil' => $penerimaanLainAmil,
+                    'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil,
+                    'kredit' => $kredit,
+                    'kreditAwal' => $kreditAmil
+                ]);
+            }
+        }else{
+            $sumbangan = $kredit;
+            $kredit = 0;
+            return response()->json([
+                'msg' => 'Kas sumbangan : ' . $this->get(5, 4.1) . "-" . $kreditAmil,
+                'sumbangan' => $sumbangan,
+                'zakat' => $zakat,
+                'infak' => $infak,
+                'penerimaanLainAmil' => $penerimaanLainAmil,
+                'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil,
+                'kredit' => $kredit,
+                'kreditAwal' => $kreditAmil
+            ]);
+        }
+    }
+
     /** 
      * FUNGSI UNTUK LAPORAN
      * 

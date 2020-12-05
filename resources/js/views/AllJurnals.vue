@@ -108,12 +108,7 @@
                                                 {{ jurnal.jum_kredit | currency }}
                                             </td>
                                             <td>
-                                                <button @click="edit(user)"
-                                                    class="btn btn-sm btn-outline-warning btn-rounded">
-                                                    Edit
-                                                </button>
-                                                ||
-                                                <button @click="del(user)"
+                                                <button @click="hapus(jurnal.id)"
                                                     class="mt-1 btn btn-outline-danger btn-sm btn-rounded">
                                                     Delete
                                                 </button>

@@ -2,7 +2,7 @@
   <div class="row container d-flex justify-content-center">
     <div class="col-sm-12">
       <div class="my-5 mb-5">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
           <thead>
             <tr>
               <th></th>

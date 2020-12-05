@@ -69,4 +69,6 @@ class Jurnal extends Model
             ->orWhere('jurnal.keterangan', 'LIKE', '%' . $id . '%')
             ->paginate(10);
     }
+
+    
 }

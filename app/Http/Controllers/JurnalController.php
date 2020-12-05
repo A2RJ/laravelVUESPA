@@ -99,4 +99,10 @@ class JurnalController extends Controller
     {
         return response()->json(['data' => Jurnal::find($id)->delete(), 'msg' => 'Berhasil hapus jurnal']);
     }
+
+    public function cekKas()
+    {
+        //Buat fungsi agar Kredit != Kas
+        //dan sebaliknya
+    }
 }
