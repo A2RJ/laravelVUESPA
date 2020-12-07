@@ -49,12 +49,12 @@
                                 <div class="form-group">
                                     <label for="jum_debet">Debet</label>
                                     <input type="number" class="form-control" name="jum_debet" v-model="form.jum_debet"
-                                        id="jum_debet" placeholder="RP. . ." />
+                                        id="jum_debet"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="jum_kredit">Kredit</label>
                                     <input type="number" class="form-control" name="jum_kredit"
-                                        v-model="form.jum_kredit" id="jum_kredit" placeholder="RP. . ." />
+                                        v-model="form.jum_kredit" id="jum_kredit rupiah1" placeholder="RP. . ." />
                                 </div>
                                 <button type="submit" class="btn btn-md btn-outline-primary btn-rounded float-right">
                                     Submit

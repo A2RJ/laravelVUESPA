@@ -2410,7 +2410,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -47595,22 +47594,26 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
-                      _c("a", { staticClass: "sidebar-link" }, [
-                        _c("i", {
-                          staticClass: "feather-icon",
-                          attrs: { "data-feather": "tag" }
-                        }),
-                        _c(
-                          "span",
-                          { staticClass: "hide-menu" },
-                          [
-                            _c("router-link", { attrs: { to: "/Input" } }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "sidebar-link",
+                          attrs: { href: "#", "aria-expanded": "false" }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "feather-icon",
+                            attrs: { "data-feather": "home" }
+                          }),
+                          _vm._v(" "),
+                          _c("router-link", { attrs: { to: "/Input" } }, [
+                            _c("span", { staticClass: "hide-menu" }, [
                               _vm._v("Input")
                             ])
-                          ],
-                          1
-                        )
-                      ])
+                          ])
+                        ],
+                        1
+                      )
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
@@ -49549,8 +49552,7 @@ var render = function() {
                       attrs: {
                         type: "number",
                         name: "jum_debet",
-                        id: "jum_debet",
-                        placeholder: "RP. . ."
+                        id: "jum_debet"
                       },
                       domProps: { value: _vm.form.jum_debet },
                       on: {
@@ -49582,7 +49584,7 @@ var render = function() {
                       attrs: {
                         type: "number",
                         name: "jum_kredit",
-                        id: "jum_kredit",
+                        id: "jum_kredit rupiah1",
                         placeholder: "RP. . ."
                       },
                       domProps: { value: _vm.form.jum_kredit },
@@ -67279,16 +67281,50 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// $(document).ready(function () {
 var header = document.getElementById("sidebarnav");
 var li = header.getElementsByClassName("sidebar-item");
 
 for (var i = 0; i < li.length; i++) {
   li[i].addEventListener("click", function () {
     var current = document.getElementsByClassName("selected");
-    current[0].className = current[0].className.replace(" selected", "");
-    this.className += " selected"; // this.className.addClass('selected')
+    current[0].className = current[0].className.replace(" selected", " ");
+    this.className += " selected";
   });
-}
+} // $("#rupiah").keyup(function (event) {
+//   var rupiah = formatRupiah($("#rupiah").val());
+//   console.log(rupiah);
+// });
+
+
+$("input #rupiah").keyup(function () {
+  var text = $(this).text(); // $("input #rupiah").val(formatRupiah(text, 'Rp. '));
+
+  console.log(text);
+});
+var rupiah = document.getElementById('#jum_debet');
+rupiah.addEventListener('keyup', function (e) {
+  // tambahkan 'Rp.' pada saat form di ketik
+  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+  rupiah.value = formatRupiah(this.value, 'Rp. ');
+});
+/* Fungsi formatRupiah */
+
+function formatRupiah(angka, prefix) {
+  var number_string = angka.replace(/[^,\d]/g, '').toString(),
+      split = number_string.split(','),
+      sisa = split[0].length % 3,
+      rupiah = split[0].substr(0, sisa),
+      ribuan = split[0].substr(sisa).match(/\d{3}/gi); // tambahkan titik jika yang di input sudah menjadi angka ribuan
+
+  if (ribuan) {
+    separator = sisa ? '.' : '';
+    rupiah += separator + ribuan.join('.');
+  }
+
+  rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+  return prefix == undefined ? rupiah : rupiah ? 'Rp. ' + rupiah : '';
+} // });
 
 /***/ }),
 

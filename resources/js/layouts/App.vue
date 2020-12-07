@@ -261,12 +261,11 @@
                             <li class="nav-small-cap">
                                 <span class="hide-menu">Applications</span>
                             </li>
-
                             <li class="sidebar-item">
-                                <a class="sidebar-link"><i data-feather="tag"
-                                        class="feather-icon"></i><span class="hide-menu">
-                                        <router-link to="/Input">Input</router-link>
-                                    </span></a>
+                                <a class="sidebar-link" href="#" aria-expanded="false"><i data-feather="home"
+                                        class="feather-icon"></i>
+                                    <router-link to="/Input"><span class="hide-menu">Input</span></router-link>
+                                </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="#" aria-expanded="false"><i data-feather="tag"
