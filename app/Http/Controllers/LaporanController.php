@@ -42,7 +42,6 @@ class LaporanController extends Controller
         $infak = $this->get(5, 4.3);
         $penerimaanLainAmil = $this->get(12) + $this->get(15) + $this->get(18);
         $kredit = $this->get(9) + $this->get(10) + $this->get(11) + $this->get(12) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17);
-        $kreditAmil = $kredit;
 
         $kredit = $sumbangan - $kredit;
 
@@ -65,43 +64,34 @@ class LaporanController extends Controller
                 }else{
                     $infak = $kredit;
                     $kredit = 0;
-                    return response()->json([
-                        'msg' => 'Kas infak : ' . $this->get(5, 4.3) . "-" . $kreditAmil,
+                    return response()->json([    
                         'sumbangan' => $sumbangan,
                         'zakat' => $zakat,
                         'infak' => $infak,
                         'penerimaanLainAmil' => $penerimaanLainAmil,
-                        'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil,
-                        'kredit' => $kredit,
-                        'kreditAwal' => $kreditAmil
+                        'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
                     ]);
                 }
             }else{
                 $zakat = $kredit;
                 $kredit = 0;
                 return response()->json([
-                    'msg' => 'Kas zakat : ' . $this->get(5, 4.2) . "-" . $kreditAmil,
                     'sumbangan' => $sumbangan,
                     'zakat' => $zakat,
                     'infak' => $infak,
                     'penerimaanLainAmil' => $penerimaanLainAmil,
-                    'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil,
-                    'kredit' => $kredit,
-                    'kreditAwal' => $kreditAmil
+                    'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
                 ]);
             }
         }else{
             $sumbangan = $kredit;
             $kredit = 0;
             return response()->json([
-                'msg' => 'Kas sumbangan : ' . $this->get(5, 4.1) . "-" . $kreditAmil,
                 'sumbangan' => $sumbangan,
                 'zakat' => $zakat,
                 'infak' => $infak,
                 'penerimaanLainAmil' => $penerimaanLainAmil,
-                'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil,
-                'kredit' => $kredit,
-                'kreditAwal' => $kreditAmil
+                'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
             ]);
         }
     }
@@ -113,10 +103,8 @@ class LaporanController extends Controller
      **/
     public function LPK()
     {
-        $kas = ($this->get(5) + $this->get(12) + $this->get(15) + $this->get(18)) - ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(12) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17));
-
         return response()->json([
-            'kas' => $kas,
+            'kas' => ($this->get(5) + $this->get(12) + $this->get(15) + $this->get(18)) - ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17)),
             'bank' => $this->get(17) - $this->get(18),
             'piutang' => $this->get(15, 2.3) - $this->get(14, 2.3),
             'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4) - $this->get(12, 1.4),
@@ -132,7 +120,7 @@ class LaporanController extends Controller
             'jumlahUtang' => ($this->get(16, 2.1) - $this->get(15, 2.1)) + ($this->get(16, 2.2) - $this->get(15, 2.2)),
             'zakat' => ($this->get(1, 4.8) + $this->get(1, 4.9) + $this->get(1, '4.10')) - ($this->get(2, 5.13) + $this->get(2, 5.14) + $this->get(2, 5.15) + $this->get(2, 5.16) + $this->get(2, 5.17)),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - ($this->get(4, 5.18) + $this->get(4, 5.19) + $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5) + $this->get(3, 2.2) + $this->get(3, 2.4)),
-            'amil' => $kas,
+            'amil' => ($this->get(5) + $this->get(12) + $this->get(15) + $this->get(18)) - ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17)),
             'nonHalal' => ($this->get(7, 4.5) + $this->get(7, 4.6) + $this->get(7, 4.7)) - ($this->get(8, 5.11) + $this->get(8, 5.12))
         ]);
     }
@@ -253,9 +241,9 @@ class LaporanController extends Controller
             'sumbangan' => $this->get(5, 4.1),
             'amilzakat' => $this->get(5, 4.2),
             'amilinfak' => $this->get(5, 4.3),
-            'penerimaanAmil' => $this->get(5) - ($this->get(12) + $this->get(15) + $this->get(18)),
-            'penerimaanlainnya' => $this->get(12) + $this->get(15) + $this->get(18),
-            'penerimaanAmilLainnya' => $this->get(5),
+            'penerimaanAmil' => $this->get(12) + $this->get(15) + $this->get(18),
+            // 'penerimaanlainnya' => $this->get(12) + $this->get(15) + $this->get(18),
+            // 'penerimaanAmilLainnya' => $this->get(5),
             'bebanAmil' => $this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17),
             'bungaBank' => $this->get(7, 4.5),
             'giro' => $this->get(7, 4.6),

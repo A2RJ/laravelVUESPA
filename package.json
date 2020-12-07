@@ -30,6 +30,7 @@
         "vue-axios": "^2.1.5",
         "vue-currency-filter": "^5.2.0",
         "vue-fragment": "^1.5.1",
+        "vue-html2pdf": "^1.8.0",
         "vue-m-message": "^3.0.0",
         "vue-router": "^3.3.2",
         "vue-sweetalert2": "^4.1.1",

@@ -256,20 +256,20 @@
               <td>Sumbangan</td>
               <td>{{ data.sumbangan | currency }}</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td></td>
               <td class="font-weight-bold">Jumlah penerimaan dana amil</td>
+              <td>{{ data.penerimaanAmil | currency }}</td>
+            </tr> -->
+            <tr>
+              <td></td>
+              <td>Penerimaan lainnya</td>
               <td>{{ data.penerimaanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
-              <td>Penerimaan lainnya</td>
-              <td>{{ data.penerimaanlainnya | currency }}</td>
-            </tr>
-            <tr>
-              <td></td>
               <td class="font-weight-bold">Jumlah penerimaan dana amil dan lainnya</td>
-              <td>{{ data.penerimaanAmilLainnya | currency }}</td>
+              <td>{{ data.amilinfak + data.amilzakat + data.sumbangan + data.penerimaanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
@@ -294,7 +294,7 @@
             <tr>
               <td></td>
               <td class="font-weight-bold">Surplus (Defisit)</td>
-              <td>{{ data.penerimaanAmil - data.bebanAmil | currency }}</td>
+              <td>{{ (data.amilinfak + data.amilzakat + data.sumbangan + data.penerimaanAmil) - data.bebanAmil | currency }}</td>
             </tr>
             <tr>
               <td></td>
