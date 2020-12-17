@@ -10,15 +10,25 @@ import Vue2Filters from 'vue2-filters'
 import VueCurrencyFilter from 'vue-currency-filter'
 import VueSweetalert2 from 'vue-sweetalert2';
 import VueHtml2pdf from 'vue-html2pdf'
-
-Vue.component('pagination', require('laravel-vue-pagination'));
-Vue.component('fragment', require('vue-fragment'));
+import vueCurrencyDirective from 'vue-currency-directive';
 
 const options = {
   confirmButtonColor: '#41b882',
   cancelButtonColor: '#ff7674',
 };
+const options2 = {
+    name: 'currency',
+    symbol: 'Rp.',
+    thousandsSeparator: '.',
+    fractionCount: 0,
+    fractionSeparator: ',',
+    symbolPosition: 'front',
+    symbolSpacing: true
+}
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+Vue.component('fragment', require('vue-fragment'));
+Vue.directive('currency', vueCurrencyDirective);
 Vue.use(VueSweetalert2, options);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -26,18 +36,9 @@ Vue.use(Plugin)
 Vue.use(Fragment)
 Vue.use(Vue2Filters)
 Vue.use(VueHtml2pdf)
-Vue.use(VueCurrencyFilter,
-    {
-        name: 'currency',
-        symbol: 'Rp.',
-        thousandsSeparator: '.',
-        fractionCount: 0,
-        fractionSeparator: ',',
-        symbolPosition: 'front',
-        symbolSpacing: true
-    })
+Vue.use(VueCurrencyFilter, options2)
     
-    import AllJurnals from './views/AllJurnals.vue';
+import AllJurnals from './views/AllJurnals.vue';
 import Input from './views/Input.vue';
 import LPK from './views/LPK.vue';
 import Aktivitas from './views/Aktivitas.vue';

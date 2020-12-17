@@ -3020,15 +3020,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {},
   data: function data() {
     return {
       listAktivitas: [],
       listWaktu: [],
       listAkun: [],
       form: {},
-      message: false
+      message: false,
+      debet: {
+        value: "",
+        formatted: "" // Better to be empty
+
+      },
+      kredit: {
+        value: "",
+        formatted: "" // Better to be empty
+
+      }
     };
   },
   created: function created() {
@@ -3059,20 +3114,20 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       this.axios.post("/api/jurnals/", this.form).then(function (res) {
-        _this3.$swal('Success', 'Berhasil simpan data jurnal', 'success');
+        _this3.$swal("Success", "Berhasil simpan data jurnal", "success");
 
-        _this3.form.id_aktivitas = '';
-        _this3.form.jangka_waktu = '';
-        _this3.form.no_akun = '';
-        _this3.form.keterangan = '';
-        _this3.form.jum_debet = '';
-        _this3.form.jum_kredit = '';
+        _this3.form.id_aktivitas = "";
+        _this3.form.jangka_waktu = "";
+        _this3.form.no_akun = "";
+        _this3.form.keterangan = "";
+        _this3.form.jum_debet = "";
+        _this3.form.jum_kredit = "";
       })["catch"](function (err) {
         console.log(err);
 
         _this3.$swal({
-          icon: 'error',
-          title: 'Oops...',
+          icon: "error",
+          title: "Oops...",
           text: "Pastikan semua field terisi",
           footer: err
         });
@@ -56311,6 +56366,20 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="fun
 
 /***/ }),
 
+/***/ "./node_modules/vue-currency-directive/dist/index.min.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/vue-currency-directive/dist/index.min.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var e=(e,t)=>e[t].toLocaleString(e.locale||navigator.language,{style:"currency",currency:e.currency||"USD"}),t={bind(e,t,r){const a="input"!==e.tagName.toLowerCase()?e.querySelector(".v-currency-input")||e.querySelector('input[type="text"]')||e.querySelector("input"):e,u=new RegExp(/[a-zA-z,\W]/,"g"),[l,n]=t.expression.split("."),c=r.context.$data[l],o=e=>{u.test(e.value)&&(e.value=e.value.replace(u,""));const r=Number(e.value);let a,l;if(e.value&&0!==r){if(t.arg)if(t.arg.length<=3)a=t.arg;else{const e=t.arg.split("[");a=e[0],l=e[1],l=l.replace("]","")}else a=c.currency,l=c.locale;return r.toLocaleString(l||navigator.language,{style:a?"currency":void 0,currency:a||void 0})}return""};a.value=o(t),c.formatted=o(t),a.addEventListener("blur",e=>{e.target.value=o(e.target),c.formatted=e.target.value}),a.addEventListener("focus",e=>e.target.value=0===Number(c[n])?"":c[n]),a.addEventListener("input",e=>{u.test(e.target.value)&&(e.target.value=e.target.value.replace(u,""));const t=Number(e.target.value),r=0===t?"":t;c[n]=r})},update(t,r,a){const u="input"!==t.tagName.toLowerCase()?t.querySelector(".v-currency-input")||t.querySelector('input[type="text"]')||t.querySelector("input"):t,[l,n]=r.expression.split("."),c=a.context.$data[l];(c.currency||c.locale)&&(u.value===c.formatted&&(u.value=e(c,n)),c.formatted=e(c,n))}};/* harmony default export */ __webpack_exports__["default"] = (t);
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-currency-filter/dist/vue-currency-filter.module.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/vue-currency-filter/dist/vue-currency-filter.module.js ***!
@@ -59304,9 +59373,9 @@ var render = function() {
               _vm.message
                 ? _c("div", {}, [
                     _vm._v(
-                      "\n                            " +
+                      "\n              " +
                         _vm._s(_vm.message) +
-                        "\n                        "
+                        "\n            "
                     )
                   ])
                 : _vm._e(),
@@ -59379,9 +59448,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                        " +
+                                "\n                    " +
                                   _vm._s(aktivitas.aktivitas) +
-                                  "\n                                    "
+                                  "\n                  "
                               )
                             ]
                           )
@@ -59443,9 +59512,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                        " +
+                                "\n                    " +
                                   _vm._s(waktu.jangka_waktu) +
-                                  "\n                                    "
+                                  "\n                  "
                               )
                             ]
                           )
@@ -59504,11 +59573,11 @@ var render = function() {
                             { key: akun.id, domProps: { value: akun.no_akun } },
                             [
                               _vm._v(
-                                "\n                                        " +
+                                "\n                    " +
                                   _vm._s(akun.no_akun) +
                                   " " +
                                   _vm._s(akun.akun) +
-                                  "\n                                    "
+                                  "\n                  "
                               )
                             ]
                           )
@@ -59560,6 +59629,13 @@ var render = function() {
                     _c("input", {
                       directives: [
                         {
+                          name: "currency",
+                          rawName: "v-currency:IDR",
+                          value: _vm.debet.value,
+                          expression: "debet.value",
+                          arg: "IDR"
+                        },
+                        {
                           name: "model",
                           rawName: "v-model",
                           value: _vm.form.jum_debet,
@@ -59568,9 +59644,9 @@ var render = function() {
                       ],
                       staticClass: "form-control",
                       attrs: {
-                        type: "number",
                         name: "jum_debet",
-                        id: "jum_debet"
+                        id: "jum_debet",
+                        placeholder: "RP. . ."
                       },
                       domProps: { value: _vm.form.jum_debet },
                       on: {
@@ -59592,6 +59668,13 @@ var render = function() {
                     _c("input", {
                       directives: [
                         {
+                          name: "currency",
+                          rawName: "v-currency:IDR",
+                          value: _vm.kredit.value,
+                          expression: "kredit.value",
+                          arg: "IDR"
+                        },
+                        {
                           name: "model",
                           rawName: "v-model",
                           value: _vm.form.jum_kredit,
@@ -59600,9 +59683,8 @@ var render = function() {
                       ],
                       staticClass: "form-control",
                       attrs: {
-                        type: "number",
                         name: "jum_kredit",
-                        id: "jum_kredit rupiah1",
+                        id: "jum_kredit",
                         placeholder: "RP. . ."
                       },
                       domProps: { value: _vm.form.jum_kredit },
@@ -59624,11 +59706,7 @@ var render = function() {
                         "btn btn-md btn-outline-primary btn-rounded float-right",
                       attrs: { type: "submit" }
                     },
-                    [
-                      _vm._v(
-                        "\n                                Submit\n                            "
-                      )
-                    ]
+                    [_vm._v("\n                Submit\n              ")]
                   )
                 ]
               )
@@ -77371,40 +77449,7 @@ for (var i = 0; i < li.length; i++) {
     current[0].className = current[0].className.replace(" selected", " ");
     this.className += " selected";
   });
-} // $("#rupiah").keyup(function (event) {
-//   var rupiah = formatRupiah($("#rupiah").val());
-//   console.log(rupiah);
-// });
-
-
-$("input #rupiah").keyup(function () {
-  var text = $(this).text(); // $("input #rupiah").val(formatRupiah(text, 'Rp. '));
-
-  console.log(text);
-});
-var rupiah = document.getElementById('#jum_debet');
-rupiah.addEventListener('keyup', function (e) {
-  // tambahkan 'Rp.' pada saat form di ketik
-  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-  rupiah.value = formatRupiah(this.value, 'Rp. ');
-});
-/* Fungsi formatRupiah */
-
-function formatRupiah(angka, prefix) {
-  var number_string = angka.replace(/[^,\d]/g, '').toString(),
-      split = number_string.split(','),
-      sisa = split[0].length % 3,
-      rupiah = split[0].substr(0, sisa),
-      ribuan = split[0].substr(sisa).match(/\d{3}/gi); // tambahkan titik jika yang di input sudah menjadi angka ribuan
-
-  if (ribuan) {
-    separator = sisa ? '.' : '';
-    rupiah += separator + ribuan.join('.');
-  }
-
-  rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-  return prefix == undefined ? rupiah : rupiah ? 'Rp. ' + rupiah : '';
-} // });
+}
 
 /***/ }),
 
@@ -77983,13 +78028,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-currency-filter */ "./node_modules/vue-currency-filter/dist/vue-currency-filter.module.js");
 /* harmony import */ var vue_sweetalert2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-sweetalert2 */ "./node_modules/vue-sweetalert2/dist/index.js");
 /* harmony import */ var vue_html2pdf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-html2pdf */ "./node_modules/vue-html2pdf/dist/vue-html2pdf.esm.js");
-/* harmony import */ var _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/AllJurnals.vue */ "./resources/js/views/AllJurnals.vue");
-/* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
-/* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
-/* harmony import */ var _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/Aktivitas.vue */ "./resources/js/views/Aktivitas.vue");
-/* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
-/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
-/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
+/* harmony import */ var vue_currency_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-currency-directive */ "./node_modules/vue-currency-directive/dist/index.min.js");
+/* harmony import */ var _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/AllJurnals.vue */ "./resources/js/views/AllJurnals.vue");
+/* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
+/* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
+/* harmony import */ var _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/Aktivitas.vue */ "./resources/js/views/Aktivitas.vue");
+/* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
+/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
+/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
@@ -78001,20 +78047,12 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('fragment', __webpack_require__(/*! vue-fragment */ "./node_modules/vue-fragment/dist/vue-fragment.esm.js"));
+
 var options = {
   confirmButtonColor: '#41b882',
   cancelButtonColor: '#ff7674'
 };
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_sweetalert2__WEBPACK_IMPORTED_MODULE_8__["default"], options);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_3___default.a, axios__WEBPACK_IMPORTED_MODULE_4___default.a);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Plugin"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Fragment"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_6___default.a);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_html2pdf__WEBPACK_IMPORTED_MODULE_9__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__["default"], {
+var options2 = {
   name: 'currency',
   symbol: 'Rp.',
   thousandsSeparator: '.',
@@ -78022,7 +78060,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPO
   fractionSeparator: ',',
   symbolPosition: 'front',
   symbolSpacing: true
-});
+};
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('fragment', __webpack_require__(/*! vue-fragment */ "./node_modules/vue-fragment/dist/vue-fragment.esm.js"));
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.directive('currency', vue_currency_directive__WEBPACK_IMPORTED_MODULE_10__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_sweetalert2__WEBPACK_IMPORTED_MODULE_8__["default"], options);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_3___default.a, axios__WEBPACK_IMPORTED_MODULE_4___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Plugin"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MODULE_5__["Fragment"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_6___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_html2pdf__WEBPACK_IMPORTED_MODULE_9__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__["default"], options2);
 
 
 
@@ -78036,31 +78085,31 @@ var routes = [{
 }, {
   name: 'Jurnal',
   path: '/jurnal',
-  component: _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_10__["default"]
+  component: _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
 }, {
   name: 'Input',
   path: '/input',
-  component: _views_Input_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
+  component: _views_Input_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
 }, {
   name: 'LPK',
   path: '/LPK',
-  component: _views_LPK_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
+  component: _views_LPK_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
 }, {
   name: 'Aktivitas',
   path: '/Aktivitas',
-  component: _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
+  component: _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
 }, {
   name: 'Arus Kas',
   path: '/arusKas',
-  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
+  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
 }, {
   name: 'LPD',
   path: '/LPDana',
-  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
+  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
 }, {
   name: 'PAK',
   path: '/PAK',
-  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
+  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: routes
@@ -78092,8 +78141,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/a2rj/Programming/Web/LARAVEL/laravelVUESPA/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/a2rj/Programming/Web/LARAVEL/laravelVUESPA/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\laravelVUESPA\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\laravelVUESPA\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
