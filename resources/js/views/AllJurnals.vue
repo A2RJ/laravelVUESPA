@@ -13,7 +13,14 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-12" v-if="jurnals.data < 1">
+                        <div v-if="loading" class="d-flex justify-content-center mt-5">
+                            <div class="dot-falling"></div>
+                        </div>
+                        <div v-if="loading" class="d-flex justify-content-center">
+                            <div class=""><h4>Loading...</h4></div>
+                        </div>
+                       <div v-else class="loading">
+                            <div class="col-12 mt-3" v-if="jurnals.data < 1">
                             <h6 class="text-danger text-center">
                                 Maaf data jurnal {{ keywords }} tidak ditemukan
                             </h6>
@@ -25,7 +32,7 @@
                                         <tr class="text-center">
                                             <th colspan="8">
                                                 <div class="text-title">
-                                                    <h5>Jurnal Tahun</h5>
+                                                    <h5 class="card-title">Jurnal Tahun</h5>
                                                 </div>
                                             </th>
                                         </tr>
@@ -77,7 +84,7 @@
                                         <tr class="text-center">
                                             <th colspan="8">
                                                 <div class="text-title">
-                                                    <h5>Jurnal Tahun</h5>
+                                                    <h5 class="card-title">Jurnal Tahun</h5>
                                                 </div>
                                             </th>
                                         </tr>
@@ -124,6 +131,7 @@
                                 </div>
                             </div>
                         </div>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -139,7 +147,8 @@ perhitungan.
             return {
                 jurnals: {},
                 keywords: "",
-                message: ""
+                message: "",
+                loading: false,
             };
         },
         mounted() {
@@ -157,20 +166,22 @@ perhitungan.
                 this.message = "";
             },
             getResult(page) {
+                this.loading = true
                 if (typeof page === "undefined") {
                     page = 1;
                 }
                 axios
                     .get("api/jurnals?page=" + page)
-                    .then(res => (this.jurnals = res.data));
+                    .then(res => (this.jurnals = res.data, this.loading = false));
             },
             cari1(page) {
                 if (typeof page === "undefined") {
                     page = 1;
                 }
+                this.loading = true
                 axios
                     .get("api/cari/" + this.keywords + "?page=" + page)
-                    .then(res => (this.jurnals = res.data));
+                    .then(res => (this.jurnals = res.data, this.loading = false));
             },
             hapus(jurnal) {
                 this.$swal({

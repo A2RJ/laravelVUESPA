@@ -12,8 +12,8 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import VueHtml2pdf from 'vue-html2pdf'
 import vueCurrencyDirective from 'vue-currency-directive';
 import VueChart from 'vue-chart-js'
-
-Vue.use(VueChart)
+import dots from 'three-dots'
+// import BootstrapIcons from 'bootstrap-icons'
 
 const options = {
   confirmButtonColor: '#41b882',
@@ -40,7 +40,10 @@ Vue.use(Fragment)
 Vue.use(Vue2Filters)
 Vue.use(VueHtml2pdf)
 Vue.use(VueCurrencyFilter, options2)
-    
+Vue.use(dots)
+Vue.use(VueChart)
+// Vue.use(BootstrapIcons)
+
 import Home from './views/Home';
 import AllJurnals from './views/AllJurnals.vue';
 import Input from './views/Input.vue';
@@ -58,7 +61,7 @@ const routes = [
     },
     {
         name: 'Jurnal',
-        path: '/jurnal',
+        path: '/Jurnal',
         component: AllJurnals
     },
     {

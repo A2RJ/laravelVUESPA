@@ -78,8 +78,7 @@
                                                             Luanch Admin
                                                         </h6>
                                                         <span class="font-12 text-nowrap d-block text-muted">Just see
-                                                            the my new
-                                                            admin!</span>
+                                                            the my new admin!</span>
                                                         <span class="font-12 text-nowrap d-block text-muted">9:30
                                                             AM</span>
                                                     </div>
@@ -91,14 +90,10 @@
                                                         class="btn btn-success text-white rounded-circle btn-circle"><i
                                                             data-feather="calendar" class="text-white"></i></span>
                                                     <div class="w-75 d-inline-block v-middle pl-2">
-                                                        <h6 class="message-title mb-0 mt-1">
-                                                            Event today
-                                                        </h6>
+                                                        <h6 class="message-title mb-0 mt-1">Event today</h6>
                                                         <span
                                                             class="font-12 text-nowrap d-block text-muted text-truncate">Just
-                                                            a reminder
-                                                            that you have
-                                                            event</span>
+                                                            a reminder that you have event</span>
                                                         <span class="font-12 text-nowrap d-block text-muted">9:10
                                                             AM</span>
                                                     </div>
@@ -109,14 +104,10 @@
                                                     <span class="btn btn-info rounded-circle btn-circle"><i
                                                             data-feather="settings" class="text-white"></i></span>
                                                     <div class="w-75 d-inline-block v-middle pl-2">
-                                                        <h6 class="message-title mb-0 mt-1">
-                                                            Settings
-                                                        </h6>
+                                                        <h6 class="message-title mb-0 mt-1">Settings</h6>
                                                         <span
                                                             class="font-12 text-nowrap d-block text-muted text-truncate">You
-                                                            can customize
-                                                            this template as you
-                                                            want</span>
+                                                            can customize this template as you want</span>
                                                         <span class="font-12 text-nowrap d-block text-muted">9:08
                                                             AM</span>
                                                     </div>
@@ -127,12 +118,9 @@
                                                     <span class="btn btn-primary rounded-circle btn-circle"><i
                                                             data-feather="box" class="text-white"></i></span>
                                                     <div class="w-75 d-inline-block v-middle pl-2">
-                                                        <h6 class="message-title mb-0 mt-1">
-                                                            Pavan kumar
-                                                        </h6>
+                                                        <h6 class="message-title mb-0 mt-1">Pavan kumar</h6>
                                                         <span class="font-12 text-nowrap d-block text-muted">Just see
-                                                            the my
-                                                            admin!</span>
+                                                            the my admin!</span>
                                                         <span class="font-12 text-nowrap d-block text-muted">9:02
                                                             AM</span>
                                                     </div>
@@ -141,8 +129,7 @@
                                         </li>
                                         <li>
                                             <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
-                                                <strong>Check all
-                                                    notifications</strong>
+                                                <strong>Check all notifications</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </li>
@@ -210,8 +197,8 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                     <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
-                                            class="svg-icon mr-2 ml-1"></i>
-                                        My Profile</a>
+                                            class="svg-icon mr-2 ml-1"></i> My
+                                        Profile</a>
                                     <a class="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card"
                                             class="svg-icon mr-2 ml-1"></i>
                                         My Balance</a>
@@ -259,23 +246,23 @@
                             </li>
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
-                                <span class="hide-menu">Applications</span>
+                                <span class="hide-menu">Jurnal</span>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="#" aria-expanded="false"><i data-feather="home"
-                                        class="feather-icon"></i>
-                                    <router-link to="/Input"><span class="hide-menu">Input</span></router-link>
-                                </a>
+                                <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
+                                        data-feather="calendar" class="feather-icon"></i><span class="hide-menu">
+                                        <router-link to="/Input">Input</router-link>
+                                    </span></a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="#" aria-expanded="false"><i data-feather="tag"
-                                        class="feather-icon"></i><span class="hide-menu">
+                                <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
+                                        data-feather="calendar" class="feather-icon"></i><span class="hide-menu">
                                         <router-link to="/Jurnal">Jurnal</router-link>
                                     </span></a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
-                                        data-feather="message-square" class="feather-icon"></i><span class="hide-menu">
+                                        data-feather="calendar" class="feather-icon"></i><span class="hide-menu">
                                         <router-link to="/LPK">Neraca</router-link>
                                     </span></a>
                             </li>
@@ -294,134 +281,37 @@
                             <li class="sidebar-item">
                                 <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i
                                         data-feather="calendar" class="feather-icon"></i><span class="hide-menu">
-                                        <router-link to="/PAK">Perubahan Aset
-                                            Kelolaan</router-link>
-                                    </span></a>
-                            </li>
-
-                            <li class="list-divider"></li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i
-                                        data-feather="bar-chart" class="feather-icon"></i><span class="hide-menu">Charts
-                                    </span></a>
-                                <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item">
-                                        <a href="chart-morris.html" class="sidebar-link"><span class="hide-menu">
-                                                Morris Chart
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="chart-chart-js.html" class="sidebar-link"><span class="hide-menu">
-                                                ChartJs
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="chart-knob.html" class="sidebar-link"><span class="hide-menu">
-                                                Knob Chart
-                                            </span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link sidebar-link" href="ui-cards.html" aria-expanded="false"><i
-                                        data-feather="sidebar" class="feather-icon"></i><span class="hide-menu">Cards
+                                        <router-link to="/PAK">Perubahan Aset Kelolaan</router-link>
                                     </span></a>
                             </li>
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
-                                <span class="hide-menu">Authentication</span>
+                                <span class="hide-menu">Pelaporan</span>
                             </li>
-
-                            <li class="sidebar-item">
-                                <a class="sidebar-link sidebar-link" href="authentication-login1.html"
-                                    aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
-                                        class="hide-menu">Login </span></a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link sidebar-link" href="authentication-register1.html"
+                            <!-- <li class="sidebar-item">
+                                <a class="sidebar-link sidebar-link" href="#"
                                     aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
                                         class="hide-menu">Register </span></a>
-                            </li>
+                            </li> -->
 
                             <li class="sidebar-item">
                                 <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i
-                                        data-feather="feather" class="feather-icon"></i><span class="hide-menu">Icons
+                                        data-feather="feather" class="feather-icon"></i><span class="hide-menu">Print
+                                        Laporan
                                     </span></a>
                                 <ul aria-expanded="false" class="collapse first-level base-level-line">
                                     <li class="sidebar-item">
                                         <a href="icon-fontawesome.html" class="sidebar-link"><span class="hide-menu">
-                                                Fontawesome Icons
-                                            </span></a>
+                                                Fontawesome Icons </span></a>
                                     </li>
 
                                     <li class="sidebar-item">
                                         <a href="icon-simple-lineicon.html" class="sidebar-link"><span
-                                                class="hide-menu">
-                                                Simple Line Icons
-                                            </span></a>
+                                                class="hide-menu"> Simple Line Icons </span></a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="sidebar-item">
-                                <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i
-                                        data-feather="crosshair" class="feather-icon"></i><span class="hide-menu">Multi
-                                        level dd</span></a>
-                                <ul aria-expanded="false" class="collapse first-level base-level-line">
-                                    <li class="sidebar-item">
-                                        <a href="javascript:void(0)" class="sidebar-link"><span class="hide-menu">
-                                                item 1.1</span></a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="javascript:void(0)" class="sidebar-link"><span class="hide-menu">
-                                                item 1.2</span></a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a class="has-arrow sidebar-link" href="javascript:void(0)"
-                                            aria-expanded="false"><span class="hide-menu">Menu 1.3</span></a>
-                                        <ul aria-expanded="false" class="collapse second-level base-level-line">
-                                            <li class="sidebar-item">
-                                                <a href="javascript:void(0)" class="sidebar-link"><span
-                                                        class="hide-menu">
-                                                        item 1.3.1</span></a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a href="javascript:void(0)" class="sidebar-link"><span
-                                                        class="hide-menu">
-                                                        item 1.3.2</span></a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a href="javascript:void(0)" class="sidebar-link"><span
-                                                        class="hide-menu">
-                                                        item 1.3.3</span></a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a href="javascript:void(0)" class="sidebar-link"><span
-                                                        class="hide-menu">
-                                                        item 1.3.4</span></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="javascript:void(0)" class="sidebar-link"><span class="hide-menu">
-                                                item 1.4</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="list-divider"></li>
-                            <li class="nav-small-cap">
-                                <span class="hide-menu">Extra</span>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link sidebar-link" href="../../docs/docs.html"
-                                    aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
-                                        class="hide-menu">Documentation</span></a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link sidebar-link" href="authentication-login1.html"
-                                    aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-                                        class="hide-menu">Logout</span></a>
-                            </li>
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
@@ -503,6 +393,6 @@
     import { Fragment } from "vue-fragment";
     export default {
         name: "app",
-        components: { Fragment }
+        components: { Fragment },
     };
 </script>

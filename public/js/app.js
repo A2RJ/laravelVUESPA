@@ -2300,116 +2300,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -2605,12 +2495,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       jurnals: {},
       keywords: "",
-      message: ""
+      message: "",
+      loading: false
     };
   },
   mounted: function mounted() {
@@ -2630,12 +2529,14 @@ __webpack_require__.r(__webpack_exports__);
     getResult: function getResult(page) {
       var _this = this;
 
+      this.loading = true;
+
       if (typeof page === "undefined") {
         page = 1;
       }
 
       axios.get("api/jurnals?page=" + page).then(function (res) {
-        return _this.jurnals = res.data;
+        return _this.jurnals = res.data, _this.loading = false;
       });
     },
     cari1: function cari1(page) {
@@ -2645,8 +2546,9 @@ __webpack_require__.r(__webpack_exports__);
         page = 1;
       }
 
+      this.loading = true;
       axios.get("api/cari/" + this.keywords + "?page=" + page).then(function (res) {
-        return _this2.jurnals = res.data;
+        return _this2.jurnals = res.data, _this2.loading = false;
       });
     },
     hapus: function hapus(jurnal) {
@@ -24492,6 +24394,112 @@ core_controller.helpers.each(
 return src;
 
 })));
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/three-dots/dist/three-dots.css":
+/*!*************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/three-dots/dist/three-dots.css ***!
+  \*************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n/*!\n * three-dots - v0.2.0\n * CSS loading animation made by single element.\n * https://nzbin.github.io/three-dots/\n *\n * Copyright (c) 2018 nzbin\n * Released under MIT License\n */\n@charset \"UTF-8\";\n/**\n * ==============================================\n * Dot Elastic\n * ==============================================\n */\n.dot-elastic {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-elastic 1s infinite linear;\n          animation: dot-elastic 1s infinite linear;\n}\n\n.dot-elastic::before, .dot-elastic::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n}\n\n.dot-elastic::before {\n  left: -15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-elastic-before 1s infinite linear;\n          animation: dot-elastic-before 1s infinite linear;\n}\n\n.dot-elastic::after {\n  left: 15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-elastic-after 1s infinite linear;\n          animation: dot-elastic-after 1s infinite linear;\n}\n\n@-webkit-keyframes dot-elastic-before {\n  0% {\n    transform: scale(1, 1);\n  }\n  25% {\n    transform: scale(1, 1.5);\n  }\n  50% {\n    transform: scale(1, 0.67);\n  }\n  75% {\n    transform: scale(1, 1);\n  }\n  100% {\n    transform: scale(1, 1);\n  }\n}\n\n@keyframes dot-elastic-before {\n  0% {\n    transform: scale(1, 1);\n  }\n  25% {\n    transform: scale(1, 1.5);\n  }\n  50% {\n    transform: scale(1, 0.67);\n  }\n  75% {\n    transform: scale(1, 1);\n  }\n  100% {\n    transform: scale(1, 1);\n  }\n}\n\n@-webkit-keyframes dot-elastic {\n  0% {\n    transform: scale(1, 1);\n  }\n  25% {\n    transform: scale(1, 1);\n  }\n  50% {\n    transform: scale(1, 1.5);\n  }\n  75% {\n    transform: scale(1, 1);\n  }\n  100% {\n    transform: scale(1, 1);\n  }\n}\n\n@keyframes dot-elastic {\n  0% {\n    transform: scale(1, 1);\n  }\n  25% {\n    transform: scale(1, 1);\n  }\n  50% {\n    transform: scale(1, 1.5);\n  }\n  75% {\n    transform: scale(1, 1);\n  }\n  100% {\n    transform: scale(1, 1);\n  }\n}\n\n@-webkit-keyframes dot-elastic-after {\n  0% {\n    transform: scale(1, 1);\n  }\n  25% {\n    transform: scale(1, 1);\n  }\n  50% {\n    transform: scale(1, 0.67);\n  }\n  75% {\n    transform: scale(1, 1.5);\n  }\n  100% {\n    transform: scale(1, 1);\n  }\n}\n\n@keyframes dot-elastic-after {\n  0% {\n    transform: scale(1, 1);\n  }\n  25% {\n    transform: scale(1, 1);\n  }\n  50% {\n    transform: scale(1, 0.67);\n  }\n  75% {\n    transform: scale(1, 1.5);\n  }\n  100% {\n    transform: scale(1, 1);\n  }\n}\n\n/**\n * ==============================================\n * Dot Pulse\n * ==============================================\n */\n.dot-pulse {\n  position: relative;\n  left: -9999px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  box-shadow: 9999px 0 0 -5px #9880ff;\n  -webkit-animation: dot-pulse 1.5s infinite linear;\n          animation: dot-pulse 1.5s infinite linear;\n  -webkit-animation-delay: .25s;\n          animation-delay: .25s;\n}\n\n.dot-pulse::before, .dot-pulse::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n}\n\n.dot-pulse::before {\n  box-shadow: 9984px 0 0 -5px #9880ff;\n  -webkit-animation: dot-pulse-before 1.5s infinite linear;\n          animation: dot-pulse-before 1.5s infinite linear;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n\n.dot-pulse::after {\n  box-shadow: 10014px 0 0 -5px #9880ff;\n  -webkit-animation: dot-pulse-after 1.5s infinite linear;\n          animation: dot-pulse-after 1.5s infinite linear;\n  -webkit-animation-delay: .5s;\n          animation-delay: .5s;\n}\n\n@-webkit-keyframes dot-pulse-before {\n  0% {\n    box-shadow: 9984px 0 0 -5px #9880ff;\n  }\n  30% {\n    box-shadow: 9984px 0 0 2px #9880ff;\n  }\n  60%,\n  100% {\n    box-shadow: 9984px 0 0 -5px #9880ff;\n  }\n}\n\n@keyframes dot-pulse-before {\n  0% {\n    box-shadow: 9984px 0 0 -5px #9880ff;\n  }\n  30% {\n    box-shadow: 9984px 0 0 2px #9880ff;\n  }\n  60%,\n  100% {\n    box-shadow: 9984px 0 0 -5px #9880ff;\n  }\n}\n\n@-webkit-keyframes dot-pulse {\n  0% {\n    box-shadow: 9999px 0 0 -5px #9880ff;\n  }\n  30% {\n    box-shadow: 9999px 0 0 2px #9880ff;\n  }\n  60%,\n  100% {\n    box-shadow: 9999px 0 0 -5px #9880ff;\n  }\n}\n\n@keyframes dot-pulse {\n  0% {\n    box-shadow: 9999px 0 0 -5px #9880ff;\n  }\n  30% {\n    box-shadow: 9999px 0 0 2px #9880ff;\n  }\n  60%,\n  100% {\n    box-shadow: 9999px 0 0 -5px #9880ff;\n  }\n}\n\n@-webkit-keyframes dot-pulse-after {\n  0% {\n    box-shadow: 10014px 0 0 -5px #9880ff;\n  }\n  30% {\n    box-shadow: 10014px 0 0 2px #9880ff;\n  }\n  60%,\n  100% {\n    box-shadow: 10014px 0 0 -5px #9880ff;\n  }\n}\n\n@keyframes dot-pulse-after {\n  0% {\n    box-shadow: 10014px 0 0 -5px #9880ff;\n  }\n  30% {\n    box-shadow: 10014px 0 0 2px #9880ff;\n  }\n  60%,\n  100% {\n    box-shadow: 10014px 0 0 -5px #9880ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Flashing\n * ==============================================\n */\n.dot-flashing {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-flashing 1s infinite linear alternate;\n          animation: dot-flashing 1s infinite linear alternate;\n  -webkit-animation-delay: .5s;\n          animation-delay: .5s;\n}\n\n.dot-flashing::before, .dot-flashing::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n}\n\n.dot-flashing::before {\n  left: -15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-flashing 1s infinite alternate;\n          animation: dot-flashing 1s infinite alternate;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n\n.dot-flashing::after {\n  left: 15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-flashing 1s infinite alternate;\n          animation: dot-flashing 1s infinite alternate;\n  -webkit-animation-delay: 1s;\n          animation-delay: 1s;\n}\n\n@-webkit-keyframes dot-flashing {\n  0% {\n    background-color: #9880ff;\n  }\n  50%,\n  100% {\n    background-color: #ebe6ff;\n  }\n}\n\n@keyframes dot-flashing {\n  0% {\n    background-color: #9880ff;\n  }\n  50%,\n  100% {\n    background-color: #ebe6ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Collision\n * ==============================================\n */\n.dot-collision {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n}\n\n.dot-collision::before, .dot-collision::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n}\n\n.dot-collision::before {\n  left: -10px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-collision-before 2s infinite ease-in;\n          animation: dot-collision-before 2s infinite ease-in;\n}\n\n.dot-collision::after {\n  left: 10px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-collision-after 2s infinite ease-in;\n          animation: dot-collision-after 2s infinite ease-in;\n  -webkit-animation-delay: 1s;\n          animation-delay: 1s;\n}\n\n@-webkit-keyframes dot-collision-before {\n  0%,\n  50%,\n  75%,\n  100% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(-15px);\n  }\n}\n\n@keyframes dot-collision-before {\n  0%,\n  50%,\n  75%,\n  100% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(-15px);\n  }\n}\n\n@-webkit-keyframes dot-collision-after {\n  0%,\n  50%,\n  75%,\n  100% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(15px);\n  }\n}\n\n@keyframes dot-collision-after {\n  0%,\n  50%,\n  75%,\n  100% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(15px);\n  }\n}\n\n/**\n * ==============================================\n * Dot Revolution\n * ==============================================\n */\n.dot-revolution {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n}\n\n.dot-revolution::before, .dot-revolution::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n}\n\n.dot-revolution::before {\n  left: 0;\n  top: -15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  transform-origin: 5px 20px;\n  -webkit-animation: dot-revolution 1.4s linear infinite;\n          animation: dot-revolution 1.4s linear infinite;\n}\n\n.dot-revolution::after {\n  left: 0;\n  top: -30px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  transform-origin: 5px 35px;\n  -webkit-animation: dot-revolution 1s linear infinite;\n          animation: dot-revolution 1s linear infinite;\n}\n\n@-webkit-keyframes dot-revolution {\n  0% {\n    transform: rotateZ(0deg) translate3d(0, 0, 0);\n  }\n  100% {\n    transform: rotateZ(360deg) translate3d(0, 0, 0);\n  }\n}\n\n@keyframes dot-revolution {\n  0% {\n    transform: rotateZ(0deg) translate3d(0, 0, 0);\n  }\n  100% {\n    transform: rotateZ(360deg) translate3d(0, 0, 0);\n  }\n}\n\n/**\n * ==============================================\n * Dot Carousel\n * ==============================================\n */\n.dot-carousel {\n  position: relative;\n  left: -9999px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  -webkit-animation: dot-carousel 1.5s infinite linear;\n          animation: dot-carousel 1.5s infinite linear;\n}\n\n@-webkit-keyframes dot-carousel {\n  0% {\n    box-shadow: 9984px 0 0 -1px #9880ff, 9999px 0 0 1px #9880ff, 10014px 0 0 -1px #9880ff;\n  }\n  50% {\n    box-shadow: 10014px 0 0 -1px #9880ff, 9984px 0 0 -1px #9880ff, 9999px 0 0 1px #9880ff;\n  }\n  100% {\n    box-shadow: 9999px 0 0 1px #9880ff, 10014px 0 0 -1px #9880ff, 9984px 0 0 -1px #9880ff;\n  }\n}\n\n@keyframes dot-carousel {\n  0% {\n    box-shadow: 9984px 0 0 -1px #9880ff, 9999px 0 0 1px #9880ff, 10014px 0 0 -1px #9880ff;\n  }\n  50% {\n    box-shadow: 10014px 0 0 -1px #9880ff, 9984px 0 0 -1px #9880ff, 9999px 0 0 1px #9880ff;\n  }\n  100% {\n    box-shadow: 9999px 0 0 1px #9880ff, 10014px 0 0 -1px #9880ff, 9984px 0 0 -1px #9880ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Typing\n * ==============================================\n */\n.dot-typing {\n  position: relative;\n  left: -9999px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  -webkit-animation: dot-typing 1.5s infinite linear;\n          animation: dot-typing 1.5s infinite linear;\n}\n\n@-webkit-keyframes dot-typing {\n  0% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  16.667% {\n    box-shadow: 9984px -10px 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  33.333% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  50% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px -10px 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  66.667% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  83.333% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px -10px 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n}\n\n@keyframes dot-typing {\n  0% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  16.667% {\n    box-shadow: 9984px -10px 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  33.333% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  50% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px -10px 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  66.667% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n  83.333% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px -10px 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9984px 0 0 0 #9880ff, 9999px 0 0 0 #9880ff, 10014px 0 0 0 #9880ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Windmill\n * ==============================================\n */\n.dot-windmill {\n  position: relative;\n  top: -10px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  transform-origin: 5px 15px;\n  -webkit-animation: dot-windmill 2s infinite linear;\n          animation: dot-windmill 2s infinite linear;\n}\n\n.dot-windmill::before, .dot-windmill::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n}\n\n.dot-windmill::before {\n  left: -8.66px;\n  top: 15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n}\n\n.dot-windmill::after {\n  left: 8.66px;\n  top: 15px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n}\n\n@-webkit-keyframes dot-windmill {\n  0% {\n    transform: rotateZ(0deg) translate3d(0, 0, 0);\n  }\n  100% {\n    transform: rotateZ(720deg) translate3d(0, 0, 0);\n  }\n}\n\n@keyframes dot-windmill {\n  0% {\n    transform: rotateZ(0deg) translate3d(0, 0, 0);\n  }\n  100% {\n    transform: rotateZ(720deg) translate3d(0, 0, 0);\n  }\n}\n\n/**\n * ==============================================\n * Dot Bricks\n * ==============================================\n */\n.dot-bricks {\n  position: relative;\n  top: 8px;\n  left: -9999px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  -webkit-animation: dot-bricks 2s infinite ease;\n          animation: dot-bricks 2s infinite ease;\n}\n\n@-webkit-keyframes dot-bricks {\n  0% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n  8.333% {\n    box-shadow: 10007px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n  16.667% {\n    box-shadow: 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n  25% {\n    box-shadow: 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff;\n  }\n  33.333% {\n    box-shadow: 10007px 0 0 0 #9880ff, 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff;\n  }\n  41.667% {\n    box-shadow: 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff;\n  }\n  50% {\n    box-shadow: 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff;\n  }\n  58.333% {\n    box-shadow: 9991px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff;\n  }\n  66.666% {\n    box-shadow: 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff, 9991px -16px 0 0 #9880ff;\n  }\n  75% {\n    box-shadow: 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff;\n  }\n  83.333% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff;\n  }\n  91.667% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n}\n\n@keyframes dot-bricks {\n  0% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n  8.333% {\n    box-shadow: 10007px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n  16.667% {\n    box-shadow: 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n  25% {\n    box-shadow: 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff;\n  }\n  33.333% {\n    box-shadow: 10007px 0 0 0 #9880ff, 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff;\n  }\n  41.667% {\n    box-shadow: 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff;\n  }\n  50% {\n    box-shadow: 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff;\n  }\n  58.333% {\n    box-shadow: 9991px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff, 9991px -16px 0 0 #9880ff;\n  }\n  66.666% {\n    box-shadow: 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff, 9991px -16px 0 0 #9880ff;\n  }\n  75% {\n    box-shadow: 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff;\n  }\n  83.333% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 10007px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff;\n  }\n  91.667% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px -16px 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9991px -16px 0 0 #9880ff, 9991px 0 0 0 #9880ff, 10007px 0 0 0 #9880ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Floating\n * ==============================================\n */\n.dot-floating {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-floating 3s infinite cubic-bezier(0.15, 0.6, 0.9, 0.1);\n          animation: dot-floating 3s infinite cubic-bezier(0.15, 0.6, 0.9, 0.1);\n}\n\n.dot-floating::before, .dot-floating::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n}\n\n.dot-floating::before {\n  left: -12px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-floating-before 3s infinite ease-in-out;\n          animation: dot-floating-before 3s infinite ease-in-out;\n}\n\n.dot-floating::after {\n  left: -24px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-floating-after 3s infinite cubic-bezier(0.4, 0, 1, 1);\n          animation: dot-floating-after 3s infinite cubic-bezier(0.4, 0, 1, 1);\n}\n\n@-webkit-keyframes dot-floating {\n  0% {\n    left: calc(-50% - 5px);\n  }\n  75% {\n    left: calc(50% + 105px);\n  }\n  100% {\n    left: calc(50% + 105px);\n  }\n}\n\n@keyframes dot-floating {\n  0% {\n    left: calc(-50% - 5px);\n  }\n  75% {\n    left: calc(50% + 105px);\n  }\n  100% {\n    left: calc(50% + 105px);\n  }\n}\n\n@-webkit-keyframes dot-floating-before {\n  0% {\n    left: -50px;\n  }\n  50% {\n    left: -12px;\n  }\n  75% {\n    left: -50px;\n  }\n  100% {\n    left: -50px;\n  }\n}\n\n@keyframes dot-floating-before {\n  0% {\n    left: -50px;\n  }\n  50% {\n    left: -12px;\n  }\n  75% {\n    left: -50px;\n  }\n  100% {\n    left: -50px;\n  }\n}\n\n@-webkit-keyframes dot-floating-after {\n  0% {\n    left: -100px;\n  }\n  50% {\n    left: -24px;\n  }\n  75% {\n    left: -100px;\n  }\n  100% {\n    left: -100px;\n  }\n}\n\n@keyframes dot-floating-after {\n  0% {\n    left: -100px;\n  }\n  50% {\n    left: -24px;\n  }\n  75% {\n    left: -100px;\n  }\n  100% {\n    left: -100px;\n  }\n}\n\n/**\n * ==============================================\n * Dot Fire\n * ==============================================\n */\n.dot-fire {\n  position: relative;\n  left: -9999px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  box-shadow: 9999px 22.5px 0 -5px #9880ff;\n  -webkit-animation: dot-fire 1.5s infinite linear;\n          animation: dot-fire 1.5s infinite linear;\n  -webkit-animation-delay: -.85s;\n          animation-delay: -.85s;\n}\n\n.dot-fire::before, .dot-fire::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n}\n\n.dot-fire::before {\n  box-shadow: 9999px 22.5px 0 -5px #9880ff;\n  -webkit-animation: dot-fire 1.5s infinite linear;\n          animation: dot-fire 1.5s infinite linear;\n  -webkit-animation-delay: -1.85s;\n          animation-delay: -1.85s;\n}\n\n.dot-fire::after {\n  box-shadow: 9999px 22.5px 0 -5px #9880ff;\n  -webkit-animation: dot-fire 1.5s infinite linear;\n          animation: dot-fire 1.5s infinite linear;\n  -webkit-animation-delay: -2.85s;\n          animation-delay: -2.85s;\n}\n\n@-webkit-keyframes dot-fire {\n  1% {\n    box-shadow: 9999px 22.5px 0 -5px #9880ff;\n  }\n  50% {\n    box-shadow: 9999px -5.625px 0 2px #9880ff;\n  }\n  100% {\n    box-shadow: 9999px -22.5px 0 -5px #9880ff;\n  }\n}\n\n@keyframes dot-fire {\n  1% {\n    box-shadow: 9999px 22.5px 0 -5px #9880ff;\n  }\n  50% {\n    box-shadow: 9999px -5.625px 0 2px #9880ff;\n  }\n  100% {\n    box-shadow: 9999px -22.5px 0 -5px #9880ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Spin\n * ==============================================\n */\n.dot-spin {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: transparent;\n  color: transparent;\n  box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 0 rgba(152, 128, 255, 0), 0 18px 0 0 rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 0 rgba(152, 128, 255, 0), -18px 0 0 0 rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 0 rgba(152, 128, 255, 0);\n  -webkit-animation: dot-spin 1.5s infinite linear;\n          animation: dot-spin 1.5s infinite linear;\n}\n\n@-webkit-keyframes dot-spin {\n  0%,\n  100% {\n    box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  12.5% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 0 #9880ff, 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  25% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 0 #9880ff, 0 18px 0 0 #9880ff, -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  37.5% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 0 #9880ff, 0 18px 0 0 #9880ff, -12.72984px 12.72984px 0 0 #9880ff, -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  50% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 0 #9880ff, -12.72984px 12.72984px 0 0 #9880ff, -18px 0 0 0 #9880ff, -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  62.5% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 0 #9880ff, -18px 0 0 0 #9880ff, -12.72984px -12.72984px 0 0 #9880ff;\n  }\n  75% {\n    box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 0 #9880ff, -12.72984px -12.72984px 0 0 #9880ff;\n  }\n  87.5% {\n    box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 0 #9880ff;\n  }\n}\n\n@keyframes dot-spin {\n  0%,\n  100% {\n    box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  12.5% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 0 #9880ff, 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  25% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 0 #9880ff, 12.72984px 12.72984px 0 0 #9880ff, 0 18px 0 0 #9880ff, -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  37.5% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 0 #9880ff, 0 18px 0 0 #9880ff, -12.72984px 12.72984px 0 0 #9880ff, -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  50% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 0 #9880ff, -12.72984px 12.72984px 0 0 #9880ff, -18px 0 0 0 #9880ff, -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);\n  }\n  62.5% {\n    box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 0 #9880ff, -18px 0 0 0 #9880ff, -12.72984px -12.72984px 0 0 #9880ff;\n  }\n  75% {\n    box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 0 #9880ff, -12.72984px -12.72984px 0 0 #9880ff;\n  }\n  87.5% {\n    box-shadow: 0 -18px 0 0 #9880ff, 12.72984px -12.72984px 0 0 #9880ff, 18px 0 0 -5px rgba(152, 128, 255, 0), 12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.72984px -12.72984px 0 0 #9880ff;\n  }\n}\n\n/**\n * ==============================================\n * Dot Falling\n * ==============================================\n */\n.dot-falling {\n  position: relative;\n  left: -9999px;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  box-shadow: 9999px 0 0 0 #9880ff;\n  -webkit-animation: dot-falling 1s infinite linear;\n          animation: dot-falling 1s infinite linear;\n  -webkit-animation-delay: .1s;\n          animation-delay: .1s;\n}\n\n.dot-falling::before, .dot-falling::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n}\n\n.dot-falling::before {\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-falling-before 1s infinite linear;\n          animation: dot-falling-before 1s infinite linear;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n\n.dot-falling::after {\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-falling-after 1s infinite linear;\n          animation: dot-falling-after 1s infinite linear;\n  -webkit-animation-delay: .2s;\n          animation-delay: .2s;\n}\n\n@-webkit-keyframes dot-falling {\n  0% {\n    box-shadow: 9999px -15px 0 0 rgba(152, 128, 255, 0);\n  }\n  25%,\n  50%,\n  75% {\n    box-shadow: 9999px 0 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9999px 15px 0 0 rgba(152, 128, 255, 0);\n  }\n}\n\n@keyframes dot-falling {\n  0% {\n    box-shadow: 9999px -15px 0 0 rgba(152, 128, 255, 0);\n  }\n  25%,\n  50%,\n  75% {\n    box-shadow: 9999px 0 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9999px 15px 0 0 rgba(152, 128, 255, 0);\n  }\n}\n\n@-webkit-keyframes dot-falling-before {\n  0% {\n    box-shadow: 9984px -15px 0 0 rgba(152, 128, 255, 0);\n  }\n  25%,\n  50%,\n  75% {\n    box-shadow: 9984px 0 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9984px 15px 0 0 rgba(152, 128, 255, 0);\n  }\n}\n\n@keyframes dot-falling-before {\n  0% {\n    box-shadow: 9984px -15px 0 0 rgba(152, 128, 255, 0);\n  }\n  25%,\n  50%,\n  75% {\n    box-shadow: 9984px 0 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 9984px 15px 0 0 rgba(152, 128, 255, 0);\n  }\n}\n\n@-webkit-keyframes dot-falling-after {\n  0% {\n    box-shadow: 10014px -15px 0 0 rgba(152, 128, 255, 0);\n  }\n  25%,\n  50%,\n  75% {\n    box-shadow: 10014px 0 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 10014px 15px 0 0 rgba(152, 128, 255, 0);\n  }\n}\n\n@keyframes dot-falling-after {\n  0% {\n    box-shadow: 10014px -15px 0 0 rgba(152, 128, 255, 0);\n  }\n  25%,\n  50%,\n  75% {\n    box-shadow: 10014px 0 0 0 #9880ff;\n  }\n  100% {\n    box-shadow: 10014px 15px 0 0 rgba(152, 128, 255, 0);\n  }\n}\n\n/**\n * ==============================================\n * Dot Stretching\n * ==============================================\n */\n.dot-stretching {\n  position: relative;\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  transform: scale(1.25, 1.25);\n  -webkit-animation: dot-stretching 2s infinite ease-in;\n          animation: dot-stretching 2s infinite ease-in;\n}\n\n.dot-stretching::before, .dot-stretching::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n}\n\n.dot-stretching::before {\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-stretching-before 2s infinite ease-in;\n          animation: dot-stretching-before 2s infinite ease-in;\n}\n\n.dot-stretching::after {\n  width: 10px;\n  height: 10px;\n  border-radius: 5px;\n  background-color: #9880ff;\n  color: #9880ff;\n  -webkit-animation: dot-stretching-after 2s infinite ease-in;\n          animation: dot-stretching-after 2s infinite ease-in;\n}\n\n@-webkit-keyframes dot-stretching {\n  0% {\n    transform: scale(1.25, 1.25);\n  }\n  50%,\n  60% {\n    transform: scale(0.8, 0.8);\n  }\n  100% {\n    transform: scale(1.25, 1.25);\n  }\n}\n\n@keyframes dot-stretching {\n  0% {\n    transform: scale(1.25, 1.25);\n  }\n  50%,\n  60% {\n    transform: scale(0.8, 0.8);\n  }\n  100% {\n    transform: scale(1.25, 1.25);\n  }\n}\n\n@-webkit-keyframes dot-stretching-before {\n  0% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n  50%,\n  60% {\n    transform: translate(-20px) scale(1, 1);\n  }\n  100% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n}\n\n@keyframes dot-stretching-before {\n  0% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n  50%,\n  60% {\n    transform: translate(-20px) scale(1, 1);\n  }\n  100% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n}\n\n@-webkit-keyframes dot-stretching-after {\n  0% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n  50%,\n  60% {\n    transform: translate(20px) scale(1, 1);\n  }\n  100% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n}\n\n@keyframes dot-stretching-after {\n  0% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n  50%,\n  60% {\n    transform: translate(20px) scale(1, 1);\n  }\n  100% {\n    transform: translate(0) scale(0.7, 0.7);\n  }\n}\n\n/**\n * ==============================================\n * Experiment: Gooey Effect\n * Dot Gathering\n * ==============================================\n */\n.dot-gathering {\n  position: relative;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: black;\n  color: transparent;\n  margin: -1px 0;\n  filter: blur(2px);\n}\n\n.dot-gathering::before, .dot-gathering::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  left: -50px;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: black;\n  color: transparent;\n  opacity: 0;\n  filter: blur(2px);\n  -webkit-animation: dot-gathering 2s infinite ease-in;\n          animation: dot-gathering 2s infinite ease-in;\n}\n\n.dot-gathering::after {\n  -webkit-animation-delay: .5s;\n          animation-delay: .5s;\n}\n\n@-webkit-keyframes dot-gathering {\n  0% {\n    opacity: 0;\n    transform: translateX(0);\n  }\n  35%,\n  60% {\n    opacity: 1;\n    transform: translateX(50px);\n  }\n  100% {\n    opacity: 0;\n    transform: translateX(100px);\n  }\n}\n\n@keyframes dot-gathering {\n  0% {\n    opacity: 0;\n    transform: translateX(0);\n  }\n  35%,\n  60% {\n    opacity: 1;\n    transform: translateX(50px);\n  }\n  100% {\n    opacity: 0;\n    transform: translateX(100px);\n  }\n}\n\n/**\n * ==============================================\n * Experiment: Gooey Effect\n * Dot Hourglass\n * ==============================================\n */\n.dot-hourglass {\n  position: relative;\n  top: -15px;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: black;\n  color: transparent;\n  margin: -1px 0;\n  filter: blur(2px);\n  transform-origin: 5px 20px;\n  -webkit-animation: dot-hourglass 2.4s infinite ease-in-out;\n          animation: dot-hourglass 2.4s infinite ease-in-out;\n  -webkit-animation-delay: .6s;\n          animation-delay: .6s;\n}\n\n.dot-hourglass::before, .dot-hourglass::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: black;\n  color: transparent;\n  filter: blur(2px);\n}\n\n.dot-hourglass::before {\n  top: 30px;\n}\n\n.dot-hourglass::after {\n  -webkit-animation: dot-hourglass-after 2.4s infinite cubic-bezier(0.65, 0.05, 0.36, 1);\n          animation: dot-hourglass-after 2.4s infinite cubic-bezier(0.65, 0.05, 0.36, 1);\n}\n\n@-webkit-keyframes dot-hourglass {\n  0% {\n    transform: rotateZ(0deg);\n  }\n  25% {\n    transform: rotateZ(180deg);\n  }\n  50% {\n    transform: rotateZ(180deg);\n  }\n  75% {\n    transform: rotateZ(360deg);\n  }\n  100% {\n    transform: rotateZ(360deg);\n  }\n}\n\n@keyframes dot-hourglass {\n  0% {\n    transform: rotateZ(0deg);\n  }\n  25% {\n    transform: rotateZ(180deg);\n  }\n  50% {\n    transform: rotateZ(180deg);\n  }\n  75% {\n    transform: rotateZ(360deg);\n  }\n  100% {\n    transform: rotateZ(360deg);\n  }\n}\n\n@-webkit-keyframes dot-hourglass-after {\n  0% {\n    transform: translateY(0);\n  }\n  25% {\n    transform: translateY(30px);\n  }\n  50% {\n    transform: translateY(30px);\n  }\n  75% {\n    transform: translateY(0);\n  }\n  100% {\n    transform: translateY(0);\n  }\n}\n\n@keyframes dot-hourglass-after {\n  0% {\n    transform: translateY(0);\n  }\n  25% {\n    transform: translateY(30px);\n  }\n  50% {\n    transform: translateY(30px);\n  }\n  75% {\n    transform: translateY(0);\n  }\n  100% {\n    transform: translateY(0);\n  }\n}\n\n/**\n * ==============================================\n * Experiment: Gooey Effect\n * Dot Overtaking\n * ==============================================\n */\n.dot-overtaking {\n  position: relative;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: transparent;\n  color: black;\n  margin: -1px 0;\n  box-shadow: 0 -20px 0 0;\n  filter: blur(2px);\n  -webkit-animation: dot-overtaking 2s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);\n          animation: dot-overtaking 2s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);\n}\n\n.dot-overtaking::before, .dot-overtaking::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: transparent;\n  color: black;\n  box-shadow: 0 -20px 0 0;\n  filter: blur(2px);\n}\n\n.dot-overtaking::before {\n  -webkit-animation: dot-overtaking 2s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);\n          animation: dot-overtaking 2s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);\n  -webkit-animation-delay: .3s;\n          animation-delay: .3s;\n}\n\n.dot-overtaking::after {\n  -webkit-animation: dot-overtaking 1.5s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);\n          animation: dot-overtaking 1.5s infinite cubic-bezier(0.2, 0.6, 0.8, 0.2);\n  -webkit-animation-delay: .6s;\n          animation-delay: .6s;\n}\n\n@-webkit-keyframes dot-overtaking {\n  0% {\n    transform: rotateZ(0deg);\n  }\n  100% {\n    transform: rotateZ(360deg);\n  }\n}\n\n@keyframes dot-overtaking {\n  0% {\n    transform: rotateZ(0deg);\n  }\n  100% {\n    transform: rotateZ(360deg);\n  }\n}\n\n/**\n * ==============================================\n * Experiment: Gooey Effect\n * Dot Shuttle\n * ==============================================\n */\n.dot-shuttle {\n  position: relative;\n  left: -15px;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: black;\n  color: transparent;\n  margin: -1px 0;\n  filter: blur(2px);\n}\n\n.dot-shuttle::before, .dot-shuttle::after {\n  content: '';\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: black;\n  color: transparent;\n  filter: blur(2px);\n}\n\n.dot-shuttle::before {\n  left: 15px;\n  -webkit-animation: dot-shuttle 2s infinite ease-out;\n          animation: dot-shuttle 2s infinite ease-out;\n}\n\n.dot-shuttle::after {\n  left: 30px;\n}\n\n@-webkit-keyframes dot-shuttle {\n  0%,\n  50%,\n  100% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(-45px);\n  }\n  75% {\n    transform: translateX(45px);\n  }\n}\n\n@keyframes dot-shuttle {\n  0%,\n  50%,\n  100% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(-45px);\n  }\n  75% {\n    transform: translateX(45px);\n  }\n}\n\n/**\n * ==============================================\n * Experiment: Emoji\n * Dot Bouncing\n * ==============================================\n */\n.dot-bouncing {\n  position: relative;\n  height: 10px;\n  font-size: 10px;\n}\n\n.dot-bouncing::before {\n  content: '\\26BD\\1F3C0\\1F3D0';\n  display: inline-block;\n  position: relative;\n  -webkit-animation: dot-bouncing 1s infinite;\n          animation: dot-bouncing 1s infinite;\n}\n\n@-webkit-keyframes dot-bouncing {\n  0% {\n    top: -20px;\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n  }\n  34% {\n    transform: scale(1, 1);\n  }\n  35% {\n    top: 20px;\n    -webkit-animation-timing-function: ease-out;\n            animation-timing-function: ease-out;\n    transform: scale(1.5, 0.5);\n  }\n  45% {\n    transform: scale(1, 1);\n  }\n  90% {\n    top: -20px;\n  }\n  100% {\n    top: -20px;\n  }\n}\n\n@keyframes dot-bouncing {\n  0% {\n    top: -20px;\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n  }\n  34% {\n    transform: scale(1, 1);\n  }\n  35% {\n    top: 20px;\n    -webkit-animation-timing-function: ease-out;\n            animation-timing-function: ease-out;\n    transform: scale(1.5, 0.5);\n  }\n  45% {\n    transform: scale(1, 1);\n  }\n  90% {\n    top: -20px;\n  }\n  100% {\n    top: -20px;\n  }\n}\n\n/**\n * ==============================================\n * Experiment: Emoji\n * Dot Rolling\n * ==============================================\n */\n.dot-rolling {\n  position: relative;\n  height: 10px;\n  font-size: 10px;\n}\n\n.dot-rolling::before {\n  content: '\\26BD';\n  display: inline-block;\n  position: relative;\n  transform: translateX(-25px);\n  -webkit-animation: dot-rolling 3s infinite;\n          animation: dot-rolling 3s infinite;\n}\n\n@-webkit-keyframes dot-rolling {\n  0% {\n    content: '\\26BD';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  16.667% {\n    content: '\\26BD';\n    transform: translateX(25px) rotateZ(720deg);\n  }\n  33.333% {\n    content: '\\26BD';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  34.333% {\n    content: '\\1F3C0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  50% {\n    content: '\\1F3C0';\n    transform: translateX(25px) rotateZ(720deg);\n  }\n  66.667% {\n    content: '\\1F3C0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  67.667% {\n    content: '\\1F3D0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  83.333% {\n    content: '\\1F3D0';\n    transform: translateX(25px) rotateZ(720deg);\n  }\n  100% {\n    content: '\\1F3D0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n}\n\n@keyframes dot-rolling {\n  0% {\n    content: '\\26BD';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  16.667% {\n    content: '\\26BD';\n    transform: translateX(25px) rotateZ(720deg);\n  }\n  33.333% {\n    content: '\\26BD';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  34.333% {\n    content: '\\1F3C0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  50% {\n    content: '\\1F3C0';\n    transform: translateX(25px) rotateZ(720deg);\n  }\n  66.667% {\n    content: '\\1F3C0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  67.667% {\n    content: '\\1F3D0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n  83.333% {\n    content: '\\1F3D0';\n    transform: translateX(25px) rotateZ(720deg);\n  }\n  100% {\n    content: '\\1F3D0';\n    transform: translateX(-25px) rotateZ(0deg);\n  }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -87239,6 +87247,515 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/sweetalert2/dist/sweetalert2.all.js":
 /*!**********************************************************!*\
   !*** ./node_modules/sweetalert2/dist/sweetalert2.all.js ***!
@@ -94088,6 +94605,36 @@ if (typeof this !== 'undefined' && this.Sweetalert2){  this.swal = this.sweetAle
 
 /***/ }),
 
+/***/ "./node_modules/three-dots/dist/three-dots.css":
+/*!*****************************************************!*\
+  !*** ./node_modules/three-dots/dist/three-dots.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./three-dots.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/three-dots/dist/three-dots.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -94904,7 +95451,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "Just see\n                                                        the my new\n                                                        admin!"
+                                                  "Just see\n                                                        the my new admin!"
                                                 )
                                               ]
                                             ),
@@ -94963,11 +95510,7 @@ var render = function() {
                                                 staticClass:
                                                   "message-title mb-0 mt-1"
                                               },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                        Event today\n                                                    "
-                                                )
-                                              ]
+                                              [_vm._v("Event today")]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -94978,7 +95521,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "Just\n                                                        a reminder\n                                                        that you have\n                                                        event"
+                                                  "Just\n                                                        a reminder that you have event"
                                                 )
                                               ]
                                             ),
@@ -95037,11 +95580,7 @@ var render = function() {
                                                 staticClass:
                                                   "message-title mb-0 mt-1"
                                               },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                        Settings\n                                                    "
-                                                )
-                                              ]
+                                              [_vm._v("Settings")]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -95052,7 +95591,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "You\n                                                        can customize\n                                                        this template as you\n                                                        want"
+                                                  "You\n                                                        can customize this template as you want"
                                                 )
                                               ]
                                             ),
@@ -95109,11 +95648,7 @@ var render = function() {
                                                 staticClass:
                                                   "message-title mb-0 mt-1"
                                               },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                        Pavan kumar\n                                                    "
-                                                )
-                                              ]
+                                              [_vm._v("Pavan kumar")]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -95124,7 +95659,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "Just see\n                                                        the my\n                                                        admin!"
+                                                  "Just see\n                                                        the my admin!"
                                                 )
                                               ]
                                             ),
@@ -95159,9 +95694,7 @@ var render = function() {
                                   },
                                   [
                                     _c("strong", [
-                                      _vm._v(
-                                        "Check all\n                                                notifications"
-                                      )
+                                      _vm._v("Check all notifications")
                                     ]),
                                     _vm._v(" "),
                                     _c("i", {
@@ -95358,7 +95891,7 @@ var render = function() {
                                 attrs: { "data-feather": "user" }
                               }),
                               _vm._v(
-                                "\n                                    My Profile"
+                                " My\n                                    Profile"
                               )
                             ]
                           ),
@@ -95497,7 +96030,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("li", { staticClass: "nav-small-cap" }, [
                       _c("span", { staticClass: "hide-menu" }, [
-                        _vm._v("Applications")
+                        _vm._v("Jurnal")
                       ])
                     ]),
                     _vm._v(" "),
@@ -95505,22 +96038,25 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link",
+                          staticClass: "sidebar-link sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
                           _c("i", {
                             staticClass: "feather-icon",
-                            attrs: { "data-feather": "home" }
+                            attrs: { "data-feather": "calendar" }
                           }),
-                          _vm._v(" "),
-                          _c("router-link", { attrs: { to: "/Input" } }, [
-                            _c("span", { staticClass: "hide-menu" }, [
-                              _vm._v("Input")
-                            ])
-                          ])
-                        ],
-                        1
+                          _c(
+                            "span",
+                            { staticClass: "hide-menu" },
+                            [
+                              _c("router-link", { attrs: { to: "/Input" } }, [
+                                _vm._v("Input")
+                              ])
+                            ],
+                            1
+                          )
+                        ]
                       )
                     ]),
                     _vm._v(" "),
@@ -95528,13 +96064,13 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link",
+                          staticClass: "sidebar-link sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
                           _c("i", {
                             staticClass: "feather-icon",
-                            attrs: { "data-feather": "tag" }
+                            attrs: { "data-feather": "calendar" }
                           }),
                           _c(
                             "span",
@@ -95560,7 +96096,7 @@ var render = function() {
                         [
                           _c("i", {
                             staticClass: "feather-icon",
-                            attrs: { "data-feather": "message-square" }
+                            attrs: { "data-feather": "calendar" }
                           }),
                           _c(
                             "span",
@@ -95645,9 +96181,7 @@ var render = function() {
                             { staticClass: "hide-menu" },
                             [
                               _c("router-link", { attrs: { to: "/PAK" } }, [
-                                _vm._v(
-                                  "Perubahan Aset\n                                        Kelolaan"
-                                )
+                                _vm._v("Perubahan Aset Kelolaan")
                               ])
                             ],
                             1
@@ -95658,160 +96192,10 @@ var render = function() {
                     _vm._v(" "),
                     _c("li", { staticClass: "list-divider" }),
                     _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link has-arrow",
-                          attrs: {
-                            href: "javascript:void(0)",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "bar-chart" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Charts\n                                ")
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        {
-                          staticClass: "collapse  first-level base-level-line",
-                          attrs: { "aria-expanded": "false" }
-                        },
-                        [
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "chart-morris.html" }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            Morris Chart\n                                        "
-                                  )
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "chart-chart-js.html" }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            ChartJs\n                                        "
-                                  )
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "chart-knob.html" }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            Knob Chart\n                                        "
-                                  )
-                                ])
-                              ]
-                            )
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link sidebar-link",
-                          attrs: {
-                            href: "ui-cards.html",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "sidebar" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Cards\n                                ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "list-divider" }),
-                    _vm._v(" "),
                     _c("li", { staticClass: "nav-small-cap" }, [
                       _c("span", { staticClass: "hide-menu" }, [
-                        _vm._v("Authentication")
+                        _vm._v("Pelaporan")
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link sidebar-link",
-                          attrs: {
-                            href: "authentication-login1.html",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "lock" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Login ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link sidebar-link",
-                          attrs: {
-                            href: "authentication-register1.html",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "lock" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Register ")
-                          ])
-                        ]
-                      )
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
@@ -95830,7 +96214,9 @@ var render = function() {
                             attrs: { "data-feather": "feather" }
                           }),
                           _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Icons\n                                ")
+                            _vm._v(
+                              "Print\n                                    Laporan\n                                "
+                            )
                           ])
                         ]
                       ),
@@ -95852,7 +96238,7 @@ var render = function() {
                               [
                                 _c("span", { staticClass: "hide-menu" }, [
                                   _vm._v(
-                                    "\n                                            Fontawesome Icons\n                                        "
+                                    "\n                                            Fontawesome Icons "
                                   )
                                 ])
                               ]
@@ -95868,244 +96254,10 @@ var render = function() {
                               },
                               [
                                 _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            Simple Line Icons\n                                        "
-                                  )
+                                  _vm._v(" Simple Line Icons ")
                                 ])
                               ]
                             )
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link has-arrow",
-                          attrs: {
-                            href: "javascript:void(0)",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "crosshair" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v(
-                              "Multi\n                                    level dd"
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        {
-                          staticClass: "collapse first-level base-level-line",
-                          attrs: { "aria-expanded": "false" }
-                        },
-                        [
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "javascript:void(0)" }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            item 1.1"
-                                  )
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "javascript:void(0)" }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            item 1.2"
-                                  )
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "has-arrow sidebar-link",
-                                attrs: {
-                                  href: "javascript:void(0)",
-                                  "aria-expanded": "false"
-                                }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v("Menu 1.3")
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "ul",
-                              {
-                                staticClass:
-                                  "collapse second-level base-level-line",
-                                attrs: { "aria-expanded": "false" }
-                              },
-                              [
-                                _c("li", { staticClass: "sidebar-item" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "sidebar-link",
-                                      attrs: { href: "javascript:void(0)" }
-                                    },
-                                    [
-                                      _c("span", { staticClass: "hide-menu" }, [
-                                        _vm._v(
-                                          "\n                                                    item 1.3.1"
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "sidebar-item" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "sidebar-link",
-                                      attrs: { href: "javascript:void(0)" }
-                                    },
-                                    [
-                                      _c("span", { staticClass: "hide-menu" }, [
-                                        _vm._v(
-                                          "\n                                                    item 1.3.2"
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "sidebar-item" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "sidebar-link",
-                                      attrs: { href: "javascript:void(0)" }
-                                    },
-                                    [
-                                      _c("span", { staticClass: "hide-menu" }, [
-                                        _vm._v(
-                                          "\n                                                    item 1.3.3"
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "sidebar-item" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "sidebar-link",
-                                      attrs: { href: "javascript:void(0)" }
-                                    },
-                                    [
-                                      _c("span", { staticClass: "hide-menu" }, [
-                                        _vm._v(
-                                          "\n                                                    item 1.3.4"
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "javascript:void(0)" }
-                              },
-                              [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(
-                                    "\n                                            item 1.4"
-                                  )
-                                ])
-                              ]
-                            )
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "list-divider" }),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-small-cap" }, [
-                      _c("span", { staticClass: "hide-menu" }, [
-                        _vm._v("Extra")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link sidebar-link",
-                          attrs: {
-                            href: "../../docs/docs.html",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "edit-3" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Documentation")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link sidebar-link",
-                          attrs: {
-                            href: "authentication-login1.html",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "log-out" }
-                          }),
-                          _c("span", { staticClass: "hide-menu" }, [
-                            _vm._v("Logout")
                           ])
                         ]
                       )
@@ -96315,224 +96467,286 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm.jurnals.data < 1
-              ? _c("div", { staticClass: "col-12" }, [
-                  _c("h6", { staticClass: "text-danger text-center" }, [
-                    _vm._v(
-                      "\n                            Maaf data jurnal " +
-                        _vm._s(_vm.keywords) +
-                        " tidak ditemukan\n                        "
-                    )
-                  ])
+            _vm.loading
+              ? _c(
+                  "div",
+                  { staticClass: "d-flex justify-content-center mt-5" },
+                  [_c("div", { staticClass: "dot-falling" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.loading
+              ? _c("div", { staticClass: "d-flex justify-content-center" }, [
+                  _vm._m(0)
                 ])
-              : _c("div", {}, [
-                  !_vm.keywords
-                    ? _c("div", {}, [
-                        _c("table", { staticClass: "table table-responsive" }, [
-                          _vm._m(0),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            _vm._l(_vm.jurnals.data, function(jurnal, index) {
-                              return _c("tr", { key: index }, [
-                                _c("td", [_vm._v(_vm._s(index + 1))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.aktivitas))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.no_akun))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.keterangan))]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(
-                                    "\n                                            " +
-                                      _vm._s(jurnal.debet) +
-                                      ":\n                                            " +
-                                      _vm._s(
-                                        _vm._f("currency")(jurnal.jum_debet)
-                                      ) +
-                                      "\n                                        "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(
-                                    "\n                                            " +
-                                      _vm._s(jurnal.kredit) +
-                                      ":\n                                            " +
-                                      _vm._s(
-                                        _vm._f("currency")(jurnal.jum_kredit)
-                                      ) +
-                                      "\n                                        "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [
+              : _c("div", { staticClass: "loading" }, [
+                  _vm.jurnals.data < 1
+                    ? _c("div", { staticClass: "col-12 mt-3" }, [
+                        _c("h6", { staticClass: "text-danger text-center" }, [
+                          _vm._v(
+                            "\n                            Maaf data jurnal " +
+                              _vm._s(_vm.keywords) +
+                              " tidak ditemukan\n                        "
+                          )
+                        ])
+                      ])
+                    : _c("div", {}, [
+                        !_vm.keywords
+                          ? _c("div", {}, [
+                              _c(
+                                "table",
+                                { staticClass: "table table-responsive" },
+                                [
+                                  _vm._m(1),
+                                  _vm._v(" "),
                                   _c(
-                                    "button",
+                                    "tbody",
+                                    _vm._l(_vm.jurnals.data, function(
+                                      jurnal,
+                                      index
+                                    ) {
+                                      return _c("tr", { key: index }, [
+                                        _c("td", [_vm._v(_vm._s(index + 1))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.created_at))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.aktivitas))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.no_akun))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.keterangan))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(jurnal.debet) +
+                                              ":\n                                            " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_debet
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(jurnal.kredit) +
+                                              ":\n                                            " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_kredit
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.hapus(jurnal.id)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                Delete\n                                            "
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-center mt-2"
+                                },
+                                [
+                                  _c(
+                                    "pagination",
                                     {
-                                      staticClass:
-                                        "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                                      attrs: { data: _vm.jurnals },
                                       on: {
-                                        click: function($event) {
-                                          return _vm.hapus(jurnal.id)
-                                        }
+                                        "pagination-change-page": _vm.getResult
                                       }
                                     },
                                     [
-                                      _vm._v(
-                                        "\n                                                Delete\n                                            "
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "prev-nav" },
+                                          slot: "prev-nav"
+                                        },
+                                        [_vm._v("< Previous")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "next-nav" },
+                                          slot: "next-nav"
+                                        },
+                                        [_vm._v("Next >")]
                                       )
                                     ]
                                   )
-                                ])
-                              ])
-                            }),
-                            0
-                          )
-                        ]),
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "d-flex justify-content-center mt-2" },
-                          [
-                            _c(
-                              "pagination",
-                              {
-                                attrs: { data: _vm.jurnals },
-                                on: { "pagination-change-page": _vm.getResult }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  {
-                                    attrs: { slot: "prev-nav" },
-                                    slot: "prev-nav"
-                                  },
-                                  [_vm._v("< Previous")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  {
-                                    attrs: { slot: "next-nav" },
-                                    slot: "next-nav"
-                                  },
-                                  [_vm._v("Next >")]
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.keywords
-                    ? _c("div", [
-                        _c("table", { staticClass: "table table-responsive" }, [
-                          _vm._m(1),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            _vm._l(_vm.jurnals.data, function(jurnal, index) {
-                              return _c("tr", { key: index }, [
-                                _c("td", [_vm._v(_vm._s(index + 1))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.created_at))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.aktivitas))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.no_akun))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(jurnal.keterangan))]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(
-                                    "\n                                            " +
-                                      _vm._s(jurnal.debet) +
-                                      ":\n                                            " +
-                                      _vm._s(
-                                        _vm._f("currency")(jurnal.jum_debet)
-                                      ) +
-                                      "\n                                        "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(
-                                    "\n                                            " +
-                                      _vm._s(jurnal.kredit) +
-                                      ":\n                                            " +
-                                      _vm._s(
-                                        _vm._f("currency")(jurnal.jum_kredit)
-                                      ) +
-                                      "\n                                        "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [
+                        _vm.keywords
+                          ? _c("div", [
+                              _c(
+                                "table",
+                                { staticClass: "table table-responsive" },
+                                [
+                                  _vm._m(2),
+                                  _vm._v(" "),
                                   _c(
-                                    "button",
+                                    "tbody",
+                                    _vm._l(_vm.jurnals.data, function(
+                                      jurnal,
+                                      index
+                                    ) {
+                                      return _c("tr", { key: index }, [
+                                        _c("td", [_vm._v(_vm._s(index + 1))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.created_at))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.aktivitas))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.no_akun))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.keterangan))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(jurnal.debet) +
+                                              ":\n                                            " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_debet
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(jurnal.kredit) +
+                                              ":\n                                            " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_kredit
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.hapus(jurnal.id)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                Delete\n                                            "
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-center mt-2"
+                                },
+                                [
+                                  _c(
+                                    "pagination",
                                     {
-                                      staticClass:
-                                        "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                                      attrs: { data: _vm.jurnals },
                                       on: {
-                                        click: function($event) {
-                                          return _vm.hapus(jurnal.id)
-                                        }
+                                        "pagination-change-page": _vm.cari1
                                       }
                                     },
                                     [
-                                      _vm._v(
-                                        "\n                                                Delete\n                                            "
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "prev-nav" },
+                                          slot: "prev-nav"
+                                        },
+                                        [_vm._v("< Previous")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "next-nav" },
+                                          slot: "next-nav"
+                                        },
+                                        [_vm._v("Next >")]
                                       )
                                     ]
                                   )
-                                ])
-                              ])
-                            }),
-                            0
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "d-flex justify-content-center mt-2" },
-                          [
-                            _c(
-                              "pagination",
-                              {
-                                attrs: { data: _vm.jurnals },
-                                on: { "pagination-change-page": _vm.cari1 }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  {
-                                    attrs: { slot: "prev-nav" },
-                                    slot: "prev-nav"
-                                  },
-                                  [_vm._v("< Previous")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  {
-                                    attrs: { slot: "next-nav" },
-                                    slot: "next-nav"
-                                  },
-                                  [_vm._v("Next >")]
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e()
                       ])
-                    : _vm._e()
                 ])
           ])
         ])
@@ -96545,11 +96759,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", {}, [_c("h4", [_vm._v("Loading...")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", { staticClass: "text-center" }, [
         _c("th", { attrs: { colspan: "8" } }, [
           _c("div", { staticClass: "text-title" }, [
-            _c("h5", [_vm._v("Jurnal Tahun")])
+            _c("h5", { staticClass: "card-title" }, [_vm._v("Jurnal Tahun")])
           ])
         ])
       ]),
@@ -96583,7 +96803,7 @@ var staticRenderFns = [
       _c("tr", { staticClass: "text-center" }, [
         _c("th", { attrs: { colspan: "8" } }, [
           _c("div", { staticClass: "text-title" }, [
-            _c("h5", [_vm._v("Jurnal Tahun")])
+            _c("h5", { staticClass: "card-title" }, [_vm._v("Jurnal Tahun")])
           ])
         ])
       ]),
@@ -115304,7 +115524,7 @@ var li = header.getElementsByClassName("sidebar-item");
 for (var i = 0; i < li.length; i++) {
   li[i].addEventListener("click", function () {
     var current = document.getElementsByClassName("selected");
-    current[0].className = current[0].className.replace(" selected", " ");
+    current[0].className = current[0].className.replace(" selected", "");
     this.className += " selected";
   });
 }
@@ -115958,14 +116178,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_currency_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-currency-directive */ "./node_modules/vue-currency-directive/dist/index.min.js");
 /* harmony import */ var vue_chart_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-chart-js */ "./node_modules/vue-chart-js/dist/vue-chart-js.min.js");
 /* harmony import */ var vue_chart_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_chart_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/Home */ "./resources/js/views/Home.vue");
-/* harmony import */ var _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/AllJurnals.vue */ "./resources/js/views/AllJurnals.vue");
-/* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
-/* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
-/* harmony import */ var _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/Aktivitas.vue */ "./resources/js/views/Aktivitas.vue");
-/* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
-/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
-/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
+/* harmony import */ var three_dots__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! three-dots */ "./node_modules/three-dots/dist/three-dots.css");
+/* harmony import */ var three_dots__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(three_dots__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/Home */ "./resources/js/views/Home.vue");
+/* harmony import */ var _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/AllJurnals.vue */ "./resources/js/views/AllJurnals.vue");
+/* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
+/* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
+/* harmony import */ var _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/Aktivitas.vue */ "./resources/js/views/Aktivitas.vue");
+/* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
+/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
+/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
@@ -115979,7 +116201,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_chart_js__WEBPACK_IMPORTED_MODULE_11___default.a);
+ // import BootstrapIcons from 'bootstrap-icons'
+
 var options = {
   confirmButtonColor: '#41b882',
   cancelButtonColor: '#ff7674'
@@ -116004,6 +116227,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_fragment__WEBPACK_IMPORTED_MO
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_6___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_html2pdf__WEBPACK_IMPORTED_MODULE_9__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__["default"], options2);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(three_dots__WEBPACK_IMPORTED_MODULE_12___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_chart_js__WEBPACK_IMPORTED_MODULE_11___default.a); // Vue.use(BootstrapIcons)
+
 
 
 
@@ -116015,35 +116241,35 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPO
 var routes = [{
   name: 'Home',
   path: '/',
-  component: _views_Home__WEBPACK_IMPORTED_MODULE_12__["default"]
+  component: _views_Home__WEBPACK_IMPORTED_MODULE_13__["default"]
 }, {
   name: 'Jurnal',
-  path: '/jurnal',
-  component: _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
+  path: '/Jurnal',
+  component: _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
 }, {
   name: 'Input',
   path: '/input',
-  component: _views_Input_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
+  component: _views_Input_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
 }, {
   name: 'LPK',
   path: '/LPK',
-  component: _views_LPK_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
+  component: _views_LPK_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
 }, {
   name: 'Aktivitas',
   path: '/Aktivitas',
-  component: _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
+  component: _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
 }, {
   name: 'Arus Kas',
   path: '/arusKas',
-  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
+  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
 }, {
   name: 'LPD',
   path: '/LPDana',
-  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_19__["default"]
 }, {
   name: 'PAK',
   path: '/PAK',
-  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_19__["default"]
+  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_20__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: routes

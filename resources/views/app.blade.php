@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="{{ asset('src/dist/css/style.min.css') }}">
     
     <!-- Custom CSS -->
-    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+ 
 </head>
 
 <body>
