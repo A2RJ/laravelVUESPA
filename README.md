@@ -6,9 +6,10 @@
 *1. Perbaiki UI agar bisa discreenshot untuk laporan
    Untuk dashboard (card gradient) - jumlah jurnal, jumlah kas, jumlah kredit
 
-2. Mulai kerjakan laporan, jika SC gambar belum FIX 
-   revisi format serta penyusunan isi termasuk
-   penjelasan aktivitas dan akun yang ada
+2. Mulai kerjakan laporan 
+   - Baca pahami isi laporan sekarang
+   - Revisi format laporan
+   - Revisi isi laporan termasuk penjelasan aktivitas dan akun yang ada
 
 3. Fitur pdf
 
