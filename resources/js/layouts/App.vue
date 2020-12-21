@@ -332,7 +332,7 @@
                     <div class="row">
                         <div class="col-7 align-self-center">
                             <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                                Tabs
+                                SIKANGMAS
                             </h4>
                             <div class="d-flex align-items-center">
                                 <nav aria-label="breadcrumb">
@@ -341,7 +341,7 @@
                                             <a href="index.html" class="text-muted">Home</a>
                                         </li>
                                         <li class="breadcrumb-item text-muted active" aria-current="page">
-                                            Library
+                                            jurnal
                                         </li>
                                     </ol>
                                 </nav>
@@ -374,10 +374,10 @@
                 <!-- ============================================================== -->
                 <!-- footer -->
                 <!-- ============================================================== -->
-                <footer class="footer text-center text-muted">
+                <!-- <footer class="footer text-center text-muted">
                     All Rights Reserved by Adminmart. Designed and Developed by
                     <a href="https://wrappixel.com">WrapPixel</a>.
-                </footer>
+                </footer> -->
                 <!-- ============================================================== -->
                 <!-- End footer -->
                 <!-- ============================================================== -->

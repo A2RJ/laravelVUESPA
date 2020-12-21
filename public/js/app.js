@@ -2503,6 +2503,71 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2555,17 +2620,17 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       this.$swal({
-        title: 'Yakin?',
+        title: "Yakin?",
         text: "Anda masih dapat membatalkan",
-        icon: 'warning',
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus'
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus"
       }).then(function (result) {
         if (result.isConfirmed) {
           axios.get("api/hapus/" + jurnal).then(function (res) {
-            return _this3.cari(), _this3.$swal('Success', 'Dihapus.', 'success');
+            return _this3.cari(), _this3.$swal("Success", "Dihapus.", "success");
           });
         }
       });
@@ -96281,7 +96346,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                            Tabs\n                        "
+                      "\n                            SIKANGMAS\n                        "
                     )
                   ]
                 ),
@@ -96308,7 +96373,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                        Library\n                                    "
+                            "\n                                        jurnal\n                                    "
                           )
                         ]
                       )
@@ -96344,17 +96409,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "container-fluid" }, [_c("router-view")], 1),
-          _vm._v(" "),
-          _c("footer", { staticClass: "footer text-center text-muted" }, [
-            _vm._v(
-              "\n                All Rights Reserved by Adminmart. Designed and Developed by\n                "
-            ),
-            _c("a", { attrs: { href: "https://wrappixel.com" } }, [
-              _vm._v("WrapPixel")
-            ]),
-            _vm._v(".\n            ")
-          ])
+          _c("div", { staticClass: "container-fluid" }, [_c("router-view")], 1)
         ])
       ]
     )
@@ -96484,9 +96539,9 @@ var render = function() {
                     ? _c("div", { staticClass: "col-12 mt-3" }, [
                         _c("h6", { staticClass: "text-danger text-center" }, [
                           _vm._v(
-                            "\n                            Maaf data jurnal " +
+                            "\n                                Maaf data jurnal " +
                               _vm._s(_vm.keywords) +
-                              " tidak ditemukan\n                        "
+                              " tidak\n                                ditemukan\n                            "
                           )
                         ])
                       ])
@@ -96526,29 +96581,29 @@ var render = function() {
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            "\n                                            " +
+                                            "\n                                                " +
                                               _vm._s(jurnal.debet) +
-                                              ":\n                                            " +
+                                              ":\n                                                " +
                                               _vm._s(
                                                 _vm._f("currency")(
                                                   jurnal.jum_debet
                                                 )
                                               ) +
-                                              "\n                                        "
+                                              "\n                                            "
                                           )
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            "\n                                            " +
+                                            "\n                                                " +
                                               _vm._s(jurnal.kredit) +
-                                              ":\n                                            " +
+                                              ":\n                                                " +
                                               _vm._s(
                                                 _vm._f("currency")(
                                                   jurnal.jum_kredit
                                                 )
                                               ) +
-                                              "\n                                        "
+                                              "\n                                            "
                                           )
                                         ]),
                                         _vm._v(" "),
@@ -96566,7 +96621,7 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n                                                Delete\n                                            "
+                                                "\n                                                    Delete\n                                                "
                                               )
                                             ]
                                           )
@@ -96654,29 +96709,29 @@ var render = function() {
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            "\n                                            " +
+                                            "\n                                                " +
                                               _vm._s(jurnal.debet) +
-                                              ":\n                                            " +
+                                              ":\n                                                " +
                                               _vm._s(
                                                 _vm._f("currency")(
                                                   jurnal.jum_debet
                                                 )
                                               ) +
-                                              "\n                                        "
+                                              "\n                                            "
                                           )
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            "\n                                            " +
+                                            "\n                                                " +
                                               _vm._s(jurnal.kredit) +
-                                              ":\n                                            " +
+                                              ":\n                                                " +
                                               _vm._s(
                                                 _vm._f("currency")(
                                                   jurnal.jum_kredit
                                                 )
                                               ) +
-                                              "\n                                        "
+                                              "\n                                            "
                                           )
                                         ]),
                                         _vm._v(" "),
@@ -96694,7 +96749,7 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n                                                Delete\n                                            "
+                                                "\n                                                    Delete\n                                                "
                                               )
                                             ]
                                           )
@@ -96769,7 +96824,11 @@ var staticRenderFns = [
       _c("tr", { staticClass: "text-center" }, [
         _c("th", { attrs: { colspan: "8" } }, [
           _c("div", { staticClass: "text-title" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Jurnal Tahun")])
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(
+                "\n                                                        Jurnal Tahun\n                                                    "
+              )
+            ])
           ])
         ])
       ]),
@@ -96778,7 +96837,9 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
         _vm._v(" "),
         _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
-          _vm._v("Tgl")
+          _vm._v(
+            "\n                                                Tgl\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
@@ -96803,7 +96864,11 @@ var staticRenderFns = [
       _c("tr", { staticClass: "text-center" }, [
         _c("th", { attrs: { colspan: "8" } }, [
           _c("div", { staticClass: "text-title" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Jurnal Tahun")])
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(
+                "\n                                                        Jurnal Tahun\n                                                    "
+              )
+            ])
           ])
         ])
       ]),
@@ -96812,7 +96877,9 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
         _vm._v(" "),
         _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
-          _vm._v("Tgl")
+          _vm._v(
+            "\n                                                Tgl\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
