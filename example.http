@@ -1,1 +1,1 @@
-GET http://192.168.1.17:8000/api/laporan/hitungDanaAmil HTTP/1.1
+GET http://127.0.0.1:8000/api/laporan/LPK HTTP/1.1
