@@ -295,13 +295,13 @@
                             </li> -->
 
                             <li class="sidebar-item">
-                                <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i
+                                <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false" ><i
                                         data-feather="feather" class="feather-icon"></i><span class="hide-menu">Print
                                         Laporan
                                     </span></a>
                                 <ul aria-expanded="false" class="collapse first-level base-level-line">
                                     <li class="sidebar-item">
-                                        <a href="icon-fontawesome.html" class="sidebar-link"><span class="hide-menu">
+                                        <a href="#" class="sidebar-link"><span class="hide-menu" @click="generateReport()">
                                                 Fontawesome Icons </span></a>
                                     </li>
 

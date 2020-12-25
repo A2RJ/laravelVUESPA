@@ -9,7 +9,7 @@ import { Plugin, Fragment } from 'vue-fragment'
 import Vue2Filters from 'vue2-filters'
 import VueCurrencyFilter from 'vue-currency-filter'
 import VueSweetalert2 from 'vue-sweetalert2';
-import VueHtml2pdf from 'vue-html2pdf'
+// import VueHtml2pdf from 'vue-html2pdf'
 import vueCurrencyDirective from 'vue-currency-directive';
 import VueChart from 'vue-chart-js'
 import dots from 'three-dots'
@@ -38,7 +38,7 @@ Vue.use(VueAxios, axios);
 Vue.use(Plugin)
 Vue.use(Fragment)
 Vue.use(Vue2Filters)
-Vue.use(VueHtml2pdf)
+// Vue.use(VueHtml2pdf)
 Vue.use(VueCurrencyFilter, options2)
 Vue.use(dots)
 Vue.use(VueChart)

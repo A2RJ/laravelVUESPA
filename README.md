@@ -8,11 +8,13 @@
 
 ### \* = task complete
 
-\*1. Perbaiki UI agar bisa discreenshot untuk laporan
-Untuk dashboard (card gradient) - jumlah jurnal, jumlah kas, jumlah kredit
+1. Perbaiki UI agar bisa discreenshot untuk laporan
 
-   ### Di neraca untuk dana amil disitu total amil, zakat, infak dan nonhalal
-   ### Hitung total diNeraca
+-   Untuk dashboard (card gradient) - jumlah jurnal, jumlah kas, jumlah kredit
+-   Di neraca untuk dana amil disitu total amil, zakat, infak dan nonhalal
+-   Hitung total diNeraca
+-   Buat fungsi untuk mengecek kas sehingga debet !> kredit
+-   Aktivitas 16 Kas = 15 Kredit, berarti ubah nilai debet dan kredit dineraca
 
 2. Mulai kerjakan laporan
 

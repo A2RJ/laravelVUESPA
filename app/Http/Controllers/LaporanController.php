@@ -103,14 +103,14 @@ class LaporanController extends Controller
      **/
     public function LPK()
     {
-        $debet = $this->get(1) + $this->get(12) + $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5) + $this->get(5) + $this->get(7) + $this->get(12) + $this->get(15) + $this->get(18);
+        $debet = $this->get(1) + $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5) + $this->get(5) + $this->get(7) + $this->get(12) + $this->get(15, 2.3) + $this->get(16) + $this->get(18);
 
-        $kredit = $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17);
+        $kredit = $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(9, 1.4) + $this->get(9, 2.1) + $this->get(9, 2.3) + $this->get(9, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.2) + $this->get(17);
 
         return response()->json([
             'kas' => $debet - $kredit,
             'bank' => $this->get(17) - $this->get(18),
-            'piutang' => $this->get(15, 2.3) - $this->get(14, 2.3),
+            'piutang' => $this->get(14, 2.3) - $this->get(15, 2.3),
             // 9 - 10 - 11 - 12
             'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4) - $this->get(12, 1.4),
             'peralatan' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1) - $this->get(12, 2.1),
@@ -124,7 +124,8 @@ class LaporanController extends Controller
             // $this->get(2) - 
             'infak' => $this->get(4),
             // ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - 
-            'amil' => ($this->get(5) + $this->get(12) + $this->get(15) + $this->get(18)),
+            'amil' => ($this->get(5)) - ($this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2) +$this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4) + $this->get(13)),
+            //  + $this->get(12) + $this->get(15) + $this->get(18)
             // ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17)) - 
             'nonHalal' => $this->get(7)
             //  - ($this->get(8, 5.11) + $this->get(8, 5.12))
@@ -186,8 +187,8 @@ class LaporanController extends Controller
             'investasiKas' => $this->get(12, 2.1) + $this->get(12, 2.3) + $this->get(12, 2.5),
             'peralatanKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1),
             'gnbKredit' => $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3),
-            'tanahKredit' => $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4),
-            'investasiKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1) + $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3) + $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4),
+            'tanahKredit' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5),
+            'investasiKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1) + $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3) + $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5),
             'utangJPendek' => $this->get(16, 2.1),
             'utangJPanjang' => $this->get(16, 2.2),
             'pendanaanKas' => $this->get(16, 2.1) + $this->get(16, 2.2),
