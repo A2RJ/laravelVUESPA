@@ -2415,340 +2415,321 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
   components: {
     Fragment: vue_fragment__WEBPACK_IMPORTED_MODULE_0__["Fragment"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Aktivitas.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Aktivitas.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {};
-  },
-  mounted: function mounted() {
-    this.load();
   },
   methods: {
-    load: function load() {
-      this.axios.get("/api/laporan/aktivitas").then(function (res) {
-        console.log(res.data);
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    }
-  },
-  computed: {
-    apa: function apa() {// return parseFloat(this.aktivaabtt) + parseFloat(this.abtt);
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/AllJurnals.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/AllJurnals.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      jurnals: {},
-      keywords: "",
-      message: "",
-      loading: false
-    };
-  },
-  mounted: function mounted() {
-    this.getResult();
-  },
-  methods: {
-    cari: function cari() {
-      if (this.keywords === "") {
-        this.getResult();
-      } else {
-        this.cari1();
-      }
-    },
-    reset: function reset() {
-      this.message = "";
-    },
-    getResult: function getResult(page) {
-      var _this = this;
-
-      this.loading = true;
-
-      if (typeof page === "undefined") {
-        page = 1;
-      }
-
-      axios.get("api/jurnals?page=" + page).then(function (res) {
-        return _this.jurnals = res.data, _this.loading = false;
-      });
-    },
-    cari1: function cari1(page) {
-      var _this2 = this;
-
-      if (typeof page === "undefined") {
-        page = 1;
-      }
-
-      this.loading = true;
-      axios.get("api/cari/" + this.keywords + "?page=" + page).then(function (res) {
-        return _this2.jurnals = res.data, _this2.loading = false;
-      });
-    },
-    hapus: function hapus(jurnal) {
-      var _this3 = this;
-
-      this.$swal({
-        title: "Yakin?",
-        text: "Anda masih dapat membatalkan",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Hapus"
-      }).then(function (result) {
-        if (result.isConfirmed) {
-          axios.get("api/hapus/" + jurnal).then(function (res) {
-            return _this3.cari(), _this3.$swal("Success", "Dihapus.", "success");
-          });
-        }
-      });
+    generateReport: function generateReport() {
+      console.log("Holla");
     }
   }
 });
@@ -2764,6 +2745,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -3004,6 +2988,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3014,10 +3027,28 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("api/laporan/arusKas").then(function (response) {
-      return _this.data = response.data;
+      return _this.data = response.data, _this.generateReport();
     })["catch"](function (error) {
       return console.log(error);
     });
+  },
+  methods: {
+    generateReport: function generateReport() {
+      if (this.$route.params.Report) {
+        if (this.$route.params.Report == "ArusKas") {
+          var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
+          jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
+            margin: {
+              top: 60
+            },
+            html: "table"
+          });
+          doc.setPage(1);
+          doc.text("To Do List", 40, 40);
+          doc.save("table.pdf");
+        }
+      }
+    }
   }
 });
 
@@ -3277,6 +3308,318 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Jurnals.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Jurnals.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      jurnals: {},
+      keywords: "",
+      message: "",
+      loading: false
+    };
+  },
+  mounted: function mounted() {
+    this.getResult();
+    this.generateReport();
+  },
+  methods: {
+    cari: function cari() {
+      if (this.keywords === "") {
+        this.getResult();
+      } else {
+        this.cari1();
+      }
+    },
+    reset: function reset() {
+      this.message = "";
+    },
+    getResult: function getResult(page) {
+      var _this = this;
+
+      this.loading = true;
+
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      axios.get("api/jurnals?page=" + page).then(function (res) {
+        return _this.jurnals = res.data, _this.loading = false;
+      });
+    },
+    cari1: function cari1(page) {
+      var _this2 = this;
+
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      this.loading = true;
+      axios.get("api/cari/" + this.keywords + "?page=" + page).then(function (res) {
+        return _this2.jurnals = res.data, _this2.loading = false;
+      });
+    },
+    hapus: function hapus(jurnal) {
+      var _this3 = this;
+
+      this.$swal({
+        title: "Yakin?",
+        text: "Anda masih dapat membatalkan",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus"
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios.get("api/hapus/" + jurnal).then(function (res) {
+            return _this3.cari(), _this3.$swal("Success", "Dihapus.", "success");
+          });
+        }
+      });
+    },
+    generateReport: function generateReport() {
+      if (this.$route.params.Report) {
+        if (this.jurnals) {
+          if (this.$route.params.Report == "Jurnals") {
+            var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
+            jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
+              margin: {
+                top: 60
+              },
+              html: "table"
+            });
+            doc.setPage(1);
+            doc.text("To Do List", 40, 40);
+            doc.save("table.pdf");
+          }
+        }
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/LPK.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/LPK.vue?vue&type=script&lang=js& ***!
@@ -3286,6 +3629,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -3415,6 +3761,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3425,10 +3813,28 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("api/laporan/lpk").then(function (response) {
-      return _this.data = response.data;
+      return _this.data = response.data, _this.generateReport();
     })["catch"](function (error) {
       return console.log(error);
     });
+  },
+  methods: {
+    generateReport: function generateReport() {
+      if (this.$route.params.Report) {
+        if (this.$route.params.Report == "LPK") {
+          var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
+          jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
+            margin: {
+              top: 60
+            },
+            html: "table"
+          });
+          doc.setPage(1);
+          doc.text("To Do List", 40, 40);
+          doc.save("table.pdf");
+        }
+      }
+    }
   }
 });
 
@@ -3513,23 +3919,27 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("api/laporan/lpak").then(function (response) {
-      return _this.data = response.data;
+      return _this.data = response.data, _this.generateReport();
     })["catch"](function (error) {
       return console.log(error);
     });
   },
   methods: {
     generateReport: function generateReport() {
-      var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]('p', 'pt');
-      jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
-        margin: {
-          top: 60
-        },
-        html: "table"
-      });
-      doc.setPage(1);
-      doc.text('To Do List', 40, 40);
-      doc.save("table.pdf");
+      if (this.$route.params.Report) {
+        if (this.$route.params.Report == "PAK") {
+          var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
+          jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
+            margin: {
+              top: 60
+            },
+            html: "table"
+          });
+          doc.setPage(1);
+          doc.text("To Do List", 40, 40);
+          doc.save("table.pdf");
+        }
+      }
     }
   }
 });
@@ -3545,6 +3955,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
+/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -3948,6 +4361,86 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3959,9 +4452,27 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("api/laporan/lpd").then(function (response) {
       return _this.data = response.data;
-    })["catch"](function (error) {
+    }, this.generateReport())["catch"](function (error) {
       return console.log(error);
     });
+  },
+  methods: {
+    generateReport: function generateReport() {
+      if (this.$route.params.Report) {
+        if (this.$route.params.Report == "LPDana") {
+          var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
+          jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
+            margin: {
+              top: 60
+            },
+            html: "table"
+          });
+          doc.setPage(1);
+          doc.text("To Do List", 40, 40);
+          doc.save("table.pdf");
+        }
+      }
+    }
   }
 });
 
@@ -95373,7 +95884,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "Just see\n                                                        the my new admin!"
+                                                  "Just see the my new\n                                                        admin!"
                                                 )
                                               ]
                                             ),
@@ -95384,11 +95895,7 @@ var render = function() {
                                                 staticClass:
                                                   "font-12 text-nowrap d-block text-muted"
                                               },
-                                              [
-                                                _vm._v(
-                                                  "9:30\n                                                        AM"
-                                                )
-                                              ]
+                                              [_vm._v("9:30 AM")]
                                             )
                                           ]
                                         )
@@ -95432,7 +95939,11 @@ var render = function() {
                                                 staticClass:
                                                   "message-title mb-0 mt-1"
                                               },
-                                              [_vm._v("Event today")]
+                                              [
+                                                _vm._v(
+                                                  "\n                                                        Event today\n                                                    "
+                                                )
+                                              ]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -95443,7 +95954,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "Just\n                                                        a reminder that you have event"
+                                                  "Just a reminder\n                                                        that you have\n                                                        event"
                                                 )
                                               ]
                                             ),
@@ -95454,11 +95965,7 @@ var render = function() {
                                                 staticClass:
                                                   "font-12 text-nowrap d-block text-muted"
                                               },
-                                              [
-                                                _vm._v(
-                                                  "9:10\n                                                        AM"
-                                                )
-                                              ]
+                                              [_vm._v("9:10 AM")]
                                             )
                                           ]
                                         )
@@ -95502,7 +96009,11 @@ var render = function() {
                                                 staticClass:
                                                   "message-title mb-0 mt-1"
                                               },
-                                              [_vm._v("Settings")]
+                                              [
+                                                _vm._v(
+                                                  "\n                                                        Settings\n                                                    "
+                                                )
+                                              ]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -95513,7 +96024,7 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "You\n                                                        can customize this template as you want"
+                                                  "You can customize\n                                                        this template as you\n                                                        want"
                                                 )
                                               ]
                                             ),
@@ -95524,11 +96035,7 @@ var render = function() {
                                                 staticClass:
                                                   "font-12 text-nowrap d-block text-muted"
                                               },
-                                              [
-                                                _vm._v(
-                                                  "9:08\n                                                        AM"
-                                                )
-                                              ]
+                                              [_vm._v("9:08 AM")]
                                             )
                                           ]
                                         )
@@ -95570,18 +96077,9 @@ var render = function() {
                                                 staticClass:
                                                   "message-title mb-0 mt-1"
                                               },
-                                              [_vm._v("Pavan kumar")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass:
-                                                  "font-12 text-nowrap d-block text-muted"
-                                              },
                                               [
                                                 _vm._v(
-                                                  "Just see\n                                                        the my admin!"
+                                                  "\n                                                        Pavan kumar\n                                                    "
                                                 )
                                               ]
                                             ),
@@ -95594,9 +96092,18 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "9:02\n                                                        AM"
+                                                  "Just see the my\n                                                        admin!"
                                                 )
                                               ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "span",
+                                              {
+                                                staticClass:
+                                                  "font-12 text-nowrap d-block text-muted"
+                                              },
+                                              [_vm._v("9:02 AM")]
                                             )
                                           ]
                                         )
@@ -95616,7 +96123,9 @@ var render = function() {
                                   },
                                   [
                                     _c("strong", [
-                                      _vm._v("Check all notifications")
+                                      _vm._v(
+                                        "Check all\n                                                notifications"
+                                      )
                                     ]),
                                     _vm._v(" "),
                                     _c("i", {
@@ -95813,7 +96322,7 @@ var render = function() {
                                 attrs: { "data-feather": "user" }
                               }),
                               _vm._v(
-                                " My\n                                    Profile"
+                                "\n                                    My Profile"
                               )
                             ]
                           ),
@@ -95960,7 +96469,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link sidebar-link",
+                          staticClass: "sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
@@ -95986,7 +96495,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link sidebar-link",
+                          staticClass: "sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
@@ -96012,7 +96521,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link sidebar-link",
+                          staticClass: "sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
@@ -96038,7 +96547,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link sidebar-link",
+                          staticClass: "sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
@@ -96064,7 +96573,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link sidebar-link",
+                          staticClass: "sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
@@ -96090,7 +96599,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link sidebar-link",
+                          staticClass: "sidebar-link",
                           attrs: { href: "#", "aria-expanded": "false" }
                         },
                         [
@@ -96103,7 +96612,9 @@ var render = function() {
                             { staticClass: "hide-menu" },
                             [
                               _c("router-link", { attrs: { to: "/PAK" } }, [
-                                _vm._v("Perubahan Aset Kelolaan")
+                                _vm._v(
+                                  "Perubahan Aset\n                                        Kelolaan"
+                                )
                               ])
                             ],
                             1
@@ -96137,7 +96648,7 @@ var render = function() {
                           }),
                           _c("span", { staticClass: "hide-menu" }, [
                             _vm._v(
-                              "Print\n                                    Laporan\n                                "
+                              "Print Laporan\n                                "
                             )
                           ])
                         ]
@@ -96160,19 +96671,15 @@ var render = function() {
                               [
                                 _c(
                                   "span",
-                                  {
-                                    staticClass: "hide-menu",
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.generateReport()
-                                      }
-                                    }
-                                  },
+                                  { staticClass: "hide-menu" },
                                   [
-                                    _vm._v(
-                                      "\n                                            Fontawesome Icons "
+                                    _c(
+                                      "router-link",
+                                      { attrs: { to: "/Jurnal/Jurnals" } },
+                                      [_vm._v("Jurnal")]
                                     )
-                                  ]
+                                  ],
+                                  1
                                 )
                               ]
                             )
@@ -96183,12 +96690,77 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "sidebar-link",
-                                attrs: { href: "icon-simple-lineicon.html" }
+                                attrs: { href: "#" }
                               },
                               [
-                                _c("span", { staticClass: "hide-menu" }, [
-                                  _vm._v(" Simple Line Icons ")
-                                ])
+                                _c(
+                                  "span",
+                                  { staticClass: "hide-menu" },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      { attrs: { to: "/ReportLPK/LPK" } },
+                                      [_vm._v("Neraca")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "sidebar-item" }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "sidebar-link",
+                                attrs: { href: "#" }
+                              },
+                              [
+                                _c(
+                                  "span",
+                                  { staticClass: "hide-menu" },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      { attrs: { to: "/PAK" } },
+                                      [
+                                        _vm._v(
+                                          "Perubahan Aset\n                                                Kelolaan"
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "sidebar-item" }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "sidebar-link",
+                                attrs: { href: "#" }
+                              },
+                              [
+                                _c(
+                                  "span",
+                                  { staticClass: "hide-menu" },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      { attrs: { to: "/PAK" } },
+                                      [
+                                        _vm._v(
+                                          "Perubahan Aset\n                                                Kelolaan"
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
                               ]
                             )
                           ])
@@ -96284,487 +96856,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Aktivitas.vue?vue&type=template&id=1c5cc976&":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Aktivitas.vue?vue&type=template&id=1c5cc976& ***!
-  \*******************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row container d-flex justify-content-center" },
-      [
-        _c("div", { staticClass: "col-sm-12" }, [
-          _c("div", { staticClass: "mb-5 mt-5" })
-        ])
-      ]
-    )
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/AllJurnals.vue?vue&type=template&id=8791be02&":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/AllJurnals.vue?vue&type=template&id=8791be02& ***!
-  \********************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h4", { staticClass: "card-title" }, [_vm._v("Jurnal")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "add-items d-flex row" }, [
-              _c("div", { staticClass: "col-lg-12" }, [
-                _c(
-                  "form",
-                  {
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                      }
-                    }
-                  },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.keywords,
-                          expression: "keywords"
-                        }
-                      ],
-                      staticClass: "form-control todo-list-input",
-                      attrs: { type: "text", placeholder: "Cari jurnal" },
-                      domProps: { value: _vm.keywords },
-                      on: {
-                        keyup: _vm.cari,
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.keywords = $event.target.value
-                        }
-                      }
-                    })
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _vm.loading
-              ? _c(
-                  "div",
-                  { staticClass: "d-flex justify-content-center mt-5" },
-                  [_c("div", { staticClass: "dot-falling" })]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.loading
-              ? _c("div", { staticClass: "d-flex justify-content-center" }, [
-                  _vm._m(0)
-                ])
-              : _c("div", { staticClass: "loading" }, [
-                  _vm.jurnals.data < 1
-                    ? _c("div", { staticClass: "col-12 mt-3" }, [
-                        _c("h6", { staticClass: "text-danger text-center" }, [
-                          _vm._v(
-                            "\n                                Maaf data jurnal " +
-                              _vm._s(_vm.keywords) +
-                              " tidak\n                                ditemukan\n                            "
-                          )
-                        ])
-                      ])
-                    : _c("div", {}, [
-                        !_vm.keywords
-                          ? _c("div", {}, [
-                              _c(
-                                "table",
-                                { staticClass: "table table-responsive" },
-                                [
-                                  _vm._m(1),
-                                  _vm._v(" "),
-                                  _c(
-                                    "tbody",
-                                    _vm._l(_vm.jurnals.data, function(
-                                      jurnal,
-                                      index
-                                    ) {
-                                      return _c("tr", { key: index }, [
-                                        _c("td", [_vm._v(_vm._s(index + 1))]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.created_at))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.aktivitas))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.no_akun))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.keterangan))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(jurnal.debet) +
-                                              ":\n                                                " +
-                                              _vm._s(
-                                                _vm._f("currency")(
-                                                  jurnal.jum_debet
-                                                )
-                                              ) +
-                                              "\n                                            "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(jurnal.kredit) +
-                                              ":\n                                                " +
-                                              _vm._s(
-                                                _vm._f("currency")(
-                                                  jurnal.jum_kredit
-                                                )
-                                              ) +
-                                              "\n                                            "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c(
-                                            "button",
-                                            {
-                                              staticClass:
-                                                "mt-1 btn btn-outline-danger btn-sm btn-rounded",
-                                              on: {
-                                                click: function($event) {
-                                                  return _vm.hapus(jurnal.id)
-                                                }
-                                              }
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                                    Delete\n                                                "
-                                              )
-                                            ]
-                                          )
-                                        ])
-                                      ])
-                                    }),
-                                    0
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "d-flex justify-content-center mt-2"
-                                },
-                                [
-                                  _c(
-                                    "pagination",
-                                    {
-                                      attrs: { data: _vm.jurnals },
-                                      on: {
-                                        "pagination-change-page": _vm.getResult
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "span",
-                                        {
-                                          attrs: { slot: "prev-nav" },
-                                          slot: "prev-nav"
-                                        },
-                                        [_vm._v("< Previous")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "span",
-                                        {
-                                          attrs: { slot: "next-nav" },
-                                          slot: "next-nav"
-                                        },
-                                        [_vm._v("Next >")]
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm.keywords
-                          ? _c("div", [
-                              _c(
-                                "table",
-                                { staticClass: "table table-responsive" },
-                                [
-                                  _vm._m(2),
-                                  _vm._v(" "),
-                                  _c(
-                                    "tbody",
-                                    _vm._l(_vm.jurnals.data, function(
-                                      jurnal,
-                                      index
-                                    ) {
-                                      return _c("tr", { key: index }, [
-                                        _c("td", [_vm._v(_vm._s(index + 1))]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.created_at))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.aktivitas))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.no_akun))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(jurnal.keterangan))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(jurnal.debet) +
-                                              ":\n                                                " +
-                                              _vm._s(
-                                                _vm._f("currency")(
-                                                  jurnal.jum_debet
-                                                )
-                                              ) +
-                                              "\n                                            "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(jurnal.kredit) +
-                                              ":\n                                                " +
-                                              _vm._s(
-                                                _vm._f("currency")(
-                                                  jurnal.jum_kredit
-                                                )
-                                              ) +
-                                              "\n                                            "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c(
-                                            "button",
-                                            {
-                                              staticClass:
-                                                "mt-1 btn btn-outline-danger btn-sm btn-rounded",
-                                              on: {
-                                                click: function($event) {
-                                                  return _vm.hapus(jurnal.id)
-                                                }
-                                              }
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                                    Delete\n                                                "
-                                              )
-                                            ]
-                                          )
-                                        ])
-                                      ])
-                                    }),
-                                    0
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "d-flex justify-content-center mt-2"
-                                },
-                                [
-                                  _c(
-                                    "pagination",
-                                    {
-                                      attrs: { data: _vm.jurnals },
-                                      on: {
-                                        "pagination-change-page": _vm.cari1
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "span",
-                                        {
-                                          attrs: { slot: "prev-nav" },
-                                          slot: "prev-nav"
-                                        },
-                                        [_vm._v("< Previous")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "span",
-                                        {
-                                          attrs: { slot: "next-nav" },
-                                          slot: "next-nav"
-                                        },
-                                        [_vm._v("Next >")]
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ])
-                          : _vm._e()
-                      ])
-                ])
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [_c("h4", [_vm._v("Loading...")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", { staticClass: "text-center" }, [
-        _c("th", { attrs: { colspan: "8" } }, [
-          _c("div", { staticClass: "text-title" }, [
-            _c("h5", { staticClass: "card-title" }, [
-              _vm._v(
-                "\n                                                        Jurnal Tahun\n                                                    "
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
-          _vm._v(
-            "\n                                                Tgl\n                                            "
-          )
-        ]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("No. Akun")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Keterangan")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Debet")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Kredit")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Opsi")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", { staticClass: "text-center" }, [
-        _c("th", { attrs: { colspan: "8" } }, [
-          _c("div", { staticClass: "text-title" }, [
-            _c("h5", { staticClass: "card-title" }, [
-              _vm._v(
-                "\n                                                        Jurnal Tahun\n                                                    "
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
-          _vm._v(
-            "\n                                                Tgl\n                                            "
-          )
-        ]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("No. Akun")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Keterangan")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Debet")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Kredit")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Opsi")])
-      ])
-    ])
-  }
-]
 render._withStripped = true
 
 
@@ -97002,11 +97093,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.aktivitasKas - _vm.data.aktivitasKredit
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.aktivitasKas - _vm.data.aktivitasKredit
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -97104,11 +97197,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.investasiKas - _vm.data.investasiKredit
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.investasiKas - _vm.data.investasiKredit
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -97176,11 +97271,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.pendanaanKas - _vm.data.piutangKredit
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.pendanaanKas - _vm.data.piutangKredit
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -97194,7 +97291,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n              " +
+                      "\n                            " +
                         _vm._s(
                           _vm._f("currency")(
                             _vm.data.aktivitasKas -
@@ -97205,7 +97302,7 @@ var render = function() {
                               _vm.data.piutangKredit
                           )
                         ) +
-                        "\n            "
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -97248,7 +97345,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", { staticClass: "bold" }, [
       _c("td", { staticClass: "font-weight-bold", attrs: { colspan: "4" } }, [
-        _vm._v("Aktivitas investasi")
+        _vm._v(
+          "\n                            Aktivitas investasi\n                        "
+        )
       ])
     ])
   },
@@ -97258,7 +97357,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", { staticClass: "bold" }, [
       _c("td", { staticClass: "font-weight-bold", attrs: { colspan: "4" } }, [
-        _vm._v("Aktivitas Pendanaan")
+        _vm._v(
+          "\n                            Aktivitas Pendanaan\n                        "
+        )
       ])
     ])
   },
@@ -97737,6 +97838,448 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Jurnals.vue?vue&type=template&id=4ab9319c&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Jurnals.vue?vue&type=template&id=4ab9319c& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h4", { staticClass: "card-title" }, [_vm._v("Jurnal")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "add-items d-flex row" }, [
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                      }
+                    }
+                  },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.keywords,
+                          expression: "keywords"
+                        }
+                      ],
+                      staticClass: "form-control todo-list-input",
+                      attrs: { type: "text", placeholder: "Cari jurnal" },
+                      domProps: { value: _vm.keywords },
+                      on: {
+                        keyup: _vm.cari,
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.keywords = $event.target.value
+                        }
+                      }
+                    })
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.loading
+              ? _c(
+                  "div",
+                  { staticClass: "d-flex justify-content-center mt-5" },
+                  [_c("div", { staticClass: "dot-falling" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.loading
+              ? _c("div", { staticClass: "d-flex justify-content-center" }, [
+                  _vm._m(0)
+                ])
+              : _c("div", { staticClass: "loading" }, [
+                  _vm.jurnals.data < 1
+                    ? _c("div", { staticClass: "col-12 mt-3" }, [
+                        _c("h6", { staticClass: "text-danger text-center" }, [
+                          _vm._v(
+                            "\n                                Maaf data jurnal " +
+                              _vm._s(_vm.keywords) +
+                              " tidak\n                                ditemukan\n                            "
+                          )
+                        ])
+                      ])
+                    : _c("div", {}, [
+                        !_vm.keywords
+                          ? _c("div", {}, [
+                              _c(
+                                "table",
+                                { staticClass: "table table-responsive" },
+                                [
+                                  _vm._m(1),
+                                  _vm._v(" "),
+                                  _c(
+                                    "tbody",
+                                    _vm._l(_vm.jurnals.data, function(
+                                      jurnal,
+                                      index
+                                    ) {
+                                      return _c("tr", { key: index }, [
+                                        _c("td", [_vm._v(_vm._s(index + 1))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.created_at))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.aktivitas))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.no_akun))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.keterangan))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                                " +
+                                              _vm._s(jurnal.debet) +
+                                              ":\n                                                " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_debet
+                                                )
+                                              ) +
+                                              "\n                                            "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                                " +
+                                              _vm._s(jurnal.kredit) +
+                                              ":\n                                                " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_kredit
+                                                )
+                                              ) +
+                                              "\n                                            "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.hapus(jurnal.id)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    Delete\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-center mt-2"
+                                },
+                                [
+                                  _c(
+                                    "pagination",
+                                    {
+                                      attrs: { data: _vm.jurnals },
+                                      on: {
+                                        "pagination-change-page": _vm.getResult
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "prev-nav" },
+                                          slot: "prev-nav"
+                                        },
+                                        [_vm._v("< Previous")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "next-nav" },
+                                          slot: "next-nav"
+                                        },
+                                        [_vm._v("Next >")]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.keywords
+                          ? _c("div", [
+                              _c(
+                                "table",
+                                { staticClass: "table table-responsive" },
+                                [
+                                  _vm._m(2),
+                                  _vm._v(" "),
+                                  _c(
+                                    "tbody",
+                                    _vm._l(_vm.jurnals.data, function(
+                                      jurnal,
+                                      index
+                                    ) {
+                                      return _c("tr", { key: index }, [
+                                        _c("td", [_vm._v(_vm._s(index + 1))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.created_at))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.aktivitas))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.no_akun))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(jurnal.keterangan))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                                " +
+                                              _vm._s(jurnal.debet) +
+                                              ":\n                                                " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_debet
+                                                )
+                                              ) +
+                                              "\n                                            "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                                " +
+                                              _vm._s(jurnal.kredit) +
+                                              ":\n                                                " +
+                                              _vm._s(
+                                                _vm._f("currency")(
+                                                  jurnal.jum_kredit
+                                                )
+                                              ) +
+                                              "\n                                            "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "mt-1 btn btn-outline-danger btn-sm btn-rounded",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.hapus(jurnal.id)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    Delete\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-center mt-2"
+                                },
+                                [
+                                  _c(
+                                    "pagination",
+                                    {
+                                      attrs: { data: _vm.jurnals },
+                                      on: {
+                                        "pagination-change-page": _vm.cari1
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "prev-nav" },
+                                          slot: "prev-nav"
+                                        },
+                                        [_vm._v("< Previous")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          attrs: { slot: "next-nav" },
+                                          slot: "next-nav"
+                                        },
+                                        [_vm._v("Next >")]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e()
+                      ])
+                ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [_c("h4", [_vm._v("Loading...")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "text-center" }, [
+        _c("th", { attrs: { colspan: "8" } }, [
+          _c("div", { staticClass: "text-title" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(
+                "\n                                                        Jurnal Tahun\n                                                    "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Tgl\n                                            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No. Akun")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Keterangan")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Debet")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Kredit")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Opsi")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "text-center" }, [
+        _c("th", { attrs: { colspan: "8" } }, [
+          _c("div", { staticClass: "text-title" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(
+                "\n                                                        Jurnal Tahun\n                                                    "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "tgl", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Tgl\n                                            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Aktivitas")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No. Akun")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Keterangan")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Debet")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Kredit")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Opsi")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/LPK.vue?vue&type=template&id=772c46d0&":
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/LPK.vue?vue&type=template&id=772c46d0& ***!
@@ -97834,14 +98377,16 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.kas +
-                            _vm.data.bank +
-                            _vm.data.piutang +
-                            _vm.data.perlengkapan
-                        )
-                      )
+                      "\n                                " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.kas +
+                              _vm.data.bank +
+                              _vm.data.piutang +
+                              _vm.data.perlengkapan
+                          )
+                        ) +
+                        "\n                            "
                     )
                   ]),
                   _vm._v(" "),
@@ -97906,7 +98451,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v("Akumulasi penyusutan gedung dan bangunan")
+                    _vm._v(
+                      "\n                                Akumulasi penyusutan gedung dan bangunan\n                            "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -97937,14 +98484,16 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.zakat +
-                            _vm.data.infak +
-                            _vm.data.amil +
-                            _vm.data.nonHalal
-                        )
-                      )
+                      "\n                                " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.zakat +
+                              _vm.data.infak +
+                              _vm.data.amil +
+                              _vm.data.nonHalal
+                          )
+                        ) +
+                        "\n                            "
                     )
                   ])
                 ]),
@@ -97956,18 +98505,20 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.kas +
-                            _vm.data.bank +
-                            _vm.data.piutang +
-                            _vm.data.perlengkapan +
-                            _vm.data.peralatan +
-                            _vm.data.gnb +
-                            _vm.data.tanah -
-                            (_vm.data.AkmPeralatan + _vm.data.AkmGnB)
-                        )
-                      )
+                      "\n                                " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.kas +
+                              _vm.data.bank +
+                              _vm.data.piutang +
+                              _vm.data.perlengkapan +
+                              _vm.data.peralatan +
+                              _vm.data.gnb +
+                              _vm.data.tanah -
+                              (_vm.data.AkmPeralatan + _vm.data.AkmGnB)
+                          )
+                        ) +
+                        "\n                            "
                     )
                   ]),
                   _vm._v(" "),
@@ -97977,16 +98528,18 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.zakat +
-                            _vm.data.infak +
-                            _vm.data.amil +
-                            _vm.data.nonHalal +
-                            _vm.data.UJPendek +
-                            _vm.data.UJPanjang
-                        )
-                      )
+                      "\n                                " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.zakat +
+                              _vm.data.infak +
+                              _vm.data.amil +
+                              _vm.data.nonHalal +
+                              _vm.data.UJPendek +
+                              _vm.data.UJPanjang
+                          )
+                        ) +
+                        "\n                            "
                     )
                   ])
                 ])
@@ -98260,18 +98813,22 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penerimaan dana zakat")
+                    _vm._v(
+                      "\n                            Jumlah penerimaan dana zakat\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.penempatan +
-                            _vm.data.entitas +
-                            _vm.data.individual
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.penempatan +
+                              _vm.data.entitas +
+                              _vm.data.individual
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98290,16 +98847,20 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v("jumlah penerimaan dana zakat setelah bagian amil")
+                    _vm._v(
+                      "\n                            jumlah penerimaan dana zakat setelah bagian amil\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.penerimaanZakat + _vm.data.amilzakat
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.penerimaanZakat + _vm.data.amilzakat
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98360,7 +98921,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penyaluran dana zakat")
+                    _vm._v(
+                      "\n                            Jumlah penyaluran dana zakat\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98377,13 +98940,15 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.penerimaanZakat +
-                            _vm.data.amilzakat -
-                            _vm.data.penyaluranZakat
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.penerimaanZakat +
+                              _vm.data.amilzakat -
+                              _vm.data.penyaluranZakat
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98450,7 +99015,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v("Bagian amil atas penerimaan dana infak/sedekah")
+                    _vm._v(
+                      "\n                            Bagian amil atas penerimaan dana infak/sedekah\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98472,16 +99039,20 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penerimaan dana infak/sedekah")
+                    _vm._v(
+                      "\n                            Jumlah penerimaan dana infak/sedekah\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.penerimaanInfak + _vm.data.amilinfak
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.penerimaanInfak + _vm.data.amilinfak
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98544,7 +99115,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v("Akumulasi penyusutan dan penyisihan Peralatan")
+                    _vm._v(
+                      "\n                            Akumulasi penyusutan dan penyisihan Peralatan\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98557,7 +99130,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "Akumulasi penyusutan dan penyisihan Gedung dan Bangunan"
+                      "\n                            Akumulasi penyusutan dan penyisihan Gedung dan\n                            Bangunan\n                        "
                     )
                   ]),
                   _vm._v(" "),
@@ -98568,7 +99141,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penyaluran dana infak/sedekah")
+                    _vm._v(
+                      "\n                            Jumlah penyaluran dana infak/sedekah\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98585,11 +99160,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.penerimaanInfak - _vm.data.penyaluranInfak
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.penerimaanInfak - _vm.data.penyaluranInfak
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98646,19 +99223,23 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penerimaan dana amil dan lainnya")
+                    _vm._v(
+                      "\n                            Jumlah penerimaan dana amil dan lainnya\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.amilinfak +
-                            _vm.data.amilzakat +
-                            _vm.data.sumbangan +
-                            _vm.data.penerimaanAmil
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.amilinfak +
+                              _vm.data.amilzakat +
+                              _vm.data.sumbangan +
+                              _vm.data.penerimaanAmil
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98681,7 +99262,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penggunaan dana amil")
+                    _vm._v(
+                      "\n                            Jumlah penggunaan dana amil\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98698,15 +99281,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.amilinfak +
-                            _vm.data.amilzakat +
-                            _vm.data.sumbangan +
-                            _vm.data.penerimaanAmil -
-                            _vm.data.bebanAmil
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.amilinfak +
+                              _vm.data.amilzakat +
+                              _vm.data.sumbangan +
+                              _vm.data.penerimaanAmil -
+                              _vm.data.bebanAmil
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -98753,7 +99338,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penerimaan dana nonhalal")
+                    _vm._v(
+                      "\n                            Jumlah penerimaan dana nonhalal\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98795,7 +99382,9 @@ var render = function() {
                   _c("td"),
                   _vm._v(" "),
                   _c("td", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Jumlah penggunaan dana nonhalal")
+                    _vm._v(
+                      "\n                            Jumlah penggunaan dana nonhalal\n                        "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -98814,12 +99403,14 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.data.penerimaanNonHalal -
-                            _vm.data.penyaluranNonHalal
-                        )
-                      )
+                      "\n                            " +
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.data.penerimaanNonHalal -
+                              _vm.data.penyaluranNonHalal
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -99159,7 +99750,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("td", { staticClass: "font-weight-bold" }, [
         _vm._v(
-          "\n              Jumlah saldo dana zakat, dana infak/sedekah, dana amil dan dana\n              nonhalal.\n            "
+          "\n                            Jumlah saldo dana zakat, dana infak/sedekah,\n                            dana amil dan dana nonhalal.\n                        "
         )
       ]),
       _vm._v(" "),
@@ -115485,144 +116076,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/views/Aktivitas.vue":
-/*!******************************************!*\
-  !*** ./resources/js/views/Aktivitas.vue ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Aktivitas_vue_vue_type_template_id_1c5cc976___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Aktivitas.vue?vue&type=template&id=1c5cc976& */ "./resources/js/views/Aktivitas.vue?vue&type=template&id=1c5cc976&");
-/* harmony import */ var _Aktivitas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Aktivitas.vue?vue&type=script&lang=js& */ "./resources/js/views/Aktivitas.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Aktivitas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Aktivitas_vue_vue_type_template_id_1c5cc976___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Aktivitas_vue_vue_type_template_id_1c5cc976___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/views/Aktivitas.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/views/Aktivitas.vue?vue&type=script&lang=js&":
-/*!*******************************************************************!*\
-  !*** ./resources/js/views/Aktivitas.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Aktivitas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Aktivitas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Aktivitas.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Aktivitas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/views/Aktivitas.vue?vue&type=template&id=1c5cc976&":
-/*!*************************************************************************!*\
-  !*** ./resources/js/views/Aktivitas.vue?vue&type=template&id=1c5cc976& ***!
-  \*************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Aktivitas_vue_vue_type_template_id_1c5cc976___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Aktivitas.vue?vue&type=template&id=1c5cc976& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Aktivitas.vue?vue&type=template&id=1c5cc976&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Aktivitas_vue_vue_type_template_id_1c5cc976___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Aktivitas_vue_vue_type_template_id_1c5cc976___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/views/AllJurnals.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/views/AllJurnals.vue ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AllJurnals_vue_vue_type_template_id_8791be02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AllJurnals.vue?vue&type=template&id=8791be02& */ "./resources/js/views/AllJurnals.vue?vue&type=template&id=8791be02&");
-/* harmony import */ var _AllJurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AllJurnals.vue?vue&type=script&lang=js& */ "./resources/js/views/AllJurnals.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _AllJurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AllJurnals_vue_vue_type_template_id_8791be02___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AllJurnals_vue_vue_type_template_id_8791be02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/views/AllJurnals.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/views/AllJurnals.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/views/AllJurnals.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AllJurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AllJurnals.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/AllJurnals.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AllJurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/views/AllJurnals.vue?vue&type=template&id=8791be02&":
-/*!**************************************************************************!*\
-  !*** ./resources/js/views/AllJurnals.vue?vue&type=template&id=8791be02& ***!
-  \**************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AllJurnals_vue_vue_type_template_id_8791be02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AllJurnals.vue?vue&type=template&id=8791be02& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/AllJurnals.vue?vue&type=template&id=8791be02&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AllJurnals_vue_vue_type_template_id_8791be02___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AllJurnals_vue_vue_type_template_id_8791be02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/views/ArusKas.vue":
 /*!****************************************!*\
   !*** ./resources/js/views/ArusKas.vue ***!
@@ -115825,6 +116278,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Input_vue_vue_type_template_id_41a4ed8a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Input_vue_vue_type_template_id_41a4ed8a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/Jurnals.vue":
+/*!****************************************!*\
+  !*** ./resources/js/views/Jurnals.vue ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Jurnals_vue_vue_type_template_id_4ab9319c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Jurnals.vue?vue&type=template&id=4ab9319c& */ "./resources/js/views/Jurnals.vue?vue&type=template&id=4ab9319c&");
+/* harmony import */ var _Jurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Jurnals.vue?vue&type=script&lang=js& */ "./resources/js/views/Jurnals.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Jurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Jurnals_vue_vue_type_template_id_4ab9319c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Jurnals_vue_vue_type_template_id_4ab9319c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/Jurnals.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/Jurnals.vue?vue&type=script&lang=js&":
+/*!*****************************************************************!*\
+  !*** ./resources/js/views/Jurnals.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Jurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Jurnals.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Jurnals.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Jurnals_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/Jurnals.vue?vue&type=template&id=4ab9319c&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/views/Jurnals.vue?vue&type=template&id=4ab9319c& ***!
+  \***********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Jurnals_vue_vue_type_template_id_4ab9319c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Jurnals.vue?vue&type=template&id=4ab9319c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Jurnals.vue?vue&type=template&id=4ab9319c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Jurnals_vue_vue_type_template_id_4ab9319c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Jurnals_vue_vue_type_template_id_4ab9319c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -116065,13 +116587,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var three_dots__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! three-dots */ "./node_modules/three-dots/dist/three-dots.css");
 /* harmony import */ var three_dots__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(three_dots__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/Home */ "./resources/js/views/Home.vue");
-/* harmony import */ var _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/AllJurnals.vue */ "./resources/js/views/AllJurnals.vue");
-/* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
+/* harmony import */ var _views_Input_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/Input.vue */ "./resources/js/views/Input.vue");
+/* harmony import */ var _views_Jurnals_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/Jurnals.vue */ "./resources/js/views/Jurnals.vue");
 /* harmony import */ var _views_LPK_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/LPK.vue */ "./resources/js/views/LPK.vue");
-/* harmony import */ var _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/Aktivitas.vue */ "./resources/js/views/Aktivitas.vue");
-/* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
-/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
-/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
+/* harmony import */ var _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/ArusKas.vue */ "./resources/js/views/ArusKas.vue");
+/* harmony import */ var _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/PerubahanDana.vue */ "./resources/js/views/PerubahanDana.vue");
+/* harmony import */ var _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/PerubahanAsetKelolaan.vue */ "./resources/js/views/PerubahanAsetKelolaan.vue");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
@@ -116113,7 +116634,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_currency_filter__WEBPACK_IMPORTED_MODULE_7__["default"], options2);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(three_dots__WEBPACK_IMPORTED_MODULE_11___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_chart_js__WEBPACK_IMPORTED_MODULE_10___default.a); // Vue.use(BootstrapIcons)
-
+// View 
 
 
 
@@ -116127,33 +116648,50 @@ var routes = [{
   path: '/',
   component: _views_Home__WEBPACK_IMPORTED_MODULE_12__["default"]
 }, {
-  name: 'Jurnal',
-  path: '/Jurnal',
-  component: _views_AllJurnals_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
-}, {
   name: 'Input',
   path: '/input',
-  component: _views_Input_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
+  component: _views_Input_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
+}, {
+  name: 'Jurnal',
+  path: '/Jurnal',
+  component: _views_Jurnals_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
 }, {
   name: 'LPK',
   path: '/LPK',
   component: _views_LPK_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
 }, {
-  name: 'Aktivitas',
-  path: '/Aktivitas',
-  component: _views_Aktivitas_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
-}, {
   name: 'Arus Kas',
   path: '/arusKas',
-  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
+  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
 }, {
   name: 'LPD',
   path: '/LPDana',
-  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
 }, {
   name: 'PAK',
   path: '/PAK',
-  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_19__["default"]
+  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+}, // Report
+{
+  name: 'Report Jurnal',
+  path: '/Jurnal/:Report',
+  component: _views_Jurnals_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
+}, {
+  name: 'Report LPK',
+  path: '/ReportLPK/:Report',
+  component: _views_LPK_vue__WEBPACK_IMPORTED_MODULE_15__["default"]
+}, {
+  name: 'Report ArusKas',
+  path: '/ReportArusKas/:Report',
+  component: _views_ArusKas_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
+}, {
+  name: 'Report PAK',
+  path: '/ReportPAK/:Report',
+  component: _views_PerubahanAsetKelolaan_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+}, {
+  name: 'Report LPDana',
+  path: '/ReportLPDana/:Report',
+  component: _views_PerubahanDana_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: routes

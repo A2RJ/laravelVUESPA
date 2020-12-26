@@ -56,6 +56,7 @@
 <script>
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+
 export default {
     data() {
         return {
@@ -65,16 +66,22 @@ export default {
     mounted() {
         axios
             .get("api/laporan/lpak")
-            .then(response => (this.data = response.data))
+            .then(
+                response => ((this.data = response.data), this.generateReport())
+            )
             .catch(error => console.log(error));
     },
     methods: {
         generateReport() {
-            const doc = new jsPDF('p', 'pt');
-            autoTable(doc, {  margin: {top: 60}, html: "table" });
-            doc.setPage(1);
-            doc.text('To Do List', 40, 40);
-            doc.save("table.pdf");
+           if (this.$route.params.Report) {
+                if (this.$route.params.Report == "PAK") {
+                    const doc = new jsPDF("p", "pt");
+                    autoTable(doc, { margin: { top: 60 }, html: "table" });
+                    doc.setPage(1);
+                    doc.text("To Do List", 40, 40);
+                    doc.save("table.pdf");
+                }
+            }
         }
     }
 };

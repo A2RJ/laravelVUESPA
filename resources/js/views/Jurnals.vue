@@ -204,9 +204,11 @@
         </div>
     </div>
 </template>
-// Tidak ada ubah data, langsung hapus dan input kembali krn ada banyak
-perhitungan.
+
 <script>
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+
 export default {
     data: function() {
         return {
@@ -217,7 +219,8 @@ export default {
         };
     },
     mounted() {
-        this.getResult();
+        this.getResult()
+        this.generateReport()
     },
     methods: {
         cari() {
@@ -273,6 +276,19 @@ export default {
                         );
                 }
             });
+        },
+        generateReport() {
+            if (this.$route.params.Report) {
+            if(this.jurnals){
+                if (this.$route.params.Report == "Jurnals") {
+                    const doc = new jsPDF("p", "pt");
+                    autoTable(doc, { margin: { top: 60 }, html: "table" });
+                    doc.setPage(1);
+                    doc.text("To Do List", 40, 40);
+                    doc.save("table.pdf");
+                }
+            }
+            }
         }
     }
 };

@@ -44,11 +44,13 @@ Vue.use(dots)
 Vue.use(VueChart)
 // Vue.use(BootstrapIcons)
 
+// View 
 import Home from './views/Home';
-import AllJurnals from './views/AllJurnals.vue';
+
 import Input from './views/Input.vue';
+
+import Jurnals from './views/Jurnals.vue';
 import LPK from './views/LPK.vue';
-import Aktivitas from './views/Aktivitas.vue';
 import ArusKas from './views/ArusKas.vue';
 import LPDana from './views/PerubahanDana.vue';
 import PAK from './views/PerubahanAsetKelolaan.vue';
@@ -58,26 +60,21 @@ const routes = [
         name: 'Home',
         path: '/',
         component: Home
-    },
-    {
-        name: 'Jurnal',
-        path: '/Jurnal',
-        component: AllJurnals
-    },
+    }, 
     {
         name: 'Input',
         path: '/input',
         component: Input
     },
     {
+        name: 'Jurnal',
+        path: '/Jurnal',
+        component: Jurnals
+    },
+    {
         name: 'LPK',
         path: '/LPK',
         component: LPK
-    },
-    {
-        name: 'Aktivitas',
-        path: '/Aktivitas',
-        component: Aktivitas
     },
     {
         name: 'Arus Kas',
@@ -93,7 +90,33 @@ const routes = [
         name: 'PAK',
         path: '/PAK',
         component: PAK
-    }
+    },
+    // Report
+    {
+        name: 'Report Jurnal',
+        path: '/Jurnal/:Report',
+        component: Jurnals
+    },
+    {
+        name: 'Report LPK',
+        path: '/ReportLPK/:Report',
+        component: LPK
+    },
+    {
+        name: 'Report ArusKas',
+        path: '/ReportArusKas/:Report',
+        component: ArusKas
+    },
+    {
+        name: 'Report PAK',
+        path: '/ReportPAK/:Report',
+        component: PAK
+    },
+    {
+        name: 'Report LPDana',
+        path: '/ReportLPDana/:Report',
+        component: LPDana
+    },
 ];
 
 const router = new VueRouter({
