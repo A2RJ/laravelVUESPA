@@ -2717,10 +2717,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -2748,6 +2744,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
 /* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
 /* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3073,22 +3076,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       chartData: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+          label: "Debet",
+          data: [1000, 1900, 3000, 5000, 2000, 3000, 4000, 5000, 7000, 8000, 15000, 16000],
+          backgroundColor: ["rgba(50, 143, 168, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"],
+          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
           borderWidth: 1
         }, {
-          label: '# of Votes 2',
-          data: [2, 12, 5, 1, 6, 8],
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+          label: "Kredit",
+          data: [500, 2000, 2500, 6000, 1200, 3200, 3200, 5200, 6500, 9000, 15000, 14000],
+          backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"],
+          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
           borderWidth: 1
         }]
       },
@@ -3103,9 +3108,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  mounted: function mounted() {
-    this.load();
-  },
+  mounted: function mounted() {},
   methods: {}
 });
 
@@ -3907,6 +3910,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3958,6 +3963,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
 /* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
 /* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
 //
 //
 //
@@ -96517,6 +96524,14 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
+                    _c("li", { staticClass: "list-divider" }),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-small-cap" }, [
+                      _c("span", { staticClass: "hide-menu" }, [
+                        _vm._v("Pelaporan")
+                      ])
+                    ]),
+                    _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
                       _c(
                         "a",
@@ -96621,14 +96636,6 @@ var render = function() {
                           )
                         ]
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "list-divider" }),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-small-cap" }, [
-                      _c("span", { staticClass: "hide-menu" }, [
-                        _vm._v("Pelaporan")
-                      ])
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "sidebar-item" }, [
@@ -96877,12 +96884,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row container d-flex justify-content-center" },
-    [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "mb-4 mt-5" }, [
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body table-responsive" }, [
           _c(
             "table",
             { staticClass: "table table-bordered table-responsive" },
@@ -97093,13 +97098,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n                            " +
+                      "\n                                " +
                         _vm._s(
                           _vm._f("currency")(
                             _vm.data.aktivitasKas - _vm.data.aktivitasKredit
                           )
                         ) +
-                        "\n                        "
+                        "\n                            "
                     )
                   ])
                 ]),
@@ -97197,13 +97202,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n                            " +
+                      "\n                                " +
                         _vm._s(
                           _vm._f("currency")(
                             _vm.data.investasiKas - _vm.data.investasiKredit
                           )
                         ) +
-                        "\n                        "
+                        "\n                            "
                     )
                   ])
                 ]),
@@ -97271,13 +97276,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n                            " +
+                      "\n                                " +
                         _vm._s(
                           _vm._f("currency")(
                             _vm.data.pendanaanKas - _vm.data.piutangKredit
                           )
                         ) +
-                        "\n                        "
+                        "\n                            "
                     )
                   ])
                 ]),
@@ -97291,7 +97296,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n                            " +
+                      "\n                                " +
                         _vm._s(
                           _vm._f("currency")(
                             _vm.data.aktivitasKas -
@@ -97302,7 +97307,7 @@ var render = function() {
                               _vm.data.piutangKredit
                           )
                         ) +
-                        "\n                        "
+                        "\n                            "
                     )
                   ])
                 ]),
@@ -97315,8 +97320,8 @@ var render = function() {
           )
         ])
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -97335,18 +97340,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("td", { staticClass: "font-weight-bold", attrs: { colspan: "4" } }, [
-        _vm._v("Beban")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticClass: "bold" }, [
-      _c("td", { staticClass: "font-weight-bold", attrs: { colspan: "4" } }, [
         _vm._v(
-          "\n                            Aktivitas investasi\n                        "
+          "\n                                Beban\n                            "
         )
       ])
     ])
@@ -97358,7 +97353,19 @@ var staticRenderFns = [
     return _c("tr", { staticClass: "bold" }, [
       _c("td", { staticClass: "font-weight-bold", attrs: { colspan: "4" } }, [
         _vm._v(
-          "\n                            Aktivitas Pendanaan\n                        "
+          "\n                                Aktivitas investasi\n                            "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", { staticClass: "bold" }, [
+      _c("td", { staticClass: "font-weight-bold", attrs: { colspan: "4" } }, [
+        _vm._v(
+          "\n                                Aktivitas Pendanaan\n                            "
         )
       ])
     ])
@@ -97439,20 +97446,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row container d-flex justify-content-center" },
-    [
-      _c("div", { staticClass: "col-sm-12" }, [
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "card" }, [
         _c(
           "div",
-          { staticClass: "mb-5 mt-5" },
+          { staticClass: "card-body table-responsive" },
           [_c("vue-chart", { attrs: { type: "line", data: _vm.chartData } })],
           1
         )
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -98298,7 +98303,7 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-sm-12" }, [
       _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "card-body table-responsive" }, [
           _c(
             "table",
             { staticClass: "table table-bordered table-responsive" },
@@ -98626,25 +98631,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row container d-flex justify-content-center" },
-    [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "my-5 mb-5" }, [
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body table-responsive" }, [
           _c(
             "table",
-            {
-              staticClass: "table table-bordered table-responsive",
-              attrs: { id: "my-table" }
-            },
+            { staticClass: "table table-bordered table-responsive" },
             [
               _vm._m(0),
               _vm._v(" "),
               _c("tbody", [
                 _c("tr", [
                   _c("td", [
-                    _vm._v("Dana infak/sedekah - aset kelolaan lancar")
+                    _vm._v(
+                      "\n                                Dana infak/sedekah - aset kelolaan lancar\n                            "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [_vm._v("Saldo Awal")]),
@@ -98665,7 +98667,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n                            " +
+                      "\n                                " +
                         _vm._s(
                           _vm._f("currency")(
                             _vm.data.lancarKas -
@@ -98673,7 +98675,7 @@ var render = function() {
                               _vm.data.penyisihan
                           )
                         ) +
-                        "\n                        "
+                        "\n                            "
                     )
                   ])
                 ]),
@@ -98681,7 +98683,7 @@ var render = function() {
                 _c("tr", [
                   _c("td", [
                     _vm._v(
-                      "\n                            Dana infak/sedekah - aset kelolaan tidak lancar\n                        "
+                      "\n                                Dana infak/sedekah - aset kelolaan tidak\n                                lancar\n                            "
                     )
                   ]),
                   _vm._v(" "),
@@ -98707,13 +98709,11 @@ var render = function() {
                 ])
               ])
             ]
-          ),
-          _vm._v(" "),
-          _c("button", { on: { click: _vm.generateReport } }, [_vm._v("Click")])
+          )
         ])
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -98760,12 +98760,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row container d-flex justify-content-center" },
-    [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "my-5 mb-5" }, [
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body table-responsive" }, [
           _c(
             "table",
             { staticClass: "table table-bordered table-responsive" },
@@ -99427,8 +99425,8 @@ var render = function() {
           )
         ])
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {

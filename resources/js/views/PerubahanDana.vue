@@ -1,8 +1,9 @@
 <template>
-    <div class="row container d-flex justify-content-center">
+    <div class="row">
         <div class="col-sm-12">
-            <div class="my-5 mb-5">
-                <table class="table table-bordered table-responsive">
+            <div class="card">
+                <div class="card-body table-responsive">
+                    <table class="table table-bordered table-responsive">
                     <thead>
                         <tr>
                             <th></th>
@@ -476,6 +477,7 @@
                 </table>
             </div>
         </div>
+    </div>
     </div>
 </template>
 

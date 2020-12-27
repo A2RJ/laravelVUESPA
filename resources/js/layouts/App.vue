@@ -476,6 +476,12 @@
                                     </span></a
                                 >
                             </li>
+                            
+                            <li class="list-divider"></li>
+                            <li class="nav-small-cap">
+                                <span class="hide-menu">Pelaporan</span>
+                            </li>
+                            
                             <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
@@ -541,16 +547,6 @@
                                     </span></a
                                 >
                             </li>
-                            <li class="list-divider"></li>
-                            <li class="nav-small-cap">
-                                <span class="hide-menu">Pelaporan</span>
-                            </li>
-                            <!-- <li class="sidebar-item">
-                                <a class="sidebar-link" href="#"
-                                    aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
-                                        class="hide-menu">Register </span></a>
-                            </li> -->
-
                             <li class="sidebar-item">
                                 <a
                                     class="sidebar-link has-arrow"
