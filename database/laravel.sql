@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 30 Nov 2020 pada 12.08
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.10
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 28 Des 2020 pada 03.47
+-- Versi server: 10.4.17-MariaDB
+-- Versi PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -137,7 +137,13 @@ INSERT INTO `akun` (`id`, `id_akun`, `no_akun`, `akun`, `debet`, `kredit`, `kete
 (64, 11, '2.4', 'Penyusutan Gedung dan Bangunan', 'B. P. Gedung dan Bangunan', 'A. P. Gedung dan Bangunan', 'Kredit'),
 (65, 4, '2.1', 'Peralatan', 'Peralatan', 'Kas', 'Kredit'),
 (66, 4, '2.3', 'Gedung dan Bangunan', 'Gedung dan Bangunan', 'Kas', 'Kredit'),
-(67, 4, '2.5', 'Tanah', 'Tanah', 'Kas', 'Kredit');
+(67, 4, '2.5', 'Tanah', 'Tanah', 'Kas', 'Kredit'),
+(74, 14, '2.3', 'Piutang', 'Piutang', 'Kas', 'Kredit'),
+(75, 15, '2.3', 'Piutang', 'Kas', 'Piutang', 'Kas'),
+(76, 15, '2.1', 'Utang Jangka Pendek', 'Utang Jangka Pendek', 'Kas', 'Kredit'),
+(77, 15, '2.2', 'Utang Jangka Panjang', 'Utang Jangka Panjang', 'Kas', 'Kredit'),
+(78, 16, '2.1', 'Utang Jangka Pendek', 'Kas', 'Utang Jangka Pendek', 'Kas'),
+(79, 16, '2.2', 'Utang Jangka Panjang', 'Kas', 'Utang Jangka Panjang', 'Kas');
 
 -- --------------------------------------------------------
 
@@ -166,9 +172,15 @@ CREATE TABLE `jurnal` (
   `jum_debet` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jum_kredit` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `jurnal`
+--
+
+INSERT INTO `jurnal` (`id`, `id_aktivitas`, `jangka_waktu`, `no_akun`, `keterangan`, `jum_debet`, `jum_kredit`, `created_at`, `updated_at`) VALUES
+(1, '5', NULL, '4.1', 'Sumbangan donatur', '50000000', '50000000', '2020-12-24 23:03:16', '2020-12-24 23:03:16');
 
 -- --------------------------------------------------------
 
@@ -242,7 +254,7 @@ ALTER TABLE `aktivitas`
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT untuk tabel `jangka_waktu`
@@ -254,7 +266,7 @@ ALTER TABLE `jangka_waktu`
 -- AUTO_INCREMENT untuk tabel `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
