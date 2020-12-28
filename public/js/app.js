@@ -3542,8 +3542,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.getResult();
-    this.generateReport();
+    this.getResult(); // this.generateReport()
   },
   methods: {
     cari: function cari() {

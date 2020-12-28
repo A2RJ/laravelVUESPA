@@ -79,8 +79,8 @@
                 </div>
                 <div class="form-group">
                   <label for="jum_debet">Debet</label>
+                    <!-- v-currency:IDR="debet.value" -->
                   <input
-                    v-currency:IDR="debet.value"
                     class="form-control"
                     name="jum_debet"
                     v-model="form.jum_debet"
@@ -90,8 +90,8 @@
                 </div>
                 <div class="form-group">
                   <label for="jum_kredit">Kredit</label>
+                    <!-- v-currency:IDR="kredit.value" -->
                   <input
-                    v-currency:IDR="kredit.value"
                     class="form-control"
                     name="jum_kredit"
                     v-model="form.jum_kredit"
@@ -190,5 +190,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

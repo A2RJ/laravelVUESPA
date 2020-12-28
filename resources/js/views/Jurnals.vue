@@ -220,7 +220,7 @@ export default {
     },
     mounted() {
         this.getResult()
-        this.generateReport()
+        // this.generateReport()
     },
     methods: {
         cari() {
