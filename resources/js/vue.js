@@ -8,14 +8,19 @@ import axios from 'axios'
 import { Plugin, Fragment } from 'vue-fragment'
 import Vue2Filters from 'vue2-filters'
 import VueCurrencyFilter from 'vue-currency-filter'
+import VueCurrencyInput from 'vue-currency-input'
+// Ini untuk input import vueCurrencyDirective from 'vue-currency-directive';
 import VueSweetalert2 from 'vue-sweetalert2';
 // import VueHtml2pdf from 'vue-html2pdf'
-import vueCurrencyDirective from 'vue-currency-directive';
 import VueChart from 'vue-chart-js'
 import dots from 'three-dots'
 // import BootstrapIcons from 'bootstrap-icons'
-
-const options = {
+const pluginOptions = {
+  /* see config reference */
+  globalOptions: { currency: 'IDR' }
+}
+Vue.use(VueCurrencyInput, pluginOptions)
+const sweetOption = {
   confirmButtonColor: '#41b882',
   cancelButtonColor: '#ff7674',
 };
@@ -31,8 +36,8 @@ const options2 = {
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.component('fragment', require('vue-fragment'));
-Vue.directive('currency', vueCurrencyDirective);
-Vue.use(VueSweetalert2, options);
+// Vue.directive('currency', vueCurrencyDirective);
+Vue.use(VueSweetalert2, sweetOption);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Plugin)
@@ -90,33 +95,7 @@ const routes = [
         name: 'PAK',
         path: '/PAK',
         component: PAK
-    },
-    // Report
-    {
-        name: 'Report Jurnal',
-        path: '/Jurnal/:Report',
-        component: Jurnals
-    },
-    {
-        name: 'Report LPK',
-        path: '/ReportLPK/:Report',
-        component: LPK
-    },
-    {
-        name: 'Report ArusKas',
-        path: '/ReportArusKas/:Report',
-        component: ArusKas
-    },
-    {
-        name: 'Report PAK',
-        path: '/ReportPAK/:Report',
-        component: PAK
-    },
-    {
-        name: 'Report LPDana',
-        path: '/ReportLPDana/:Report',
-        component: LPDana
-    },
+    }
 ];
 
 const router = new VueRouter({

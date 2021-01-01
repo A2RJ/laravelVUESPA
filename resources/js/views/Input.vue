@@ -79,24 +79,24 @@
                 </div>
                 <div class="form-group">
                   <label for="jum_debet">Debet</label>
-                    <!-- v-currency:IDR="debet.value" -->
-                  <input
+                  <currency-input
                     class="form-control"
                     name="jum_debet"
-                    v-model="form.jum_debet"
                     id="jum_debet"
-                    placeholder="RP. . ."
+                    v-model="form.jum_debet"
+                    currency="IDR"
+                    locale="idr"
                   />
                 </div>
                 <div class="form-group">
                   <label for="jum_kredit">Kredit</label>
-                    <!-- v-currency:IDR="kredit.value" -->
-                  <input
+                  <currency-input
                     class="form-control"
                     name="jum_kredit"
-                    v-model="form.jum_kredit"
                     id="jum_kredit"
-                    placeholder="RP. . ."
+                    v-model="form.jum_kredit"
+                    currency="IDR"
+                    locale="idr"
                   />
                 </div>
                 <button
@@ -121,17 +121,15 @@ export default {
       listAktivitas: [],
       listWaktu: [],
       listAkun: [],
-      form: {},
+      form: {
+        id_aktivitas: null,
+        jangka_waktu: "",
+        no_akun: "",
+        keterangan: "",
+        jum_debet: 0,
+        jum_kredit: 0,
+      },
       message: false,
-
-      debet: {
-        value: "",
-        formatted: "", // Better to be empty
-      },
-      kredit: {
-        value: "",
-        formatted: "", // Better to be empty
-      },
     };
   },
   created() {
@@ -178,7 +176,7 @@ export default {
           this.form.jum_kredit = "";
         })
         .catch((err) => {
-          console.log(err);
+          console.log(this.form);
           this.$swal({
             icon: "error",
             title: "Oops...",

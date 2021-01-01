@@ -1,4 +1,4 @@
-// $(document).ready(function () {
+$(document).ready(function () {
   var header = document.getElementById("sidebarnav");
   var li = header.getElementsByClassName("sidebar-item");
   for (var i = 0; i < li.length; i++) {
@@ -8,3 +8,4 @@
       this.className += " selected";
     });
   }
+});

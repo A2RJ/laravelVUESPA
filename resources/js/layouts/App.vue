@@ -476,12 +476,12 @@
                                     </span></a
                                 >
                             </li>
-                            
+
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
                                 <span class="hide-menu">Pelaporan</span>
                             </li>
-                            
+
                             <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
@@ -567,7 +567,8 @@
                                     <li class="sidebar-item">
                                         <a class="sidebar-link" href="#">
                                             <span class="hide-menu">
-                                                <router-link to="/Jurnal/Jurnals"
+                                                <router-link
+                                                    to="/Jurnal/Jurnals"
                                                     >Jurnal</router-link
                                                 >
                                             </span>
