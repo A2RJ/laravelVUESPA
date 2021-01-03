@@ -1,1 +1,9 @@
 GET http://127.0.0.1:8000/api/laporan/lpk HTTP/1.1
+# Gunakan perintah artisan untuk package
+# Buat generator laravel, untuk koneksi ambil 
+# dari .env saja kemudian untuk nama table 
+# beserta primary ambil dari table.json
+# table.json = {{'tableName': 'test', 'primaryKey': 'id'}, {'tableName': 'test2', 'primaryKey': 'id2'}}
+# kemudian looping generate CRUD
+# based on table
+# Buat database backup seperti diproject ini
