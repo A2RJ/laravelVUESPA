@@ -15,8 +15,15 @@ npm i && composer update
 
 ```
 Clone this repo
-Import MySQL DB in storage/backup //php artisan make:mysqlbackup laravel sql
-Create migration from current table schema //php artisan migrate:generate
+Import MySQL DB in storage/backup 
+```
+## Optional
+```
+//Backup and restore DB
+Backup DB php artisan make:mysqlbackup DBName sql
+Restore DB php artisan mysql:restore DBName
+//Create migration from current table schema
+php artisan migrate:generate
 ```
 
 ## Run tests
