@@ -14,8 +14,8 @@ npm i && composer update
 ## Usage
 
 ```
-npm run watch 
-npm run php
+Clone this repo
+Import MySQL DB in database folder
 ```
 
 ## Run tests
