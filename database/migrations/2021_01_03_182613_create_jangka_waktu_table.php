@@ -14,9 +14,8 @@ class CreateJangkaWaktuTable extends Migration
     public function up()
     {
         Schema::create('jangka_waktu', function (Blueprint $table) {
-            $table->id(); 
-            $table->integer('id_jangka_waktu');
-            $table->foreign('id_jangka_waktu')->references('id_aktivitas')->on('aktivitas');
+            $table->bigIncrements('id');
+            $table->integer('id_jangka_waktu')->index('jangka_waktu_id_jangka_waktu_foreign');
             $table->string('jangka_waktu', 20);
         });
     }
