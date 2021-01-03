@@ -89,6 +89,12 @@
                                                     }}
                                                 </td>
                                                 <td>
+                                                    <!-- <button
+                                                        @click="edit(jurnal.id)"
+                                                        class="mt-1 btn btn-outline-warning btn-sm btn-rounded"
+                                                    >
+                                                        Update
+                                                    </button> -->
                                                     <button
                                                         @click="
                                                             hapus(jurnal.id)
@@ -219,7 +225,7 @@ export default {
         };
     },
     mounted() {
-        this.getResult()
+        this.getResult();
         // this.generateReport()
     },
     methods: {
@@ -277,17 +283,40 @@ export default {
                 }
             });
         },
+        edit(jurnal) {
+            this.$swal({
+                title: "Submit new value",
+                input: "text",
+                inputAttributes: {
+                    autocapitalize: "off"
+                },
+                showCancelButton: true,
+                confirmButtonText: "Look up",
+                showLoaderOnConfirm: true,
+                preConfirm: result => {}
+            }).then(result => {
+                if (result.isConfirmed) {
+                    console.log(result.value, jurnal);
+                    axios.get("api/ubah/" + jurnal + "-" + result.value).then(
+                        res =>
+                            // this.cari(),
+                            console.log(res),
+                        this.$swal("Success", "diubah", "success")
+                    );
+                }
+            });
+        },
         generateReport() {
             if (this.$route.params.Report) {
-            if(this.jurnals){
-                if (this.$route.params.Report == "Jurnals") {
-                    const doc = new jsPDF("p", "pt");
-                    autoTable(doc, { margin: { top: 60 }, html: "table" });
-                    doc.setPage(1);
-                    doc.text("To Do List", 40, 40);
-                    doc.save("table.pdf");
+                if (this.jurnals) {
+                    if (this.$route.params.Report == "Jurnals") {
+                        const doc = new jsPDF("p", "pt");
+                        autoTable(doc, { margin: { top: 60 }, html: "table" });
+                        doc.setPage(1);
+                        doc.text("To Do List", 40, 40);
+                        doc.save("table.pdf");
+                    }
                 }
-            }
             }
         }
     }

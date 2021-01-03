@@ -31,4 +31,6 @@ Route::get('cari/{data}', [JurnalController::class, 'cari']);
 
 Route::get('hapus/{id}', [JurnalController::class, 'hapus']);
 
+// Route::get('ubah/{id}', [JurnalController::class, 'ubah']);
+
 Route::get('laporan/{id}', [LaporanController::class, 'index']);

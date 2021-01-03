@@ -101,9 +101,14 @@ class JurnalController extends Controller
         return response()->json(['data' => Jurnal::find($id)->delete(), 'msg' => 'Berhasil hapus jurnal']);
     }
 
-    public function cekKas()
+    public function ubah($data)
     {
-        //Buat fungsi agar Kredit != Kas
-        //dan sebaliknya
+        $id = explode('-', $data);
+        $jurnal = Jurnal::find($id[0]);
+
+        $jurnal->keterangan = $id[1];
+
+        $jurnal->save();
+        return response()->json(['message' => $jurnal->wasChanged()]);
     }
 }

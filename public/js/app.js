@@ -3528,6 +3528,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3594,6 +3600,30 @@ __webpack_require__.r(__webpack_exports__);
           axios.get("api/hapus/" + jurnal).then(function (res) {
             return _this3.cari(), _this3.$swal("Success", "Dihapus.", "success");
           });
+        }
+      });
+    },
+    edit: function edit(jurnal) {
+      var _this4 = this;
+
+      this.$swal({
+        title: "Submit new value",
+        input: "text",
+        inputAttributes: {
+          autocapitalize: "off"
+        },
+        showCancelButton: true,
+        confirmButtonText: "Look up",
+        showLoaderOnConfirm: true,
+        preConfirm: function preConfirm(result) {}
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          console.log(result.value, jurnal);
+          axios.get("api/ubah/" + jurnal + "-" + result.value).then(function (res) {
+            return (// this.cari(),
+              console.log(res)
+            );
+          }, _this4.$swal("Success", "diubah", "success"));
         }
       });
     },
