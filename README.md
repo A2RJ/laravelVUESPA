@@ -1,28 +1,44 @@
-### Come on 4 step again don't wasting time
+<h1 align="center">Welcome to laravelVUESPA 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-### Have fun oke progress oke.
+> Accounting application final project
 
-### Fokus Progress Sesuai Nomor
+## Install
 
-### Utamakan laporan Setelah Itu Baru Aplikasi
+```sh
+npm i && composer update
+```
 
-### \* = task complete
+## Usage
 
-1. Perbaiki UI agar bisa discreenshot untuk laporan
+```
+npm run watch 
+npm run php
+```
 
--   Untuk dashboard (card gradient) - jumlah jurnal, jumlah kas, jumlah kredit
--   Di neraca untuk dana amil disitu total amil, zakat, infak dan nonhalal
--   Hitung total diNeraca
--   Buat fungsi untuk mengecek kas sehingga debet !> kredit
--   Aktivitas 16 Kas = 15 Kredit, berarti ubah nilai debet dan kredit dineraca
+## Run tests
 
-2. Mulai kerjakan laporan
+```sh
+npm run watch
+npm run php
+```
 
-    - Baca pahami isi laporan sekarang
-    - Revisi format laporan
-    - Revisi isi laporan termasuk penjelasan aktivitas dan akun yang ada
+## Author
 
-3. Fitur pdf
+👤 **a2rj**
 
-4. Perbaiki logic LPK
-   Kerjakan neraca sampai nilai balance, perhatikan input data dengan pelan pelan saantai saja, kepala rileks
+* Github: [@a2rj](https://github.com/a2rj)
+* LinkedIn: [@a2rj](https://linkedin.com/in/a2rj)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+<a href="https://www.patreon.com/a2rj">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
