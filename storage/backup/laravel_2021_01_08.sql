@@ -26,7 +26,7 @@ CREATE TABLE `aktivitas` (
   `id_aktivitas` int(11) NOT NULL AUTO_INCREMENT,
   `aktivitas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_aktivitas`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,15 +48,16 @@ DROP TABLE IF EXISTS `akun`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `akun` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `id_akun` int(11) NOT NULL,
+  `id_aktivitas` int(11) NOT NULL,
   `no_akun` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
   `akun` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `debet` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kredit` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `akun_id_akun_foreign` (`id_akun`),
-  CONSTRAINT `akun_id_akun_foreign` FOREIGN KEY (`id_akun`) REFERENCES `aktivitas` (`id_aktivitas`)
+  KEY `id_aktivitas` (`id_aktivitas`),
+  KEY `no_akun` (`no_akun`),
+  CONSTRAINT `akun_id_aktivitas_foreign` FOREIGN KEY (`id_aktivitas`) REFERENCES `aktivitas` (`id_aktivitas`)
 ) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,11 +80,11 @@ DROP TABLE IF EXISTS `jangka_waktu`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jangka_waktu` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `id_jangka_waktu` int(11) NOT NULL,
+  `id_aktivitas` int(11) NOT NULL,
   `jangka_waktu` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `jangka_waktu_id_jangka_waktu_foreign` (`id_jangka_waktu`),
-  CONSTRAINT `jangka_waktu_id_jangka_waktu_foreign` FOREIGN KEY (`id_jangka_waktu`) REFERENCES `aktivitas` (`id_aktivitas`)
+  KEY `jangka_waktu_id_aktivitas_foreign` (`id_aktivitas`),
+  CONSTRAINT `jangka_waktu_id_aktivitas_foreign` FOREIGN KEY (`id_aktivitas`) REFERENCES `aktivitas` (`id_aktivitas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,16 +106,22 @@ DROP TABLE IF EXISTS `jurnal`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jurnal` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `id_aktivitas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jangka_waktu` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_aktivitas` int(11) NOT NULL,
+  `jangka_waktu` int(11) DEFAULT NULL,
   `no_akun` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `jum_debet` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jum_kredit` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_aktivitas` (`id_aktivitas`),
+  UNIQUE KEY `no_akun` (`no_akun`),
+  UNIQUE KEY `jangka_waktu` (`jangka_waktu`),
+  CONSTRAINT `jurnal_ibfk_1` FOREIGN KEY (`id_aktivitas`) REFERENCES `aktivitas` (`id_aktivitas`),
+  CONSTRAINT `jurnal_ibfk_2` FOREIGN KEY (`jangka_waktu`) REFERENCES `jangka_waktu` (`id_aktivitas`),
+  CONSTRAINT `jurnal_ibfk_3` FOREIGN KEY (`no_akun`) REFERENCES `akun` (`no_akun`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +130,6 @@ CREATE TABLE `jurnal` (
 
 LOCK TABLES `jurnal` WRITE;
 /*!40000 ALTER TABLE `jurnal` DISABLE KEYS */;
-INSERT INTO `jurnal` VALUES (15,'5',NULL,'4.1','Coba du bos','1000000','1000000','2021-01-03 01:26:51','2021-01-03 01:51:43');
 /*!40000 ALTER TABLE `jurnal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +145,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +154,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2020_06_04_195613_create_aktivitas_table',1),(2,'2020_06_04_195613_create_akun_table',1),(3,'2020_06_04_195613_create_jurnal_table',1),(4,'2020_06_05_023259_create_jangka_waktu_table',1),(5,'2021_01_03_182519_create_aktivitas_table',0),(6,'2021_01_03_182519_create_akun_table',0),(7,'2021_01_03_182519_create_jangka_waktu_table',0),(8,'2021_01_03_182519_create_jurnal_table',0),(9,'2021_01_03_182521_add_foreign_keys_to_akun_table',0),(10,'2021_01_03_182521_add_foreign_keys_to_jangka_waktu_table',0),(11,'2021_01_03_182613_create_aktivitas_table',0),(12,'2021_01_03_182613_create_akun_table',0),(13,'2021_01_03_182613_create_jangka_waktu_table',0),(14,'2021_01_03_182613_create_jurnal_table',0),(15,'2021_01_03_182615_add_foreign_keys_to_akun_table',0),(16,'2021_01_03_182615_add_foreign_keys_to_jangka_waktu_table',0);
+INSERT INTO `migrations` VALUES (1,'2021_01_08_231414_create_aktivitas_table',1),(2,'2021_01_08_231414_create_akun_table',1),(3,'2021_01_08_231414_create_jangka_waktu_table',1),(4,'2021_01_08_231414_create_jurnal_table',1),(5,'2021_01_08_231416_add_foreign_keys_to_akun_table',2),(6,'2021_01_08_231416_add_foreign_keys_to_jangka_waktu_table',2),(7,'2021_01_08_231416_add_foreign_keys_to_jurnal_table',2);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -161,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-04  3:24:42
+-- Dump completed on 2021-01-09  7:29:22
