@@ -15,8 +15,8 @@ class CreateAkunTable extends Migration
     {
         Schema::create('akun', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_akun')->index('akun_id_akun_foreign');
-            $table->string('no_akun', 5);
+            $table->integer('id_aktivitas')->index('id_aktivitas');
+            $table->string('no_akun', 5)->index('no_akun');
             $table->string('akun', 40);
             $table->string('debet', 50);
             $table->string('kredit', 50);
