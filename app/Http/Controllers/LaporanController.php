@@ -118,7 +118,7 @@ class LaporanController extends Controller
     {
         $debet = $this->get(1) + $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5) + $this->get(5) + $this->get(7) + $this->get(12) + $this->get(15, 2.3) + $this->get(16) + $this->get(18);
 
-        $kredit = $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(9, 1.4) + $this->get(9, 2.1) + $this->get(9, 2.3) + $this->get(9, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.2) + $this->get(17);
+        $kredit = $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(8) + $this->get(9, 1.4) + $this->get(9, 2.1) + $this->get(9, 2.3) + $this->get(9, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.2) + $this->get(17);
 
         return response()->json([
             'kas' => $debet - $kredit,
@@ -133,12 +133,12 @@ class LaporanController extends Controller
             'tanah' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5) - $this->get(12, 2.5),
             'UJPendek' => $this->get(16, 2.1) - $this->get(15, 2.1),
             'UJPanjang' => $this->get(16, 2.2) - $this->get(15, 2.2),
-            'zakat' => $this->get(2) - $this->get(1),
+            'zakat' => $this->get(1) - $this->get(2),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - $this->get(4),
             'amil' => ($this->get(5)) - ($this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2) +$this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4) + $this->get(13)),
             //  + $this->get(12) + $this->get(15) + $this->get(18)
             // ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17)) - 
-            'nonHalal' => ($this->get(8, 5.11) + $this->get(8, 5.12)) - $this->get(7)
+            'nonHalal' => $this->get(7) - ($this->get(8, 5.11) + $this->get(8, 5.12))
         ]);
     }
 
