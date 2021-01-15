@@ -51,19 +51,23 @@ Vue.use(VueChart)
 
 // View 
 import Home from './views/Home';
-
 import Input from './views/Input.vue';
-
 import Jurnals from './views/Jurnals.vue';
 import LPK from './views/LPK.vue';
 import ArusKas from './views/ArusKas.vue';
 import LPDana from './views/PerubahanDana.vue';
 import PAK from './views/PerubahanAsetKelolaan.vue';
+import Login from './views/Login.vue'
 
 const routes = [
     {
-        name: 'Home',
+        name: 'Login',
         path: '/',
+        component: Login
+    },
+    {
+        name: 'Home',
+        path: '/login',
         component: Home
     }, 
     {

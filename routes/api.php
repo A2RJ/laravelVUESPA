@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,6 +32,8 @@ Route::get('cari/{data}', [JurnalController::class, 'cari']);
 
 Route::get('hapus/{id}', [JurnalController::class, 'hapus']);
 
-// Route::get('ubah/{id}', [JurnalController::class, 'ubah']);
-
 Route::get('laporan/{id}', [LaporanController::class, 'index']);
+
+Route::resource('admin', AuthController::class);
+Route::get('auth/login/{data}', [AuthController::class, 'login']);
+Route::get('auth/logout', [AuthController::class, 'logout']);

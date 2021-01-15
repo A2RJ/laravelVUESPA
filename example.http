@@ -1,4 +1,4 @@
-GET http://127.0.0.1:8000/api/laporan/lpk HTTP/1.1
+GET http://127.0.0.1:8000/api/auth/logout HTTP/1.1
 # Gunakan perintah artisan untuk package
 # Buat generator laravel, untuk koneksi ambil 
 # dari .env saja kemudian untuk nama table 
