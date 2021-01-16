@@ -11,7 +11,7 @@
                                     <input
                                         v-model="keywords"
                                         v-on:keyup="cari"
-                                        type="text"
+                                        type="search"
                                         class="form-control todo-list-input"
                                         placeholder="Cari jurnal"
                                     />

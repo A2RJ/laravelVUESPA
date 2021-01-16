@@ -20,15 +20,15 @@
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{ asset('src/dist/css/style.min.css') }}">
-    
+
     <!-- Custom CSS -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
- 
+
 </head>
 
 <body>
 
-   <!-- ============================================================== -->
+    <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
     <div class="preloader">
@@ -52,6 +52,8 @@
     <!-- apps -->
     <script src="{{ asset('src/dist/js/app-style-switcher.js') }}"></script>
     <script src="{{ asset('src/dist/js/feather.min.js') }}"></script>
+    <script src="{{ asset('src/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('src/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ asset('src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
     <script src="{{ asset('src/assets/extra-libs/sparkline/sparkline.js') }}"></script>

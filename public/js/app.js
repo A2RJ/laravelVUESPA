@@ -2897,6 +2897,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -2916,6 +2994,35 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3513,6 +3620,28 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -97336,32 +97465,6 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link",
-                          attrs: { href: "#", "aria-expanded": "false" }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "calendar" }
-                          }),
-                          _c(
-                            "span",
-                            { staticClass: "hide-menu" },
-                            [
-                              _c("router-link", { attrs: { to: "/Zakat" } }, [
-                                _vm._v("Kalkulator Zakat")
-                              ])
-                            ],
-                            1
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
                     _c("li", { staticClass: "list-divider" }),
                     _vm._v(" "),
                     _c("li", { staticClass: "nav-small-cap" }, [
@@ -97668,6 +97771,7 @@ var render = function() {
                               _c(
                                 "router-link",
                                 {
+                                  attrs: { to: "/login" },
                                   on: {
                                     click: function($event) {
                                       return _vm.logout()
@@ -97874,7 +97978,144 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" })
+          _c("div", { staticClass: "card-body" }, [
+            _c("h4", { staticClass: "card-title" }, [_vm._v("Daftar Admin")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "table-responsive" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-striped table-bordered no-wrap",
+                  attrs: { id: "zero_config" }
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [_vm._v("Nama")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Username")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Opsi")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [_vm._v("Tiger Nixon")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("System Architect")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-warning btn-sm btn-rounded"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Ubah\n                                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-danger btn-sm btn-rounded"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Delete\n                                    "
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("Garrett Winters")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Accountant")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-warning btn-sm btn-rounded"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Ubah\n                                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-danger btn-sm btn-rounded"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Delete\n                                    "
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("Ashton Cox")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Junior Technical Author")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-warning btn-sm btn-rounded"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Ubah\n                                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "mt-1 btn btn-outline-danger btn-sm btn-rounded"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Delete\n                                    "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tfoot", [
+                    _c("tr", [
+                      _c("th", [_vm._v("Nama")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Username")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Opsi")])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ])
         ])
       ])
     ])
@@ -97908,10 +98149,72 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row container" }, [
       _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" })
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-6 offset-3" }, [
+                _c("form", { staticClass: "mt-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [
+                      _vm._v("Nama Lengkap")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [_vm._v("Username")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [_vm._v("Password")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [
+                      _vm._v("Konfirmasi Password")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-3" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn btn-md btn-outline-primary btn-rounded float-right",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                    Ubah\n                                "
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
         ])
       ])
     ])
@@ -98359,7 +98662,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "form-control todo-list-input",
-                      attrs: { type: "text", placeholder: "Cari jurnal" },
+                      attrs: { type: "search", placeholder: "Cari jurnal" },
                       domProps: { value: _vm.keywords },
                       on: {
                         keyup: _vm.cari,
@@ -98782,7 +99085,54 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" })
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-6 offset-3" }, [
+                _c("form", { staticClass: "mt-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [
+                      _vm._v("Pilih Jenis Zakat")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [
+                      _vm._v("Nilai Emas")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "a" } }, [
+                      _vm._v("Nilai Tunai")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-3" }, [
+                    _c("p", [
+                      _vm._v(
+                        "\n                                    Zakat yang anda keluarkan senilai RP. 0\n                                "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
         ])
       ])
     ])
@@ -117063,6 +117413,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
+  $("#zero_config").DataTable();
   var header = document.getElementById("sidebarnav");
   var li = header.getElementsByClassName("sidebar-item");
 

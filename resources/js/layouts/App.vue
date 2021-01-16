@@ -476,7 +476,7 @@
                                     </span></a
                                 >
                             </li>
-                            <li class="sidebar-item">
+                            <!-- <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
                                     href="#"
@@ -491,7 +491,7 @@
                                         >
                                     </span></a
                                 >
-                            </li>
+                            </li> -->
 
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
@@ -652,7 +652,7 @@
                                         class="feather-icon"
                                     ></i
                                     ><span class="hide-menu">
-                                        <router-link @click="logout()">Logout</router-link
+                                        <router-link @click="logout()" to="/login">Logout</router-link
                                         >
                                     </span></a
                                 >

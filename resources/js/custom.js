@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $("#zero_config").DataTable();
   var header = document.getElementById("sidebarnav");
   var li = header.getElementsByClassName("sidebar-item");
   for (var i = 0; i < li.length; i++) {
