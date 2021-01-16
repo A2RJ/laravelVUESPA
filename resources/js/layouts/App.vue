@@ -476,6 +476,22 @@
                                     </span></a
                                 >
                             </li>
+                            <li class="sidebar-item">
+                                <a
+                                    class="sidebar-link"
+                                    href="#"
+                                    aria-expanded="false"
+                                    ><i
+                                        data-feather="calendar"
+                                        class="feather-icon"
+                                    ></i
+                                    ><span class="hide-menu">
+                                        <router-link to="/Zakat"
+                                            >Kalkulator Zakat</router-link
+                                        >
+                                    </span></a
+                                >
+                            </li>
 
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
@@ -605,6 +621,42 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="list-divider"></li>
+                            <li class="nav-small-cap">
+                                <span class="hide-menu">Admin</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a
+                                    class="sidebar-link"
+                                    href="#"
+                                    aria-expanded="false"
+                                    ><i
+                                        data-feather="calendar"
+                                        class="feather-icon"
+                                    ></i
+                                    ><span class="hide-menu">
+                                        <router-link to="/Index"
+                                            >Admin</router-link
+                                        >
+                                    </span></a
+                                >
+                            </li>
+                            <li class="list-divider"></li>
+                            <li class="sidebar-item">
+                                <a
+                                    class="sidebar-link"
+                                    href="#"
+                                    aria-expanded="false"
+                                    ><i
+                                        data-feather="calendar"
+                                        class="feather-icon"
+                                    ></i
+                                    ><span class="hide-menu">
+                                        <router-link @click="logout()">Logout</router-link
+                                        >
+                                    </span></a
+                                >
+                            </li>
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
@@ -700,6 +752,9 @@ export default {
     methods: {
         generateReport() {
             console.log("Holla");
+        },
+        logout(){
+            console.log("Was logged out");
         }
     }
 };
