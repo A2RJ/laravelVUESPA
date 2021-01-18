@@ -27,7 +27,7 @@
                                         type="submit"
                                         class="btn btn-md btn-outline-primary btn-rounded float-right"
                                     >
-                                        Ubah
+                                        Simpan
                                     </button>
                                 </div>
                             </form>

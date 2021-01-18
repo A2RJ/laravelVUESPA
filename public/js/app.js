@@ -2975,6 +2975,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -97979,6 +97980,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-body" }, [
+            _c(
+              "button",
+              { staticClass: "mt-1 btn btn-info mb-4 btn-sm btn-rounded" },
+              [_vm._v("Tambah Admin")]
+            ),
+            _vm._v(" "),
             _c("h4", { staticClass: "card-title" }, [_vm._v("Daftar Admin")]),
             _vm._v(" "),
             _c("div", { staticClass: "table-responsive" }, [
@@ -98206,7 +98213,7 @@ var staticRenderFns = [
                       },
                       [
                         _vm._v(
-                          "\n                                    Ubah\n                                "
+                          "\n                                    Simpan\n                                "
                         )
                       ]
                     )
@@ -118466,7 +118473,7 @@ var routes = [{
 }, {
   name: 'Index',
   path: '/Index',
-  component: _views_admin_index_vue__WEBPACK_IMPORTED_MODULE_21__["default"]
+  component: _views_admin_tambah_vue__WEBPACK_IMPORTED_MODULE_22__["default"]
 }, {
   name: 'Tambah',
   path: '/Tambah',

@@ -3,6 +3,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
+                    <button class="mt-1 btn btn-info mb-4 btn-sm btn-rounded">Tambah Admin</button>
                     <h4 class="card-title">Daftar Admin</h4>
                     <!-- <h6 class="card-subtitle">
                         DataTables has most features enabled by default, so all
