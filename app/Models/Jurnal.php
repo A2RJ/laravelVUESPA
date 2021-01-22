@@ -46,13 +46,33 @@ class Jurnal extends Model
     public function joinTable()
     {
         return DB::table('jurnal')
-            ->Join('aktivitas', 'jurnal.id_aktivitas', '=', 'aktivitas.id_aktivitas')
-            ->Join('akun', [
-                ['jurnal.id_aktivitas', '=', 'akun.id_aktivitas'],
-                ['jurnal.no_akun', '=', 'akun.no_akun']
-            ])
-            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
-            ->paginate(10);
+        ->Join('aktivitas',
+            'jurnal.id_aktivitas',
+            '=',
+            'aktivitas.id_aktivitas'
+        )
+        ->Join('akun', [
+            ['jurnal.id_aktivitas', '=', 'akun.id_aktivitas'],
+            ['jurnal.no_akun', '=', 'akun.no_akun']
+        ])
+        ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
+        ->paginate(10);
+    }
+
+    static function LPK()
+    {
+        return DB::table('jurnal')
+        ->Join('aktivitas',
+            'jurnal.id_aktivitas',
+            '=',
+            'aktivitas.id_aktivitas'
+        )
+        ->Join('akun', [
+            ['jurnal.id_aktivitas', '=', 'akun.id_aktivitas'],
+            ['jurnal.no_akun', '=', 'akun.no_akun']
+        ])
+        ->select('jurnal.id','aktivitas.aktivitas', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
+        ->get();
     }
 
     public function cari($id)

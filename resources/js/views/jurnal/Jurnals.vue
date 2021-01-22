@@ -6,7 +6,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Jurnal</h4>
                         <div class="add-items d-flex row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-10">
                                 <form v-on:submit.prevent>
                                     <input
                                         v-model="keywords"
@@ -16,6 +16,13 @@
                                         placeholder="Cari jurnal"
                                     />
                                 </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <button
+                                    @click="reset" class="mt-1 btn btn-outline-danger float-left mb-4 btn-md btn-rounded"
+                                >
+                                    Reset
+                                </button>
                             </div>
                         </div>
                         <div
@@ -37,8 +44,8 @@
                                     ditemukan
                                 </h6>
                             </div>
-                            <div class="" v-else>
-                                <div class="" v-if="!keywords">
+                            <div v-else>
+                                <div v-if="!keywords">
                                     <table class="table table-responsive">
                                         <thead>
                                             <tr class="text-center">
@@ -303,6 +310,28 @@ export default {
                             console.log(res),
                         this.$swal("Success", "diubah", "success")
                     );
+                }
+            });
+        },
+        reset(){
+             this.$swal({
+                title: "Yakin?",
+                text: "Anda masih dapat membatalkan",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Reset"
+            }).then(result => {
+                if (result.isConfirmed) {
+                    axios
+                        .get("api/reset/")
+                        .then(
+                            res => (
+                                this.cari(),
+                                this.$swal("Success", "Direset.", "success")
+                            )
+                        );
                 }
             });
         },

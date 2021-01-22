@@ -476,7 +476,7 @@
                                     </span></a
                                 >
                             </li>
-                            <!-- <li class="sidebar-item">
+                            <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
                                     href="#"
@@ -491,13 +491,15 @@
                                         >
                                     </span></a
                                 >
-                            </li> -->
+                            </li>
 
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
                                 <span class="hide-menu">Pelaporan</span>
                             </li>
+                            
 
+                            
                             <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
@@ -564,64 +566,21 @@
                                 >
                             </li>
                             <li class="sidebar-item">
-                                <a
-                                    class="sidebar-link has-arrow"
-                                    href="javascript:void(0)"
+                                <a 
+                                    class="sidebar-link"
+                                    href="/api/laporan/cetak"
                                     aria-expanded="false"
                                     ><i
-                                        data-feather="feather"
+                                        data-feather="calendar"
                                         class="feather-icon"
                                     ></i
-                                    ><span class="hide-menu"
-                                        >Print Laporan
+                                    ><span class="hide-menu">
+                                        Laporan
                                     </span></a
                                 >
-                                <ul
-                                    aria-expanded="false"
-                                    class="collapse first-level base-level-line"
-                                >
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link" href="#">
-                                            <span class="hide-menu">
-                                                <router-link
-                                                    to="/Jurnal/Jurnals"
-                                                    >Jurnal</router-link
-                                                >
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link" href="#">
-                                            <span class="hide-menu">
-                                                <router-link to="/ReportLPK/LPK"
-                                                    >Neraca</router-link
-                                                >
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link" href="#">
-                                            <span class="hide-menu">
-                                                <router-link to="/PAK"
-                                                    >Perubahan Aset
-                                                    Kelolaan</router-link
-                                                >
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a class="sidebar-link" href="#">
-                                            <span class="hide-menu">
-                                                <router-link to="/PAK"
-                                                    >Perubahan Aset
-                                                    Kelolaan</router-link
-                                                >
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="list-divider"></li>
+                            
                             <li class="nav-small-cap">
                                 <span class="hide-menu">Admin</span>
                             </li>
@@ -750,8 +709,14 @@ export default {
     name: "app",
     components: { Fragment },
     methods: {
-        generateReport() {
-            console.log("Holla");
+        laporan() {
+            axios
+                .get("/api/laporan/cetak")
+                .then(
+                    res => (
+                        this.$swal("Success", "Diunduh.", "success")
+                    )
+                );
         },
         logout(){
             console.log("Was logged out");

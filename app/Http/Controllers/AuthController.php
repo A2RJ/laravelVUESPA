@@ -23,7 +23,7 @@ class AuthController extends Controller
      */
     public function index(Request $request)
     {
-        return response()->json(['records' => admin::All()]);
+        return response()->json(['data' => admin::All()]);
     }
     /**
      * Display the specified resource.

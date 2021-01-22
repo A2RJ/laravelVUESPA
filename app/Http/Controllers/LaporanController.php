@@ -5,21 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Models\Jurnal;
-use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use PDF;
 class LaporanController extends Controller
 {
     public function cetak()
     {
-        $data = Jurnal::all();
+        $model = new Jurnal;
 
-        // share data to view
-        view()->share('coba', $data);
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
         $pdf = PDF::loadView('coba', $data);
-
-        // download PDF file with download method
-        return $pdf->download('pdf_file.pdf');
-        return $pdf->stream('pdf_file.pdf');
+        return $pdf->download('LPK.pdf');
     }
     /**  
      * Dari routes masuk ditangkap oleh functions index 

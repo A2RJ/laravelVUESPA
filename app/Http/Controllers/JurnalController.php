@@ -101,6 +101,11 @@ class JurnalController extends Controller
         return response()->json(['data' => Jurnal::find($id)->delete(), 'msg' => 'Berhasil hapus jurnal']);
     }
 
+    public function reset()
+    {
+        return response()->json(['data' => Jurnal::truncate(), 'msg' => 'Berhasil reset jurnal']);
+    }
+
     public function ubah($data)
     {
         $id = explode('-', $data);

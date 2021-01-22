@@ -115,7 +115,7 @@ const routes = [
     {
         name: 'Index',
         path: '/Index',
-        component: Tambah
+        component: Index
     },
     {
         name: 'Tambah',

@@ -2729,47 +2729,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -2777,8 +2736,12 @@ __webpack_require__.r(__webpack_exports__);
     Fragment: vue_fragment__WEBPACK_IMPORTED_MODULE_0__["Fragment"]
   },
   methods: {
-    generateReport: function generateReport() {
-      console.log("Holla");
+    laporan: function laporan() {
+      var _this = this;
+
+      axios.get("/api/laporan/cetak").then(function (res) {
+        return _this.$swal("Success", "Diunduh.", "success");
+      });
     },
     logout: function logout() {
       console.log("Was logged out");
@@ -2941,46 +2904,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      admins: {}
+    };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("api/auth").then(function (res) {
+      return _this.admins = res.data;
+    });
+  },
   methods: {}
 });
 
@@ -2995,6 +2931,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -3283,6 +3222,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
 /* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
 /* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
+var _methods;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3510,7 +3460,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getResult(); // this.generateReport()
   },
-  methods: {
+  methods: (_methods = {
     cari: function cari() {
       if (this.keywords === "") {
         this.getResult();
@@ -3588,26 +3538,43 @@ __webpack_require__.r(__webpack_exports__);
           }, _this4.$swal("Success", "diubah", "success"));
         }
       });
-    },
-    generateReport: function generateReport() {
-      if (this.$route.params.Report) {
-        if (this.jurnals) {
-          if (this.$route.params.Report == "Jurnals") {
-            var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
-            jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
-              margin: {
-                top: 60
-              },
-              html: "table"
-            });
-            doc.setPage(1);
-            doc.text("To Do List", 40, 40);
-            doc.save("table.pdf");
-          }
+    }
+  }, _defineProperty(_methods, "reset", function reset() {
+    var _this5 = this;
+
+    this.$swal({
+      title: "Yakin?",
+      text: "Anda masih dapat membatalkan",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Reset"
+    }).then(function (result) {
+      if (result.isConfirmed) {
+        axios.get("api/reset/").then(function (res) {
+          return _this5.cari(), _this5.$swal("Success", "Direset.", "success");
+        });
+      }
+    });
+  }), _defineProperty(_methods, "generateReport", function generateReport() {
+    if (this.$route.params.Report) {
+      if (this.jurnals) {
+        if (this.$route.params.Report == "Jurnals") {
+          var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
+          jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
+            margin: {
+              top: 60
+            },
+            html: "table"
+          });
+          doc.setPage(1);
+          doc.text("To Do List", 40, 40);
+          doc.save("table.pdf");
         }
       }
     }
-  }
+  }), _methods)
 });
 
 /***/ }),
@@ -97466,6 +97433,32 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
+                    _c("li", { staticClass: "sidebar-item" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "sidebar-link",
+                          attrs: { href: "#", "aria-expanded": "false" }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "feather-icon",
+                            attrs: { "data-feather": "calendar" }
+                          }),
+                          _c(
+                            "span",
+                            { staticClass: "hide-menu" },
+                            [
+                              _c("router-link", { attrs: { to: "/Zakat" } }, [
+                                _vm._v("Kalkulator Zakat")
+                              ])
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
                     _c("li", { staticClass: "list-divider" }),
                     _vm._v(" "),
                     _c("li", { staticClass: "nav-small-cap" }, [
@@ -97584,133 +97577,20 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "sidebar-link has-arrow",
+                          staticClass: "sidebar-link",
                           attrs: {
-                            href: "javascript:void(0)",
+                            href: "/api/laporan/cetak",
                             "aria-expanded": "false"
                           }
                         },
                         [
                           _c("i", {
                             staticClass: "feather-icon",
-                            attrs: { "data-feather": "feather" }
+                            attrs: { "data-feather": "calendar" }
                           }),
                           _c("span", { staticClass: "hide-menu" }, [
                             _vm._v(
-                              "Print Laporan\n                                "
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        {
-                          staticClass: "collapse first-level base-level-line",
-                          attrs: { "aria-expanded": "false" }
-                        },
-                        [
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  { staticClass: "hide-menu" },
-                                  [
-                                    _c(
-                                      "router-link",
-                                      { attrs: { to: "/Jurnal/Jurnals" } },
-                                      [_vm._v("Jurnal")]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  { staticClass: "hide-menu" },
-                                  [
-                                    _c(
-                                      "router-link",
-                                      { attrs: { to: "/ReportLPK/LPK" } },
-                                      [_vm._v("Neraca")]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  { staticClass: "hide-menu" },
-                                  [
-                                    _c(
-                                      "router-link",
-                                      { attrs: { to: "/PAK" } },
-                                      [
-                                        _vm._v(
-                                          "Perubahan Aset\n                                                Kelolaan"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "sidebar-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "sidebar-link",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  { staticClass: "hide-menu" },
-                                  [
-                                    _c(
-                                      "router-link",
-                                      { attrs: { to: "/PAK" } },
-                                      [
-                                        _vm._v(
-                                          "Perubahan Aset\n                                                Kelolaan"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
+                              "\n                                    Laporan\n                                "
                             )
                           ])
                         ]
@@ -97969,22 +97849,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "button",
-              { staticClass: "mt-1 btn btn-info mb-4 btn-sm btn-rounded" },
-              [_vm._v("Tambah Admin")]
-            ),
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c(
+          "div",
+          { staticClass: "card-body" },
+          [
+            _c("router-link", { attrs: { to: "/Tambah" } }, [
+              _c(
+                "button",
+                { staticClass: "mt-1 btn btn-info mb-4 btn-sm btn-rounded" },
+                [_vm._v("Tambah Admin")]
+              )
+            ]),
             _vm._v(" "),
             _c("h4", { staticClass: "card-title" }, [_vm._v("Daftar Admin")]),
             _vm._v(" "),
@@ -97996,134 +97874,85 @@ var staticRenderFns = [
                   attrs: { id: "zero_config" }
                 },
                 [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", [_vm._v("Nama")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Username")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Opsi")])
-                    ])
-                  ]),
+                  _vm._m(0),
                   _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("Tiger Nixon")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("System Architect")]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mt-1 btn btn-outline-warning btn-sm btn-rounded"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Ubah\n                                    "
-                            )
-                          ]
-                        ),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.admins.data, function(admin, index) {
+                      return _c("tr", { key: index }, [
+                        _c("td", [_vm._v(_vm._s(admin.name))]),
                         _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mt-1 btn btn-outline-danger btn-sm btn-rounded"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Delete\n                                    "
-                            )
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("Garrett Winters")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Accountant")]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mt-1 btn btn-outline-warning btn-sm btn-rounded"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Ubah\n                                    "
-                            )
-                          ]
-                        ),
+                        _c("td", [_vm._v("System Architect")]),
                         _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mt-1 btn btn-outline-danger btn-sm btn-rounded"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Delete\n                                    "
-                            )
-                          ]
-                        )
+                        _vm._m(1, true)
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("Ashton Cox")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Junior Technical Author")]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mt-1 btn btn-outline-warning btn-sm btn-rounded"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Ubah\n                                    "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mt-1 btn btn-outline-danger btn-sm btn-rounded"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Delete\n                                    "
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ]),
+                    }),
+                    0
+                  ),
                   _vm._v(" "),
-                  _c("tfoot", [
-                    _c("tr", [
-                      _c("th", [_vm._v("Nama")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Username")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Opsi")])
-                    ])
-                  ])
+                  _vm._m(2)
                 ]
               )
             ])
-          ])
-        ])
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Nama")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Username")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opsi")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c(
+        "button",
+        { staticClass: "mt-1 btn btn-outline-warning btn-sm btn-rounded" },
+        [
+          _vm._v(
+            "\n                                        Ubah\n                                    "
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "mt-1 btn btn-outline-danger btn-sm btn-rounded" },
+        [
+          _vm._v(
+            "\n                                        Delete\n                                    "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tfoot", [
+      _c("tr", [
+        _c("th", [_vm._v("Nama")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Username")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opsi")])
       ])
     ])
   }
@@ -98149,80 +97978,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "row container" }, [
+    _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-sm-6 offset-3" },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("router-link", { attrs: { to: "/Index" } }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "mt-1 btn btn-outline-info float-left mb-4 btn-md btn-rounded"
+                    },
+                    [_vm._v("Batal")]
+                  )
+                ])
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row container" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-6 offset-3" }, [
-                _c("form", { staticClass: "mt-6" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "a" } }, [
-                      _vm._v("Nama Lengkap")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "a" } }, [_vm._v("Username")]),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "a" } }, [_vm._v("Password")]),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "a" } }, [
-                      _vm._v("Konfirmasi Password")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: { type: "text" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "mt-3" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn btn-md btn-outline-primary btn-rounded float-right",
-                        attrs: { type: "submit" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                    Simpan\n                                "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
+    return _c("form", { staticClass: "mt-6" }, [
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "a" } }, [_vm._v("Nama Lengkap")]),
+        _vm._v(" "),
+        _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "a" } }, [_vm._v("Username")]),
+        _vm._v(" "),
+        _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "a" } }, [_vm._v("Password")]),
+        _vm._v(" "),
+        _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "a" } }, [_vm._v("Konfirmasi Password")]),
+        _vm._v(" "),
+        _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-3" }, [
+        _c(
+          "button",
+          {
+            staticClass:
+              "btn btn-md btn-outline-primary btn-rounded float-right",
+            attrs: { type: "submit" }
+          },
+          [
+            _vm._v(
+              "\n                                    Simpan\n                                "
+            )
+          ]
+        )
       ])
     ])
   }
@@ -98648,7 +98477,7 @@ var render = function() {
             _c("h4", { staticClass: "card-title" }, [_vm._v("Jurnal")]),
             _vm._v(" "),
             _c("div", { staticClass: "add-items d-flex row" }, [
-              _c("div", { staticClass: "col-lg-12" }, [
+              _c("div", { staticClass: "col-lg-10" }, [
                 _c(
                   "form",
                   {
@@ -98683,6 +98512,22 @@ var render = function() {
                     })
                   ]
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-2" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "mt-1 btn btn-outline-danger float-left mb-4 btn-md btn-rounded",
+                    on: { click: _vm.reset }
+                  },
+                  [
+                    _vm._v(
+                      "\n                                Reset\n                            "
+                    )
+                  ]
+                )
               ])
             ]),
             _vm._v(" "),
@@ -98709,9 +98554,9 @@ var render = function() {
                           )
                         ])
                       ])
-                    : _c("div", {}, [
+                    : _c("div", [
                         !_vm.keywords
-                          ? _c("div", {}, [
+                          ? _c("div", [
                               _c(
                                 "table",
                                 { staticClass: "table table-responsive" },
@@ -117420,7 +117265,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $("#zero_config").DataTable();
   var header = document.getElementById("sidebarnav");
   var li = header.getElementsByClassName("sidebar-item");
 
@@ -117431,7 +117275,7 @@ $(document).ready(function () {
       this.className += " selected";
     });
   }
-});
+}); // $("#zero_config").DataTable();
 
 /***/ }),
 
@@ -118473,7 +118317,7 @@ var routes = [{
 }, {
   name: 'Index',
   path: '/Index',
-  component: _views_admin_tambah_vue__WEBPACK_IMPORTED_MODULE_22__["default"]
+  component: _views_admin_index_vue__WEBPACK_IMPORTED_MODULE_21__["default"]
 }, {
   name: 'Tambah',
   path: '/Tambah',

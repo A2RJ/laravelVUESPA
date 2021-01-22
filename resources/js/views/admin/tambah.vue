@@ -31,6 +31,9 @@
                                     </button>
                                 </div>
                             </form>
+                             <router-link to="/Index">
+                    <button class="mt-1 btn btn-outline-info float-left mb-4 btn-md btn-rounded">Batal</button>
+                    </router-link>
                         </div>
                     </div>
                 </div>
