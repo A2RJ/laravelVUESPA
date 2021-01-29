@@ -15,7 +15,7 @@ class AddForeignKeysToJurnalTable extends Migration
     {
         Schema::table('jurnal', function (Blueprint $table) {
             $table->foreign('id_aktivitas', 'jurnal_ibfk_1')->references('id_aktivitas')->on('aktivitas')->onUpdate('RESTRICT')->onDelete('RESTRICT');
-            $table->foreign('jangka_waktu', 'jurnal_ibfk_2')->references('id_aktivitas')->on('jangka_waktu')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+            $table->foreign('jangka_waktu', 'jurnal_ibfk_2')->references('id')->on('jangka_waktu')->onUpdate('RESTRICT')->onDelete('RESTRICT');
             $table->foreign('no_akun', 'jurnal_ibfk_3')->references('no_akun')->on('akun')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
