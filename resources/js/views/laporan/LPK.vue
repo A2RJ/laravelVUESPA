@@ -185,19 +185,7 @@ export default {
             )
             .catch(error => console.log(error));
     },
-    methods: {
-        generateReport() {
-            if (this.$route.params.Report) {
-                if (this.$route.params.Report == "LPK") {
-                    const doc = new jsPDF("p", "pt");
-                    autoTable(doc, { margin: { top: 60 }, html: "table" });
-                    doc.setPage(1);
-                    doc.text("To Do List", 40, 40);
-                    doc.save("table.pdf");
-                }
-            }
-        }
-    }
+    methods: {}
 };
 </script>
 

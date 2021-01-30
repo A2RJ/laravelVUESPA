@@ -2772,25 +2772,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      chartData: {
-        labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
-        datasets: [{
-          label: "Debet",
-          data: [1000, 1900, 3000, 5000, 2000, 3000, 4000, 5000, 7000, 8000, 15000, 16000],
-          backgroundColor: ["rgba(50, 143, 168, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"],
-          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
-          borderWidth: 1
-        }, {
-          label: "Kredit",
-          data: [500, 2000, 2500, 6000, 1200, 3200, 3200, 5200, 6500, 9000, 15000, 14000],
-          backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"],
-          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
-          borderWidth: 1
-        }]
-      },
+      debet: false,
+      kredit: [],
+      chartData: {},
       options: {
         scales: {
           yAxes: [{
@@ -2802,7 +2793,30 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("api/dashboard").then(function (response) {
+      return _this.debet = response.data.debet, _this.kredit = response.data.kredit, _this.chartData = {
+        labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+        datasets: [{
+          label: "Debet",
+          data: _this.debet,
+          backgroundColor: ["rgba(50, 143, 168, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"],
+          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
+          borderWidth: 1
+        }, {
+          label: "Kredit",
+          data: _this.kredit,
+          backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"],
+          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
+          borderWidth: 1
+        }]
+      };
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  },
   methods: {}
 });
 
@@ -4155,24 +4169,7 @@ __webpack_require__.r(__webpack_exports__);
       return console.log(error);
     });
   },
-  methods: {
-    generateReport: function generateReport() {
-      if (this.$route.params.Report) {
-        if (this.$route.params.Report == "LPK") {
-          var doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__["default"]("p", "pt");
-          jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default()(doc, {
-            margin: {
-              top: 60
-            },
-            html: "table"
-          });
-          doc.setPage(1);
-          doc.text("To Do List", 40, 40);
-          doc.save("table.pdf");
-        }
-      }
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -97783,7 +97780,13 @@ var render = function() {
         _c(
           "div",
           { staticClass: "card-body table-responsive" },
-          [_c("vue-chart", { attrs: { type: "line", data: _vm.chartData } })],
+          [
+            _vm.debet
+              ? _c("vue-chart", {
+                  attrs: { type: "line", data: _vm.chartData }
+                })
+              : _vm._e()
+          ],
           1
         )
       ])

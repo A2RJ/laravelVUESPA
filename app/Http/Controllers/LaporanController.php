@@ -231,32 +231,32 @@ class LaporanController extends Controller
     {
         return response()->json([
             "debet" => [
-                'januari' => $this->debet(date("Y") . "-01"),
-                'februari' => $this->debet(date("Y") . "-02"),
-                'maret' => $this->debet(date("Y") . "-03"),
-                'april' => $this->debet(date("Y") . "-04"),
-                'mei' => $this->debet(date("Y") . "-05"),
-                'juni' => $this->debet(date("Y") . "-06"),
-                'juli' => $this->debet(date("Y") . "-07"),
-                'agustus' => $this->debet(date("Y") . "-08"),
-                'september' => $this->debet(date("Y") . "-09"),
-                'oktober' => $this->debet(date("Y") . "-10"),
-                'november' => $this->debet(date("Y") . "-11"),
-                'desember' => $this->debet(date("Y") . "-12")
+                $this->debet(date("Y") . "-01"),
+                $this->debet(date("Y") . "-02"),
+                $this->debet(date("Y") . "-03"),
+                $this->debet(date("Y") . "-04"),
+                $this->debet(date("Y") . "-05"),
+                $this->debet(date("Y") . "-06"),
+                $this->debet(date("Y") . "-07"),
+                $this->debet(date("Y") . "-08"),
+                $this->debet(date("Y") . "-09"),
+                $this->debet(date("Y") . "-10"),
+                $this->debet(date("Y") . "-11"),
+                $this->debet(date("Y") . "-12")
             ],
             "kredit" => [
-                'januari' => $this->kredit(date("Y") . "-01"),
-                'februari' => $this->kredit(date("Y") . "-02"),
-                'maret' => $this->kredit(date("Y") . "-03"),
-                'april' => $this->kredit(date("Y") . "-04"),
-                'mei' => $this->kredit(date("Y") . "-05"),
-                'juni' => $this->kredit(date("Y") . "-06"),
-                'juli' => $this->kredit(date("Y") . "-07"),
-                'agustus' => $this->kredit(date("Y") . "-08"),
-                'september' => $this->kredit(date("Y") . "-09"),
-                'oktober' => $this->kredit(date("Y") . "-10"),
-                'november' => $this->kredit(date("Y") . "-11"),
-                'desember' => $this->kredit(date("Y") . "-12")
+                $this->kredit(date("Y") . "-01"),
+                $this->kredit(date("Y") . "-02"),
+                $this->kredit(date("Y") . "-03"),
+                $this->kredit(date("Y") . "-04"),
+                $this->kredit(date("Y") . "-05"),
+                $this->kredit(date("Y") . "-06"),
+                $this->kredit(date("Y") . "-07"),
+                $this->kredit(date("Y") . "-08"),
+                $this->kredit(date("Y") . "-09"),
+                $this->kredit(date("Y") . "-10"),
+                $this->kredit(date("Y") . "-11"),
+                $this->kredit(date("Y") . "-12")
             ]
         ]);
     }
