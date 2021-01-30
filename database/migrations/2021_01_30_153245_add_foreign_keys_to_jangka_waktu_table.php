@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeysToAkunTable extends Migration
+class AddForeignKeysToJangkaWaktuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddForeignKeysToAkunTable extends Migration
      */
     public function up()
     {
-        Schema::table('akun', function (Blueprint $table) {
+        Schema::table('jangka_waktu', function (Blueprint $table) {
             $table->foreign('id_aktivitas')->references('id_aktivitas')->on('aktivitas')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
@@ -25,8 +25,8 @@ class AddForeignKeysToAkunTable extends Migration
      */
     public function down()
     {
-        Schema::table('akun', function (Blueprint $table) {
-            $table->dropForeign('id_aktivitas');
+        Schema::table('jangka_waktu', function (Blueprint $table) {
+            $table->dropForeign('jangka_waktu_id_aktivitas_foreign');
         });
     }
 }
