@@ -21,13 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('jurnals', JurnalController::class);
-// Buat route seperti laporan
 Route::get('aktivitas', [JurnalController::class, 'getAktivitas']);
 Route::get('akun/{id}', [JurnalController::class, 'getAkun']);
 Route::get('waktu/{id}', [JurnalController::class, 'getWaktu']);
 Route::get('cari/{data}', [JurnalController::class, 'cari']);
 Route::get('hapus/{id}', [JurnalController::class, 'hapus']);
 Route::get('reset', [JurnalController::class, 'reset']);
+
+Route::get('dashboard', [LaporanController::class, 'dashboard']);
 Route::get('laporan/{id}', [LaporanController::class, 'index']);
 
 Route::resource('auth', AuthController::class);

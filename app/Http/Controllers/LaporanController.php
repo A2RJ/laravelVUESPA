@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Models\Jurnal;
+use Illuminate\Support\Facades\DB;
 use PDF;
+
 class LaporanController extends Controller
 {
     public function cetak()
@@ -46,70 +48,20 @@ class LaporanController extends Controller
         }
     }
 
-    public function hitungDanaAmil()
+    public function getMonth($id, $bulan = false, $no = false, $jenis = false)
     {
-        $sumbangan = $this->get(5, 4.1);
-        $zakat = $this->get(5, 4.2);
-        $infak = $this->get(5, 4.3);
-        $penerimaanLainAmil = $this->get(12) + $this->get(15) + $this->get(18);
-        $kredit = $this->get(9) + $this->get(10) + $this->get(11) + $this->get(12) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17);
-
-        $kredit = $sumbangan - $kredit;
-
-        if ($kredit <= 0) {
-
-            $sumbangan = 0;
-            $kredit = abs($kredit);
-            $kredit = $zakat - $kredit;
-
-            if ($kredit <= 0) {
-
-                $zakat = 0;
-                $kredit = abs($kredit);
-                $kredit = $infak - $kredit;
-
-                if ($kredit <= 0) {
-                    return response()->json([
-                        'msg' => 'Jumlah kas tidak sesuai dengan kredit'
-                    ]);
-                } else {
-                    $infak = $kredit;
-                    $kredit = 0;
-                    return response()->json([
-                        'sumbangan' => $sumbangan,
-                        'zakat' => $zakat,
-                        'infak' => $infak,
-                        'penerimaanLainAmil' => $penerimaanLainAmil,
-                        'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
-                    ]);
-                }
+        if ($no) {
+            if ($jenis) {
+                return DB::table('jurnal')->where('id_aktivitas', $id)->where('no_akun', $no)->where('created_at', 'LIKE', "%{$bulan}%")->sum('jum_' . $jenis);
             } else {
-                $zakat = $kredit;
-                $kredit = 0;
-                return response()->json([
-                    'sumbangan' => $sumbangan,
-                    'zakat' => $zakat,
-                    'infak' => $infak,
-                    'penerimaanLainAmil' => $penerimaanLainAmil,
-                    'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
-                ]);
+                return DB::table('jurnal')->where('id_aktivitas', $id)->where('no_akun', $no)->where('created_at', 'LIKE', "%{$bulan}%")->sum('jum_debet');
             }
         } else {
-            $sumbangan = $kredit;
-            $kredit = 0;
-            return response()->json([
-                'sumbangan' => $sumbangan,
-                'zakat' => $zakat,
-                'infak' => $infak,
-                'penerimaanLainAmil' => $penerimaanLainAmil,
-                'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
-            ]);
+            return DB::table('jurnal')->where('id_aktivitas', $id)->where('created_at', 'LIKE', "%{$bulan}%")->sum('jum_debet');
         }
     }
 
-    /** 
-     * FUNGSI UNTUK LAPORAN
-     * 
+    /**
      * Untuk Halaman Laporan Posisi Keuangan
      **/
     public function LPK()
@@ -122,7 +74,6 @@ class LaporanController extends Controller
             'kas' => $debet - $kredit,
             'bank' => $this->get(17) - $this->get(18),
             'piutang' => $this->get(14, 2.3) - $this->get(15, 2.3),
-            // 9 - 10 - 11 - 12
             'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4) - $this->get(12, 1.4),
             'peralatan' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1) - $this->get(12, 2.1),
             'AkmPeralatan' => $this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2),
@@ -133,9 +84,7 @@ class LaporanController extends Controller
             'UJPanjang' => $this->get(16, 2.2) - $this->get(15, 2.2),
             'zakat' => $this->get(1) - $this->get(2),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - $this->get(4),
-            'amil' => ($this->get(5)) - ($this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2) +$this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4) + $this->get(13)),
-            //  + $this->get(12) + $this->get(15) + $this->get(18)
-            // ($this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17)) - 
+            'amil' => ($this->get(5)) - ($this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2) + $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4) + $this->get(13)),
             'nonHalal' => $this->get(7) - ($this->get(8, 5.11) + $this->get(8, 5.12))
         ]);
     }
@@ -159,7 +108,6 @@ class LaporanController extends Controller
             'transportasi' => $this->get(13, 5.9),
             'bebanPeralatan' => $this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2),
             'bebanBangunan' => $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4)
-            // bagaimana dengan dana hibah, sedangkan infak dan hibah itu berbeda
         ]);
     }
 
@@ -257,8 +205,6 @@ class LaporanController extends Controller
             'amilzakat' => $this->get(5, 4.2),
             'amilinfak' => $this->get(5, 4.3),
             'penerimaanAmil' => $this->get(12) + $this->get(15) + $this->get(18),
-            // 'penerimaanlainnya' => $this->get(12) + $this->get(15) + $this->get(18),
-            // 'penerimaanAmilLainnya' => $this->get(5),
             'bebanAmil' => $this->get(9) + $this->get(10) + $this->get(11) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17),
             'bungaBank' => $this->get(7, 4.5),
             'giro' => $this->get(7, 4.6),
@@ -268,5 +214,112 @@ class LaporanController extends Controller
             'nonHalalLainKredit' => $this->get(8, 5.12),
             'penyaluranNonHalal' => $this->get(8, 5.11) + $this->get(8, 5.12)
         ]);
+    }
+
+    /**
+     * fungsi untuk mengambil nilai debet dan kredit halaman dashboard
+     */
+    public function debet($bulan)
+    {
+        return $this->getMonth(1, $bulan) + $this->getMonth(3, $bulan, 4.11) + $this->getMonth(3, $bulan, 4.12) + $this->getMonth(3, $bulan, 4.13) + $this->getMonth(3, $bulan, 2.1) + $this->getMonth(3, $bulan, 2.3) + $this->getMonth(3, $bulan, 2.5) + $this->getMonth(5, $bulan) + $this->getMonth(7, $bulan) + $this->getMonth(12, $bulan) + $this->getMonth(15, $bulan, 2.3) + $this->getMonth(16, $bulan) + $this->getMonth(18, $bulan);
+    }
+    public function kredit($bulan)
+    {
+        return $this->getMonth(2, $bulan) + $this->getMonth(3, $bulan, 2.2) + $this->getMonth(3, $bulan, 2.4) + $this->getMonth(4, $bulan) + $this->getMonth(8, $bulan) + $this->getMonth(9, $bulan, 1.4) + $this->getMonth(9, $bulan, 2.1) + $this->getMonth(9, $bulan, 2.3) + $this->getMonth(9, $bulan, 2.5) + $this->getMonth(10, $bulan, 1.4) + $this->getMonth(10, $bulan, 2.1) + $this->getMonth(10, $bulan, 2.3) + $this->getMonth(10, $bulan, 2.5) + $this->getMonth(10, $bulan, 1.4) + $this->getMonth(10, $bulan, 2.1) + $this->getMonth(10, $bulan, 2.3) + $this->getMonth(10, $bulan, 2.5) + $this->getMonth(13, $bulan) + $this->getMonth(14, $bulan) + $this->getMonth(15, $bulan, 2.1) + $this->getMonth(15, $bulan, 2.2) + $this->getMonth(17, $bulan);
+    }
+    public function dashboard()
+    {
+        return response()->json([
+            "debet" => [
+                'januari' => $this->debet(date("Y") . "-01"),
+                'februari' => $this->debet(date("Y") . "-02"),
+                'maret' => $this->debet(date("Y") . "-03"),
+                'april' => $this->debet(date("Y") . "-04"),
+                'mei' => $this->debet(date("Y") . "-05"),
+                'juni' => $this->debet(date("Y") . "-06"),
+                'juli' => $this->debet(date("Y") . "-07"),
+                'agustus' => $this->debet(date("Y") . "-08"),
+                'september' => $this->debet(date("Y") . "-09"),
+                'oktober' => $this->debet(date("Y") . "-10"),
+                'november' => $this->debet(date("Y") . "-11"),
+                'desember' => $this->debet(date("Y") . "-12")
+            ],
+            "kredit" => [
+                'januari' => $this->kredit(date("Y") . "-01"),
+                'februari' => $this->kredit(date("Y") . "-02"),
+                'maret' => $this->kredit(date("Y") . "-03"),
+                'april' => $this->kredit(date("Y") . "-04"),
+                'mei' => $this->kredit(date("Y") . "-05"),
+                'juni' => $this->kredit(date("Y") . "-06"),
+                'juli' => $this->kredit(date("Y") . "-07"),
+                'agustus' => $this->kredit(date("Y") . "-08"),
+                'september' => $this->kredit(date("Y") . "-09"),
+                'oktober' => $this->kredit(date("Y") . "-10"),
+                'november' => $this->kredit(date("Y") . "-11"),
+                'desember' => $this->kredit(date("Y") . "-12")
+            ]
+        ]);
+    }
+
+
+    public function hitungDanaAmil()
+    {
+        $sumbangan = $this->get(5, 4.1);
+        $zakat = $this->get(5, 4.2);
+        $infak = $this->get(5, 4.3);
+        $penerimaanLainAmil = $this->get(12) + $this->get(15) + $this->get(18);
+        $kredit = $this->get(9) + $this->get(10) + $this->get(11) + $this->get(12) + $this->get(13) + $this->get(14) + $this->get(16) + $this->get(17);
+
+        $kredit = $sumbangan - $kredit;
+
+        if ($kredit <= 0) {
+
+            $sumbangan = 0;
+            $kredit = abs($kredit);
+            $kredit = $zakat - $kredit;
+
+            if ($kredit <= 0) {
+
+                $zakat = 0;
+                $kredit = abs($kredit);
+                $kredit = $infak - $kredit;
+
+                if ($kredit <= 0) {
+                    return response()->json([
+                        'msg' => 'Jumlah kas tidak sesuai dengan kredit'
+                    ]);
+                } else {
+                    $infak = $kredit;
+                    $kredit = 0;
+                    return response()->json([
+                        'sumbangan' => $sumbangan,
+                        'zakat' => $zakat,
+                        'infak' => $infak,
+                        'penerimaanLainAmil' => $penerimaanLainAmil,
+                        'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
+                    ]);
+                }
+            } else {
+                $zakat = $kredit;
+                $kredit = 0;
+                return response()->json([
+                    'sumbangan' => $sumbangan,
+                    'zakat' => $zakat,
+                    'infak' => $infak,
+                    'penerimaanLainAmil' => $penerimaanLainAmil,
+                    'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
+                ]);
+            }
+        } else {
+            $sumbangan = $kredit;
+            $kredit = 0;
+            return response()->json([
+                'sumbangan' => $sumbangan,
+                'zakat' => $zakat,
+                'infak' => $infak,
+                'penerimaanLainAmil' => $penerimaanLainAmil,
+                'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
+            ]);
+        }
     }
 }

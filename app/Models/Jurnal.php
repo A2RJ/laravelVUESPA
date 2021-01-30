@@ -59,6 +59,16 @@ class Jurnal extends Model
         ->paginate(10);
     }
 
+    public function sumdebet($aktivitas, $akun)
+    {
+        return DB::table('jurnal')
+        // ->join('akun', 'jurnal.id_aktivitas', 'akun.id_aktivitas')
+        ->where('jurnal.id_aktivitas', '=', $aktivitas)
+        ->where('jurnal.no_akun', '=', $akun)
+        // ->where('jurnal.created_at', $bulan)
+        ->sum('jurnal.jum_debet');
+    }
+
     static function LPK()
     {
         return DB::table('jurnal')

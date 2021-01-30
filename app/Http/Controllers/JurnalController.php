@@ -23,6 +23,7 @@ class JurnalController extends Controller
         $model = new Jurnal;
         return response()->json($model->joinTable());
     }
+
     /**
      * Store a newly created resource in storage.
      *
