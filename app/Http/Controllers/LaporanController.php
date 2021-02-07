@@ -10,17 +10,6 @@ use PDF;
 
 class LaporanController extends Controller
 {
-    public function cetak()
-    {
-        $model = new Jurnal;
-
-        $data = [
-            'data' => $model->LPK()
-        ];
-        libxml_use_internal_errors(true);
-        $pdf = PDF::loadView('coba', $data);
-        return $pdf->download('LPK.pdf');
-    }
     /**  
      * Dari routes masuk ditangkap oleh functions index 
      * dan diteruskan ke function sesuai params
@@ -261,7 +250,53 @@ class LaporanController extends Controller
         ]);
     }
 
+    public function cetakLPK()
+    {
+        $model = new Jurnal;
 
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
+        $this->cetak2();
+        $pdf = PDF::loadView('coba', $data);
+        return $pdf->download('LPK.pdf');
+    }
+    public function cetakJurnal()
+    {
+        $model = new Jurnal;
+
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
+        $pdf = PDF::loadView('coba', $data);
+        $pdf->download('LPKkkk.pdf');
+    }
+
+    public function cetakLPD()
+    {
+        $model = new Jurnal;
+
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
+        $this->cetak2();
+        $pdf = PDF::loadView('coba', $data);
+        return $pdf->download('LPK.pdf');
+    }
+    public function cetakLPAK()
+    {
+        $model = new Jurnal;
+
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
+        $pdf = PDF::loadView('coba', $data);
+        $pdf->download('LPKkkk.pdf');
+    }
     public function hitungDanaAmil()
     {
         $sumbangan = $this->get(5, 4.1);
