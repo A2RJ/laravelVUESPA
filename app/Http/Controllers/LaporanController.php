@@ -250,6 +250,30 @@ class LaporanController extends Controller
         ]);
     }
 
+    public function cetak()
+    {
+        $model = new Jurnal;
+
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
+        $pdf = PDF::loadView('coba', $data);
+        return $pdf->download('LPK.pdf');
+    }
+
+    public function cetakJurnal()
+    {
+        $model = new Jurnal;
+
+        $data = [
+            'data' => $model->LPK()
+        ];
+        libxml_use_internal_errors(true);
+        $pdf = PDF::loadView('laporan/Jurnal', $data);
+        $pdf->download('Jurnal-SIKANGMAS-'. date("Y-m-d") . '.pdf');
+    }
+    
     public function cetakLPK()
     {
         $model = new Jurnal;
@@ -259,10 +283,11 @@ class LaporanController extends Controller
         ];
         libxml_use_internal_errors(true);
         $this->cetak2();
-        $pdf = PDF::loadView('coba', $data);
-        return $pdf->download('LPK.pdf');
+        $pdf = PDF::loadView('laporan/LPK', $data);
+        return $pdf->download('LPK-SIKANGMAS-' . date("Y-m-d") . '.pdf');
     }
-    public function cetakJurnal()
+    
+    public function cetakArusKas()
     {
         $model = new Jurnal;
 
@@ -270,9 +295,11 @@ class LaporanController extends Controller
             'data' => $model->LPK()
         ];
         libxml_use_internal_errors(true);
-        $pdf = PDF::loadView('coba', $data);
-        $pdf->download('LPKkkk.pdf');
+        $this->cetak2();
+        $pdf = PDF::loadView('laporan/ArusKas', $data);
+        return $pdf->download('Arus-Kas-SIKANGMAS-' . date("Y-m-d") . '.pdf');
     }
+    
 
     public function cetakLPD()
     {
@@ -283,9 +310,10 @@ class LaporanController extends Controller
         ];
         libxml_use_internal_errors(true);
         $this->cetak2();
-        $pdf = PDF::loadView('coba', $data);
-        return $pdf->download('LPK.pdf');
+        $pdf = PDF::loadView('laporan/LPD', $data);
+        return $pdf->download('LPD-SIKANGMAS-' . date("Y-m-d") . '.pdf');
     }
+
     public function cetakLPAK()
     {
         $model = new Jurnal;
@@ -294,9 +322,10 @@ class LaporanController extends Controller
             'data' => $model->LPK()
         ];
         libxml_use_internal_errors(true);
-        $pdf = PDF::loadView('coba', $data);
-        $pdf->download('LPKkkk.pdf');
+        $pdf = PDF::loadView('laporan/LPAK', $data);
+        $pdf->download('LPAK-SIKANGMAS-' . date("Y-m-d") . '.pdf');
     }
+
     public function hitungDanaAmil()
     {
         $sumbangan = $this->get(5, 4.1);
