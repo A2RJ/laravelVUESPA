@@ -69,7 +69,7 @@ class Jurnal extends Model
         ->sum('jurnal.jum_debet');
     }
 
-    static function LPK()
+    static function jurnal()
     {
         return DB::table('jurnal')
         ->Join('aktivitas',
