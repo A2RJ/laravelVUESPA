@@ -128,13 +128,16 @@ class AuthController extends Controller
             // session()->flash('app_error', 'Error occurred while deleting admin');
             return response()->json(['app_error' => 'Error occurred while deleting admin']);
         }
-
-        // return redirect()->back();
     }
 
-    public function login(Request $request)
+    public function login()
     {
-        return response()->json(['app_message' => 'Login Boy']);
+        return view('login');
+    }
+
+    public function loginAuth()
+    {
+        return redirect('/sikangmas');
     }
 
     public function logout()

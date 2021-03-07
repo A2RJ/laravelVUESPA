@@ -31,6 +31,7 @@ Route::get('reset', [JurnalController::class, 'reset']);
 Route::get('dashboard', [LaporanController::class, 'dashboard']);
 Route::get('laporan/{id}', [LaporanController::class, 'index']);
 
+Route::post('/login', [AuthController::class, 'loginAuth']);
 Route::resource('auth', AuthController::class);
 Route::get('auth/login/{data}', [AuthController::class, 'login']);
 Route::get('auth/logout', [AuthController::class, 'logout']);

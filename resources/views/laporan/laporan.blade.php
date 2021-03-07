@@ -86,6 +86,9 @@
     <div class="page_break"></div>
 
     <h4 class="center">Laporan Keuangan SIKANGMAS <?= date("Y") ?></h4>
+    <p>
+        <?php var_dump($lpk); die; ?>
+    </p>
     <table class="center">
         <thead>
             <tr>
