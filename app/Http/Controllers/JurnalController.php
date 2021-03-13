@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Aktivitas;
 use App\Models\Akun;
-use App\Models\JangkaWaktu;
 use App\Models\Jurnal;
+use App\Models\Aktivitas;
+use App\Models\JangkaWaktu;
 
 class JurnalController extends Controller
 {
