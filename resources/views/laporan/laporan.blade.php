@@ -86,73 +86,12 @@
     <div class="page_break"></div>
 
     <h4 class="center">Laporan Keuangan SIKANGMAS <?= date("Y") ?></h4>
-    <p>
-        <?php var_dump($lpk); die; ?>
+    <p> {{ $lpk['kas'] }}
     </p>
-    <table class="center">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Tanggal</th>
-                <th>Aktivitas</th>
-                <th>Akun</th>
-                <th>Keterangan</th>
-                <th>Debet</th>
-                <th>Kredit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $i = 1;
-            foreach ($jurnal as $p) { ?>
-                <tr>
-                    <th>
-                        <?= $i;
-                        $i++; ?>
-                    </th>
-                    <td><?= $p->created_at ?></td>
-                    <td><?= $p->aktivitas ?></td>
-                    <td><?= $p->no_akun . " " . $p->akun ?></td>
-                    <td><?= $p->keterangan ?></td>
-                    <td><?= $p->debet . " <br> " . $p->jum_debet ?></td>
-                    <td><?= $p->kredit . " <br> " . $p->jum_debet ?></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
 
     <div class="page_break"></div>
 
     <h4 class="center">Laporan Keuangan SIKANGMAS <?= date("Y") ?></h4>
-    <table class="center">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Tanggal</th>
-                <th>Aktivitas</th>
-                <th>Akun</th>
-                <th>Keterangan</th>
-                <th>Debet</th>
-                <th>Kredit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $i = 1;
-            foreach ($jurnal as $p) { ?>
-                <tr>
-                    <th>
-                        <?= $i;
-                        $i++; ?>
-                    </th>
-                    <td><?= $p->created_at ?></td>
-                    <td><?= $p->aktivitas ?></td>
-                    <td><?= $p->no_akun . " " . $p->akun ?></td>
-                    <td><?= $p->keterangan ?></td>
-                    <td><?= $p->debet . " <br> " . $p->jum_debet ?></td>
-                    <td><?= $p->kredit . " <br> " . $p->jum_debet ?></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
 
 
 </body>

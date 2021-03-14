@@ -252,13 +252,18 @@ class LaporanController extends Controller
 
     public function cetak()
     {
+        $lpk = $this->LPK();
+        $arusKas = $this->arusKas();
+        $lpd = $this->lpd();
+        $lpak = $this->lpak();
+
         $model = new Jurnal;
         $data = [
             'jurnal' => $model->jurnal(),
-            'lpk' => $this->LPK(),
-            'arusKas' => $this->arusKas(),
-            'lpd' => $this->lpd(),
-            'lpak' => $this->lpak()
+            'lpk' => $lpk->original,
+            'arusKas' => $arusKas->original,
+            'lpd' => $lpd->original,
+            'lpak' => $lpak->original
         ];
 
         $pdf = PDF::loadView('laporan/laporan', $data);
