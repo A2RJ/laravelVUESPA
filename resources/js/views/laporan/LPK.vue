@@ -168,9 +168,6 @@
 </template>
 
 <script>
-import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
-
 export default {
     data() {
         return {
@@ -181,7 +178,7 @@ export default {
         axios
             .get("api/laporan/lpk")
             .then(
-                response => ((this.data = response.data), this.generateReport())
+                response => ((this.data = response.data))
             )
             .catch(error => console.log(error));
     },

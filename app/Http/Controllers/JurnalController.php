@@ -75,13 +75,13 @@ class JurnalController extends Controller
 
     public function getAktivitas()
     {
-        return response()->json(Aktivitas::all());
+        return response()->json(Aktivitas::all(), 200);
     }
 
     public function getAkun($id)
     {
-        return response()->json(Akun::where('id_aktivitas', $id)->get(), 200);
-        // return response()->json(Akun::where('id_aktivitas', $id)->where('no_akun', '!=', '2.2')->where('no_akun', '!=', '2.4')->get(), 200);
+        // return response()->json(Akun::where('id_aktivitas', $id)->get(), 200);
+        return response()->json(Akun::where('id_aktivitas', $id)->where('no_akun', '!=', '2.2')->where('no_akun', '!=', '2.4')->get(), 200);
     }
 
     public function getWaktu($id)

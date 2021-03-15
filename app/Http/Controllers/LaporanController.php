@@ -151,7 +151,7 @@ class LaporanController extends Controller
         return response()->json([
             'lancarKas' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13),
             'lancarKredit' => $this->get(4, 5.18) + $this->get(4, 5.19),
-            'penyisihan' => '',
+            'penyisihan' => '0',
             'jumlahLancar' => $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) - $this->get(4, 5.18) + $this->get(4, 5.19),
             'tdkLancarKas' => $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5),
             'tdkLancarKredit' => $this->get(4, 2.1) + $this->get(4, 2.3) + $this->get(4, 2.5),
@@ -250,21 +250,6 @@ class LaporanController extends Controller
         ]);
     }
 
-    public function cetak()
-    {
-        $model = new Jurnal;
-        $data = [
-            'jurnal' => $model->jurnal(),
-            'lpk' => $this->LPK()->original,
-            'arusKas' => $this->arusKas()->original,
-            'lpd' => $this->lpd()->original,
-            'lpak' => $this->lpak()->original
-        ];
-
-        $pdf = PDF::loadView('laporan/laporan', $data);
-        return $pdf->download('Laporan-Keuangan-SIKANGMAS-' . date("Y-m-d") . '.pdf');
-    }
-
     public function hitungDanaAmil()
     {
         $sumbangan = $this->get(5, 4.1);
@@ -324,5 +309,20 @@ class LaporanController extends Controller
                 'tKasAmil' => $sumbangan + $zakat + $infak + $penerimaanLainAmil
             ]);
         }
+    }
+
+    public function cetak()
+    {
+        $model = new Jurnal;
+        $data = [
+            'jurnal' => $model->jurnal(),
+            'lpk' => $this->LPK()->original,
+            'arusKas' => $this->arusKas()->original,
+            'lpd' => $this->lpd()->original,
+            'lpak' => $this->lpak()->original
+        ];
+
+        $pdf = PDF::loadView('laporan/laporan', $data);
+        return $pdf->download('Laporan-Keuangan-SIKANGMAS-' . date("Y-m-d") . '.pdf');
     }
 }

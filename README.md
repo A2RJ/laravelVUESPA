@@ -1,5 +1,6 @@
 # Revisi
-- PDF
+- Implementasi semua aktivitas dan akun
+- Validasi perhitungan
 - Login
 - Kelola user
 - Kalkulator zakat

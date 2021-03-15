@@ -2729,6 +2729,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -3980,9 +3982,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -4152,8 +4151,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4164,7 +4161,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("api/laporan/lpk").then(function (response) {
-      return _this.data = response.data, _this.generateReport();
+      return _this.data = response.data;
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -96658,11 +96655,19 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "navbar-brand" }, [
-                    _c("a", { attrs: { href: "index.html" } }, [
-                      _c("b", { staticClass: "logo-icon" }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "logo-text" })
-                    ])
+                    _c(
+                      "a",
+                      { staticClass: "text-center", attrs: { href: "/" } },
+                      [
+                        _c("b", { staticClass: "logo-icon" }, [
+                          _c("h4", [_vm._v("SIKANGMAS")])
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "logo-text" }, [
+                          _c("h4", [_vm._v("SIKANGMAS")])
+                        ])
+                      ]
+                    )
                   ]),
                   _vm._v(" "),
                   _c(
@@ -97430,32 +97435,6 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link",
-                          attrs: { href: "#", "aria-expanded": "false" }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "calendar" }
-                          }),
-                          _c(
-                            "span",
-                            { staticClass: "hide-menu" },
-                            [
-                              _c("router-link", { attrs: { to: "/Zakat" } }, [
-                                _vm._v("Kalkulator Zakat")
-                              ])
-                            ],
-                            1
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
                     _c("li", { staticClass: "list-divider" }),
                     _vm._v(" "),
                     _c("li", { staticClass: "nav-small-cap" }, [
@@ -97594,76 +97573,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "list-divider" }),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-small-cap" }, [
-                      _c("span", { staticClass: "hide-menu" }, [
-                        _vm._v("Admin")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link",
-                          attrs: { href: "#", "aria-expanded": "false" }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "calendar" }
-                          }),
-                          _c(
-                            "span",
-                            { staticClass: "hide-menu" },
-                            [
-                              _c("router-link", { attrs: { to: "/Index" } }, [
-                                _vm._v("Admin")
-                              ])
-                            ],
-                            1
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "list-divider" }),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "sidebar-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "sidebar-link",
-                          attrs: { href: "#", "aria-expanded": "false" }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "feather-icon",
-                            attrs: { "data-feather": "calendar" }
-                          }),
-                          _c(
-                            "span",
-                            { staticClass: "hide-menu" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: { to: "/login" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.logout()
-                                    }
-                                  }
-                                },
-                                [_vm._v("Logout")]
-                              )
-                            ],
-                            1
-                          )
-                        ]
-                      )
-                    ])
+                    _c("li", { staticClass: "list-divider" })
                   ])
                 ])
               ]

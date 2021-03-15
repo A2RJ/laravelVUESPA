@@ -14,8 +14,8 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/sikangmas', function () {
+Route::get('/', function () {
     return view('app');
 })->where('any', '.*');
 
-Route::get('/', [AuthController::class, 'login']);
+Route::get('/sikangmas', [AuthController::class, 'login']);

@@ -30,16 +30,18 @@
                         <!-- ============================================================== -->
                         <div class="navbar-brand">
                             <!-- Logo icon -->
-                            <a href="index.html">
+                            <a href="/" class="text-center">
                                 <b class="logo-icon">
                                     <!-- Dark Logo icon 
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
                                     <!-- Light Logo icon 
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />-->
+                                    <h4>SIKANGMAS</h4>
                                 </b>
                                 <!--End Logo icon -->
                                 <!-- Logo text -->
                                 <span class="logo-text">
+                                    <h4>SIKANGMAS</h4>
                                     <!-- dark Logo text 
                                 <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
                                     <!-- Light Logo text
@@ -476,7 +478,7 @@
                                     </span></a
                                 >
                             </li>
-                            <li class="sidebar-item">
+                            <!-- <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
                                     href="#"
@@ -491,7 +493,7 @@
                                         >
                                     </span></a
                                 >
-                            </li>
+                            </li> -->
 
                             <li class="list-divider"></li>
                             <li class="nav-small-cap">
@@ -581,10 +583,10 @@
                             </li>
                             <li class="list-divider"></li>
                             
-                            <li class="nav-small-cap">
+                            <!-- <li class="nav-small-cap">
                                 <span class="hide-menu">Admin</span>
-                            </li>
-                            <li class="sidebar-item">
+                            </li> -->
+                            <!-- <li class="sidebar-item">
                                 <a
                                     class="sidebar-link"
                                     href="#"
@@ -615,7 +617,7 @@
                                         >
                                     </span></a
                                 >
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
