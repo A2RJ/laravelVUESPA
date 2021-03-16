@@ -36,12 +36,12 @@
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
                                     <!-- Light Logo icon 
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />-->
-                                    <h4>SIKANGMAS</h4>
+                                    <!-- <h4>SIKANGMAS</h4> -->
                                 </b>
                                 <!--End Logo icon -->
                                 <!-- Logo text -->
                                 <span class="logo-text">
-                                    <h4>SIKANGMAS</h4>
+                                    <!-- <h4>SIKANGMAS</h4> -->
                                     <!-- dark Logo text 
                                 <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
                                     <!-- Light Logo text

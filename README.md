@@ -1,5 +1,8 @@
 # Revisi
-- Implementasi semua aktivitas dan akun
+- id 11 nilai debet dan kredit harus diisi & tidak boleh sama
+- Selain itu hanya debet
+- Ubah nama minimum dan debet
+- panggil ujpendek dan panjang sesuai nilai
 - Validasi perhitungan
 - Login
 - Kelola user

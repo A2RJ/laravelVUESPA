@@ -29,7 +29,7 @@
                     </option>
                   </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" v-if="cicilKredit">
                   <label for="selectWaktu">Waktu</label>
                   <select
                     class="custom-select"
@@ -37,14 +37,9 @@
                     name="jangka_waktu"
                     v-model="form.jangka_waktu"
                   >
-                    <option value="0">Pilih Waktu</option>
-                    <option
-                      v-for="waktu in listWaktu"
-                      :key="waktu.id"
-                      :value="waktu.jangka_waktu"
-                    >
-                      {{ waktu.jangka_waktu }}
-                    </option>
+                    <option>Pilih Waktu</option>
+                    <option value="Jangka Pendek">Jangka Pendek</option>
+                    <option value="Jangka Panjang">Jangka Panjang</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -88,7 +83,7 @@
                     locale="idr"
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group" v-if="kredit">
                   <label for="jum_kredit">Kredit</label>
                   <currency-input
                     class="form-control"
@@ -98,6 +93,7 @@
                     currency="IDR"
                     locale="idr"
                   />
+                  <small id="emailHelp" class="form-text text-muted">Kredit tidak boleh lebih besar atau sama dengan debet.</small>
                 </div>
                 <button
                   type="submit"
@@ -122,7 +118,7 @@ export default {
       listWaktu: [],
       listAkun: [],
       form: {
-        id_aktivitas: null,
+        id_aktivitas: "",
         jangka_waktu: "",
         no_akun: "",
         keterangan: "",
@@ -130,61 +126,55 @@ export default {
         jum_kredit: 0,
       },
       message: false,
-    };
+      cicilKredit: false,
+      kredit: false
+    }
   },
   created() {
     this.axios
       .get("/api/aktivitas")
       .then((response) => {
-        this.listAktivitas = response.data;
+        this.listAktivitas = response.data
       })
       .catch((err) => {
-        console.log(err);
-      });
+        console.log(err)
+      })
   },
 
   methods: {
     change: function () {
-      this.axios
-        .get("/api/waktu/" + this.form.id_aktivitas)
-        .then((response) => {
-          this.listWaktu = response.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      this.form.id_aktivitas == 10 || this.form.id_aktivitas == 11 ? this.cicilKredit = true : this.cicilKredit = false
+      this.form.id_aktivitas == 11 ? this.kredit = true : this.kredit = false
 
       this.axios
         .get("/api/akun/" + this.form.id_aktivitas)
-        .then((response) => {
-          this.listAkun = response.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+        .then((response) => this.listAkun = response.data)
+        .catch((err) => console.log(err))
     },
+    
     addData() {
       this.axios
         .post("/api/jurnals/", this.form)
         .then((res) => {
-          this.$swal("Success", "Berhasil simpan data jurnal", "success");
-          this.form.id_aktivitas = "";
-          this.form.jangka_waktu = "";
-          this.form.no_akun = "";
-          this.form.keterangan = "";
-          this.form.jum_debet = "";
-          this.form.jum_kredit = "";
+          this.$swal("Success", res.message, "success")
+          this.form.id_aktivitas = ""
+          this.form.jangka_waktu = ""
+          this.form.no_akun = ""
+          this.form.keterangan = ""
+          this.form.jum_debet = ""
+          this.form.jum_kredit = ""
+          this.kredit = false
+          this.cicilKredit = false
         })
         .catch((err) => {
-          console.log(this.form);
           this.$swal({
             icon: "error",
             title: "Oops...",
-            text: "Pastikan semua field terisi",
+            text: err.message,
             footer: err,
-          });
-        });
+          })
+        })
     },
   },
-};
+}
 </script>

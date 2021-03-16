@@ -34,42 +34,80 @@ class JurnalController extends Controller
         $model = new Jurnal;
         $model->fill($request->all());
 
-        if ($model->save()) {
-            if (
-                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "3" or
-                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "9" or
-                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "10" or
-                $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "11"
-            ) {
-                $jumlah = $request->input("jum_debet") / 5;
+        if ($request->input("id_aktivitas") == 10) {
+            Jurnal::create([
+                'id_aktivitas' => $request->input("id_aktivitas"),
+                'jangka_waktu' => $request->input("jangka_waktu"),
+                'no_akun' => $request->input("no_akun"),
+                'keterangan' => $request->input("keterangan"),
+                'jum_debet' => $request->input("jum_debet"),
+                'jum_kredit' => $request->input("jum_debet")
+            ]);
+
+            $this->penyusutan($request);
+            return response()->json(['message' => "Success input data"]);
+        } else if ($request->input("id_aktivitas") == 11) {
+            if ($request->input("jum_debet") > $request->input("jum_kredit")) {
                 Jurnal::create([
                     'id_aktivitas' => $request->input("id_aktivitas"),
                     'jangka_waktu' => $request->input("jangka_waktu"),
-                    'no_akun' => 2.2,
+                    'no_akun' => $request->input("no_akun"),
                     'keterangan' => $request->input("keterangan"),
-                    'jum_debet' => $jumlah,
-                    'jum_kredit' => $jumlah
+                    'jum_debet' => $request->input("jum_debet"),
+                    'jum_kredit' => $request->input("jum_kredit")
                 ]);
-                return response()->json(['message' => "Berhasil perlatan"]);
-            } elseif (
-                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "3" or
-                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "9" or
-                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "10" or
-                $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "11"
-            ) {
-                $jumlah = $request->input("jum_debet") / 30;
-                Jurnal::create([
-                    'id_aktivitas' => $request->input("id_aktivitas"),
-                    'jangka_waktu' => $request->input("jangka_waktu"),
-                    'no_akun' => 2.4,
-                    'keterangan' => $request->input("keterangan"),
-                    'jum_debet' => $jumlah,
-                    'jum_kredit' => $jumlah
-                ]);
-                return response()->json(['message' => "Berhasil GnB"]);
+
+                $this->penyusutan($request);
+                return response()->json(['message' => "Success input data"]);
+            } else {
+                return response()->json(['message' => "Failed"], 422);
             }
         } else {
-            return response()->json(['message' => false]);
+            Jurnal::create([
+                'id_aktivitas' => $request->input("id_aktivitas"),
+                'jangka_waktu' => $request->input("jangka_waktu"),
+                'no_akun' => $request->input("no_akun"),
+                'keterangan' => $request->input("keterangan"),
+                'jum_debet' => $request->input("jum_debet"),
+                'jum_kredit' => $request->input("jum_debet")
+            ]);
+            $this->penyusutan($request);
+            return response()->json(['message' => "Success input data"]);
+        }
+    }
+
+    public function penyusutan($request)
+    {
+        if (
+            $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "3" or
+            $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "9" or
+            $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "10" or
+            $request->input("no_akun") == "2.1" and $request->input("id_aktivitas") == "11"
+        ) {
+            $jumlah = $request->input("jum_debet") / 5;
+            Jurnal::create([
+                'id_aktivitas' => $request->input("id_aktivitas"),
+                'jangka_waktu' => $request->input("jangka_waktu"),
+                'no_akun' => 2.2,
+                'keterangan' => $request->input("keterangan"),
+                'jum_debet' => $jumlah,
+                'jum_kredit' => $jumlah
+            ]);
+        } elseif (
+            $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "3" or
+            $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "9" or
+            $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "10" or
+            $request->input("no_akun") == "2.3" and $request->input("id_aktivitas") == "11"
+        ) {
+            $jumlah = $request->input("jum_debet") / 30;
+            Jurnal::create([
+                'id_aktivitas' => $request->input("id_aktivitas"),
+                'jangka_waktu' => $request->input("jangka_waktu"),
+                'no_akun' => 2.4,
+                'keterangan' => $request->input("keterangan"),
+                'jum_debet' => $jumlah,
+                'jum_kredit' => $jumlah
+            ]);
         }
     }
 

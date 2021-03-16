@@ -41,7 +41,7 @@
                             <div class="col-12 mt-3" v-if="jurnals.data < 1">
                                 <h6 class="text-danger text-center">
                                     Maaf data jurnal {{ keywords }} tidak
-                                    ditemukan
+                                    ditemukan, silahkan input jurnal.
                                 </h6>
                             </div>
                             <div v-else>
@@ -88,7 +88,14 @@
                                                             | currency
                                                     }}
                                                 </td>
-                                                <td>
+                                                <td v-if="jurnal.jangka_waktu">
+                                                    {{ jurnal.jangka_waktu }}:
+                                                    {{
+                                                        jurnal.jum_kredit
+                                                            | currency
+                                                    }}
+                                                </td>
+                                                <td v-else>
                                                     {{ jurnal.kredit }}:
                                                     {{
                                                         jurnal.jum_kredit
@@ -96,12 +103,6 @@
                                                     }}
                                                 </td>
                                                 <td>
-                                                    <!-- <button
-                                                        @click="edit(jurnal.id)"
-                                                        class="mt-1 btn btn-outline-warning btn-sm btn-rounded"
-                                                    >
-                                                        Update
-                                                    </button> -->
                                                     <button
                                                         @click="
                                                             hapus(jurnal.id)
@@ -173,7 +174,14 @@
                                                             | currency
                                                     }}
                                                 </td>
-                                                <td>
+                                                <td v-if="jurnal.jangka_waktu">
+                                                    {{ jurnal.jangka_waktu }}:
+                                                    {{
+                                                        jurnal.jum_kredit
+                                                            | currency
+                                                    }}
+                                                </td>
+                                                <td v-else>
                                                     {{ jurnal.kredit }}:
                                                     {{
                                                         jurnal.jum_kredit
@@ -276,7 +284,7 @@ export default {
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Hapus"
+                confirmButtonText: "Delete"
             }).then(result => {
                 if (result.isConfirmed) {
                     axios

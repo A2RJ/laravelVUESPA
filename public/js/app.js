@@ -3153,10 +3153,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3164,14 +3160,16 @@ __webpack_require__.r(__webpack_exports__);
       listWaktu: [],
       listAkun: [],
       form: {
-        id_aktivitas: null,
+        id_aktivitas: "",
         jangka_waktu: "",
         no_akun: "",
         keterangan: "",
         jum_debet: 0,
         jum_kredit: 0
       },
-      message: false
+      message: false,
+      cicilKredit: false,
+      kredit: false
     };
   },
   created: function created() {
@@ -3187,22 +3185,19 @@ __webpack_require__.r(__webpack_exports__);
     change: function change() {
       var _this2 = this;
 
-      this.axios.get("/api/waktu/" + this.form.id_aktivitas).then(function (response) {
-        _this2.listWaktu = response.data;
-      })["catch"](function (err) {
-        console.log(err);
-      });
+      this.form.id_aktivitas == 10 || this.form.id_aktivitas == 11 ? this.cicilKredit = true : this.cicilKredit = false;
+      this.form.id_aktivitas == 11 ? this.kredit = true : this.kredit = false;
       this.axios.get("/api/akun/" + this.form.id_aktivitas).then(function (response) {
-        _this2.listAkun = response.data;
+        return _this2.listAkun = response.data;
       })["catch"](function (err) {
-        console.log(err);
+        return console.log(err);
       });
     },
     addData: function addData() {
       var _this3 = this;
 
       this.axios.post("/api/jurnals/", this.form).then(function (res) {
-        _this3.$swal("Success", "Berhasil simpan data jurnal", "success");
+        _this3.$swal("Success", res.message, "success");
 
         _this3.form.id_aktivitas = "";
         _this3.form.jangka_waktu = "";
@@ -3210,13 +3205,13 @@ __webpack_require__.r(__webpack_exports__);
         _this3.form.keterangan = "";
         _this3.form.jum_debet = "";
         _this3.form.jum_kredit = "";
+        _this3.kredit = false;
+        _this3.cicilKredit = false;
       })["catch"](function (err) {
-        console.log(_this3.form);
-
         _this3.$swal({
           icon: "error",
           title: "Oops...",
-          text: "Pastikan semua field terisi",
+          text: err.message,
           footer: err
         });
       });
@@ -3242,6 +3237,14 @@ var _methods;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3522,7 +3525,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Hapus"
+        confirmButtonText: "Delete"
       }).then(function (result) {
         if (result.isConfirmed) {
           axios.get("api/hapus/" + jurnal).then(function (res) {
@@ -96659,13 +96662,9 @@ var render = function() {
                       "a",
                       { staticClass: "text-center", attrs: { href: "/" } },
                       [
-                        _c("b", { staticClass: "logo-icon" }, [
-                          _c("h4", [_vm._v("SIKANGMAS")])
-                        ]),
+                        _c("b", { staticClass: "logo-icon" }),
                         _vm._v(" "),
-                        _c("span", { staticClass: "logo-text" }, [
-                          _c("h4", [_vm._v("SIKANGMAS")])
-                        ])
+                        _c("span", { staticClass: "logo-text" })
                       ]
                     )
                   ]),
@@ -98125,69 +98124,63 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "selectWaktu" } }, [
-                      _vm._v("Waktu")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.jangka_waktu,
-                            expression: "form.jangka_waktu"
-                          }
-                        ],
-                        staticClass: "custom-select",
-                        attrs: { id: "selectWaktu", name: "jangka_waktu" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.form,
-                              "jangka_waktu",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "0" } }, [
-                          _vm._v("Pilih Waktu")
+                  _vm.cicilKredit
+                    ? _c("div", { staticClass: "form-group" }, [
+                        _c("label", { attrs: { for: "selectWaktu" } }, [
+                          _vm._v("Waktu")
                         ]),
                         _vm._v(" "),
-                        _vm._l(_vm.listWaktu, function(waktu) {
-                          return _c(
-                            "option",
-                            {
-                              key: waktu.id,
-                              domProps: { value: waktu.jangka_waktu }
-                            },
-                            [
-                              _vm._v(
-                                "\n                    " +
-                                  _vm._s(waktu.jangka_waktu) +
-                                  "\n                  "
-                              )
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ]),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.jangka_waktu,
+                                expression: "form.jangka_waktu"
+                              }
+                            ],
+                            staticClass: "custom-select",
+                            attrs: { id: "selectWaktu", name: "jangka_waktu" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.form,
+                                  "jangka_waktu",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c("option", [_vm._v("Pilih Waktu")]),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { value: "Jangka Pendek" } },
+                              [_vm._v("Jangka Pendek")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { value: "Jangka Panjang" } },
+                              [_vm._v("Jangka Panjang")]
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
                     _c("label", { attrs: { for: "selectAkun" } }, [
@@ -98314,33 +98307,48 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("label", { attrs: { for: "jum_kredit" } }, [
-                        _vm._v("Kredit")
-                      ]),
-                      _vm._v(" "),
-                      _c("currency-input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          name: "jum_kredit",
-                          id: "jum_kredit",
-                          currency: "IDR",
-                          locale: "idr"
-                        },
-                        model: {
-                          value: _vm.form.jum_kredit,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "jum_kredit", $$v)
-                          },
-                          expression: "form.jum_kredit"
-                        }
-                      })
-                    ],
-                    1
-                  ),
+                  _vm.kredit
+                    ? _c(
+                        "div",
+                        { staticClass: "form-group" },
+                        [
+                          _c("label", { attrs: { for: "jum_kredit" } }, [
+                            _vm._v("Kredit")
+                          ]),
+                          _vm._v(" "),
+                          _c("currency-input", {
+                            staticClass: "form-control",
+                            attrs: {
+                              name: "jum_kredit",
+                              id: "jum_kredit",
+                              currency: "IDR",
+                              locale: "idr"
+                            },
+                            model: {
+                              value: _vm.form.jum_kredit,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "jum_kredit", $$v)
+                              },
+                              expression: "form.jum_kredit"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "small",
+                            {
+                              staticClass: "form-text text-muted",
+                              attrs: { id: "emailHelp" }
+                            },
+                            [
+                              _vm._v(
+                                "Kredit tidak boleh lebih besar atau sama dengan debet."
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _c(
                     "button",
@@ -98463,7 +98471,7 @@ var render = function() {
                           _vm._v(
                             "\n                                Maaf data jurnal " +
                               _vm._s(_vm.keywords) +
-                              " tidak\n                                ditemukan\n                            "
+                              " tidak\n                                ditemukan, silahkan input jurnal.\n                            "
                           )
                         ])
                       ])
@@ -98515,19 +98523,33 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(jurnal.kredit) +
-                                              ":\n                                                " +
-                                              _vm._s(
-                                                _vm._f("currency")(
-                                                  jurnal.jum_kredit
-                                                )
-                                              ) +
-                                              "\n                                            "
-                                          )
-                                        ]),
+                                        jurnal.jangka_waktu
+                                          ? _c("td", [
+                                              _vm._v(
+                                                "\n                                                " +
+                                                  _vm._s(jurnal.jangka_waktu) +
+                                                  ":\n                                                " +
+                                                  _vm._s(
+                                                    _vm._f("currency")(
+                                                      jurnal.jum_kredit
+                                                    )
+                                                  ) +
+                                                  "\n                                            "
+                                              )
+                                            ])
+                                          : _c("td", [
+                                              _vm._v(
+                                                "\n                                                " +
+                                                  _vm._s(jurnal.kredit) +
+                                                  ":\n                                                " +
+                                                  _vm._s(
+                                                    _vm._f("currency")(
+                                                      jurnal.jum_kredit
+                                                    )
+                                                  ) +
+                                                  "\n                                            "
+                                              )
+                                            ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _c(
@@ -98643,19 +98665,33 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(jurnal.kredit) +
-                                              ":\n                                                " +
-                                              _vm._s(
-                                                _vm._f("currency")(
-                                                  jurnal.jum_kredit
-                                                )
-                                              ) +
-                                              "\n                                            "
-                                          )
-                                        ]),
+                                        jurnal.jangka_waktu
+                                          ? _c("td", [
+                                              _vm._v(
+                                                "\n                                                " +
+                                                  _vm._s(jurnal.jangka_waktu) +
+                                                  ":\n                                                " +
+                                                  _vm._s(
+                                                    _vm._f("currency")(
+                                                      jurnal.jum_kredit
+                                                    )
+                                                  ) +
+                                                  "\n                                            "
+                                              )
+                                            ])
+                                          : _c("td", [
+                                              _vm._v(
+                                                "\n                                                " +
+                                                  _vm._s(jurnal.kredit) +
+                                                  ":\n                                                " +
+                                                  _vm._s(
+                                                    _vm._f("currency")(
+                                                      jurnal.jum_kredit
+                                                    )
+                                                  ) +
+                                                  "\n                                            "
+                                              )
+                                            ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _c(
