@@ -73,7 +73,7 @@
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="jum_debet">Debet</label>
+                  <label for="jum_debet">Nominal</label>
                   <currency-input
                     class="form-control"
                     name="jum_debet"
@@ -84,7 +84,7 @@
                   />
                 </div>
                 <div class="form-group" v-if="kredit">
-                  <label for="jum_kredit">Kredit</label>
+                  <label for="jum_kredit">Tunai</label>
                   <currency-input
                     class="form-control"
                     name="jum_kredit"

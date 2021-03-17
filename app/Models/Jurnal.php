@@ -35,7 +35,8 @@ class Jurnal extends Model
         'no_akun',
         'keterangan',
         'jum_debet',
-        'jum_kredit'
+        'jum_kredit',
+        'utang'
     ];
 
     /**
@@ -51,7 +52,7 @@ class Jurnal extends Model
             ['jurnal.id_aktivitas', '=', 'akun.id_aktivitas'],
             ['jurnal.no_akun', '=', 'akun.no_akun']
         ])
-        ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet',  'akun.kredit', 'jurnal.jangka_waktu','jurnal.jum_kredit')
+        ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet',  'akun.kredit', 'jurnal.jangka_waktu','jurnal.jum_kredit', 'jurnal.utang')
         ->paginate(10);
     }
 
@@ -77,7 +78,7 @@ class Jurnal extends Model
             ['jurnal.id_aktivitas', '=', 'akun.id_aktivitas'],
             ['jurnal.no_akun', '=', 'akun.no_akun']
         ])
-        ->select('jurnal.id','aktivitas.aktivitas', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
+        ->select('jurnal.id','aktivitas.aktivitas', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet','akun.kredit', 'jurnal.jangka_waktu','jurnal.jum_kredit', 'jurnal.utang')
         ->get();
     }
 
@@ -89,7 +90,7 @@ class Jurnal extends Model
                 ['jurnal.id_aktivitas', '=', 'akun.id_aktivitas'],
                 ['jurnal.no_akun', '=', 'akun.no_akun']
             ])
-            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet', 'akun.kredit', 'jurnal.jum_kredit')
+            ->select('jurnal.id', 'jurnal.id_aktivitas', 'jurnal.created_at', 'aktivitas.aktivitas', 'akun.no_akun', 'akun.akun', 'jurnal.keterangan', 'akun.debet', 'jurnal.jum_debet',  'akun.kredit', 'jurnal.jangka_waktu', 'jurnal.jum_kredit', 'jurnal.utang')
             ->where('jurnal.created_at', 'LIKE', '%' . $id . '%')
             ->orWhere('aktivitas.aktivitas', 'LIKE', '%' . $id . '%')
             ->orWhere('jurnal.keterangan', 'LIKE', '%' . $id . '%')

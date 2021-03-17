@@ -31,8 +31,8 @@ class JurnalController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Jurnal;
-        $model->fill($request->all());
+        // $model = new Jurnal;
+        // $model->fill($request->all());
 
         if ($request->input("id_aktivitas") == 10) {
             Jurnal::create([
@@ -48,13 +48,15 @@ class JurnalController extends Controller
             return response()->json(['message' => "Success input data"]);
         } else if ($request->input("id_aktivitas") == 11) {
             if ($request->input("jum_debet") > $request->input("jum_kredit")) {
+                $utang = $request->input("jum_debet") - $request->input("jum_kredit");
                 Jurnal::create([
                     'id_aktivitas' => $request->input("id_aktivitas"),
                     'jangka_waktu' => $request->input("jangka_waktu"),
                     'no_akun' => $request->input("no_akun"),
                     'keterangan' => $request->input("keterangan"),
                     'jum_debet' => $request->input("jum_debet"),
-                    'jum_kredit' => $request->input("jum_kredit")
+                    'jum_kredit' => $request->input("jum_kredit"),
+                    'utang' => $utang
                 ]);
 
                 $this->penyusutan($request);
@@ -87,7 +89,7 @@ class JurnalController extends Controller
             $jumlah = $request->input("jum_debet") / 5;
             Jurnal::create([
                 'id_aktivitas' => $request->input("id_aktivitas"),
-                'jangka_waktu' => $request->input("jangka_waktu"),
+                'jangka_waktu' => null,
                 'no_akun' => 2.2,
                 'keterangan' => $request->input("keterangan"),
                 'jum_debet' => $jumlah,
@@ -102,7 +104,7 @@ class JurnalController extends Controller
             $jumlah = $request->input("jum_debet") / 30;
             Jurnal::create([
                 'id_aktivitas' => $request->input("id_aktivitas"),
-                'jangka_waktu' => $request->input("jangka_waktu"),
+                'jangka_waktu' => null,
                 'no_akun' => 2.4,
                 'keterangan' => $request->input("keterangan"),
                 'jum_debet' => $jumlah,

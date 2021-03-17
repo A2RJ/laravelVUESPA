@@ -1,9 +1,9 @@
 # Revisi
-- id 11 nilai debet dan kredit harus diisi & tidak boleh sama
-- Selain itu hanya debet
-- Ubah nama minimum dan debet
-- panggil ujpendek dan panjang sesuai nilai
+- Aktivitas kredit di halaman lain (belum)
+- Perhitungan pembelian cicilan (input, validasi nominal-utang, panggil nilai diLPK atau halaman lain)
+- Perhitungan aktivitas peminjaman
 - Validasi perhitungan
+- Laporan (pdf)
 - Login
 - Kelola user
 - Kalkulator zakat

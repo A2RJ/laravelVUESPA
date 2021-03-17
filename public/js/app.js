@@ -3465,6 +3465,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -98284,7 +98294,7 @@ var render = function() {
                     { staticClass: "form-group" },
                     [
                       _c("label", { attrs: { for: "jum_debet" } }, [
-                        _vm._v("Debet")
+                        _vm._v("Nominal")
                       ]),
                       _vm._v(" "),
                       _c("currency-input", {
@@ -98313,7 +98323,7 @@ var render = function() {
                         { staticClass: "form-group" },
                         [
                           _c("label", { attrs: { for: "jum_kredit" } }, [
-                            _vm._v("Kredit")
+                            _vm._v("Tunai")
                           ]),
                           _vm._v(" "),
                           _c("currency-input", {
@@ -98526,12 +98536,22 @@ var render = function() {
                                         jurnal.jangka_waktu
                                           ? _c("td", [
                                               _vm._v(
-                                                "\n                                                " +
+                                                "\n                                                Kas: \n                                                " +
+                                                  _vm._s(
+                                                    _vm._f("currency")(
+                                                      jurnal.jum_kredit
+                                                    )
+                                                  ) +
+                                                  " "
+                                              ),
+                                              _c("br"),
+                                              _vm._v(
+                                                " Utang\n                                                " +
                                                   _vm._s(jurnal.jangka_waktu) +
                                                   ":\n                                                " +
                                                   _vm._s(
                                                     _vm._f("currency")(
-                                                      jurnal.jum_kredit
+                                                      jurnal.utang
                                                     )
                                                   ) +
                                                   "\n                                            "
@@ -98668,12 +98688,22 @@ var render = function() {
                                         jurnal.jangka_waktu
                                           ? _c("td", [
                                               _vm._v(
-                                                "\n                                                " +
+                                                "\n                                                Kas: \n                                                " +
+                                                  _vm._s(
+                                                    _vm._f("currency")(
+                                                      jurnal.jum_kredit
+                                                    )
+                                                  ) +
+                                                  " "
+                                              ),
+                                              _c("br"),
+                                              _vm._v(
+                                                " Utang\n                                                " +
                                                   _vm._s(jurnal.jangka_waktu) +
                                                   ":\n                                                " +
                                                   _vm._s(
                                                     _vm._f("currency")(
-                                                      jurnal.jum_kredit
+                                                      jurnal.utang
                                                     )
                                                   ) +
                                                   "\n                                            "
@@ -99622,7 +99652,13 @@ var render = function() {
                   _c("td", [_vm._v("Jumlah")]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v(_vm._s(_vm._f("currency")(_vm.data.jumlahUtang)))
+                    _vm._v(
+                      _vm._s(
+                        _vm._f("currency")(
+                          _vm.data.UJPanjang + _vm.data.UJPendek
+                        )
+                      )
+                    )
                   ])
                 ]),
                 _vm._v(" "),

@@ -69,7 +69,7 @@
                                 </td>
                                 <td></td>
                                 <td>Jumlah</td>
-                                <td>{{ data.jumlahUtang | currency }}</td>
+                                <td>{{ data.UJPanjang + data.UJPendek | currency }}</td>
                             </tr>
                             <tr>
                                 <td></td>
