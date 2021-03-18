@@ -28,15 +28,18 @@ class LaporanController extends Controller
     {
         if ($no) {
             if ($jenis) {
-                return Jurnal::where('id_aktivitas', $id)->where('no_akun', $no)->sum('jum_' . $jenis);
+                return Jurnal::where('id_aktivitas', $id)->where('no_akun', $no)->sum($jenis);
             } else {
                 return Jurnal::where('id_aktivitas', $id)->where('no_akun', $no)->sum('jum_debet');
             }
-        } else if($id == "Jangka Pendek" || $id == "Jangka Panjang") {
-            return Jurnal::where('jangka_waktu', $id)->sum('jum_debet');
-        }else{
+        } else{
             return Jurnal::where('id_aktivitas', $id)->sum('jum_debet');
         }
+    }
+    
+    public function getJW($id, $jangka_waktu, $jenis)
+    {
+        return Jurnal::where('id_aktivitas', $id)->where('jangka_waktu', $jangka_waktu)->sum($jenis);
     }
 
     public function getMonth($id, $bulan = false, $no = false, $jenis = false)
@@ -58,9 +61,8 @@ class LaporanController extends Controller
     public function LPK()
     {
         $debet = $this->get(1) + $this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5) + $this->get(5) + $this->get(7) + $this->get(12) + $this->get(15, 2.3) + $this->get(16) + $this->get(18);
-
-        $kredit = $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(8) + $this->get(9, 1.4) + $this->get(9, 2.1) + $this->get(9, 2.3) + $this->get(9, 2.5) + $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.2) + $this->get(17);
-//  + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5) + $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5)
+        $kredit = $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(8) + $this->get(9, 1.4) + $this->get(9, 2.1) + $this->get(9, 2.3) + $this->get(9, 2.5) + $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.2) + $this->get(17) + $this->getJW(11, "Jangka Pendek", "jum_kredit") + $this->getJW(11, "Jangka Panjang", "jum_kredit");
+        
         return response()->json([
             'kas' => $debet - $kredit,
             'bank' => $this->get(17) - $this->get(18),
@@ -71,11 +73,8 @@ class LaporanController extends Controller
             'gnb' => $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3) - $this->get(12, 2.3),
             'AkmGnB' => $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4),
             'tanah' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5) - $this->get(12, 2.5),
-            // 'UJPendek' => $this->get(10, 1.4) + $this->get(10, 2.1) + $this->get(10, 2.3) + $this->get(10, 2.5),
-            // 'UJPendek' => $this->get(10, 1.4) + $this->get(16, 2.1) - $this->get(15, 2.1),
-            // 'UJPanjang' => $this->get(16, 2.2) - $this->get(15, 2.2),
-            'UJPendek' => $this->get("Jangka Pendek"),
-            'UJPanjang' => $this->get("Jangka Panjang"),
+            'UJPendek' => $this->getJW(10, "Jangka Pendek", "utang") + $this->getJW(11, "Jangka Pendek", "utang"),
+            'UJPanjang' => $this->getJW(10, "Jangka Panjang", "utang") + $this->getJW(11, "Jangka Panjang", "utang"),
             'zakat' => $this->get(1) - $this->get(2),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - $this->get(4),
             'amil' => ($this->get(5)) - ($this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2) + $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4) + $this->get(13)),
@@ -135,10 +134,10 @@ class LaporanController extends Controller
             'gnbKas' => $this->get(12, 2.3),
             'tanahKas' => $this->get(12, 2.5),
             'investasiKas' => $this->get(12, 2.1) + $this->get(12, 2.3) + $this->get(12, 2.5),
-            'peralatanKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1),
-            'gnbKredit' => $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3),
-            'tanahKredit' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5),
-            'investasiKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1) + $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3) + $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5),
+            'peralatanKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1, "jum_kredit"),
+            'gnbKredit' => $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3, "jum_kredit"),
+            'tanahKredit' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5, "jum_kredit"),
+            'investasiKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1, "jum_kredit") + $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3, "jum_kredit") + $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5, "jum_kredit"),
             'utangJPendek' => $this->get(16, 2.1),
             'utangJPanjang' => $this->get(16, 2.2),
             'pendanaanKas' => $this->get(16, 2.1) + $this->get(16, 2.2),
@@ -221,6 +220,7 @@ class LaporanController extends Controller
     {
         return $this->getMonth(2, $bulan) + $this->getMonth(3, $bulan, 2.2) + $this->getMonth(3, $bulan, 2.4) + $this->getMonth(4, $bulan) + $this->getMonth(8, $bulan) + $this->getMonth(9, $bulan, 1.4) + $this->getMonth(9, $bulan, 2.1) + $this->getMonth(9, $bulan, 2.3) + $this->getMonth(9, $bulan, 2.5) + $this->getMonth(10, $bulan, 1.4) + $this->getMonth(10, $bulan, 2.1) + $this->getMonth(10, $bulan, 2.3) + $this->getMonth(10, $bulan, 2.5) + $this->getMonth(10, $bulan, 1.4) + $this->getMonth(10, $bulan, 2.1) + $this->getMonth(10, $bulan, 2.3) + $this->getMonth(10, $bulan, 2.5) + $this->getMonth(13, $bulan) + $this->getMonth(14, $bulan) + $this->getMonth(15, $bulan, 2.1) + $this->getMonth(15, $bulan, 2.2) + $this->getMonth(17, $bulan);
     }
+    
     public function dashboard()
     {
         return response()->json([
