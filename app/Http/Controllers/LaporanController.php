@@ -68,7 +68,7 @@ class LaporanController extends Controller
         $kredit = 
         $this->get(2) + $this->get(3, 2.2) + $this->get(3, 2.4) + $this->get(4) + $this->get(8) + 
         $this->get(9, 1.4) + $this->get(9, 2.1) + $this->get(9, 2.3) + $this->get(9, 2.5) + 
-        $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.2) + $this->get(17) + 
+        $this->get(13) + $this->get(14) + $this->get(15, 2.1) + $this->get(15, 2.6) + $this->get(17) + 
         $this->get(11, 1.4, "jum_kredit") + $this->get(11, 2.1, "jum_kredit") + 
         $this->get(11, 2.3, "jum_kredit") + $this->get(11, 2.5, "jum_kredit");
         
@@ -82,8 +82,8 @@ class LaporanController extends Controller
             'gnb' => $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3) - $this->get(12, 2.3),
             'AkmGnB' => $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4),
             'tanah' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5) - $this->get(12, 2.5),
-            'UJPendek' => $this->getJW(10, "Jangka Pendek", "utang") + $this->getJW(11, "Jangka Pendek", "utang"),
-            'UJPanjang' => $this->getJW(10, "Jangka Panjang", "utang") + $this->getJW(11, "Jangka Panjang", "utang"),
+            'UJPendek' => $this->getJW(10, "Jangka Pendek", "jum_debet") + $this->getJW(11, "Jangka Pendek", "utang") + $this->get(16, 2.1) - $this->get(15, 2.1),
+            'UJPanjang' => $this->getJW(10, "Jangka Panjang", "jum_debet") + $this->getJW(11, "Jangka Panjang", "utang") + $this->get(16, 2.6) - $this->get(15, 2.6),
             'zakat' => $this->get(1) - $this->get(2),
             'infak' => ($this->get(3, 4.11) + $this->get(3, 4.12) + $this->get(3, 4.13) + $this->get(3, 2.1) + $this->get(3, 2.3) + $this->get(3, 2.5)) - $this->get(4),
             'amil' => ($this->get(5)) - ($this->get(9, 2.2) + $this->get(10, 2.2) + $this->get(11, 2.2) + $this->get(9, 2.4) + $this->get(10, 2.4) + $this->get(11, 2.4) + $this->get(13)),
@@ -106,7 +106,7 @@ class LaporanController extends Controller
             'setor' => $this->get(17, 1.2),
             'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4, 'jum_debet'),
             'utangPendek' => $this->get(15, 2.1),
-            'utangPanjang' => $this->get(15, 2.2),
+            'utangPanjang' => $this->get(15, 2.6),
             'gaji' => $this->get(13, 5.1),
             'listrik' => $this->get(13, 5.2),
             'air' => $this->get(13, 5.3),
@@ -126,7 +126,7 @@ class LaporanController extends Controller
             'tanahKredit' => $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5, "jum_kredit"),
             'investasiKredit' => $this->get(9, 2.1) + $this->get(10, 2.1) + $this->get(11, 2.1, "jum_kredit") + $this->get(9, 2.3) + $this->get(10, 2.3) + $this->get(11, 2.3, "jum_kredit") + $this->get(9, 2.5) + $this->get(10, 2.5) + $this->get(11, 2.5, "jum_kredit"),
             'utangJPendek' => $this->get(16, 2.1),
-            'utangJPanjang' => $this->get(16, 2.2),
+            'utangJPanjang' => $this->get(16, 2.6),
             'pendanaanKas' => $this->get(16, 2.1) + $this->get(16, 2.2),
             'piutangKredit' => $this->get(14, 2.3),
             'awalTahun' => 0,

@@ -88,7 +88,7 @@
                                                             | currency
                                                     }}
                                                 </td>
-                                                <td v-if="jurnal.jangka_waktu">
+                                                <td v-if="jurnal.utang">
                                                     Kas: 
                                                     {{
                                                         jurnal.jum_kredit
@@ -179,7 +179,7 @@
                                                             | currency
                                                     }}
                                                 </td>
-                                                <td v-if="jurnal.jangka_waktu">
+                                                <td v-if="jurnal.utang">
                                                     Kas: 
                                                     {{
                                                         jurnal.jum_kredit

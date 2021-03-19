@@ -98533,7 +98533,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        jurnal.jangka_waktu
+                                        jurnal.utang
                                           ? _c("td", [
                                               _vm._v(
                                                 "\n                                                Kas: \n                                                " +
@@ -98685,7 +98685,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        jurnal.jangka_waktu
+                                        jurnal.utang
                                           ? _c("td", [
                                               _vm._v(
                                                 "\n                                                Kas: \n                                                " +
