@@ -1,11 +1,11 @@
 # Revisi
 
--   Aktivitas kredit di halaman lain (Sudah)
+-   (Sudah) Aktivitas kredit di halaman lain 
     Aktivitas ini hanya ada di LPK, untuk setiap data masuk ke akun masing2 misal
     perlengkapan, peralatan, gedung, tanah dan akumulasi/penyusutan. sedangkan 
     UJPendek dan UJPanjang nilainya diambil dari jangka waktu masing2 akun.
 
--   Perhitungan pembelian cicilan (input, validasi nominal-utang, panggil nilai diLPK atau halaman lain)
+-   (Belum) Perhitungan pembelian cicilan (input, validasi nominal-utang, panggil nilai diLPK atau halaman lain)
     Aktivitas ini ada di LPK mirip seperti pembelian kredit tetapi untuk akun masing2 misal
     perlengkapan, peralatan, gedung, tanah dan akumulasi/penyusutan diambil dari debet,
     untuk kas ambil dari kredit dan UJPendek dan UJPanjang ambil dari utang.

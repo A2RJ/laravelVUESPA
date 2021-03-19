@@ -104,7 +104,7 @@ class LaporanController extends Controller
             'piutangKas' => $this->get(15, 2.3),
             'aktivitasKas' => $this->get(5, 4.1) + $this->get(5, 4.2) + $this->get(5, 4.3) + $this->get(18) + $this->get(15, 2.3),
             'setor' => $this->get(17, 1.2),
-            'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4),
+            'perlengkapan' => $this->get(9, 1.4) + $this->get(10, 1.4) + $this->get(11, 1.4, 'jum_debet'),
             'utangPendek' => $this->get(15, 2.1),
             'utangPanjang' => $this->get(15, 2.2),
             'gaji' => $this->get(13, 5.1),
